@@ -15,24 +15,26 @@ design:
 
 content:
   slides:
-    - title: 👋 Welcome to the group
-      content: Take a look at what we're working on...
+    - title: 👋 Welcome to the BK Information Security Club Blogs Page
+      content: Where our members shares valuable knowledges in variety of security sectors like *Cryptogrpahy, Web Exploitation, Binary Exploitation, Reverse Engineering* and more.
       align: center
       background:
         position: right
         color: '#666'
         brightness: 0.7
         media: coders.jpg
-    - title: Lunch & Learn ☕️
-      content: 'Share your knowledge with the group and explore exciting new topics together!'
+
+    - title: Challenge Writeups
+      content: 'Demonstrate our solution in CTFs, Wargames and annual security competitions likes *Flare-on, NSUCrypto, etc.*'
       align: left
       background:
         position: center
         color: '#555'
         brightness: 0.7
         media: contact.jpg
-    - title: World-Class Semiconductor Lab
-      content: 'Just opened last month!'
+
+    - title: Security Talk Seminar
+      content: 'Each member in our club has interested in different fields in cyber security. And we all are eager to share about what we have learnt and found.'
       align: right
       background:
         position: center
@@ -42,6 +44,6 @@ content:
       link:
         icon: graduation-cap
         icon_pack: fas
-        text: Join Us
-        url: ../contact/
+        text: Browser out blogs
+        url: ../publication/
 ---

@@ -1,28 +1,27 @@
 ---
-draft: true
-
 # Display name
-title: BKISC
+title: hdthinh1012
 
 # Is this the primary user of the site?
-superuser: true
+superuser: false
 
 # Role/position
-role: Club Members
+role: Web Exploitation
 
 # Organizations/Affiliations
 organizations:
-  - name: Ho Chi Minh University Of Technology
+  - name: ''
     url: ''
 
 # Short bio (displayed in user profile at end of posts)
-bio: Author for combined club members' blogs
+bio: My research interests include Static Code Analysis, Compilers Fundamental, Static Application Security Testing tool like CodeQL. 
 
 interests:
-
+  - Web Security
+  - Static Code Analysis
 
 education:
-
+  courses:
 
 # Social/Academic Networking
 # For available icons, see: https://wowchemy.com/docs/getting-started/page-builder/#icons
@@ -31,16 +30,13 @@ education:
 social:
   - icon: envelope
     icon_pack: fas
-    link: 'mailto:clb.attt@hcmut.edu.vn'
+    link: 'mailto:hdthinh01@gmail.com'
   - icon: facebook
     icon_pack: fab
-    link: https://www.facebook.com/clbattthcmut
-  - icon: google-scholar
-    icon_pack: ai
-    link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ
+    link: https://www.facebook.com/hdthinh1012
   - icon: github
     icon_pack: fab
-    link: https://github.com/clbattthcmut
+    link: https://github.com/hdthinh1012
 # Link to a PDF of your resume/CV from the About widget.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
 # - icon: cv
@@ -56,9 +52,7 @@ highlight_name: false
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.
 user_groups:
-  - Researchers
+  - Members
 ---
 
-Nelson Bighetti is a professor of artificial intelligence at the Stanford AI Lab. His research interests include distributed robotics, mobile computing and programmable matter. He leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate.
+hdthinh1012 (Thinh Huynh Duc) is a Computer Science student studying at Ho Chi Minh University of Technology.

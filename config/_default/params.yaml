@@ -7,9 +7,9 @@
 
 appearance:
   theme_day: minimal
-  theme_night:
-  font: native
-  font_size: L
+  theme_night: minimal
+  font: cyberpunk
+  font_size: s
 
 # SEO
 
@@ -31,24 +31,38 @@ marketing:
 
 header:
   navbar:
+    # Choose a navigation block
+    block: navbar
+    # Display the navigation bar?
     enable: true
-    align: r
+    # Align menu links: left (l), center (c), or right (r)
+    align: c
+    # Display your site title or `assets/media/logo*` image in the nav bar?
     show_logo: true
+    # Show a language chooser (if you have translated your site content)?
+    show_translations: true
+    # If `show_translations` is enabled, do you wish to display the current language name?
     show_language: false
+    # Let the user override the default light/dark mode of your theme?
     show_day_night: true
+    # Let the user search from the nav bar?
     show_search: true
-    highlight_active_link: false
+    # Attempt to automatically highlight the active menu link? Can be disabled for complex sites.
+    highlight_active_link: true
 
 # Site footer
 
 footer:
+  block: minimal
   copyright:
-    notice: '© {year} Me. This work is licensed under {license}'
+    notice: '© {year} BK Information Security Club. This work is licensed under {license}'
     license:
       enable: true
       allow_derivatives: false
       share_alike: true
       allow_commercial: false
+  show_translations: true
+
 
 # Localization
 
@@ -61,7 +75,9 @@ locale:
 
 features:
   syntax_highlighter:
-    enable: false
+    enable: true
+    theme_light: xcode-light
+    theme_dark: xcode-dark
     extra_languages:
       - r
       - latex
@@ -99,7 +115,10 @@ features:
     provider: 'mapnik'
     api_key: ''
     zoom: 15
-
+  feedback:
+    responses:
+      positive: 'Glad to hear it! [Any ideas for improvements?](https://github.com/<USERNAME>/<REPO>/issues/new)'
+      negative: 'Sorry to hear that. [Please tell us how we can improve](https://github.com/<USERNAME>/<REPO>/issues/new).'
 # Extensions
 
 extensions:
