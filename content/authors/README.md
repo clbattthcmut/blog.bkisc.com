@@ -70,21 +70,26 @@ education:
     - Thông tin mạng xã hội
 ```
 social:
-   - icon: envelope
+  - icon: envelope
     icon_pack: fas
-    link: 'mailto:test@example.org'
-   - icon: twitter
+    link: 'mailto:clb.attt@hcmut.edu.vn'
+  - icon: twitter
     icon_pack: fab
-    link: https://twitter.com/GeorgeCushen
-   - icon: facebook
+    link: ''
+  - icon: youtube
     icon_pack: fab
-    link: https://facebook.com/GeorgeCushen
-   - icon: google-scholar
+    link: ''
+  - icon: facebook
+    icon_pack: fab
+    link: https://www.facebook.com/clbattthcmut
+  - icon: google-scholar
     icon_pack: ai
     link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ
-   - icon: github
+  - icon: github
     icon_pack: fab
-    link: https://github.com/gcushen
+    link: https://github.com/clbattthcmut
+  - icon: globe
+    icon_pack: fa
 ```
 
 9-bis. social (Không bắt buộc) Link Resume/CV
