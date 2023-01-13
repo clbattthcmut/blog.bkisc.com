@@ -60,16 +60,16 @@ user_groups:
   - Members
 ---
 
-## Some Background Informations:
+## Some Background Informations
 
-I am FazeCT, a Reverser from team BKISC , HCMC University of Technology. I have been studying in Computer Science, HCMC University of Technology since October 2021.
+I am **FazeCT**, a Reverser from team [BKISC](https://bkisc.com), HCMC University of Technology. I have been studying in Computer Science, HCMC University of Technology since **October 2021**. 
 
-Started playing CTFs since July 2022, currently I am focusly learning in the Reverse Engineering (RE) field of CTF.
+Started playing CTFs since **July 2022**, currently I am focusly learning in the **Reverse Engineering (RE)** field of CTF.
 
-I am also looking forward to learn more about Pwnable in the future.
+I am also looking forward to learn more about **Pwnable** in the future.
 
-## Noticeable Achievements:
+## Noticeable Achievements
 
-Qualified for ISITDTU CTF 2022 Finals
+**Qualified** for [ISITDTU CTF 2022](https://ctftime.org/ctf/258) Finals
 
-Ranked 57th in 2022 ACM-ICPC Asia HoChiMinh City Regional Contest
+Ranked **57<sup>th</sup>** in 2022 ACM-ICPC Asia HoChiMinh City Regional Contest
