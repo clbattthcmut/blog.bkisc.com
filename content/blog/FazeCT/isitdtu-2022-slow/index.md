@@ -78,7 +78,7 @@ The challenge provides us with a single binary, named **slow.exe**. By using **I
 
 Analyze the **main** function, we claim that the program initiates an array whose size is **45**, then modifies it through some more functions, as shown below.
 
-```
+```c
 int __cdecl main(int argc, const char **argv, const char **envp)
 {
   void *Block; // [esp+4h] [ebp-BCh]
@@ -98,7 +98,7 @@ int __cdecl main(int argc, const char **argv, const char **envp)
 
 The function **sub_401AC0(v5, 38, 0)** allocates dynamic memory using **malloc** based on **v5** then assigns it into variable **Block**. That variable is then being passed into function **sub_4013B0(Block)**, which will produce our flag once we have fixed it.
 
-```
+```c
 int __cdecl sub_4013B0(_DWORD *a1)
 {
   int result; // eax
@@ -172,7 +172,7 @@ To be more precise, if the program reaches **case 1**, the function **sub_401110
 
 As stated earlier, the function **sub_401260(v38)** will be called if the program reaches **case 14**, which will be the last part of our code flow. 
 
-```
+```c
 int __cdecl sub_401260(char a1)
 {
   char v2[256]; // [esp+10h] [ebp-224h] BYREF
@@ -199,7 +199,7 @@ The function receives our modified variable **Block**, then uses it to produce o
 
 Here is where things get interesting. Take a look at the function **sub_401110(v26, v22)**, we can conclude that this is why our program runs slowly. The fact that it makes our program sleeps plus it is possibly called many times throughout the process makes our executable runs without any output for a very long time.
 
-```IDA Decompiled Pseudocode
+```c IDA Decompiled Pseudocode
 int __cdecl sub_401110(int a1, int a2)
 {
   int v3; // [esp+0h] [ebp-4h]
@@ -238,7 +238,7 @@ Using **IDA Pro** integrated settings, which can be found at **Options > General
 
 With [pwntools](https://github.com/Gallopsled/pwntools) library, we also find out the opcode for **add ecx, edx** and **move eax, ecx** is **01 D1** and **89 C8** using this script written in **Python** below.
 
-```
+```python
 from pwn import *
 context.arch = 'amd64'
 print(asm('add ecx, edx'))
@@ -253,7 +253,7 @@ Change **E8 77 FC FF FF** to **01 D1 89 C8 90** using any hex editor of your cho
 
 After patching the binary, run it again to get our flag.
 
-```Terminal
+```
 fazect@LAPTOP-CQA118DI:/mnt/d/Downloads$ ./slow.exe
 RESULT: 75025
 flag is: Pr4ct1c3_VMc0d3_w1th_F1b0n4cc1
