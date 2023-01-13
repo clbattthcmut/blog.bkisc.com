@@ -32,5 +32,5 @@ design:
 
 <br>
 
-Where our members shares valuable knowledges in variety of security sectors like **Cryptogrpahy, Web Exploitation, Binary Exploitation, Reverse Engineering** and more.  
+Where our members share valuable knowledges in variety of security sectors like **Cryptography, Web Exploitation, Binary Exploitation, Reverse Engineering** and more.  
 <br>
