@@ -7,7 +7,6 @@ widget: hero # See https://wowchemy.com/docs/page-builder/
 headless: true # This file represents a page section.
 weight: 10 # Order that this section will appear.
 title: |
-  HCMUT Information Security Club Blogs Page
 hero_media: blog-example.png
 cta:
   label: Browse our blogs
@@ -29,7 +28,7 @@ design:
   css_style:
   css_class:
 ---
-
+<h1>HCMUT Information Security Club Blogs Page</h1>
 <br>
 
 Where our members share valuable knowledges in variety of security sectors like **Cryptography, Web Exploitation, Binary Exploitation, Reverse Engineering** and more.  
