@@ -1,6 +1,4 @@
 ---
-draft: true
-
 # Display name
 title: BKISC
 
