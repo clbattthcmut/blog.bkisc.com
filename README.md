@@ -62,6 +62,6 @@ Delete Events: 2022-09-05-thaidn-talk
 5. Git add và commit phần thay đổi của mình
 6. Khi đã sẵn sàng thì hãy push lên nhánh của mình trên remote luôn. Tuyệt đối không push thẳng lên main nha.
 7. Tạo một pull request và chờ maintainer accept.
-8. Mọi người chỉ cần thấy check của bot netlify mà passed hoặc neutral all là có thể tự confirm pull request được rồi nha
+8. Mọi người chỉ cần thấy check của bot netlify mà passed hoặc neutral all là có thể tự confirm pull request được rồi nha, mọi người có thể tự check nút 'Push without waiting ...' rồi confirm merge request luôn nha.
 <img width="817" alt="image" src="https://user-images.githubusercontent.com/58225765/212357845-98654448-281c-4a33-b911-cd99747bf088.png">
 
