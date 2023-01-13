@@ -3,13 +3,13 @@
 Đang deploy ở https://eclectic-belekoy-9c31db.netlify.app
 
 ## Feature
-[x] Light/Dark Theme
-[x] Member/Author Pages
-[x] Blogs Pages
-[x] Taxonomies (View items by tags)
-[x] Projects (Link several blogs/news/events to the same projects, used when writing multi-part series)
-[x] Support search for content (blogs, events, news)
-[ ] Email form contact, currently sending to maintainer not club email
+- [x] Light/Dark Theme
+- [x] Member/Author Pages
+- [x] Blogs Pages
+- [x] Taxonomies (View items by tags)
+- [x] Projects (Link several blogs/news/events to the same projects, used when writing multi-part series)
+- [x] Support search for content (blogs, events, news)
+- [ ] Email form contact, currently sending to maintainer not club email
 
 ## Requirement
 - Cần tải golang về máy tại [đây](https://go.dev/dl/)
@@ -53,3 +53,12 @@ Add Member: hdthinh1012
 Modify Blog: duti/sekai-ctf-2022-bottle-poem
 Delete Events: 2022-09-05-thaidn-talk
 ```
+
+### Các bước để contribute
+1. Clone repo về máy local
+2. Tạo một branch khác với tên của mình (ví dụ: hoangREALER sẽ tạo branch `hoangREALER` thông qua lệnh `git branch hoangREALER`)
+3. Checkout vào nhánh vừa tạo thông qua lệnh `git checkout <tên nhánh vừa tạo>`
+4. Chỉnh sửa, thay đổi, và thêm thắt cho branch của mình
+5. Git add và commit phần thay đổi của mình
+6. Khi đã sẵn sàng thì hãy push lên nhánh của mình trên remote luôn. Tuyệt đối không push thẳng lên main nha.
+7. Tạo một pull request và chờ maintainer accept.
