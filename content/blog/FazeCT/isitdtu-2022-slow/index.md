@@ -164,7 +164,9 @@ int __cdecl sub_4013B0(_DWORD *a1)
 }
 ```
 
-It is easy to observe that only case 1 and case 14 involve calling other functions. To be more precise, if the program reaches **case 1**, the function **sub_401110(v26, v22)** will be called, and on the other hand, if the program reaches **case 14**, the function **sub_401260(v38)** will be called. We will talk more about these two functions in the next parts of this blog.
+It is easy to observe that only case 1 and case 14 involve calling other functions. 
+
+To be more precise, if the program reaches **case 1**, the function **sub_401110(v26, v22)** will be called, and on the other hand, if the program reaches **case 14**, the function **sub_401260(v38)** will be called. We will talk more about these two functions in the next parts of this blog.
 
 ## Reaching case 14
 
