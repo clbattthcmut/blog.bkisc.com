@@ -1,12 +1,6 @@
 ---
-draft: true
-
 # Display name
 title: FazeCT
-
-# Username (this should match the folder name)
-authors:
-  - FazeCT
 
 # Is this the primary user of the site?
 superuser: false
