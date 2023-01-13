@@ -16,12 +16,15 @@ main:
   - name: Events
     url: event
     weight: 30
+  - name: Projects
+    url: project
+    weight: 40
   - name: Blogs
     url: blog
-    weight: 40
+    weight: 50
   - name: People
     url: people
-    weight: 50
+    weight: 60
   - name: Contact
     url: contact
-    weight: 60
+    weight: 70

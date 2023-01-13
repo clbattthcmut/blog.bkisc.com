@@ -1,10 +1,10 @@
 ---
 # Documentation: https://wowchemy.com/docs/page-builder/
-widget: featured
+widget: pages
 headless: true
-weight: 20
+weight: 30
 
-title: Recent & Upcoming Events
+title: Latest Upload
 subtitle:
 
 content:
@@ -17,7 +17,7 @@ content:
     tag: ''
   offset: 0
   order: desc
-  page_type: event
+  page_type: blog
 design:
   view: 3
   columns: '1'

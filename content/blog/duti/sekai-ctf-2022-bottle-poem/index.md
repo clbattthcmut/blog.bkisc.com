@@ -12,7 +12,7 @@ publishDate: '2023-01-12T00:00:00Z'
 # Legend: 0 = Uncategorized; 1 = Conference paper; 2 = Journal article;
 # 3 = Preprint / Working Paper; 4 = Report; 5 = Book; 6 = Book section;
 # 7 = Thesis; 8 = Patent
-publication_types: ['4']
+publication_types: ['9']
 
 # Publication name and optional abbreviated publication name.
 publication: ''
@@ -27,7 +27,7 @@ tags:
   - ctf
   - writeup
   - web exploitation
-featured: false
+featured: true
 
 links:
   # - name: Custom Link
@@ -44,7 +44,7 @@ url_video: ''
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder.
 image:
-  caption: 'Image credit: [**Unsplash**](https://unsplash.com/photos/s9CC2SKySJM)'
+  caption: 'Image credit: [**Sekai CTF**](https://unsplash.com/photos/s9CC2SKySJM)'
   focal_point: ''
   preview_only: false
 
@@ -53,7 +53,8 @@ image:
 #   Simply enter your project's folder or file name without extension.
 #   E.g. `internal-project` references `content/project/internal-project/index.md`.
 #   Otherwise, set `projects: []`.
-projects: []
+projects:
+    - ctf-2022-writeups
 
 # Slides (optional).
 #   Associate this publication with Markdown slides.
@@ -62,8 +63,6 @@ projects: []
 #   Otherwise, set `slides: ""`.
 slides:
 ---
-{{< list_tags >}}
-{{< list_categories >}}
 {{< toc >}}
 
 ## Problem statement

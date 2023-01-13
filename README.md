@@ -2,6 +2,15 @@
 ## Netlify
 Đang deploy ở https://eclectic-belekoy-9c31db.netlify.app
 
+## Feature
+[x] Light/Dark Theme
+[x] Member/Author Pages
+[x] Blogs Pages
+[x] Taxonomies (View items by tags)
+[x] Projects (Link several blogs/news/events to the same projects, used when writing multi-part series)
+[x] Support search for content (blogs, events, news)
+[ ] Email form contact, currently sending to maintainer not club email
+
 ## Requirement
 - Cần tải golang về máy tại [đây](https://go.dev/dl/)
 - Cần tải hugo extended bằng bản binary tại [đây](https://github.com/gohugoio/hugo/releases/tag/v0.109.0)
@@ -29,18 +38,18 @@ Thành viên câu lạc bộ cần thêm tên mình vào danh sách member trư�
 - Hướng dẫn add tên mình vào danh sách member tại [đây](./content/authors/README.md)
 - Hướng dẫn đóng góp blog tại [đây](./content/blog/README.md)
 
-Ngoài ra trang web có hai mục /news và /events để đăng tin tức hoặc thông báo sự kiện sắp diễn ra, các bài đăng trong mục này sẽ để dưới tên là admin BKISC và do bạn Chủ Tịch CLB viết.
+Ngoài ra trang web có hai mục /news và /events để đăng tin tức hoặc thông báo sự kiện sắp diễn ra, các bài đăng trong mục này sẽ để dưới tên là admin BKISC và do bạn Admin của CLB viết.
 - Hướng dẫn đăng tin tức tại [đây](./content/post/README.md)
 - Hướng dẫn đăng thông báo sự kiện tại [đây](./content/event/README.md)
 
 ### Về commit message
-**Note**: mong mọi người commit 1 lần sau mỗi hoạt động trên với message phản ánh commit đó (cái này chỉ là gợi ý thôi, mọi người cứ commit message thoải mái nha, cái nào hài hài xíu)
+**Note**: mong mọi người commit 1 lần sau mỗi hoạt động trên với message phản ánh commit đó (cái này chỉ là gợi ý thôi, mọi người cứ commit message thoải mái nha)
 ```
-[<Add, Delete, Modify>] [<Blog, News, Events, Member>] [<Tên file/thư mục liên quan>]
+[<Add, Delete, Modify>] [<Blog, News, Events, Member>]: [<Tên file/thư mục liên quan>]
 ```
 Ví dụ: 
 ```
-[Add] [Member] [hdthinh1012]
-[Modify] [Blog] [duti/sekai-ctf-2022-bottle-poem]
-[Add] [Events] [2022-09-05-thaidn-talk]
+Add Member: hdthinh1012
+Modify Blog: duti/sekai-ctf-2022-bottle-poem
+Delete Events: 2022-09-05-thaidn-talk
 ```

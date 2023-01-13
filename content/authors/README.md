@@ -1,5 +1,11 @@
+---
+draft: true
+---
 # Hướng dẫn thêm bản thân vào danh sách thành viên
 Mọi người có thể xem ví dụ ở [đây](./吳恩達/_index.md) nha (ở chế độ raw)
+## Tạo thư mục và file
+Thành viên có nickname là `Bkisc` sẽ tạo thư mục /content/authors/bkisc và thêm 2 file _index.md và avatar.jpg (hình avatar bản thân)  
+Dưới đây là lưu ý cho _index.md
 
 ## Các field cần lưu ý trên Front Matter (YAML)
 
@@ -104,3 +110,6 @@ user_groups:
   - Seniors
   - Advisors
 ```
+
+## Phần nội dung (Markdown)
+Phần này đăng khi bấm vào hình thành viên trên trang /member

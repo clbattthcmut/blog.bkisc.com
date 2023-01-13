@@ -47,7 +47,7 @@ Lưu ý:<br>
 3. Nếu được các bạn nên ăn nhẹ để tránh đói trước khi đến event <br> 
 "
 
-summary: Anh Dương Ngọc Thái, hiện đang làm việc tại Google và thường được biết đến thông qua blog cá nhân vnhacker@blogspot sẽ kể về những lần tham gia kiểm thử và tấn công hệ thống của một số bệnh viện và ngân hàng ở Việt Nam. Qua đó, anh nói về tầm quan trọng của kiểm thử bảo mật của phần mềm và chính sách breach notification để nâng cao nhận thức về bảo vệ an thông tin người dùng của doanh nghiệp.
+summary: Anh Dương Ngọc Thái, hiện đang làm việc tại Google và thường được biết đến thông qua blog cá nhân vnhacker@blogspot, sẽ kể về những lần tham gia kiểm thử và tấn công hệ thống của một số bệnh viện và ngân hàng ở Việt Nam. Qua đó, anh nói lên tầm quan trọng của kiểm thử bảo mật phần mềm và chính sách breach notification nhằm nâng cao nhận thức về bảo vệ thông tin người dùng của doanh nghiệp.
 
 # Talk start and end times.
 #   End time can optionally be hidden by prefixing the line with `#`.
@@ -62,7 +62,7 @@ authors: []
 tags: []
 
 # Is this a featured talk? (true/false)
-featured: false
+featured: true
 
 image:
   caption: 'Image credit: [**Unsplash**](https://unsplash.com/photos/bzdhc5b3Bxs)'
