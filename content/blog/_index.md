@@ -9,3 +9,6 @@ banner:
   caption: ''
   image: ''
 ---
+<h2>Tags</h2>
+{{< list_tags >}}
+<h2>All Blogs</h2>

@@ -22,8 +22,8 @@ content:
     country: Vietnam
     country_code: VN
   coordinates:
-    latitude: '10.772209770202508'
-    longitude: '106.65788365066771'
+    latitude: '10.773600770202508'
+    longitude: '106.66050365066771'
   directions: Room 304, B9 House
   office_hours:
     - 'Saturday 9:00 to 16:00'
