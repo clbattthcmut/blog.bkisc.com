@@ -1,6 +1,6 @@
 # BKISC Blog-News-Event Page
 ## Netlify
-Đang deploy ở https://eclectic-belekoy-9c31db.netlify.app
+Đang deploy ở https://bkisc-blog.netlify.app
 
 ## Feature
 - [x] Light/Dark Theme
@@ -51,7 +51,7 @@ Ví dụ:
 ```
 Add Member: hdthinh1012
 Modify Blog: duti/sekai-ctf-2022-bottle-poem
-Delete Events: 2022-09-05-thaidn-talk
+Delete Events: 2022-09-05-thaidntalk-
 ```
 
 ### Các bước để contribute
