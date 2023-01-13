@@ -1,0 +1,10 @@
+name = "my_font"
+
+# Optional Google font URL
+google_fonts = "family=Fira+Code:wght@300;400;500&family=JetBrains+Mono:ital,wght@0,400;0,500;1,400;1,500"
+
+# Font families
+heading_font = "Jura"
+body_font = "JetBrains Mono"
+nav_font = "Jura"
+mono_font = "JetBrains Mono"

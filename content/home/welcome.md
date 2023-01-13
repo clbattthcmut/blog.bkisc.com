@@ -10,7 +10,7 @@ title: |
   HCMUT Information Security Club Blogs Page
 hero_media: blog-example.png
 cta:
-  label: Browser our blogs
+  label: Browse our blogs
   url: './blog'
   #icon_pack: fas
   #icon: download
