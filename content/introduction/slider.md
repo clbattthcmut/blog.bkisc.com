@@ -22,7 +22,7 @@ content:
         position: right
         color: '#666'
         brightness: 0.7
-        media: coders.jpg
+        media: hero-background.png
 
     - title: Challenge Writeups
       content: 'Demonstrate our solution in CTFs, Wargames and annual security competitions likes *Flare-on, NSUCrypto, etc.*'
@@ -31,19 +31,19 @@ content:
         position: center
         color: '#555'
         brightness: 0.7
-        media: contact.jpg
+        media: isitdtu-ctf-2022_team.jpg
 
     - title: Security Talk Seminar
-      content: 'Each member in our club has interested in different fields in cyber security. And we all are eager to share about what we have learnt and found.'
+      content: 'Each member in our club has interested in different fields in cyber security. And we are all eager to share about what we have researched and studied.'
       align: right
       background:
         position: center
         color: '#333'
         brightness: 0.5
-        media: welcome.jpg
+        media: ky-seminar.jpg
       link:
         icon: graduation-cap
         icon_pack: fas
         text: Browser out blogs
-        url: ../publication/
+        url: ../blog/
 ---

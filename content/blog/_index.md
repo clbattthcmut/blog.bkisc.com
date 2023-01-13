@@ -1,5 +1,5 @@
 ---
-title: Publications
+title: Blogs
 
 # Listing view
 view: citation

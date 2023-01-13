@@ -3,7 +3,7 @@ title:
 subtitle:
 widget: blank
 headless: true
-weight: 40
+weight: 50
 design:
   columns: '1'
 ---

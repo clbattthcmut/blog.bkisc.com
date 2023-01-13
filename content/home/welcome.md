@@ -7,9 +7,21 @@ widget: hero # See https://wowchemy.com/docs/page-builder/
 headless: true # This file represents a page section.
 weight: 10 # Order that this section will appear.
 title: |
-  BK Information Security Club  
-  Blogs Page
-hero_media: welcome.jpg
+  HCMUT Information Security Club Blogs Page
+hero_media: blog-example.png
+cta:
+  label: Browser our blogs
+  url: './blog'
+  #icon_pack: fas
+  #icon: download
+# Optionally, add an alternative CTA link
+cta_alt:
+  label: Ask a question
+  url: './contact'
+# Optionally, add a note under the Call-To-Action button
+cta_note:
+  label: >-
+    <div style="text-shadow: none;"><a class="github-button" href="./introduction" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star">Introduction Tour</a></div>
 design:
   # Choose how many columns the section has. Valid values: 1 or 2.
   columns: '1'
@@ -20,4 +32,5 @@ design:
 
 <br>
 
-Where our members shares valuable knowledges in variety of security sectors like *Cryptogrpahy, Web Exploitation, Binary Exploitation, Reverse Engineering and more*.
+Where our members shares valuable knowledges in variety of security sectors like **Cryptogrpahy, Web Exploitation, Binary Exploitation, Reverse Engineering** and more.  
+<br>

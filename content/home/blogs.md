@@ -17,7 +17,7 @@ content:
     tag: ''
   offset: 0
   order: desc
-  page_type: publication
+  page_type: blog
 design:
   view: 3
   columns: '1'
