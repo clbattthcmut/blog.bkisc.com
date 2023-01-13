@@ -1,5 +1,6 @@
 ---
-draft: true
+draft: true 
+# Set to false when publishing
 
 # Display name
 title: 吳恩達
