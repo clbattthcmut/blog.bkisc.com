@@ -6,7 +6,7 @@ date: '2023-01-13T22:44:54Z'
 doi: ''
 
 # Schedule page publish date (NOT publication's date).
-publishDate: '2023-01-14T00:00:00Z'
+publishDate: '2023-01-13T23:17:00Z'
 
 # Publication type.
 # Legend: 0 = Uncategorized; 1 = Conference paper; 2 = Journal article;
