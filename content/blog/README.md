@@ -30,6 +30,7 @@ date: '2023-01-12T00:00:00Z'
 4. doi
     - Field này mình chưa rõ
 5. publishDate
+    - **Note:** Do đến đúng publish date bài đăng mới xuất hiện trên blogs và hiện đang tính theo giờ GMT nên mong mọi người dời về trước 7 giờ hoặc trước hẳn 1 ngày để blog xuất hiện ngay lập tức sau khi pull request 
     - Ngày đăng bài, để trùng với 3. date
 ```
 publishDate: '2023-01-12T00:00:00Z'
