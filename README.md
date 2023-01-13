@@ -1,48 +1,46 @@
-# [Hugo Research Group Theme](https://github.com/wowchemy/starter-hugo-research-group)
+# BKISC Blog-News-Event Page
+## Netlify
+Đang deploy ở https://eclectic-belekoy-9c31db.netlify.app
 
-[![Screenshot](./preview.png)](https://wowchemy.com/hugo-themes/)
+## Requirement
+- Cần tải golang về máy tại [đây](https://go.dev/dl/)
+- Cần tải hugo extended bằng bản binary tại [đây](https://github.com/gohugoio/hugo/releases/tag/v0.109.0)
 
-The **Research Group Template** empowers your research group to easily create a beautiful website with a stunning homepage, news, academic publications, events, team profiles, and a contact form.
+**Note**: nếu như sử dụng Unix based, có thể cài đặt thông qua các package manager như **apt** hoặc **brew** và có thể cài đặt trên [**docker**](https://gohugo.io/installation/linux/#docker) (không official)
 
-️**Trusted by 250,000+ researchers, educators, and students.** Highly customizable via the integrated **no-code, widget-based Wowchemy page builder**, making every site truly personalized ⭐⭐⭐⭐⭐
+## Installation
 
-[![Get Started](https://img.shields.io/badge/-Get%20started-ff4655?style=for-the-badge)](https://wowchemy.com/hugo-themes/)
-[![Discord](https://img.shields.io/discord/722225264733716590?style=for-the-badge)](https://discord.com/channels/722225264733716590/742892432458252370/742895548159492138)  
-[![Twitter Follow](https://img.shields.io/twitter/follow/wowchemy?label=Follow%20on%20Twitter)](https://twitter.com/wowchemy)
+Clone repo về máy -> Vào thư mục git -> Chạy lệnh hugo
 
-Easily write technical content with plain text Markdown, LaTeX math, diagrams, RMarkdown, or Jupyter, and import publications from BibTeX.
+```bash
+git clone --recurse-submodules -j8 https://github.com/clbattthcmut/bkisc.com-blog-page.git
+cd bkisc.com-blog-page
 
-[Check out the latest demo](https://research-group.netlify.app/) of what you'll get in less than 60 seconds, or [view the showcase](https://wowchemy.com/creators/).
+# Hiện content nháp (trên front matter có draft: true)
+hugo server -D -w
 
-The integrated [**Wowchemy**](https://wowchemy.com) website builder and CMS makes it easy to create a beautiful website for free. Edit your site in the CMS (or your favorite editor), generate it with [Hugo](https://github.com/gohugoio/hugo), and deploy with GitHub or Netlify. Customize anything on your site with widgets, light/dark themes, and language packs.
+# Không hiện content nháp
+hugo server -w
+```
 
-- 👉 [**Get Started**](https://wowchemy.com/hugo-themes/)
-- 📚 [View the **documentation**](https://wowchemy.com/docs/)
-- 💬 [Chat with the **Wowchemy research community**](https://discord.gg/z8wNYzb) or [**Hugo community**](https://discourse.gohugo.io)
-- ⬇️ **Automatically import citations from BibTeX** with the [Hugo Academic CLI](https://github.com/wowchemy/hugo-academic-cli)
-- 🐦 Share your new site with the community: [@wowchemy](https://twitter.com/wowchemy) [@GeorgeCushen](https://twitter.com/GeorgeCushen) [#MadeWithWowchemy](https://twitter.com/search?q=%23MadeWithWowchemy&src=typed_query)
-- 🗳 [Take the survey and help us improve #OpenSource](https://forms.gle/NioD9VhUg7PNmdCAA)
-- 🚀 [Contribute improvements](https://github.com/wowchemy/wowchemy-hugo-themes/blob/main/CONTRIBUTING.md) or [suggest improvements](https://github.com/wowchemy/wowchemy-hugo-themes/issues)
-- ⬆️ **Updating?** View the [Update Guide](https://wowchemy.com/docs/hugo-tutorials/update/) and [Release Notes](https://github.com/wowchemy/wowchemy-hugo-themes/releases)
+## Hướng dẫn đóng góp nội dung cho trang Blog
+### Format file
+Thành viên câu lạc bộ cần thêm tên mình vào danh sách member trước khi contribute blog
+- Hướng dẫn add tên mình vào danh sách member tại [đây](./content/authors/README.md)
+- Hướng dẫn đóng góp blog tại [đây](./content/blog/README.md)
 
-## We ask you, humbly, to support this open source movement
+Ngoài ra trang web có hai mục /news và /events để đăng tin tức hoặc thông báo sự kiện sắp diễn ra, các bài đăng trong mục này sẽ để dưới tên là admin BKISC và do bạn Chủ Tịch CLB viết.
+- Hướng dẫn đăng tin tức tại [đây](./content/post/README.md)
+- Hướng dẫn đăng thông báo sự kiện tại [đây](./content/event/README.md)
 
-Today we ask you to defend the open source independence of the Wowchemy website builder and themes 🐧
-
-We're an open source movement that depends on your support to stay online and thriving, but 99.9% of our creators don't give; they simply look the other way.
-
-### [❤️ Click here to become a GitHub Sponsor, unlocking awesome perks such as _exclusive academic templates and widgets_](https://github.com/sponsors/gcushen)
-
-## Demo credits
-
-Please replace the demo images with your own.
-
-- [Female scientist](https://unsplash.com/photos/uVnRa6mOLOM)
-- [2 Coders](https://unsplash.com/photos/kwzWjTnDPLk)
-- [Cafe](https://unsplash.com/photos/RnDGGnMEOao)
-- Blog posts
-  - https://unsplash.com/photos/AndE50aaHn4
-  - https://unsplash.com/photos/OYzbqk2y26c
-- Avatars
-  - https://unsplash.com/photos/5yENNRbbat4
-  - https://unsplash.com/photos/WNoLnJo7tS8
+### Về commit message
+**Note**: mong mọi người commit 1 lần sau mỗi hoạt động trên với message phản ánh commit đó (cái này chỉ là gợi ý thôi, mọi người cứ commit message thoải mái nha, cái nào hài hài xíu)
+```
+[<Add, Delete, Modify>] [<Blog, News, Events, Member>] [<Tên file/thư mục liên quan>]
+```
+Ví dụ: 
+```
+[Add] [Member] [hdthinh1012]
+[Modify] [Blog] [duti/sekai-ctf-2022-bottle-poem]
+[Add] [Events] [2022-09-05-thaidn-talk]
+```
