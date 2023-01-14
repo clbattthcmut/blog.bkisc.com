@@ -199,7 +199,7 @@ The function receives our modified variable **Block**, then uses it to produce o
 
 Here is where things get interesting. Take a look at the function **sub_401110(v26, v22)**, we can conclude that this is why our program runs slowly. The fact that it makes our program sleeps plus it is possibly called many times throughout the process makes our executable runs without any output for a very long time.
 
-```c IDA Decompiled Pseudocode
+```c
 int __cdecl sub_401110(int a1, int a2)
 {
   int v3; // [esp+0h] [ebp-4h]
