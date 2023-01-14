@@ -11,6 +11,11 @@ Thành viên có nickname là `Bkisc` muốn viết bài `Sekai CTF 2022: Bottle
 Sau đây là lưu ý cho file index.md
 ## Các field cần lưu ý trên Front Matter (YAML)
 Mọi người có thể tham khảo thêm hướng dẫn đầy đủ tại [đây](https://wowchemy.com/docs/content/publications/)
+0. draft
+    - Cái này để set true/false nếu file này chỉ là nháp, không xuất hiện trên blog khi publish, field này mọi người để là false nha
+```
+draft: false
+```
 1. title
     - Tên bài blog
 2. author
