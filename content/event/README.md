@@ -7,6 +7,11 @@ Mọi người có thể xem ví dụ ở [đây](./2022-09-05-thaidn-talk/index
 
 ## Tạo thư mục và file
 Tạo thư mục `/content/event/<tên-sự-kiện>` và thêm một file index.md với cú pháp gồm các field
+0. draft
+    - Cái này để set true/false nếu file này chỉ là nháp, không xuất hiện trên blog khi publish, field này mọi người để là false nha
+```
+draft: false
+```
 
 1. title
     - Tên của sự kiện

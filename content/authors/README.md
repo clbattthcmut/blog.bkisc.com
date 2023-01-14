@@ -8,6 +8,11 @@ Thành viên có nickname là `Bkisc` sẽ tạo thư mục /content/authors/bki
 Dưới đây là lưu ý cho _index.md
 
 ## Các field cần lưu ý trên Front Matter (YAML)
+0. draft
+    - Cái này để set true/false nếu file này chỉ là nháp, không xuất hiện trên blog khi publish, field này mọi người để là false nha
+```
+draft: false
+```
 
 1. title
    - Tên của thành viên hiển thị trên danh sách thành viên (url: /member)
