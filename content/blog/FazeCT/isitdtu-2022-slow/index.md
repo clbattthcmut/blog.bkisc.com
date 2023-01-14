@@ -32,8 +32,8 @@ tags:
 featured: true
 
 links:
-  # - name: Custom Link
-  #   url: http://example.org
+  - name: Original Post
+    url: https://fazect.github.io/isitdtu2022finals-slow/
 url_pdf: ''
 url_code: ''
 url_dataset: ''

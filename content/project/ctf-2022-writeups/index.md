@@ -43,4 +43,6 @@ slides: ""
 List all related work here:
 1. SekaiCTF 2022
   - [Bottle Poem](/blog/duti/sekai-ctf-2022-bottle-poem/)
+2. ISITDTU 2022
+  - [Slow](/blog/FazeCT/isitdtu-2022-slow/)
 {{< list_children >}}
