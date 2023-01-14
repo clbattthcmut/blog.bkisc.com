@@ -217,7 +217,7 @@ The algorithm here is very simple, however this is author's idea to let the prog
 
 So we know what makes our program runs slowly, it is time to fix that. Below is the decompiled assembly code of that part.
 
-```
+```assembly
 mov     ecx, [ebp+arg_0]
 mov     edx, [ecx+10h]
 sub     edx, 1
