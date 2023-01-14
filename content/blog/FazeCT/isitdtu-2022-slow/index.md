@@ -45,7 +45,8 @@ url_video: ''
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder.
-
+image:
+  caption: 'Image credit: [**ISITDTU**](https://ctftime.org/team/8241/)'
 
 # Associated Projects (optional).
 #   Associate this publication with one or more of your projects.
