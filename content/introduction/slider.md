@@ -44,6 +44,6 @@ content:
       link:
         icon: graduation-cap
         icon_pack: fas
-        text: Browse out blogs
+        text: Browse our blogs
         url: ../blog/
 ---

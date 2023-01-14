@@ -30,8 +30,8 @@ date: '2023-01-12T00:00:00Z'
 4. doi
     - Field này mình chưa rõ
 5. publishDate
+    - Ngày bài đăng được hiện lên trên trang blog, giá trị này ảnh hưởng đến bài blog có xuất hiện trên web hay chưa
     - **Note:** Do đến đúng publish date bài đăng mới xuất hiện trên blogs và hiện đang tính theo giờ GMT nên mong mọi người dời về trước 7 giờ hoặc trước hẳn 1 ngày để blog xuất hiện ngay lập tức sau khi pull request 
-    - Ngày đăng bài, để trùng với 3. date
 ```
 publishDate: '2023-01-12T00:00:00Z'
 ```
@@ -128,7 +128,7 @@ image:
 14. (Cho chuỗi bài viết series) projects
     - Field này dùng nếu như mọi người muốn liên hệ một vài bài viết chung series
     - Ví dụ mọi người muốn viết bài blog `Linux Kernel Exploitation part 1` cho projects/series `Linux-kernel-exploitation` mọi người có thể điền field này là `project: linux-kernel-exploitation` rồi tạo một thư mục content/project/linux-kernel-exploitation/index.md để hiển thị tên project/series đó sử dụng command: `hugo new  --kind project project/linux-kernel-exploitation`. 
-
+    - Tuy nhiên, dù bài blog có thể reference projects thông qua field này, nhưng projects lại không có field references blogs và Wowchemy chưa hỗ trợ render tự động giúp các blogs khi mở project nên trên đường dẫn `content/projects/linux-kernel-exploitation/index.md` mong mọi người viết thêm nội dung, add các bài blog có liên quan đến project một cách thủ công nha. Một ví dụ về projects mọi người có thể xem ở đường dẫn `content/project/ctf-2022-writeups/index.md`
 ```
 # Associated Projects (optional).
 #   Associate this publication with one or more of your projects.
