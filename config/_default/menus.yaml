@@ -22,8 +22,8 @@ main:
   - name: Blogs
     url: blog
     weight: 50
-  - name: People
-    url: people
+  - name: Members
+    url: members
     weight: 60
   - name: Contact
     url: contact

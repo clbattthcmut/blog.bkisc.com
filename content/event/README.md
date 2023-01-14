@@ -54,7 +54,8 @@ all_day: false
 ```
 
 8. publishDate
-    - Ngày thông báo sự kiện diễn ra
+    - Ngày bài đăng thông báo sự kiện được hiện lên trên trang blog, giá trị này ảnh hưởng đến bài đăng có xuất hiện trên web hay chưa
+    - **Note:** Do đến đúng publish date bài đăng mới xuất hiện trên blogs và hiện đang tính theo giờ GMT nên mong mọi người dời về trước 7 giờ hoặc trước hẳn 1 ngày để blog xuất hiện ngay lập tức sau khi pull request
     - Format: `<YYYY>-<MM>-<DD>T<HH>:<MM>:<SS>Z`
 ```
 publishDate: '2017-01-01T00:00:00Z'
