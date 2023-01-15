@@ -87,13 +87,7 @@ Then in the comment section of the location, I got the mentioned secret email, l
 
 I then sent an email to the email above, and got the next instructions.
 
-```
-"From: Ramo HackerNoodles (noodlesareramhackers@gmail.com)"
-
-So... I got some stuff to tell you. I think the killer is probably watching us. The killer used a weird weapon as you have found out. Look, the info I have is that weirdly enough the university page of Heather tweeted something that might lead you to the killer. They deleted it though. Luckily these days you can just walk back in time! Ah, the tweet was 1612383535549059076. When you have the info look in github!
-Good Luck! 
-
-```
+<img src="gmail.png" alt="Mail" width="1000"/>
 
 ## Finding the deleted tweet
 
