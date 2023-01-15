@@ -2,7 +2,7 @@
 title: 'IDEK CTF 2022 - Osint/Osint Crime Confusion 3: W as in Who'
 authors:
   - FazeCT
-date: '2023-01-15T05:44:54Z'
+date: '2023-01-15T15:50:54Z'
 doi: ''
 
 # Schedule page publish date (NOT publication's date).
