@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'IDEK CTF 2022 - Osint/Osint Crime Confusion 3: W as in Who'
 authors:
   - FazeCT
