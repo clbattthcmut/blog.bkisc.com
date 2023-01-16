@@ -4,7 +4,7 @@
 # This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
 
 title: BKISC Blogs # Website name
-baseURL: 'https://example.com/' # Website URL
+baseURL: 'https://blog.bkisc.com/bkisc.com-blog-page' # Website URL
 
 ############################
 ## LANGUAGE
