@@ -2,11 +2,11 @@
 title: 'ISITDTU CTF 2022 Finals - Slow'
 authors:
   - FazeCT
-date: '2023-01-13T22:44:54Z'
+date: '2023-01-13T15:44:54Z'
 doi: ''
 
 # Schedule page publish date (NOT publication's date).
-publishDate: '2023-01-13T23:17:00Z'
+publishDate: '2023-01-13T16:17:00Z'
 
 # Publication type.
 # Legend: 0 = Uncategorized; 1 = Conference paper; 2 = Journal article;
@@ -18,10 +18,10 @@ publication_types: ['9']
 publication: ''
 publication_short: ''
 
-abstract: An in-depth writeup on ISITDTU CTF 2022 Finals - Slow
+abstract: An in-depth writeup on ISITDTU CTF 2022 Finals - Slow.
 
 # Summary. An optional shortened abstract.
-summary: An in-depth writeup on ISITDTU CTF 2022 Finals - Slow
+summary: An in-depth writeup on ISITDTU CTF 2022 Finals - Slow.
 
 tags:
   - ctf
@@ -45,7 +45,8 @@ url_video: ''
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder.
-
+image:
+  caption: 'Image credit: [**ISITDTU**](https://ctftime.org/team/8241/)'
 
 # Associated Projects (optional).
 #   Associate this publication with one or more of your projects.
@@ -78,7 +79,7 @@ The challenge provides us with a single binary, named **slow.exe**. By using **I
 
 Analyze the **main** function, we claim that the program initiates an array whose size is **45**, then modifies it through some more functions, as shown below.
 
-```
+```c
 int __cdecl main(int argc, const char **argv, const char **envp)
 {
   void *Block; // [esp+4h] [ebp-BCh]
@@ -98,7 +99,7 @@ int __cdecl main(int argc, const char **argv, const char **envp)
 
 The function **sub_401AC0(v5, 38, 0)** allocates dynamic memory using **malloc** based on **v5** then assigns it into variable **Block**. That variable is then being passed into function **sub_4013B0(Block)**, which will produce our flag once we have fixed it.
 
-```
+```c
 int __cdecl sub_4013B0(_DWORD *a1)
 {
   int result; // eax
@@ -164,13 +165,15 @@ int __cdecl sub_4013B0(_DWORD *a1)
 }
 ```
 
-It is easy to observe that only case 1 and case 14 involve calling other functions. To be more precise, if the program reaches **case 1**, the function **sub_401110(v26, v22)** will be called, and on the other hand, if the program reaches **case 14**, the function **sub_401260(v38)** will be called. We will talk more about these two functions in the next parts of this blog.
+It is easy to observe that only case 1 and case 14 involve calling other functions. 
+
+To be more precise, if the program reaches **case 1**, the function **sub_401110(v26, v22)** will be called, and on the other hand, if the program reaches **case 14**, the function **sub_401260(v38)** will be called. We will talk more about these two functions in the next parts of this blog.
 
 ## Reaching case 14
 
 As stated earlier, the function **sub_401260(v38)** will be called if the program reaches **case 14**, which will be the last part of our code flow. 
 
-```
+```c
 int __cdecl sub_401260(char a1)
 {
   char v2[256]; // [esp+10h] [ebp-224h] BYREF
@@ -197,7 +200,7 @@ The function receives our modified variable **Block**, then uses it to produce o
 
 Here is where things get interesting. Take a look at the function **sub_401110(v26, v22)**, we can conclude that this is why our program runs slowly. The fact that it makes our program sleeps plus it is possibly called many times throughout the process makes our executable runs without any output for a very long time.
 
-```IDA Decompiled Pseudocode
+```c
 int __cdecl sub_401110(int a1, int a2)
 {
   int v3; // [esp+0h] [ebp-4h]
@@ -215,7 +218,7 @@ The algorithm here is very simple, however this is author's idea to let the prog
 
 So we know what makes our program runs slowly, it is time to fix that. Below is the decompiled assembly code of that part.
 
-```
+```assembly
 mov     ecx, [ebp+arg_0]
 mov     edx, [ecx+10h]
 sub     edx, 1
@@ -236,7 +239,7 @@ Using **IDA Pro** integrated settings, which can be found at **Options > General
 
 With [pwntools](https://github.com/Gallopsled/pwntools) library, we also find out the opcode for **add ecx, edx** and **move eax, ecx** is **01 D1** and **89 C8** using this script written in **Python** below.
 
-```
+```python
 from pwn import *
 context.arch = 'amd64'
 print(asm('add ecx, edx'))
@@ -251,7 +254,7 @@ Change **E8 77 FC FF FF** to **01 D1 89 C8 90** using any hex editor of your cho
 
 After patching the binary, run it again to get our flag.
 
-```Terminal
+```
 fazect@LAPTOP-CQA118DI:/mnt/d/Downloads$ ./slow.exe
 RESULT: 75025
 flag is: Pr4ct1c3_VMc0d3_w1th_F1b0n4cc1
