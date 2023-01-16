@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>idekctf-2022 | BKISC Blogs</title><link>https://blog.bkisc.com/bkisc.com-blog-page/tag/idekctf-2022/</link><atom:link href="https://blog.bkisc.com/bkisc.com-blog-page/tag/idekctf-2022/index.xml" rel="self" type="application/rss+xml"/><description>idekctf-2022</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 16 Jan 2023 03:50:54 +0000</lastBuildDate><image><url>https://blog.bkisc.com/bkisc.com-blog-page/media/logo_huc55a0313517dd04bda48a4ace4db28bc_511389_300x300_fit_lanczos_3.png</url><title>idekctf-2022</title><link>https://blog.bkisc.com/bkisc.com-blog-page/tag/idekctf-2022/</link></image><item><title>idekCTF 2022 - Osint/Osint Crime Confusion 3: W as in Who</title><link>https://blog.bkisc.com/bkisc.com-blog-page/blog/fazect/idekctf2022_osintcrime3/</link><pubDate>Mon, 16 Jan 2023 03:50:54 +0000</pubDate><guid>https://blog.bkisc.com/bkisc.com-blog-page/blog/fazect/idekctf2022_osintcrime3/</guid><description>&lt;details class="toc-inpage d-print-none " open>
+&lt;summary class="font-weight-bold">Table of Contents&lt;/summary>
+&lt;nav id="TableOfContents">
+&lt;ul>
+&lt;li>&lt;a href="#introduction">Introduction&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#finding-the-location">Finding the location&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#getting-further-informations">Getting further informations&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#finding-the-deleted-tweet">Finding the deleted tweet&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#exploring-the-killers-github">Exploring the killer&amp;rsquo;s GitHub&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#conclusion">Conclusion&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/nav>
+&lt;/details>
+&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>&lt;strong>Given image:&lt;/strong> &lt;a href="https://drive.google.com/file/d/1sYKHJvmFAB0yjWCTEdp_ZL9g1Eh0G56x/view?usp=share_link" target="_blank" rel="noopener">Get it here!&lt;/a>&lt;/p>
+&lt;p>&lt;strong>Description:&lt;/strong> I feel the killer might be dangerous so I have some info to give you but I don&amp;rsquo;t want to disclose my email just like that. So find my review from the image below and send me an email asking for info. Be creative with the signature so I know its you. It is time to find Who is the killer.&lt;/p>
+&lt;p>&lt;strong>Category:&lt;/strong> OSINT&lt;/p>
+&lt;h2 id="finding-the-location">Finding the location&lt;/h2>
+&lt;p>From the given image, I managed to have found the location on &lt;strong>Google Maps&lt;/strong> at &lt;strong>41.154248, -8.682320&lt;/strong>.&lt;/p>
+&lt;img src="map.png" alt="Location" width="1000"/>
+&lt;p>Then in the comment section of the location, I got the mentioned secret email, labeled &lt;strong>&lt;a href="mailto:noodlesareramhackers@gmail.com">noodlesareramhackers@gmail.com&lt;/a>&lt;/strong>.&lt;/p>
+&lt;img src="comment.png" alt="Comment" width="1000"/>
+&lt;h2 id="getting-further-informations">Getting further informations&lt;/h2>
+&lt;p>I then sent an email to the email above, and got the next instructions.&lt;/p>
+&lt;img src="gmail.png" alt="Mail" width="1000"/>
+&lt;h2 id="finding-the-deleted-tweet">Finding the deleted tweet&lt;/h2>
+&lt;p>In the first challenge of the &lt;strong>Osint Crime Confusion set (W is for Where)&lt;/strong>, I found the instagram of a person named &lt;a href="https://www.instagram.com/hjthepainteng/" target="_blank" rel="noopener">Heather James&lt;/a>.&lt;/p>
+&lt;img src="ins.png" alt="Instagram" width="1000"/>
+&lt;p>Then from this person&amp;rsquo;s informations, I found the twitter account of &lt;a href="https://twitter.com/UThE_TS" target="_blank" rel="noopener">University of Dutch ThE of Topics in Science&lt;/a>.&lt;/p>
+&lt;img src="uni.png" alt="Twitter" width="1000"/>
+&lt;p>I then immediately knew we have to bring the account to the &lt;a href="https://web.archive.org" target="_blank" rel="noopener">Wayback Machine&lt;/a> to gain access to the deleted tweet. The email did mention about the tweet&amp;rsquo;s id &lt;strong>(1612383535549059076)&lt;/strong>, so we can paste this &lt;strong>URL&lt;/strong> into the &lt;strong>Wayback Machine&lt;/strong>: &lt;strong>&lt;a href="https://twitter.com/UThE_TS/status/1612383535549059076" target="_blank" rel="noopener">https://twitter.com/UThE_TS/status/1612383535549059076&lt;/a>&lt;/strong>&lt;/p>
+&lt;p>We successfully gained access to the deleted tweet!&lt;/p>
+&lt;img src="tweet.png" alt="Tweet" width="1000"/>
+&lt;h2 id="exploring-the-killers-github">Exploring the killer&amp;rsquo;s GitHub&lt;/h2>
+&lt;p>From the email, we also know that we should continue searching in &lt;strong>GitHub&lt;/strong>. Frankly enough, when I tried to search for &lt;strong>&amp;ldquo;potatoes eating camels&amp;rdquo;&lt;/strong> in GitHub, this showed up:&lt;/p>
+&lt;img src="git.png" alt="Git" width="1000"/>
+&lt;p>The descriptions imply that the person is &lt;strong>&amp;ldquo;still improving wiki&amp;rdquo;&lt;/strong>. We then head into the &lt;strong>wiki&lt;/strong> of this repository to find out the end of our journey.&lt;/p>
+&lt;img src="wiki.png" alt="Wiki" width="1000"/>
+&lt;img src="flag.png" alt="Flag" width="1000"/>
+&lt;p>Concatenate the first letters of the last &lt;strong>7 sentences&lt;/strong> of the poem, we have our flag for the challenge: &lt;strong>idek{JULIANA_APOSIDM723489}&lt;/strong>.&lt;/p>
+&lt;h2 id="conclusion">Conclusion&lt;/h2>
+&lt;p>A good OSINT challenge overall, consist of several general skills in the field of OSINT, such as &lt;strong>using Wayback Machine&lt;/strong> or &lt;strong>finding locations on Google Maps&lt;/strong>.&lt;/p></description></item></channel></rss>
