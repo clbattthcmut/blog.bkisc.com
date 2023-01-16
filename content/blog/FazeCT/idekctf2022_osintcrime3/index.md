@@ -14,7 +14,10 @@ publishDate: '2023-01-16T03:45:54Z'
 # 7 = Thesis; 8 = Patent
 publication_types: ['9']
 
-abstract: An in-depth writeup on IDEK CTF 2022 - Osint/Osint Crime Confusion 3: W as in Who.
+# Publication name and optional abbreviated publication name.
+publication: ''
+publication_short: ''
+
 
 # Summary. An optional shortened abstract.
 summary: An in-depth writeup on IDEK CTF 2022 - Osint/Osint Crime Confusion 3: W as in Who.
