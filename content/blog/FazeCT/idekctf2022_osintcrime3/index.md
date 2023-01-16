@@ -1,12 +1,12 @@
 ---
-title: 'IDEK CTF 2022 - Osint/Osint Crime Confusion 3: W as in Who'
+title: 'ISITDTU CTF 2022 Finals - Slow'
 authors:
   - FazeCT
-date: '2023-01-16T03:40:54Z'
+date: '2023-01-13T15:44:54Z'
 doi: ''
 
 # Schedule page publish date (NOT publication's date).
-publishDate: '2023-01-16T03:45:54Z'
+publishDate: '2023-01-13T16:17:00Z'
 
 # Publication type.
 # Legend: 0 = Uncategorized; 1 = Conference paper; 2 = Journal article;
@@ -18,9 +18,10 @@ publication_types: ['9']
 publication: ''
 publication_short: ''
 
+abstract: An in-depth writeup on ISITDTU CTF 2022 Finals - Slow.
 
 # Summary. An optional shortened abstract.
-summary: An in-depth writeup on IDEK CTF 2022 - Osint/Osint Crime Confusion 3: W as in Who.
+summary: An in-depth writeup on ISITDTU CTF 2022 Finals - Slow.
 
 tags:
   - ctf
