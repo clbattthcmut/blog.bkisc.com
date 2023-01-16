@@ -18,6 +18,7 @@ publication_types: ['9']
 publication: ''
 publication_short: ''
 
+
 abstract: An in-depth writeup on IDEK CTF 2022 - Osint/Osint Crime Confusion 3: W as in Who.
 
 # Summary. An optional shortened abstract.
