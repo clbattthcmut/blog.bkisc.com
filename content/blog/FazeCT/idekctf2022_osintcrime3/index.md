@@ -1,5 +1,5 @@
 ---
-title: 'IDEK CTF 2022 - Osint/Osint Crime Confusion 3: W as in Who'
+title: 'idekCTF 2022 - Osint/Osint Crime Confusion 3: W as in Who'
 authors:
   - FazeCT
 date: '2023-01-16T03:50:54Z'
@@ -18,10 +18,10 @@ publication_types: ['9']
 publication: ''
 publication_short: ''
 
-abstract: An in-depth writeup on IDEK CTF 2022 - Osint/Osint Crime Confusion 3.
+abstract: An in-depth writeup on idekCTF 2022 - Osint/Osint Crime Confusion 3.
 
 # Summary. An optional shortened abstract.
-summary: An in-depth writeup on IDEK CTF 2022 - Osint/Osint Crime Confusion 3.
+summary: An in-depth writeup on idekCTF 2022 - Osint/Osint Crime Confusion 3.
 
 tags:
   - ctf
