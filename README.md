@@ -1,6 +1,7 @@
 # BKISC Blog-News-Event Page
 ## Netlify
 Đang deploy ở https://bkisc-blog.netlify.app
+Và ở https://clbattthcmut.github.io/bkisc.com-blog-page/
 
 ## Feature
 - [x] Light/Dark Theme
