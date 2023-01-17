@@ -20,33 +20,45 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-20.04
-    permissions:
-      contents: write
+    env:
+      HUGO_VERSION: 0.102.3
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
     steps:
-      - uses: actions/checkout@v3
+      - name: Install Hugo CLI
+        run: |
+          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_Linux-64bit.deb \
+          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
+      - name: Checkout
+        uses: actions/checkout@v3
         with:
-          submodules: true  # Fetch any Git submodules (true OR recursive)
-          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
-
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
+          submodules: recursive
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v2
+      - name: Build with Hugo
+        env:
+          # For maximum backward compatibility with Hugo modules
+          HUGO_ENVIRONMENT: production
+          HUGO_ENV: production
+        run: |
+          hugo \
+            --minify \
+            --baseURL "${{ steps.pages.outputs.base_url }}/"
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
         with:
-          hugo-version: 'latest'
-          extended: true
+          path: ./public
 
-      - name: Build
-        run: hugo --minify --baseURL "${{ steps.pages.outputs.base_url }}"
-
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        # If you're changing the branch from main, 
-        # also change the `main` in `refs/heads/main` 
-        # below accordingly.
-        if: ${{ github.ref == 'refs/heads/main' }}
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+  deploy:
+    environment:
+      name: github-pages
+      url: https://blog.bkisc.com/
+    runs-on: ubuntu-20.04
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1

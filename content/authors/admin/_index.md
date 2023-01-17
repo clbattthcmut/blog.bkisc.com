@@ -55,4 +55,4 @@ user_groups:
 ---
 <h1>BK Information Security Club</h1>
 
-BKISC (Bach Khoa Information Security Club) was founded in July 2022 by **Dr.Nguyen An Khuong** and senior members from [**Efiens Security Club**](https://efiens.com/), comprised mainly of students from Ho Chi Minh University of Technology (HCMUT). We were founded to provide studying, researching, cooperating environments for those interested in cyber security.
+BKISC (Bach Khoa Information Security Club) was founded in July 2022 by **Dr.Nguyen An Khuong** and senior members from [**Efiens Security Club**](https://efiens.com/), consisting mainly of students from Ho Chi Minh University of Technology (HCMUT). We were founded to provide studying, researching, cooperating environments for those interested in cyber security.
