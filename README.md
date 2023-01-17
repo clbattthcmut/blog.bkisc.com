@@ -1,7 +1,7 @@
 # BKISC Blog-News-Event Page
 ## Netlify
-Đang deploy ở https://bkisc-blog.netlify.app  
-Và ở https://clbattthcmut.github.io/bkisc.com-blog-page/
+.com Github Pages Domain Name: https://blog.bkisc.com/  
+Ngoài ra còn đang deploy ở https://bkisc-blog.netlify.app  
 
 ## Feature
 - [x] Light/Dark Theme
