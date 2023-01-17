@@ -9,7 +9,7 @@ appearance:
   theme_day: minimal
   theme_night: minimal
   font: minimal
-  font_size: m
+  font_size: l
 
 # SEO
 
@@ -55,9 +55,9 @@ header:
 footer:
   block: minimal
   copyright:
-    notice: '© {year} BK Information Security Club. This work is licensed under {license}'
+    notice: '© {year} BK Information Security Club'
     license:
-      enable: true
+      enable: false
       allow_derivatives: false
       share_alike: true
       allow_commercial: false
@@ -76,8 +76,8 @@ locale:
 features:
   syntax_highlighter:
     enable: true
-    theme_light: xcode-light
-    theme_dark: xcode-dark
+    theme_light: igor
+    theme_dark: dracula
     extra_languages:
       - r
       - latex

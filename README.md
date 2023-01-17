@@ -52,12 +52,12 @@ Ví dụ:
 ```
 Add Member: hdthinh1012
 Modify Blog: duti/sekai-ctf-2022-bottle-poem
-Delete Events: 2022-09-05-thaidntalk-
+Delete Events: 2022-09-05-thaidntalk
 ```
 
 ### Các bước để contribute
 1. Clone repo về máy local
-2. Tạo một branch khác với tên của mình (ví dụ: hoangREALER sẽ tạo branch `hoangREALER` thông qua lệnh `git branch hoangREALER`) (Đối với ai đã có project trước đó rồi thì chạy lệnh **`git fetch` rồi `git merge origin/main` (bắt buộc)**  khi đang đứng trên nhánh local tên mình nha)
+2. Tạo một branch khác với tên của mình (ví dụ: hoangREALER sẽ tạo branch `hoangREALER` thông qua lệnh `git branch hoangREALER`) (Đối với ai đã có project trước đó rồi thì chạy lệnh **`git fetch` rồi `git merge origin/main` (cái này nên làm nha, mọi người cố gắng chạy 2 lệnh này mỗi khi chuẩn bị push lên remote để xử lý conflict trên local trước)**  khi đang đứng trên nhánh local tên mình)
 3. Checkout vào nhánh vừa tạo thông qua lệnh `git checkout <tên nhánh vừa tạo>`
 4. Chỉnh sửa, thay đổi, và thêm thắt cho branch của mình
 5. Git add và commit phần thay đổi của mình

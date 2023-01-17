@@ -130,7 +130,8 @@ image:
   preview_only: false
 ```
 
-14. (Cho chuỗi bài viết series) projects
+14. **Bỏ qua** (Cho chuỗi bài viết series) projects
+    - **Note:** Hiện giờ do field này mọi người set là `projects: []` nha.
     - Field này dùng nếu như mọi người muốn liên hệ một vài bài viết chung series
     - Ví dụ mọi người muốn viết bài blog `Linux Kernel Exploitation part 1` cho projects/series `Linux-kernel-exploitation` mọi người có thể điền field này là `project: linux-kernel-exploitation` rồi tạo một thư mục content/project/linux-kernel-exploitation/index.md để hiển thị tên project/series đó sử dụng command: `hugo new  --kind project project/linux-kernel-exploitation`. 
     - Tuy nhiên, dù bài blog có thể reference projects thông qua field này, nhưng projects lại không có field references blogs và Wowchemy chưa hỗ trợ render tự động giúp các blogs khi mở project nên trên đường dẫn `content/projects/linux-kernel-exploitation/index.md` mong mọi người viết thêm nội dung, add các bài blog có liên quan đến project một cách thủ công nha. Một ví dụ về projects mọi người có thể xem ở đường dẫn `content/project/ctf-2022-writeups/index.md`
@@ -140,7 +141,7 @@ image:
 #   Simply enter your project's folder or file name without extension.
 #   E.g. `internal-project` references `content/project/internal-project/index.md`.
 #   Otherwise, set `projects: []`.
-projects: linux-kernel-exploitation
+projects: []
 ```
 
 15. slides
