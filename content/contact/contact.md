@@ -24,9 +24,9 @@ content:
   coordinates:
     latitude: '10.773600770202508'
     longitude: '106.66050365066771'
-  directions: Room 304, B9 House
+  directions: Room 304, B9 Block
   office_hours:
-    - 'Saturday 9:00 to 16:00'
+    - 'Saturday, from 9:00 to 16:00'
   # appointment_url: 'https://calendly.com'
   #contact_links:
   #  - icon: comments

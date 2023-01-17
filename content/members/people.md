@@ -21,7 +21,7 @@ content:
     - Principal Investigators
     - Researchers
     - Grad Students
-    - Administration
+    - Administrator
     - Alumni
     - Members
 design:

@@ -51,7 +51,8 @@ highlight_name: false
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.
 user_groups:
-  - Researchers
+  - Administrator
 ---
+<h1>BK Information Security Club</h1>
 
-BKISC (Bach Khoa Information Security Club) was created in July 2022, belongs to HCM University of Technology.
+BKISC (Bach Khoa Information Security Club) was found in July 2022 by **Dr.Nguyen An Khuong** and senior members from [**Efiens Security Club**](https://efiens.com/), comprised mainly of students from Ho Chi Minh University of Technology (HCMUT). We were founded to provide studying, researching, cooperating environments for those interested in cyber security.

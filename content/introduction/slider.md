@@ -11,26 +11,27 @@ design:
   # Automatically transition through slides?
   loop: false
   # Duration of transition between slides (in ms)
-  interval: 2000
+  interval: 5000
 
 content:
   slides:
-    - title: 👋 Welcome to the BK Information Security Club Blogs Page
+    - title: 👋 BK Information Security Club Blogs
       content: Where our members share valuable knowledges in variety of security sectors like *Cryptogrpahy, Web Exploitation, Binary Exploitation, Reverse Engineering* and more.
       align: center
       background:
         position: right
         color: '#666'
-        brightness: 0.7
+        brightness: 0.5
         media: hero-background.png
 
     - title: Challenge Writeups
       content: 'Demonstrate our solution in CTFs, Wargames and annual security competitions likes *Flare-on, NSUCrypto, etc.*'
       align: left
+      overlay_filter: 1.0
       background:
         position: center
         color: '#555'
-        brightness: 0.7
+        brightness: 0.3
         media: isitdtu-ctf-2022_team.jpg
 
     - title: Security Talk Seminar
@@ -38,8 +39,8 @@ content:
       align: right
       background:
         position: center
-        color: '#333'
-        brightness: 0.5
+        color: '#444'
+        brightness: 0.3
         media: ky-seminar.jpg
       link:
         icon: graduation-cap
