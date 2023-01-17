@@ -1,6 +1,6 @@
 # BKISC Blog-News-Event Page
 ## Netlify
-.com Github Pages Domain Name: https://blog.bkisc.com/
+.com Github Pages Domain Name: https://blog.bkisc.com/  
 Ngoài ra còn đang deploy ở https://bkisc-blog.netlify.app  
 
 ## Feature
