@@ -32,9 +32,9 @@ Chính vì lí do đó, ở Techtalk lần này, **Câu lạc bộ An toàn thô
 <br>
 <br>
 **Agenda:**<br>
-* 18:30 - 19:30: Talk 'Cơ hội việc làm ở lĩnh vực An toàn thông tin'<br>
-* 19:30 - 20:00: Session giao lưu với anh Ngô Minh Hiếu<br>  
-* 20:00 - 21:00: Talk 'Nhận thức về An toàn thông tin'
+- 18:30 ~ 19:30: Talk 'Cơ hội việc làm ở lĩnh vực An toàn thông tin'<br>
+- 19:30 ~ 20:00: Session giao lưu với anh Ngô Minh Hiếu<br>  
+- 20:00 ~ 21:00: Talk 'Nhận thức về An toàn thông tin'
 <br>
 <br>
 **Đơn vị đồng tổ chức:**<br>
