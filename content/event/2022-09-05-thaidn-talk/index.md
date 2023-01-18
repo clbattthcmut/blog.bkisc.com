@@ -20,28 +20,30 @@ Chính vì lí do đó, ở số Techtalk 46 này, **Grokking Việt Nam** xin g
 'Từ năm 2016, cùng với vài người bạn, tôi đã xâm nhập vào hệ thống mạng máy tính của nhiều ngân hàng, bệnh viện, startup ở Việt Nam (với sự đồng ý của họ). Đối với các ngân hàng, chúng tôi đã có thể đánh cắp được lượng tiền lớn và nhiều dữ liệu nhạy cảm. Đối với các bệnh viện, chúng tôi đã có thể đánh cắp toàn bộ dữ liệu khách hàng và thậm chí có thể thay đổi hồ sơ bệnh án. Trong bài nói chuyện này, tôi chia sẻ những gì chúng tôi đã học được, cung cấp thông tin về hiện trạng an ninh mạng ở Việt Nam. Tôi cũng đưa ra một cẩm nang giúp các doanh nghiệp và tổ chức bảo vệ tài sản và dữ liệu, tạo ra những sản phẩm được khách hàng tin tưởng.' - Anh Thái chia sẻ về mục đích của bài talk.
 <br>
 <br>
-Ngôn ngữ: Tiếng Việt
+**Ngôn ngữ:**
 <br>
-Speaker:
+- Tiếng Việt
+<br>
+**Speaker:**
 <br>
 - Dương Ngọc Thái - Google Security Ambassador.
 <br>
 <br>
-Thông tin sự kiện:<br>
+**Thông tin sự kiện:**<br>
 - Thời gian: 18h00 Thứ 2, 05/09/2022.<br>
 - Địa điểm: Hội trường B4, Đại học Bách Khoa, 268 Lý Thường Kiệt, P14, Q10, TP.HCM.
 <br>
 <br>
-Agenda:<br>
-* 18:30 - 19:30: Talk 'Những bài học về xâm nhập và bảo vệ hệ thống mạng Việt Nam'<br>
-* 19:30 - 20:30: Session giao lưu với anh Dương Ngọc Thái  
+**Agenda:**<br>
+- 18:30 ~ 19:30: Talk 'Những bài học về xâm nhập và bảo vệ hệ thống mạng Việt Nam'<br>
+- 19:30 ~ 20:30: Session giao lưu với anh Dương Ngọc Thái  
 <br>
 <br>
-Đơn vị đồng tổ chức:<br>
+**Đơn vị đồng tổ chức:**<br>
 Phòng thí nghiệm an ninh mạng, Khoa KH&KT Máy tính Trường ĐHBK TP HCM
 <br>  
 <br>
-Lưu ý:<br> 
+**Lưu ý:**<br> 
 1. Các bạn đăng ký sẽ nhận invitation thông qua Google Calendar, các bạn accept để nhận được thông báo sự kiện.<br>
 2. Mong các bạn đến đúng giờ để sự kiện diễn ra kịp thời gian.<br>  
 3. Mọi người nên ăn nhẹ trước khi đến event. <br> 
