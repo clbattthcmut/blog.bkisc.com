@@ -5,7 +5,7 @@ title: "Grokking Techtalk 46: Những bài học về xâm nhập và bảo vệ
 event:  Grokking - BKISC Security Techtalk
 event_url: https://www.facebook.com/events/612981910205304
 
-location: B4-Hall, Ho Chi Minh University of Technology
+location: B4 Hall, Ho Chi Minh University of Technology
 address:
   street: 268 Ly Thuong Kiet
   city: Ho Chi Minh
