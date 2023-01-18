@@ -20,13 +20,14 @@ Chính vì lí do đó, ở số Techtalk 46 này, **Grokking Việt Nam** xin g
 'Từ năm 2016, cùng với vài người bạn, tôi đã xâm nhập vào hệ thống mạng máy tính của nhiều ngân hàng, bệnh viện, startup ở Việt Nam (với sự đồng ý của họ). Đối với các ngân hàng, chúng tôi đã có thể đánh cắp được lượng tiền lớn và nhiều dữ liệu nhạy cảm. Đối với các bệnh viện, chúng tôi đã có thể đánh cắp toàn bộ dữ liệu khách hàng và thậm chí có thể thay đổi hồ sơ bệnh án. Trong bài nói chuyện này, tôi chia sẻ những gì chúng tôi đã học được, cung cấp thông tin về hiện trạng an ninh mạng ở Việt Nam. Tôi cũng đưa ra một cẩm nang giúp các doanh nghiệp và tổ chức bảo vệ tài sản và dữ liệu, tạo ra những sản phẩm được khách hàng tin tưởng.' - Anh Thái chia sẻ về mục đích của bài talk.
 <br>
 <br>
-**Ngôn ngữ:**
-<br>
-- Tiếng Việt
-<br>
+
 **Diễn giả:**
 <br>
 - Dương Ngọc Thái - Google Security Ambassador.
+<br>
+**Ngôn ngữ:**
+<br>
+- Tiếng Việt
 <br>
 <br>
 **Thông tin sự kiện:**<br>
