@@ -24,7 +24,7 @@ Chính vì lí do đó, ở số Techtalk 46 này, **Grokking Việt Nam** xin g
 <br>
 - Tiếng Việt
 <br>
-**Speaker:**
+**Diễn giả:**
 <br>
 - Dương Ngọc Thái - Google Security Ambassador.
 <br>
@@ -34,7 +34,7 @@ Chính vì lí do đó, ở số Techtalk 46 này, **Grokking Việt Nam** xin g
 - Địa điểm: Hội trường B4, Đại học Bách Khoa, 268 Lý Thường Kiệt, P14, Q10, TP.HCM.
 <br>
 <br>
-**Agenda:**<br>
+**Chương trình:**<br>
 - 18:30 ~ 19:30: Talk 'Những bài học về xâm nhập và bảo vệ hệ thống mạng Việt Nam'<br>
 - 19:30 ~ 20:30: Session giao lưu với anh Dương Ngọc Thái  
 <br>
