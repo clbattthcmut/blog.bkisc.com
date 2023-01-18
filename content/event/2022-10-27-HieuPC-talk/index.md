@@ -3,7 +3,7 @@ draft: false
 title: "Techtalk Event: Nhận thức về An toàn thông tin"
 
 event: BKISC Security Techtalk
-event_url: https://www.facebook.com/events/612981910205304
+event_url: https://www.facebook.com/events/463379705633983
 
 location: C4-Hall, Ho Chi Minh University of Technology
 address:
