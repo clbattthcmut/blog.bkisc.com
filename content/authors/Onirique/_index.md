@@ -55,9 +55,11 @@ user_groups:
 
 ## Background
 
-I am Onirique, also known as Junvalentine, currently studying in the field of Applied Cryptography (noob).
+I am Onirique, also known as Junvalentine, currently studying in the field of Applied Cryptography (absolute noob).
 
-Love traveling and football (a royal fan of Man United). Also doing Competitive Programming on Codeforces(https://codeforces.com/profile/Onirique) for fun.
+Love traveling and football (a royal fan of Man United). 
+
+Also doing Competitive Programming on [Codeforces](https://codeforces.com/profile/Onirique) for fun.
 
 ## Achievements
 
