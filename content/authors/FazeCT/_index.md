@@ -66,4 +66,4 @@ I am also looking forward to learn more about **Pwnable** in the future.
 
 **Qualified** for [ISITDTU CTF 2022](https://ctftime.org/ctf/258) Finals
 
-Ranked **57<sup>th</sup>** in 2022 ACM-ICPC Asia HoChiMinh City Regional Contest
+Ranked **57<sup>th</sup>** as **HCMUT Last Dance** in 2022 ACM-ICPC Asia HoChiMinh City Regional Contest
