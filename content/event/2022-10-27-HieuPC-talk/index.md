@@ -21,7 +21,7 @@ Chính vì lí do đó, ở Techtalk lần này, **Câu lạc bộ An toàn thô
 <br>
 - Tiếng Việt
 <br>
-**Speaker:**
+**Diễn giả:**
 <br>
 - Ngô Minh Hiếu (Hiếu PC) - Cyber Security Specialist.
 <br>
@@ -31,7 +31,7 @@ Chính vì lí do đó, ở Techtalk lần này, **Câu lạc bộ An toàn thô
 - Địa điểm: Hội trường C4, Đại học Bách Khoa, 268 Lý Thường Kiệt, P14, Q10, TP.HCM.
 <br>
 <br>
-**Agenda:**<br>
+**Chương trình:**<br>
 - 18:30 ~ 19:30: Talk 'Cơ hội việc làm ở lĩnh vực An toàn thông tin'<br>
 - 19:30 ~ 20:00: Session giao lưu với anh Ngô Minh Hiếu<br>  
 - 20:00 ~ 21:00: Talk 'Nhận thức về An toàn thông tin'
