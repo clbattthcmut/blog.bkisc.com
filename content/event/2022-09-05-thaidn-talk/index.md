@@ -2,7 +2,7 @@
 draft: false
 title: "Grokking Techtalk 46: Những bài học về xâm nhập và bảo vệ hệ thống mạng Việt Nam"
 
-event:  Grokking - BKISC Security Techtalk
+event:  Grokking VN - BKISC Security Techtalk
 event_url: https://www.facebook.com/events/612981910205304
 
 location: B4 Hall, Ho Chi Minh University of Technology
@@ -68,7 +68,7 @@ tags: []
 featured: true
 
 image:
-  caption: 'Image credit: [**BKISC**](https://www.facebook.com/clbattthcmut)'
+  caption: 'Image credit: [**Grokking Vietnam**](https://www.facebook.com/grokking.vietnam/?locale=vi_VN)'
   focal_point: Right
 
 url_code: ''
