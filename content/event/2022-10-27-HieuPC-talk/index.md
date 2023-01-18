@@ -32,9 +32,9 @@ Chính vì lí do đó, ở Techtalk lần này, **Câu lạc bộ An toàn thô
 <br>
 <br>
 **Agenda:**<br>
-- 18:30 ~ 19:30: Talk 'Cơ hội việc làm ở lĩnh vực An toàn thông tin'<br>
+- 18:30 ~ 19:30: Talk "Cơ hội việc làm ở lĩnh vực An toàn thông tin"<br>
 - 19:30 ~ 20:00: Session giao lưu với anh Ngô Minh Hiếu<br>  
-- 20:00 ~ 21:00: Talk 'Nhận thức về An toàn thông tin'
+- 20:00 ~ 21:00: Talk "Nhận thức về An toàn thông tin"
 <br>
 <br>
 **Đơn vị đồng tổ chức:**<br>
@@ -43,8 +43,8 @@ Phòng thí nghiệm an ninh mạng, Khoa KH&KT Máy tính Trường ĐHBK TP HC
 <br>
 **Lưu ý:**<br> 
 1. Các bạn đăng ký sẽ nhận invitation thông qua Google Calendar, các bạn accept để nhận được thông báo sự kiện.<br>
-2. Mong các bạn đến đúng giờ để sự kiện diễn ra kịp thời gian.<br>  
-3. Mọi người nên ăn nhẹ trước khi đến event. <br> 
+2. Rất mong các bạn đến đúng giờ để sự kiện diễn ra kịp thời gian.<br>  
+3. Các bạn nên ăn nhẹ trước khi đến event. <br> 
 "
 
 summary: Anh Ngô Minh Hiếu, hiện là chuyên viên kỹ thuật tại Trung tâm Giám sát và An toàn không gian mạng Quốc gia (NCSC), sẽ có những chia sẻ về kinh nghiệm của bản thân trong việc ngăn chặn các thông tin lừa đảo, giả mạo, không chính thống. Qua đó, anh sẽ đưa ra những bài học, những dấu hiệu cơ bản của một thông tin giả mạo để người dùng có thể tránh khỏi những thông tin như vậy.
