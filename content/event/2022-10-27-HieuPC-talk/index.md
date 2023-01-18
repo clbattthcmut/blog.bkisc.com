@@ -18,7 +18,7 @@ Chính vì lí do đó, ở Techtalk lần này, **Câu lạc bộ An toàn thô
 <br>
 <br>
 **Ngôn ngữ: **
-<br>
+
 - Tiếng Việt
 <br>
 **Speaker:**
