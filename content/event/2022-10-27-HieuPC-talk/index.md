@@ -17,8 +17,7 @@ abstract: " Trong những năm gần đây, Việt Nam luôn là một trong nh�
 Chính vì lí do đó, ở Techtalk lần này, **Câu lạc bộ An toàn thông tin - Đại học Bách Khoa** xin giới thiệu với các bạn chủ đề **“Nhận thức về An toàn thông tin”** do anh **Ngô Minh Hiếu** trình bày. Anh Ngô Minh Hiếu, hiện là **chuyên viên kỹ thuật** tại **Trung tâm Giám sát và An toàn không gian mạng Quốc gia (NCSC)**. 
 <br>
 <br>
-**Ngôn ngữ:**<br>
-- Tiếng Việt
+**Ngôn ngữ:** Tiếng Việt
 <br>
 **Speaker:**<br>
 - Ngô Minh Hiếu (Hiếu PC) - Cyber Security Specialist.
