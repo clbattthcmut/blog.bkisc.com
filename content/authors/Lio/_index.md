@@ -14,7 +14,7 @@ organizations:
     url: ''
 
 # Short bio (displayed in user profile at end of posts)
-bio: My research interests include Static Code Analysis, Compilers Fundamental, Static Application Security Testing tool like CodeQL. 
+bio: Your friendly weeaboo hecker.
 
 interests:
   - Server Security
@@ -57,4 +57,4 @@ user_groups:
   - Members
 ---
 
-hdthinh1012 (Thinh Huynh Duc) is a Computer Science student studying at Ho Chi Minh University of Technology.
+Lio (Do Nhat Thai) is a Computer Science student studying at Ho Chi Minh University of Technology.
