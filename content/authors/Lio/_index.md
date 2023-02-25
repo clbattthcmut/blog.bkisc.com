@@ -57,4 +57,18 @@ user_groups:
   - Members
 ---
 
-Lio (Do Nhat Thai) is a Computer Science student studying at Ho Chi Minh University of Technology.
+## Background
+
+Hi my name is **Lio**. I'm your friendly Pwner from **HCMC University of Technology**.
+
+I used to be a noob game developer. Now I'm an even more noob hecker.
+
+Absolutely love anime-related stuffs.
+
+My favorite number is 1767991380. Bet you can decode this (not my social security number btw).
+
+In the meantime, flag{h3r3_15_4_91F7_F0r_y0U}.
+
+## Noticeable Achievements
+
+**TOP 10** as **Fried Rice** in GAMEUIT HACKATHON 2022
