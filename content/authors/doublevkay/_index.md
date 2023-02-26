@@ -22,7 +22,7 @@ interests:
   - Blockchain-based applications' security
 education:
   courses:
-    - course: B.S. in Computer Science
+    - course: B.E. in Computer Science
       institution: Ho Chi Minh City University of Technology
       year: 2018-2022
 
