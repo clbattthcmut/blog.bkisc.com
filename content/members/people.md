@@ -18,10 +18,11 @@ content:
   user_groups:
     - Advisors
     - Seniors
+    - Mentors
     - Principal Investigators
-    - Researchers
+    # - Researchers
     - Grad Students
-    - Administrator
+    # - Administrator
     - Alumni
     - Members
 design:
