@@ -112,12 +112,12 @@ social:
    - User groups sẽ gom mọi người lại từng nhóm để thể hiện trên trang member
    - Trang mình gồm có 3 user group chính
       - Advisors: Dành cho Thầy Khương và các anh tham gia mentor hướng dẫn câu lạc bộ
-      - Seniors: Các thành viên đã tốt nghiệp và thành viên từ câu lạc bộ đàn anh Efiens
+      - Mentors: Các thành viên đã tốt nghiệp và thành viên từ câu lạc bộ đàn anh Efiens
       - Members: Thành viên hiện tại của câu lạc bộ
    - Một thành viên có thể thuộc 2 đến 3 nhóm khác nhau
 ```
 user_groups:
-  - Seniors
+  - Mentors
   - Advisors
 ```
 
