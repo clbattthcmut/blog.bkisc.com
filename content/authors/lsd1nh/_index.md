@@ -26,7 +26,7 @@ education:
   courses:
     - course: B.S. in Computer Science
       institution: Ho Chi Minh City University of Technology
-      year: 2021-2025
+      year: 2019-2023
 
 # Social/Academic Networking
 # For available icons, see: https://wowchemy.com/docs/getting-started/page-builder/#icons
@@ -51,7 +51,7 @@ email: ''
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.
 user_groups:
-  - Mentors
+  - Member
 ---
 
 
