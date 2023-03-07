@@ -23,7 +23,6 @@ bio: A CTF-Crypto player with a background of Computer Engineering.
 interests:
 - Applied Cryptography
 - Blockchain Technology
-- Artificial Intelligence
 - VLSI Design
 
 
@@ -57,11 +56,10 @@ I'm ***HappyHacker22***. I have joined ***BKISC*** since 7/2022. I am a CTF play
 
 A bit less academic about me :
 
-+ MU fan :)
 + Badminton and ping-pong
 + Chess and Chinese Chess
-+ League of Legend (Silver btw), T1 fan :)
-+ Osu! player :)
++ League of Legend (Silver btw), T1 fan 
++ Osu! player 
 
 ## Achievements
 
