@@ -68,45 +68,54 @@ slides:
 ## Plaintext Tleasure
 
 **Given file:** [Get it here!](https://drive.google.com/file/d/1O77S-Ti8GErZxdZoYiTKEWsCBWn6Fp9b/view?usp=sharig)
+
 **Description:** Threat intelligence has found that the aliens operate through a command and control server hosted on their infrastructure. Pandora managed to penetrate their defenses and have access to their internal network. Because their server uses HTTP, Pandora captured the network traffic to steal the server's administrator credentials. Open the provided file using Wireshark, and locate the username and password of the admin.
+
 **Category:** Forensics
 
 We are given a network pcap file. Although we can solve this challenge using [Wireshark](https://www.wireshark.org/), but to keep it simple for the very first challenge, we will use [strings](https://www.howtogeek.com/427805/how-to-use-the-strings-command-on-linux/) and [grep](https://www.geeksforgeeks.org/grep-command-in-unixlinux/) to get the flag.
 
-Here we use strings to dump out strings from the pcap file, then use pipe (|) and grep to find for strings that match the flag format - HTB{.
+Here we use strings to dump out strings from the pcap file, then use pipe (|) and grep to find for strings that match the flag format - **HTB{**.
 
 <img src="1.png" alt="linux" width="1000"/>
 
-Flag is: HTB{th3s3_4l13ns_st1ll_us3_HTTP}
+Flag is: **HTB{th3s3_4l13ns_st1ll_us3_HTTP}**
 
 ## Alien Cradle
 
 **Given file:** [Get it here!](https://drive.google.com/file/d/12HfCz9D5QnpK7kQBwjCINwv29T5sr6Nc/view?usp=sharing)
+
 **Description:** In an attempt for the aliens to find more information about the relic, they launched an attack targeting Pandora's close friends and partners that may know any secret information about it. During a recent incident believed to be operated by them, Pandora located a weird PowerShell script from the event logs, otherwise called PowerShell cradle. These scripts are usually used to download and execute the next stage of the attack. However, it seems obfuscated, and Pandora cannot understand it. Can you help her deobfuscate it?
+
 **Category:** Forensics
 
 For this challenge, we are given a Powershell Script file. In the script, the flag is being concatenated using some Powershell ~~magic~~ lines of code.
 
-Flag is: HTB{p0w3rsh3ll_Cr4dl3s_c4n_g3t_th3_j0b_d0n3}
+Flag is: **HTB{p0w3rsh3ll_Cr4dl3s_c4n_g3t_th3_j0b_d0n3}**
 
 ## Extraterrestrial Persistence
 
 **Given file:** [Get it here!](https://drive.google.com/file/d/1-ySd0Z3kKvX3djL228eU0_vddZf4Pdn9/view?usp=sharing)
+
 **Description:** There is a rumor that aliens have developed a persistence mechanism that is impossible to detect. After investigating her recently compromised Linux server, Pandora found a possible sample of this mechanism. Can you analyze it and find out how they install their persistence?
+
 **Category:** Forensics
 
-In this challenge, we are given a shell script to look for the flag. For the sake of understanding the flow of shell scripting, the script checks whether the username is "Pandora" and the hostname is "linux_HQ". If the check is fulfilled, it starts the process to write the base64 decoded message into the file "/usr/lib/systemd/system/service.service". The decoded message turned out to contain the flag for our challenge.
+In this challenge, we are given a shell script to look for the flag. For the sake of understanding the flow of shell scripting, the script checks whether the username is **"Pandora"** and the hostname is **"linux_HQ"**. If the check is fulfilled, it starts the process to write the base64 decoded message into the file "/usr/lib/systemd/system/service.service". The decoded message turned out to contain the flag for our challenge.
 
-Flag is: HTB{th3s3_4l13nS_4r3_s00000_b4s1c}
+Flag is: **HTB{th3s3_4l13nS_4r3_s00000_b4s1c}**
 
 ## Relic Maps
 
 **Given file:** [Get it here!](https://drive.google.com/file/d/1oyfMzfnOM69pQdIVi9j63dkLZ2xvVkgq/view?usp=sharing)
+
 **Description:** Pandora received an email with a link claiming to have information about the location of the relic and attached ancient city maps, but something seems off about it. Could it be rivals trying to send her off on a distraction? Or worse, could they be trying to hack her systems to get what she knows?Investigate the given attachment and figure out what's going on and get the flag. The link is to http://relicmaps.htb:/relicmaps.one. The document is still live (relicmaps.htb should resolve to your docker instance).
+
 **Note:** This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.
+
 **Category:** Forensics
 
-From the link attached to this challenge, we get an Onenote file named "relicmaps.one". Analyze the file, we get 2 suspicious links, which lead us to 2 different files, [http://relicmaps.htb/uploads/soft/topsecret-maps.one](https://drive.google.com/file/d/14FBabJvLlTAjhCKbJBPMk6iI9u83HI0j/view?usp=share_link) and [http://relicmaps.htb/get/DdAbds/window.bat](https://drive.google.com/file/d/1t9jembhbhIFY6PE7Lx3J7yA5prTsVGXv/view?usp=share_link).
+From the link attached to this challenge, we obtain an Onenote file named "relicmaps.one". Analyze the file, we get 2 suspicious links, which lead us to 2 different files, [http://relicmaps.htb/uploads/soft/topsecret-maps.one](https://drive.google.com/file/d/14FBabJvLlTAjhCKbJBPMk6iI9u83HI0j/view?usp=share_link) and [http://relicmaps.htb/get/DdAbds/window.bat](https://drive.google.com/file/d/1t9jembhbhIFY6PE7Lx3J7yA5prTsVGXv/view?usp=share_link).
 
 I did some analysis on the file "topsecret-maps.one", and there are only some PNGs inside it. In the "window.bat" file, we are given a Powershell Script. You can run it directly, but I choose to deobfuscate using Python to understand its flow.
 
@@ -546,4 +555,4 @@ Voilà, we get the executable! I used [dnSpy](https://github.com/dnSpy/dnSpy) to
 
 <img src="3.png" alt="dnSpy" width="1000"/>
 
-Flag is: HTB{0neN0Te?_iT'5_4_tr4P!}
+Flag is: **HTB{0neN0Te?_iT'5_4_tr4P!}**
