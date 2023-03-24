@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>FazeCT | BKISC Blogs</title><link>https://blog.bkisc.com/author/fazect/</link><atom:link href="https://blog.bkisc.com/author/fazect/index.xml" rel="self" type="application/rss+xml"/><description>FazeCT</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 24 Mar 2023 00:05:00 +0000</lastBuildDate><image><url>https://blog.bkisc.com/author/fazect/avatar_hud20978e2ce79cef4f33eb5572feeafc8_109792_270x270_fill_lanczos_center_3.png</url><title>FazeCT</title><link>https://blog.bkisc.com/author/fazect/</link></image><item><title>Cyber Apocalypse 2023: The Cursed Mission - Forensics</title><link>https://blog.bkisc.com/blog/fazect/htb2023-forensics/</link><pubDate>Fri, 24 Mar 2023 00:05:00 +0000</pubDate><guid>https://blog.bkisc.com/blog/fazect/htb2023-forensics/</guid><description>&lt;details class="toc-inpage d-print-none " open>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>FazeCT | BKISC Blogs</title><link>https://blog.bkisc.com/author/fazect/</link><atom:link href="https://blog.bkisc.com/author/fazect/index.xml" rel="self" type="application/rss+xml"/><description>FazeCT</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 24 Mar 2023 00:05:00 +0000</lastBuildDate><image><url>https://blog.bkisc.com/author/fazect/avatar_hud20978e2ce79cef4f33eb5572feeafc8_109792_270x270_fill_lanczos_center_3.png</url><title>FazeCT</title><link>https://blog.bkisc.com/author/fazect/</link></image><item><title>Cyber Apocalypse 2023: The Cursed Mission - Forensics</title><link>https://blog.bkisc.com/blog/fazect/htb2023-forensics/</link><pubDate>Fri, 24 Mar 2023 00:05:00 +0000</pubDate><guid>https://blog.bkisc.com/blog/fazect/htb2023-forensics/</guid><description>
+&lt;details class="toc-inpage d-print-none " open>
 &lt;summary class="font-weight-bold">Table of Contents&lt;/summary>
 &lt;nav id="TableOfContents">
 &lt;ul>
@@ -452,7 +453,8 @@
 &lt;img src="2.png" alt="DIE" width="1000"/>
 &lt;p>Voilà, we get the executable! I used &lt;a href="https://github.com/dnSpy/dnSpy" target="_blank" rel="noopener">dnSpy&lt;/a> to read the code of the binary. Turned out, the flag is right there to be seen!&lt;/p>
 &lt;img src="3.png" alt="dnSpy" width="1000"/>
-&lt;p>Flag is: &lt;strong>HTB{0neN0Te?_iT'5_4_tr4P!}&lt;/strong>&lt;/p></description></item><item><title>idekCTF 2022 - Osint/Osint Crime Confusion 3: W as in Who</title><link>https://blog.bkisc.com/blog/fazect/idekctf2022_osintcrime3/</link><pubDate>Mon, 16 Jan 2023 03:50:54 +0000</pubDate><guid>https://blog.bkisc.com/blog/fazect/idekctf2022_osintcrime3/</guid><description>&lt;details class="toc-inpage d-print-none " open>
+&lt;p>Flag is: &lt;strong>HTB{0neN0Te?_iT'5_4_tr4P!}&lt;/strong>&lt;/p></description></item><item><title>idekCTF 2022 - Osint/Osint Crime Confusion 3: W as in Who</title><link>https://blog.bkisc.com/blog/fazect/idekctf2022_osintcrime3/</link><pubDate>Mon, 16 Jan 2023 03:50:54 +0000</pubDate><guid>https://blog.bkisc.com/blog/fazect/idekctf2022_osintcrime3/</guid><description>
+&lt;details class="toc-inpage d-print-none " open>
 &lt;summary class="font-weight-bold">Table of Contents&lt;/summary>
 &lt;nav id="TableOfContents">
 &lt;ul>
@@ -493,7 +495,8 @@
 &lt;img src="flag.png" alt="Flag" width="1000"/>
 &lt;p>Concatenate the first letters of the last &lt;strong>7 sentences&lt;/strong> of the poem, we have our flag for the challenge: &lt;strong>idek{JULIANA_APOSIDM723489}&lt;/strong>.&lt;/p>
 &lt;h2 id="conclusion">Conclusion&lt;/h2>
-&lt;p>A good OSINT challenge overall, consist of several general skills in the field of OSINT, such as &lt;strong>using Wayback Machine&lt;/strong> or &lt;strong>finding locations on Google Maps&lt;/strong>.&lt;/p></description></item><item><title>ISITDTU CTF 2022 Finals - Slow</title><link>https://blog.bkisc.com/blog/fazect/isitdtu-2022-slow/</link><pubDate>Fri, 13 Jan 2023 15:44:54 +0000</pubDate><guid>https://blog.bkisc.com/blog/fazect/isitdtu-2022-slow/</guid><description>&lt;details class="toc-inpage d-print-none " open>
+&lt;p>A good OSINT challenge overall, consist of several general skills in the field of OSINT, such as &lt;strong>using Wayback Machine&lt;/strong> or &lt;strong>finding locations on Google Maps&lt;/strong>.&lt;/p></description></item><item><title>ISITDTU CTF 2022 Finals - Slow</title><link>https://blog.bkisc.com/blog/fazect/isitdtu-2022-slow/</link><pubDate>Fri, 13 Jan 2023 15:44:54 +0000</pubDate><guid>https://blog.bkisc.com/blog/fazect/isitdtu-2022-slow/</guid><description>
+&lt;details class="toc-inpage d-print-none " open>
 &lt;summary class="font-weight-bold">Table of Contents&lt;/summary>
 &lt;nav id="TableOfContents">
 &lt;ul>

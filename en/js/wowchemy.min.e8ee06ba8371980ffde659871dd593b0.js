@@ -1,4 +1,4 @@
-/*! Wowchemy v5.6.0 | https://wowchemy.com/ */
+/*! Wowchemy v5.7.0 | https://wowchemy.com/ */
 /*! Copyright 2016-present George Cushen (https://georgecushen.com/) */
 /*! License: https://github.com/wowchemy/wowchemy-hugo-themes/blob/main/LICENSE.md */
 

