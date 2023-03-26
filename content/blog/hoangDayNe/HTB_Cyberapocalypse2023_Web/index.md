@@ -1,8 +1,9 @@
 ---
 title: 'HackTheBox CyberApocalypse 2023 - Web'
 authors:
-  - Lê Hoàng
-  - duti
+  - hoangDayNe
+  - hdthinh1012
+  - FazeCT
 date: '2023-03-23T00:00:00Z'
 doi: ''
 
