@@ -1,12 +1,13 @@
 ---
 title: 'Cyber Apocalypse 2023: The Cursed Mission - Reverse Engineering'
 authors:
-  - BKISC
+  - FazeCT
+  - BaoDoktah
 date: '2023-03-27T00:00:00Z'
 doi: ''
 
 # Schedule page publish date (NOT publication's date).
-publishDate: '2023-03-27T00:00:00Z'
+publishDate: '2023-03-27T01:00:00Z'
 
 # Publication type.
 # Legend: 0 = Uncategorized; 1 = Conference paper; 2 = Journal article;
@@ -31,10 +32,20 @@ tags:
 
 featured: true
 
+links:
+url_pdf: ''
+url_code: ''
+url_dataset: ''
+url_poster: ''
+url_project: ''
+url_slides: ''
+url_source: ''
+url_video: ''
+
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder.
 image:
-  caption: 'Image credit: [**HTB**](https://ctf.hackthebox.com/)'
+  caption: 'Image credit: [**HTB**](https://www.hackthebox.com/)'
 
 # Associated Projects (optional).
 #   Associate this publication with one or more of your projects.
@@ -42,7 +53,6 @@ image:
 #   E.g. `internal-project` references `content/project/internal-project/index.md`.
 #   Otherwise, set `projects: []`.
 projects: []
-    # - ctf-2023-writeups
 
 # Slides (optional).
 #   Associate this publication with Markdown slides.
