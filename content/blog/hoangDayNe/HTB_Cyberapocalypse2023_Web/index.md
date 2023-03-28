@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 'HackTheBox CyberApocalypse 2023 - Web'
 authors:
   - hoangDayNe
