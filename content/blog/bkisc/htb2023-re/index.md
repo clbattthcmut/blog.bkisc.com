@@ -19,10 +19,10 @@ publication_types: ['9']
 publication: ''
 publication_short: ''
 
-abstract: An in-depth writeup on Cyber Apocalypse 2023: The Cursed Mission - Reverse Engineering category.
+abstract: An in-depth writeup on Cyber Apocalypse 2023 - The Cursed Mission, Reverse Engineering category.
 
 # Summary. An optional shortened abstract.
-summary: An in-depth writeup on Cyber Apocalypse 2023: The Cursed Mission - Reverse Engineering category.
+summary: An in-depth writeup on Cyber Apocalypse 2023 - The Cursed Mission, Reverse Engineering category.
 
 tags:
   - ctf
