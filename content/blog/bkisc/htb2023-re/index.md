@@ -3,11 +3,19 @@ title: 'Cyber Apocalypse 2023: The Cursed Mission - Reverse Engineering'
 authors:
   - FazeCT
   - BaoDoktah
+<<<<<<< HEAD
 date: '2023-03-28T00:00:00Z'
 doi: ''
 
 # Schedule page publish date (NOT publication's date).
 publishDate: '2023-03-28T10:00:00Z'
+=======
+date: '2023-03-27T00:00:00Z'
+doi: ''
+
+# Schedule page publish date (NOT publication's date).
+publishDate: '2023-03-27T01:00:00Z'
+>>>>>>> origin/main
 
 # Publication type.
 # Legend: 0 = Uncategorized; 1 = Conference paper; 2 = Journal article;
@@ -19,10 +27,10 @@ publication_types: ['9']
 publication: ''
 publication_short: ''
 
-abstract: An in-depth writeup on Cyber Apocalypse 2023: The Cursed Mission - Reverse Engineering category.
+abstract: An in-depth writeup on Cyber Apocalypse 2023 - The Cursed Mission, Reverse Engineering category.
 
 # Summary. An optional shortened abstract.
-summary: An in-depth writeup on Cyber Apocalypse 2023: The Cursed Mission - Reverse Engineering category.
+summary: An in-depth writeup on Cyber Apocalypse 2023 - The Cursed Mission, Reverse Engineering category.
 
 tags:
   - ctf
@@ -33,11 +41,22 @@ tags:
 featured: true
 
 links:
+<<<<<<< HEAD
+=======
+url_pdf: ''
+url_code: ''
+url_dataset: ''
+url_poster: ''
+url_project: ''
+url_slides: ''
+url_source: ''
+url_video: ''
+>>>>>>> origin/main
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder.
 image:
-  caption: 'Image credit: [**HTB**](https://ctf.hackthebox.com/)'
+  caption: 'Image credit: [**HTB**](https://www.hackthebox.com/)'
 
 # Associated Projects (optional).
 #   Associate this publication with one or more of your projects.
