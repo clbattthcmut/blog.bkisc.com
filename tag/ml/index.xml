@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ml | BKISC Blogs</title><link>https://blog.bkisc.com/tag/ml/</link><atom:link href="https://blog.bkisc.com/tag/ml/index.xml" rel="self" type="application/rss+xml"/><description>ml</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 27 Mar 2023 00:00:00 +0000</lastBuildDate><image><url>https://blog.bkisc.com/media/logo_huc55a0313517dd04bda48a4ace4db28bc_511389_300x300_fit_lanczos_3.png</url><title>ml</title><link>https://blog.bkisc.com/tag/ml/</link></image><item><title>Cyber Apocalypse 2023: The Cursed Mission - Machine Learning</title><link>https://blog.bkisc.com/blog/bkisc/htb2023-ml/</link><pubDate>Mon, 27 Mar 2023 00:00:00 +0000</pubDate><guid>https://blog.bkisc.com/blog/bkisc/htb2023-ml/</guid><description>
+&lt;details class="toc-inpage d-print-none " open>
+&lt;summary class="font-weight-bold">Table of Contents&lt;/summary>
+&lt;nav id="TableOfContents">
+&lt;ul>
+&lt;li>&lt;a href="#reconfiguration">Reconfiguration&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#mysterious-learnings">Mysterious Learnings&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#last-hope">Last Hope&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#on-the-rescue">On The Rescue&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/nav>
+&lt;/details>
+&lt;h2 id="reconfiguration">Reconfiguration&lt;/h2>
+&lt;p>&lt;strong>Given zip:&lt;/strong> &lt;a href="https://drive.google.com/drive/folders/1Pao4nTUNcvjCksDgyRCFPk_UCYpHeDqw?usp=sharing" target="_blank" rel="noopener">Get it here!&lt;/a>&lt;/p>
+&lt;p>&lt;strong>Description:&lt;/strong> As Pandora set out on her quest to find the ancient alien relic, she knew that the journey would be treacherous. The desert was vast and unforgiving, and the harsh conditions would put her cyborg body to the test. Pandora started by collecting data about the temperature and humidity levels in the desert. She used a scatter plot in an Orange Workspace file to visualize this data and identified the areas where the temperature was highest and the humidity was lowest. Using this information, she reconfigured her sensors to better withstand the extreme heat and conserve water. But, a second look at the data revealed something otherwordly, it seems that the relic&amp;rsquo;s presence beneath the surface has scarred the land in a very peculiar way, can you see it?&lt;/p>
+&lt;p>&lt;strong>Category:&lt;/strong> Machine Learning&lt;/p>
+&lt;p>In this challenge, we embarked on a quest to find an ancient alien relic hidden beneath the desert, following the footsteps of the cyborg Pandora. The task involved analyzing temperature and humidity data and uncovering peculiar patterns that hinted at the relic&amp;rsquo;s presence.&lt;/p>
+&lt;p>To begin the analysis, we downloaded and installed the &lt;strong>Orange&lt;/strong> data mining tool, which is an open-source data visualization and analysis tool for data scientists. You can download it here: &lt;a href="https://orange.biolab.si/download/" target="_blank" rel="noopener">https://orange.biolab.si/download/&lt;/a>&lt;/p>
+&lt;p>After installing &lt;strong>Orange&lt;/strong>, we opened the tool and loaded the &lt;strong>analysis.ows&lt;/strong> file. We then imported the &lt;strong>point.csv&lt;/strong> file into the Orange workspace by adding the &amp;ldquo;File&amp;rdquo; widget and selecting the &lt;strong>point.csv&lt;/strong> file from our computer. Next, we created a scatter plot to visualize the data. We added the &amp;ldquo;Scatter Plot&amp;rdquo; widget from &amp;ldquo;Visualize&amp;rdquo; panel to the workspace and connected it to the &amp;ldquo;File&amp;rdquo; widget.&lt;/p>
+&lt;img src="guide.png" alt="Guide" width="1000"/>
+&lt;p>By viewing the &amp;ldquo;Scatter Plot&amp;rdquo;, we got the flag:&lt;/p>
+&lt;img src="flag.png" alt="Guide" width="1000"/>
+&lt;p>Flag is: &lt;strong>HTB{sc4tter_pl0ts_4_th3_w1n}&lt;/strong>&lt;/p>
+&lt;h2 id="mysterious-learnings">Mysterious Learnings&lt;/h2>
+&lt;p>&lt;strong>Given zip:&lt;/strong> &lt;a href="https://drive.google.com/drive/folders/15cjTqJqcDseU9niakqU64AqI09QlKFcU?usp=share_link" target="_blank" rel="noopener">Get it here!&lt;/a>&lt;/p>
+&lt;p>&lt;strong>Description:&lt;/strong> One day the archeologist came across a strange metal plate covered in uncommon hieroglyphics. It looked like blueprints for some kind of alien technology. &amp;ldquo;What kind of magic is this?&amp;rdquo; He studied the plate more closely and was amazed by the advanced technology and incredible engineering they were using at a time like this. This could only lead him in him wanting to learn more&amp;hellip;&lt;/p>
+&lt;p>&lt;strong>Category:&lt;/strong> Machine Learning&lt;/p>
+&lt;p>In this challenge, we were given an &lt;strong>H5&lt;/strong> file containing a pre-trained machine learning model. Our task was to analyze the model and extract a hidden flag.&lt;/p>
+&lt;p>&lt;strong>H5&lt;/strong> file format, also known as &lt;strong>Hierarchical Data Format (HDF5)&lt;/strong>, is a versatile data model that can store large amounts of data efficiently. It is widely used in scientific research and engineering for storing and managing data. The format organizes data hierarchically and enables fast I/O operations.&lt;/p>
+&lt;p>To solve this challenge, we first needed to load the model from the H5 file and display its summary. We used &lt;strong>TensorFlow&lt;/strong> and &lt;strong>Keras&lt;/strong> libraries to achieve this. Here is the Python script:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">tensorflow&lt;/span> &lt;span class="k">as&lt;/span> &lt;span class="nn">tf&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">tensorflow&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="n">keras&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Load the model from the HDF5 file&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">model&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">keras&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">models&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">load_model&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;alien.h5&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Display the model&amp;#39;s summary&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">model&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">summary&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>We noticed a few strings in the layer names that seemed to be part of the flag. By combining these strings,decoded it from base64 we were able to construct the flag.&lt;/p>
+&lt;p>Flag is: &lt;strong>HTB{th3s3_4l13nS_4r3_s00000_b4s1c}&lt;/strong>&lt;/p>
+&lt;h2 id="last-hope">Last Hope&lt;/h2>
+&lt;p>&lt;strong>Given zip:&lt;/strong> &lt;a href="https://drive.google.com/drive/folders/19s7BGJ3ixtv732sDWy6VUshNhLRGC3Yn?usp=share_link" target="_blank" rel="noopener">Get it here!&lt;/a>&lt;/p>
+&lt;p>&lt;strong>Description:&lt;/strong> The quantum data came back and analyzed. DISASTER! Our best scientists all agree: Unfortunately our species and our whole culture are about to be eliminated. Due to abnormal behavior of the black hole&amp;rsquo;s singularity our planet is about to get swallowed. Project &amp;ldquo;ONESHOT&amp;rdquo; is our last hope&amp;hellip;&lt;/p>
+&lt;p>&lt;strong>Category:&lt;/strong> Machine Learning&lt;/p>
+&lt;p>In this challenge, we are given a file containing &lt;strong>OpenQASM 2.0&lt;/strong> code, which represents a quantum circuit. Our goal is to execute the circuit and extract the flag, which is encoded in the most frequent bitstring resulting from the measurement of the quantum circuit.&lt;/p>
+&lt;p>Here&amp;rsquo;s a brief write-up of the steps taken to solve this challenge:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>We start by reading the &lt;strong>OpenQASM&lt;/strong> code from the file named &amp;lsquo;&lt;strong>quantum_artifact.qasm&lt;/strong>&amp;rsquo; and store it as a string.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Next, we use &lt;strong>Qiskit&lt;/strong>, a &lt;strong>Python&lt;/strong> library for quantum computing, to convert the &lt;strong>OpenQASM&lt;/strong> code into a &lt;strong>QuantumCircuit&lt;/strong> object.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>We set up a quantum simulator using &lt;strong>Qiskit&amp;rsquo;s Aer&lt;/strong> module, which allows us to simulate quantum circuits on classical computers.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>We transpile the circuit, optimizing it for the simulator.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>We execute the transpiled circuit on the simulator with &lt;strong>1024&lt;/strong> shots, meaning the circuit is run &lt;strong>1024&lt;/strong> times, and store the result.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>From the result, we extract the counts, which is a dictionary containing the frequency of each bitstring.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>We iterate through the counts and find the most frequent bitstring, which is the binary representation of our flag.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>We convert the most frequent bitstring to a text string by splitting it into groups of 8 bits (1 byte) and using the int() and chr() functions to convert each byte to its corresponding character.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Finally, we print the decoded flag.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>The provided script follows these steps and successfully extracts the flag from the given quantum circuit.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">qiskit&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="n">QuantumCircuit&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">Aer&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">transpile&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># OpenQASM 2.0 code&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">with&lt;/span> &lt;span class="nb">open&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;quantum_artifact.qasm&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;r&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="k">as&lt;/span> &lt;span class="n">f&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">openqasm_code&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">f&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">read&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Load the OpenQASM code into a Qiskit QuantumCircuit object&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">qc&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">QuantumCircuit&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">from_qasm_str&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">openqasm_code&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Set up a quantum simulator&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">simulator&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">Aer&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">get_backend&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;qasm_simulator&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Transpile the circuit&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">transpiled_circuit&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">transpile&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">qc&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">simulator&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Run the circuit on the simulator&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">result&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">simulator&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">run&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">transpiled_circuit&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">shots&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="mi">1024&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">result&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Get the counts from the result&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">counts&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">result&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">get_counts&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Find the most frequent bitstring&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">max_count&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">most_frequent_bitstring&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">for&lt;/span> &lt;span class="n">bitstring&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">count&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">counts&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">items&lt;/span>&lt;span class="p">():&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="n">count&lt;/span> &lt;span class="o">&amp;gt;&lt;/span> &lt;span class="n">max_count&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">max_count&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">count&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">most_frequent_bitstring&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">bitstring&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">binary_str&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">most_frequent_bitstring&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">byte_array&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="n">binary_str&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">i&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="n">i&lt;/span>&lt;span class="o">+&lt;/span>&lt;span class="mi">8&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="k">for&lt;/span> &lt;span class="n">i&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="nb">range&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="nb">len&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">binary_str&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="mi">8&lt;/span>&lt;span class="p">)]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Convert each byte to its corresponding character using the int() and chr() functions&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">flag&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s1">&amp;#39;&amp;#39;&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">join&lt;/span>&lt;span class="p">([&lt;/span>&lt;span class="nb">chr&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nb">int&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">byte&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">2&lt;/span>&lt;span class="p">))&lt;/span> &lt;span class="k">for&lt;/span> &lt;span class="n">byte&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">byte_array&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;Flag:&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">flag&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Flag is: &lt;strong>HTB{a_gl1mps3_0f_h0p3}&lt;/strong>&lt;/p>
+&lt;h2 id="on-the-rescue">On The Rescue&lt;/h2>
+&lt;p>&lt;strong>Given zip:&lt;/strong> &lt;a href="https://drive.google.com/drive/folders/13cI2b3Slewv9u7y8ZCIi4Vjfb-HL4_Ye?usp=share_link" target="_blank" rel="noopener">Get it here!&lt;/a>&lt;/p>
+&lt;p>&lt;strong>Description:&lt;/strong> The archeologist finally found the ancient vessel. Utilizing the alien technology he managed to breach in the central computational unit and learn the reason behind their visit on Earth millions of years ago. A message appeared. It was all a desperate plan for the survival of their kind.&lt;/p>
+&lt;p>&lt;strong>Category:&lt;/strong> Machine Learning&lt;/p>
+&lt;p>The challenge presented a simple &lt;strong>Bigram Language Model&lt;/strong>, which is a basic character-level language model that predicts the next character based on the current character. We were given the model&amp;rsquo;s architecture &lt;strong>architecture.py&lt;/strong> and a pre-trained model file &lt;strong>bigram_model.pt&lt;/strong>. The objective was to generate a text that could help us understand the aliens&amp;rsquo; message.The solve script is provided below:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">torch&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">architecture&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="n">BigramLanguageModel&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">vocab&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">def&lt;/span> &lt;span class="nf">text_to_idx&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">text&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">torch&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">tensor&lt;/span>&lt;span class="p">([&lt;/span>&lt;span class="n">vocab&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">index&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">c&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="k">for&lt;/span> &lt;span class="n">c&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">text&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">def&lt;/span> &lt;span class="nf">idx_to_text&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">idx&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="s1">&amp;#39;&amp;#39;&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">join&lt;/span>&lt;span class="p">([&lt;/span>&lt;span class="n">vocab&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">i&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="k">for&lt;/span> &lt;span class="n">i&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">idx&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">def&lt;/span> &lt;span class="nf">generate_text&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">model&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">initial_text&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">length&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">generated_text&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">initial_text&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">for&lt;/span> &lt;span class="n">_&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="nb">range&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">length&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">input_idx&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">text_to_idx&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">generated_text&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">input_idx&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">input_idx&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">unsqueeze&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">to&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">model&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">device&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">logits&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">model&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">input_idx&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">next_token_idx&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">torch&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">argmax&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">logits&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">dim&lt;/span>&lt;span class="o">=-&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">item&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">generated_text&lt;/span> &lt;span class="o">+=&lt;/span> &lt;span class="n">vocab&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">next_token_idx&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">generated_text&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Load the pretrained model&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">model_path&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;bigram_model.pt&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">model&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">BigramLanguageModel&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nb">len&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">vocab&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">model&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">load_state_dict&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">torch&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">load&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">model_path&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">model&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">eval&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">model&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">device&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">torch&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">device&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;cuda&amp;#34;&lt;/span> &lt;span class="k">if&lt;/span> &lt;span class="n">torch&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">cuda&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">is_available&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="k">else&lt;/span> &lt;span class="s2">&amp;#34;cpu&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">model&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">to&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">model&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">device&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Generate text&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">initial_text&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;A&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">length&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">100&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">generated_text&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">generate_text&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">model&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">initial_text&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">length&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">generated_text&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To solve the challenge, we first created utility functions to convert text to index and index to text. Then, we wrote a function generate_text that takes the model, an initial text, and the desired length of the generated text. The function generates text by iteratively feeding the last character of the generated text to the model and appending the predicted character to the generated text.&lt;/p>
+&lt;p>We loaded the pre-trained model and moved it to the appropriate device (GPU or CPU). Finally, we generated text using the generate_text function with an initial text and a specified length, and printed the resulting text.&lt;/p>
+&lt;p>Flag is: &lt;strong>HTB{Pr0t3c7_L1fe}&lt;/strong>&lt;/p></description></item></channel></rss>
