@@ -26,7 +26,7 @@ summary: An in-depth writeup on Cyber Apocalypse 2023 - The Cursed Mission, Mach
 tags:
   - ctf
   - writeup
-  - ml
+  - machine learning
   - htb-2023
 
 featured: true
