@@ -1,7 +1,8 @@
 ---
 title: 'Cyber Apocalypse 2023: The Cursed Mission - Reverse Engineering'
 authors:
-  - BKISC
+  - FazeCT
+  - BaoDoktah
 date: '2023-03-27T00:00:00Z'
 doi: ''
 
