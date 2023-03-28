@@ -695,7 +695,7 @@ Flag is: **HTB{th1s_w@s_l0w_eff0rt}**
 
 **Category:** Reverse Engineering
 
-**Difficulty** Insane
+**Difficulty:** Insane
 
 In this challenge, the encoding process is implemented in **input_generator.py**. 
 
