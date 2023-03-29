@@ -260,7 +260,7 @@
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">but its architecture cannot represent any result
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">outside the range -1337.00 &amp;lt;= RESULT &amp;lt;= 1337.00
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Expected response: MEM_ERR
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>At first I tried to round the numbers the mathematical way but then I realised the remote server was using the &lt;em>round()&lt;/em> function of python the whole time.&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>At first I tried to round the numbers the mathematical way but then I realised the remote server was using the &lt;code>round()&lt;/code> function of python the whole time.&lt;/p>
 &lt;p>So yeah here&amp;rsquo;s the solve script.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">decimal&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="n">Decimal&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">ROUND_HALF_UP&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">ROUND_HALF_DOWN&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">pwn&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="o">*&lt;/span>
@@ -307,8 +307,8 @@
 &lt;p>&lt;strong>Note:&lt;/strong> This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.&lt;/p>
 &lt;p>&lt;strong>Category:&lt;/strong> Miscellaneous&lt;/p>
 &lt;p>&lt;strong>Difficulty:&lt;/strong> Easy&lt;/p>
-&lt;p>There are 2 noticable functions called within &lt;strong>main()&lt;/strong> which is &lt;strong>game()&lt;/strong> and &lt;strong>get_prize()&lt;/strong>.&lt;/p>
-&lt;p>The &lt;strong>get_prize()&lt;/strong> function simply gives us the flag so we won&amp;rsquo;t go too deep into it. But in order for this function to be called. We have to win 100 games of rock, paper, scissors. A.K.A. the &lt;strong>game()&lt;/strong> function.&lt;/p>
+&lt;p>There are 2 noticable functions called within &lt;code>main()&lt;/code> which is &lt;code>game()&lt;/code> and &lt;code>get_prize()&lt;/code>.&lt;/p>
+&lt;p>The &lt;code>get_prize()&lt;/code> function simply gives us the flag so we won&amp;rsquo;t go too deep into it. But in order for this function to be called. We have to win 100 games of rock, paper, scissors. A.K.A. the &lt;code>game()&lt;/code> function.&lt;/p>
 &lt;p>Having analyzed it, we got the following code:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-c" data-lang="c">&lt;span class="line">&lt;span class="cl">&lt;span class="kt">int&lt;/span> &lt;span class="nf">game&lt;/span>&lt;span class="p">()&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">{&lt;/span>
@@ -358,7 +358,7 @@
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>We noticed that the program (Guru) chooses a random number from 0 to 2, which is rock, paper, scissors accordingly. It then checks if our input contains the string that can win against its choice using the &lt;a href="https://man7.org/linux/man-pages/man3/strstr.3.html" target="_blank" rel="noopener">strstr()&lt;/a> function.&lt;/p>
 &lt;p>In other words, if Guru chooses &lt;strong>rock&lt;/strong>, then if our input contain the string &lt;strong>paper&lt;/strong>, we win.&lt;/p>
-&lt;p>We can exploit the &lt;strong>strstr()&lt;/strong> by spamming &lt;strong>rockpaperscissors&lt;/strong> 100 times or write a script to do it for us.&lt;/p>
+&lt;p>We can exploit the &lt;code>strstr()&lt;/code> by spamming &lt;strong>rockpaperscissors&lt;/strong> 100 times or write a script to do it for us.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">pwn&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="o">*&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">io&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">remote&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;68.183.37.122&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">32161&lt;/span>&lt;span class="p">)&lt;/span>
