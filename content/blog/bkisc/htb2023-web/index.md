@@ -1294,3 +1294,7 @@ Overall the technique to solve this challenge is not too flashy, it still requir
 <img src="traptrack8.png" alt="creds" width="1000"/>
 
 Flag is: **HTB{tr4p_qu3u3d_t0_rc3!}**
+
+## Original Posts
+
+- [From FazeCT](https://fazect.github.io/htb2023/)
