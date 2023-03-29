@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 title: 'Cyber Apocalypse 2023: The Cursed Mission - Web Exploitation'
 authors:
   - hoangDayNe
