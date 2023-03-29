@@ -224,8 +224,11 @@ Flag is: **HTB{l1c3ns3_4cquir3d-hunt1ng_t1m3!}**
 ## Cave System
 
 **Given file:** [Get it here!](https://drive.google.com/file/d/10IGptbNTTSxzx-Mv0Elgt2Vx4bVKjHCZ/view?usp=sharing)
+
 **Description:** Deep inside a cave system, 500 feet below the surface, you find yourself stranded with supplies running low. Ahead of you sprawls a network of tunnels, branching off and looping back on themselves. You don't have time to explore them all - you'll need to program your cave-crawling robot to find the way out...
+
 **Category:** Reverse Engineering
+
 **Difficulty:** Easy
 
 We are given a binary once again. Using [IDA Pro](https://hex-rays.com/ida-pro/), for this type of challenge, we should consider using [angr](https://angr.io/) or [z3 solver](https://pypi.org/project/z3-solver/). Here I choose to use [angr](https://angr.io/)
