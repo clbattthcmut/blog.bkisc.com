@@ -2,7 +2,7 @@
 title: 'Cyber Apocalypse 2023: The Cursed Mission - Miscellaneous'
 authors:
   - FazeCT
-  - Lê Hoàng
+  - le-hoang
   - Lio
 
 date: '2023-03-27T00:00:00Z'
@@ -107,11 +107,11 @@ Flag is: **HTB{y0u_h4v3_p0w3rfuL_sCr1pt1ng_ab1lit13S!}**
 
 Let's try to connect to the challenge instance.
 
-<img src="hijack1.png" alt="Demo"/ width="1000"/>
+<img src="hijack1.png" alt="Solved" width="1000"/>
 
 And let's try to test out those options.
 
-<img src="hijack2.png" alt="Demo"/ width="1000"/>
+<img src="hijack2.png" alt="Demo" width="1000"/>
 
 `ISFweXRob24vb2JqZWN0Ol9fbWFpbl9fLkNvbmZpZyB7SVJfc3BlY3Ryb21ldGVyX3RlbXA6ICcxNScsIGF1dG9fY2FsaWJyYXRpb246ICdvbicsCiAgcHJvcHVsc2lvbl90ZW1wOiAnMzQzNCcsIHNvbGFyX2FycmF5X3RlbXA6ICcxMicsIHVuaXRzOiBmfQo=`
 
@@ -121,7 +121,7 @@ It is important to note, however, that serialized objects should not be vulnerab
 
 Let's take a look at the next options. The application is requesting a base64 encoded string of a serialized object.
 
-<img src="hijack3.png" alt="Demo"/ width="1000"/>
+<img src="hijack3.png" alt="Demo" width="1000"/>
  
 Upon examining the serialized object provided by the application, I have determined that it is a YAML-formatted Python serialized object. This [article](https://net-square.com/yaml-deserialization-attack-in-python.html) serves as an excellent illustration of how attackers can leverage YAML-based exploits to execute arbitrary code.
 
@@ -140,7 +140,7 @@ print(base64.b64encode(serialized_data.encode()).decode())
 
 Let's grab the result and throw it to the application.
 
-<img src="hijack4.png" alt="Demo"/ width="1000"/>
+<img src="hijack4.png" alt="Demo" width="1000"/>
 
 Flag is: **HTB{1s_1t_ju5t_m3_0r_iS_1t_g3tTing_h0t_1n_h3r3?}**
 
