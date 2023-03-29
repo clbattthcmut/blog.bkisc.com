@@ -2,7 +2,7 @@
 title: 'Cyber Apocalypse 2023: The Cursed Mission - Miscellaneous'
 authors:
   - FazeCT
-  - le-hoang
+  - hoangDayNe
   - Lio
 
 date: '2023-03-27T00:00:00Z'
