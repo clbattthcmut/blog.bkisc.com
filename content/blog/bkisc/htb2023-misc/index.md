@@ -214,7 +214,7 @@ outside the range -1337.00 <= RESULT <= 1337.00
 Expected response: MEM_ERR
 ```
 
-At first I tried to round the numbers the mathematical way but then I realised the remote server was using the *round()* function of python the whole time.
+At first I tried to round the numbers the mathematical way but then I realised the remote server was using the `round()` function of python the whole time.
 
 So yeah here's the solve script.
 
@@ -274,9 +274,9 @@ Flag is: **HTB{d1v1d3_bY_Z3r0_3rr0r}**
 
 **Difficulty:** Easy
 
-There are 2 noticable functions called within **main()** which is **game()** and **get_prize()**.
+There are 2 noticable functions called within `main()` which is `game()` and `get_prize()`.
 
-The **get_prize()** function simply gives us the flag so we won't go too deep into it. But in order for this function to be called. We have to win 100 games of rock, paper, scissors. A.K.A. the **game()** function.
+The `get_prize()` function simply gives us the flag so we won't go too deep into it. But in order for this function to be called. We have to win 100 games of rock, paper, scissors. A.K.A. the `game()` function.
 
 Having analyzed it, we got the following code:
 
@@ -333,7 +333,7 @@ We noticed that the program (Guru) chooses a random number from 0 to 2, which is
 
 In other words, if Guru chooses **rock**, then if our input contain the string **paper**, we win.
 
-We can exploit the **strstr()** by spamming **rockpaperscissors** 100 times or write a script to do it for us.
+We can exploit the `strstr()` by spamming **rockpaperscissors** 100 times or write a script to do it for us.
 
 ```python
 from pwn import *
