@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Lê Hoàng | BKISC Blogs</title><link>https://blog.bkisc.com/author/le-hoang/</link><atom:link href="https://blog.bkisc.com/author/le-hoang/index.xml" rel="self" type="application/rss+xml"/><description>Lê Hoàng</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 27 Mar 2023 00:00:00 +0000</lastBuildDate><image><url>https://blog.bkisc.com/media/logo_huc55a0313517dd04bda48a4ace4db28bc_511389_300x300_fit_lanczos_3.png</url><title>Lê Hoàng</title><link>https://blog.bkisc.com/author/le-hoang/</link></image><item><title>Cyber Apocalypse 2023: The Cursed Mission - Miscellaneous</title><link>https://blog.bkisc.com/blog/bkisc/htb2023-misc/</link><pubDate>Mon, 27 Mar 2023 00:00:00 +0000</pubDate><guid>https://blog.bkisc.com/blog/bkisc/htb2023-misc/</guid><description>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>le-hoang | BKISC Blogs</title><link>https://blog.bkisc.com/author/le-hoang/</link><atom:link href="https://blog.bkisc.com/author/le-hoang/index.xml" rel="self" type="application/rss+xml"/><description>le-hoang</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 27 Mar 2023 00:00:00 +0000</lastBuildDate><image><url>https://blog.bkisc.com/media/logo_huc55a0313517dd04bda48a4ace4db28bc_511389_300x300_fit_lanczos_3.png</url><title>le-hoang</title><link>https://blog.bkisc.com/author/le-hoang/</link></image><item><title>Cyber Apocalypse 2023: The Cursed Mission - Miscellaneous</title><link>https://blog.bkisc.com/blog/bkisc/htb2023-misc/</link><pubDate>Mon, 27 Mar 2023 00:00:00 +0000</pubDate><guid>https://blog.bkisc.com/blog/bkisc/htb2023-misc/</guid><description>
 &lt;details class="toc-inpage d-print-none " open>
 &lt;summary class="font-weight-bold">Table of Contents&lt;/summary>
 &lt;nav id="TableOfContents">
@@ -37,14 +37,14 @@
 &lt;p>&lt;strong>Category:&lt;/strong> Miscellaneous&lt;/p>
 &lt;p>&lt;strong>Difficulty:&lt;/strong> Easy&lt;/p>
 &lt;p>Let&amp;rsquo;s try to connect to the challenge instance.&lt;/p>
-&lt;p>&amp;lt;img src=&amp;ldquo;hijack1.png&amp;rdquo; alt=&amp;ldquo;Demo&amp;rdquo;/ width=&amp;ldquo;1000&amp;rdquo;/&amp;gt;&lt;/p>
+&lt;img src="hijack1.png" alt="Solved" width="1000"/>
 &lt;p>And let&amp;rsquo;s try to test out those options.&lt;/p>
-&lt;p>&amp;lt;img src=&amp;ldquo;hijack2.png&amp;rdquo; alt=&amp;ldquo;Demo&amp;rdquo;/ width=&amp;ldquo;1000&amp;rdquo;/&amp;gt;&lt;/p>
+&lt;img src="hijack2.png" alt="Demo" width="1000"/>
 &lt;p>&lt;code>ISFweXRob24vb2JqZWN0Ol9fbWFpbl9fLkNvbmZpZyB7SVJfc3BlY3Ryb21ldGVyX3RlbXA6ICcxNScsIGF1dG9fY2FsaWJyYXRpb246ICdvbicsCiAgcHJvcHVsc2lvbl90ZW1wOiAnMzQzNCcsIHNvbGFyX2FycmF5X3RlbXA6ICcxMicsIHVuaXRzOiBmfQo=&lt;/code>&lt;/p>
 &lt;p>The function in question generates a base64 encoded string representing a serialized object. To provide some context, serialization is the process of storing an object, such as an array or class, in a database for later retrieval. When the application needs to access the object, it unserializes it, or loads it from the database using a function. This can improve the efficiency of Object-Oriented Programming.&lt;/p>
 &lt;p>It is important to note, however, that serialized objects should not be vulnerable to manipulation by users. If a user creates a malicious object, it could execute unwanted code. This challenge illustrates this point by presenting us with a serialized object and its corresponding base64 encoding. This is just one example of how serialized objects can be used, and it is essential to be aware of their potential risks.&lt;/p>
 &lt;p>Let&amp;rsquo;s take a look at the next options. The application is requesting a base64 encoded string of a serialized object.&lt;/p>
-&lt;p>&amp;lt;img src=&amp;ldquo;hijack3.png&amp;rdquo; alt=&amp;ldquo;Demo&amp;rdquo;/ width=&amp;ldquo;1000&amp;rdquo;/&amp;gt;&lt;/p>
+&lt;img src="hijack3.png" alt="Demo" width="1000"/>
 &lt;p>Upon examining the serialized object provided by the application, I have determined that it is a YAML-formatted Python serialized object. This &lt;a href="https://net-square.com/yaml-deserialization-attack-in-python.html" target="_blank" rel="noopener">article&lt;/a> serves as an excellent illustration of how attackers can leverage YAML-based exploits to execute arbitrary code.&lt;/p>
 &lt;p>Here is the script to generate a serialized object.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">yaml&lt;/span>
@@ -56,7 +56,7 @@
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">serialized_data&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">yaml&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">dump&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">Test&lt;/span>&lt;span class="p">())&lt;/span> &lt;span class="c1"># serializing data&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">base64&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">b64encode&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">serialized_data&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">encode&lt;/span>&lt;span class="p">())&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">decode&lt;/span>&lt;span class="p">())&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Let&amp;rsquo;s grab the result and throw it to the application.&lt;/p>
-&lt;p>&amp;lt;img src=&amp;ldquo;hijack4.png&amp;rdquo; alt=&amp;ldquo;Demo&amp;rdquo;/ width=&amp;ldquo;1000&amp;rdquo;/&amp;gt;&lt;/p>
+&lt;img src="hijack4.png" alt="Demo" width="1000"/>
 &lt;p>Flag is: &lt;strong>HTB{1s_1t_ju5t_m3_0r_iS_1t_g3tTing_h0t_1n_h3r3?}&lt;/strong>&lt;/p>
 &lt;h2 id="restricted">Restricted&lt;/h2>
 &lt;p>&lt;strong>Given file:&lt;/strong> &lt;a href="https://drive.google.com/file/d/1bu8crqTZ-PEVLRN5Dk6OhVWADcZIoYw3/view?usp=sharing" target="_blank" rel="noopener">Get it here!&lt;/a>&lt;/p>
