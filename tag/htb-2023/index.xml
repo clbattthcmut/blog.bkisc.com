@@ -567,10 +567,10 @@
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;img src="re7.png" alt="linux" width="1000"/>
 &lt;p>Flag is: &lt;strong>HTB{l1c3ns3_4cquir3d-hunt1ng_t1m3!}&lt;/strong>&lt;/p>
 &lt;h2 id="cave-system">Cave System&lt;/h2>
-&lt;p>&lt;strong>Given file:&lt;/strong> &lt;a href="https://drive.google.com/file/d/10IGptbNTTSxzx-Mv0Elgt2Vx4bVKjHCZ/view?usp=sharing" target="_blank" rel="noopener">Get it here!&lt;/a>
-&lt;strong>Description:&lt;/strong> Deep inside a cave system, 500 feet below the surface, you find yourself stranded with supplies running low. Ahead of you sprawls a network of tunnels, branching off and looping back on themselves. You don&amp;rsquo;t have time to explore them all - you&amp;rsquo;ll need to program your cave-crawling robot to find the way out&amp;hellip;
-&lt;strong>Category:&lt;/strong> Reverse Engineering
-&lt;strong>Difficulty:&lt;/strong> Easy&lt;/p>
+&lt;p>&lt;strong>Given file:&lt;/strong> &lt;a href="https://drive.google.com/file/d/10IGptbNTTSxzx-Mv0Elgt2Vx4bVKjHCZ/view?usp=sharing" target="_blank" rel="noopener">Get it here!&lt;/a>&lt;/p>
+&lt;p>&lt;strong>Description:&lt;/strong> Deep inside a cave system, 500 feet below the surface, you find yourself stranded with supplies running low. Ahead of you sprawls a network of tunnels, branching off and looping back on themselves. You don&amp;rsquo;t have time to explore them all - you&amp;rsquo;ll need to program your cave-crawling robot to find the way out&amp;hellip;&lt;/p>
+&lt;p>&lt;strong>Category:&lt;/strong> Reverse Engineering&lt;/p>
+&lt;p>&lt;strong>Difficulty:&lt;/strong> Easy&lt;/p>
 &lt;p>We are given a binary once again. Using &lt;a href="https://hex-rays.com/ida-pro/" target="_blank" rel="noopener">IDA Pro&lt;/a>, for this type of challenge, we should consider using &lt;a href="https://angr.io/" target="_blank" rel="noopener">angr&lt;/a> or &lt;a href="https://pypi.org/project/z3-solver/" target="_blank" rel="noopener">z3 solver&lt;/a>. Here I choose to use &lt;a href="https://angr.io/" target="_blank" rel="noopener">angr&lt;/a>&lt;/p>
 &lt;p>Here is the Python script.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">angr&lt;/span>
