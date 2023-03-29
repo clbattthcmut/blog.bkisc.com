@@ -14,7 +14,7 @@ organizations:
     url: 'https://hcmut.edu.vn'
 
 # Short bio (displayed in user profile at end of posts)
-bio: Started playing CTFs since July 2022, currently I am focusly learning in the Reverse Engineering (RE) field of CTF.
+bio: Hehe.
 
 interests:
   - Binary analysis
