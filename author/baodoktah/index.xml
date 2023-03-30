@@ -204,10 +204,20 @@
 &lt;/nav>
 &lt;/details>
 &lt;h2 id="shattered-tablet">Shattered Tablet&lt;/h2>
+&lt;ul>
+&lt;li>
 &lt;p>&lt;strong>Given file:&lt;/strong> &lt;a href="https://drive.google.com/file/d/1KbW9wdpO7sfwq1nUaqMTmmriVMkXzpdq/view?usp=sharing" target="_blank" rel="noopener">Get it here!&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Description:&lt;/strong> Deep in an ancient tomb, you&amp;rsquo;ve discovered a stone tablet with secret information on the locations of other relics. However, while dodging a poison dart, it slipped from your hands and shattered into hundreds of pieces. Can you reassemble it and read the clues?&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Category:&lt;/strong> Reverse Engineering&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Difficulty:&lt;/strong> Very Easy&lt;/p>
+&lt;/li>
+&lt;/ul>
 &lt;p>Reverse Engineering category greets us with a binary. I used &lt;a href="https://hex-rays.com/ida-pro/" target="_blank" rel="noopener">IDA Pro&lt;/a> to decompile the binary.&lt;/p>
 &lt;p>In the main function, the input is being checked through an if clause.&lt;/p>
 &lt;p>I used &lt;a href="https://angr.io/" target="_blank" rel="noopener">angr&lt;/a> to get the input (you can refer to &lt;a href="https://docs.angr.io/examples" target="_blank" rel="noopener">this&lt;/a> and &lt;a href="https://s0uthwood.github.io/post/angr-ctf-writeup/" target="_blank" rel="noopener">this, too&lt;/a> to get the hang of angr).&lt;/p>
@@ -223,19 +233,39 @@
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>We have to find the address of &lt;strong>puts(&amp;ldquo;Yes! That&amp;rsquo;s right!&amp;rdquo;);&lt;/strong> and avoid the address of &lt;strong>puts(&amp;ldquo;No&amp;hellip; not that&amp;rdquo;);&lt;/strong>. Also, we have to increase each of the address by &lt;strong>0x400000&lt;/strong> due to the fact that this binary is &lt;a href="https://ir0nstone.gitbook.io/notes/types/stack/pie" target="_blank" rel="noopener">PIE-enabled&lt;/a>.&lt;/p>
 &lt;p>Flag is: &lt;strong>HTB{br0k3n_4p4rt,n3ver_t0_b3_r3p41r3d}&lt;/strong>&lt;/p>
 &lt;h2 id="needle-in-a-haystack">Needle in a Haystack&lt;/h2>
+&lt;ul>
+&lt;li>
 &lt;p>&lt;strong>Given file:&lt;/strong> &lt;a href="https://drive.google.com/file/d/1f9daRLUAowb2GXMbgTaZWzu8v7aEqkWz/view?usp=sharing" target="_blank" rel="noopener">Get it here!&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Description:&lt;/strong> You&amp;rsquo;ve obtained an ancient alien Datasphere, containing categorized and sorted recordings of every word in the forgotten intergalactic common language. Hidden within it is the password to a tomb, but the sphere has been worn with age and the search function no longer works, only playing random recordings. You don&amp;rsquo;t have time to search through every recording - can you crack it open and extract the answer?&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Category:&lt;/strong> Reverse Engineering&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Difficulty:&lt;/strong> Very Easy&lt;/p>
+&lt;/li>
+&lt;/ul>
 &lt;p>We are given an another binary. Again, load the binary using &lt;a href="https://hex-rays.com/ida-pro/" target="_blank" rel="noopener">IDA Pro&lt;/a>.&lt;/p>
 &lt;p>This time, the main algorithm of the binary is to print out a random element from the given list, and guess what, the flag is also there!&lt;/p>
 &lt;img src="re1.png" alt="linux" width="1000"/>
 &lt;p>Flag is: &lt;strong>HTB{d1v1ng_1nt0_th3_d4tab4nk5}&lt;/strong>&lt;/p>
 &lt;h2 id="she-shells-c-shells">She Shells C Shells&lt;/h2>
+&lt;ul>
+&lt;li>
 &lt;p>&lt;strong>Given file:&lt;/strong> &lt;a href="https://drive.google.com/file/d/1oYAAIEwVZ2zmv7vTyZVhfCMPLxoinSKK/view?usp=sharing" target="_blank" rel="noopener">Get it here!&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Description:&lt;/strong> You&amp;rsquo;ve arrived in the Galactic Archive, sure that a critical clue is hidden here. You wait anxiously for a terminal to boot up, hiding in the shadows from the guards hunting for you. Unfortunately, it looks like you&amp;rsquo;ll need a password to get what you need without setting off the alarms&amp;hellip;&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Category:&lt;/strong> Reverse Engineering&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Difficulty:&lt;/strong> Very Easy&lt;/p>
+&lt;/li>
+&lt;/ul>
 &lt;p>We get another binary, and it&amp;rsquo;s time to use &lt;a href="https://hex-rays.com/ida-pro/" target="_blank" rel="noopener">IDA Pro&lt;/a> to decompile it.&lt;/p>
 &lt;p>Load the binary, we notice the function &lt;strong>func_flag&lt;/strong>. Let&amp;rsquo;s check that out!&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-c" data-lang="c">&lt;span class="line">&lt;span class="cl">&lt;span class="nf">fgets&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">s&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">256&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">stdin&lt;/span>&lt;span class="p">);&lt;/span>
@@ -269,11 +299,23 @@
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">end&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="nb">chr&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">t&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">i&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">^&lt;/span> &lt;span class="n">m2&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">i&lt;/span>&lt;span class="p">]))&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Flag is: &lt;strong>HTB{cr4ck1ng_0p3n_sh3ll5_by_th3_s34_sh0r3}&lt;/strong>&lt;/p>
 &lt;h2 id="hunting-license">Hunting License&lt;/h2>
+&lt;ul>
+&lt;li>
 &lt;p>&lt;strong>Given file:&lt;/strong> &lt;a href="https://drive.google.com/file/d/1xResSHQcRL1wdSw3t3u-TuzGj839Gh0m/view?usp=sharing" target="_blank" rel="noopener">Get it here!&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Description:&lt;/strong> STOP! Adventurer, have you got an up to date relic hunting license? If you don&amp;rsquo;t, you&amp;rsquo;ll need to take the exam again before you&amp;rsquo;ll be allowed passage into the spacelanes!&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Note:&lt;/strong> This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Category:&lt;/strong> Reverse Engineering&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Difficulty:&lt;/strong> Easy&lt;/p>
+&lt;/li>
+&lt;/ul>
 &lt;p>We are given a binary file, together with a netcat server.&lt;/p>
 &lt;p>By analyzing the binary file using &lt;a href="https://www.geeksforgeeks.org/file-command-in-linux-with-examples/" target="_blank" rel="noopener">file&lt;/a>, we can answer some first questions.&lt;/p>
 &lt;img src="re3.png" alt="linux" width="1000"/>
@@ -292,10 +334,20 @@
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;img src="re7.png" alt="linux" width="1000"/>
 &lt;p>Flag is: &lt;strong>HTB{l1c3ns3_4cquir3d-hunt1ng_t1m3!}&lt;/strong>&lt;/p>
 &lt;h2 id="cave-system">Cave System&lt;/h2>
+&lt;ul>
+&lt;li>
 &lt;p>&lt;strong>Given file:&lt;/strong> &lt;a href="https://drive.google.com/file/d/10IGptbNTTSxzx-Mv0Elgt2Vx4bVKjHCZ/view?usp=sharing" target="_blank" rel="noopener">Get it here!&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Description:&lt;/strong> Deep inside a cave system, 500 feet below the surface, you find yourself stranded with supplies running low. Ahead of you sprawls a network of tunnels, branching off and looping back on themselves. You don&amp;rsquo;t have time to explore them all - you&amp;rsquo;ll need to program your cave-crawling robot to find the way out&amp;hellip;&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Category:&lt;/strong> Reverse Engineering&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Difficulty:&lt;/strong> Easy&lt;/p>
+&lt;/li>
+&lt;/ul>
 &lt;p>We are given a binary once again. Using &lt;a href="https://hex-rays.com/ida-pro/" target="_blank" rel="noopener">IDA Pro&lt;/a>, for this type of challenge, we should consider using &lt;a href="https://angr.io/" target="_blank" rel="noopener">angr&lt;/a> or &lt;a href="https://pypi.org/project/z3-solver/" target="_blank" rel="noopener">z3 solver&lt;/a>. Here I choose to use &lt;a href="https://angr.io/" target="_blank" rel="noopener">angr&lt;/a>&lt;/p>
 &lt;p>Here is the Python script.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">angr&lt;/span>
@@ -309,10 +361,20 @@
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>We have to find the address of &lt;strong>puts(&amp;ldquo;Freedom at last!&amp;rdquo;);&lt;/strong> and avoid the address of &lt;strong>puts(&amp;ldquo;Lost in the darkness, you&amp;rsquo;ll wander for eternity&amp;hellip;&amp;rdquo;);&lt;/strong>. Also, we have to increase each of the address by &lt;strong>0x400000&lt;/strong> due to the fact that this binary is &lt;a href="https://ir0nstone.gitbook.io/notes/types/stack/pie" target="_blank" rel="noopener">PIE-enabled&lt;/a>.&lt;/p>
 &lt;p>Flag is: &lt;strong>HTB{H0p3_u_d1dn&amp;rsquo;t_g3t_th15_by_h4nd,1t5_4_pr3tty_l0ng_fl4g!!!}&lt;/strong>&lt;/p>
 &lt;h2 id="alien-saboteur">Alien Saboteur&lt;/h2>
+&lt;ul>
+&lt;li>
 &lt;p>&lt;strong>Given file:&lt;/strong> &lt;a href="https://drive.google.com/file/d/1LFinP3KsutSSt46WExL_TekEBFv_GOmR/view?usp=sharing" target="_blank" rel="noopener">Get it here!&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Description:&lt;/strong> You finally manage to make it into the main computer of the vessel, it&amp;rsquo;s time to get this over with. You try to shutdown the vessel, however a couple of access codes unknown to you are needed. You try to figure them out, but the computer start speaking some weird language, it seems like gibberish&amp;hellip;&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Category:&lt;/strong> Reverse Engineering&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Difficulty:&lt;/strong> Medium&lt;/p>
+&lt;/li>
+&lt;/ul>
 &lt;p>We get a binary with a text file with no format. Analyze the binary using &lt;a href="https://hex-rays.com/ida-pro/" target="_blank" rel="noopener">IDA Pro&lt;/a>, from the function &amp;ldquo;vm_create&amp;rdquo;, the text file is contained in *&lt;strong>(v3 + 18)&lt;/strong> and being executed like a normal binary.&lt;/p>
 &lt;img src="re8.png" alt="linux" width="1000"/>
 &lt;p>Each instructions appear to be at every &lt;strong>6th&lt;/strong> index from 0. From that, I wrote an interpreter for the text file (that runs through the binary).&lt;/p>
@@ -680,9 +742,17 @@
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;&amp;#39;&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">join&lt;/span>&lt;span class="p">([&lt;/span>&lt;span class="nb">chr&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">i&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="k">for&lt;/span> &lt;span class="n">i&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="n">flag&lt;/span>&lt;span class="p">]))&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Flag is: &lt;strong>HTB{5w1rl_4r0und_7h3_4l13n_l4ngu4g3}&lt;/strong>&lt;/p>
 &lt;h2 id="somewhat-linear">Somewhat Linear&lt;/h2>
+&lt;ul>
+&lt;li>
 &lt;p>&lt;strong>Given zip:&lt;/strong> &lt;a href="https://drive.google.com/drive/folders/1_ExekBgLRfE1J9aMB1QReaAHuX6_SHHZ?usp=share_link" target="_blank" rel="noopener">Get it here!&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Category:&lt;/strong> Reverse Engineering&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Difficulty:&lt;/strong> Hard&lt;/p>
+&lt;/li>
+&lt;/ul>
 &lt;p>In this challenge, we are provided with &lt;strong>input_generator.py&lt;/strong>, &lt;strong>impulse_response.wav&lt;/strong>, and &lt;strong>shuffled_flag.wav&lt;/strong> files. The objective is to reverse the process implemented in &lt;strong>input_generator.py&lt;/strong> to recover the original flag message.&lt;/p>
 &lt;p>The &lt;strong>input_generator.py&lt;/strong> script reads the flag from a file, applies a randomly generated filter to shuffle the frequencies, and then writes the shuffled flag and impulse response to two separate WAV files. The filtering process is achieved by multiplying the amplitudes of the flag&amp;rsquo;s frequency components with the randomly generated &lt;strong>filter_frequency_response&lt;/strong>.&lt;/p>
 &lt;p>To solve the challenge, we must deconvolute the shuffled flag by applying the inverse of the filter.&lt;/p>
@@ -712,9 +782,17 @@
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>After running the script, we can listen to the recovered_flag_using_wiener_filter.wav file to hear the flag.&lt;/p>
 &lt;p>Flag is: &lt;strong>HTB{th1s_w@s_l0w_eff0rt}&lt;/strong>&lt;/p>
 &lt;h2 id="analogue-signal-processing-v2">Analogue Signal Processing v2&lt;/h2>
+&lt;ul>
+&lt;li>
 &lt;p>&lt;strong>Given zip:&lt;/strong> &lt;a href="https://drive.google.com/drive/folders/1HJWdy9Z56bPPIs0nPko2R1KUX7dCCUyj?usp=share_link" target="_blank" rel="noopener">Get it here!&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Category:&lt;/strong> Reverse Engineering&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Difficulty:&lt;/strong> Insane&lt;/p>
+&lt;/li>
+&lt;/ul>
 &lt;p>In this challenge, the encoding process is implemented in &lt;strong>input_generator.py&lt;/strong>.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="k">def&lt;/span> &lt;span class="nf">encode_flag&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">flag&lt;/span>&lt;span class="p">):&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">vin&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">np&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">random&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">uniform&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">samples&lt;/span>&lt;span class="p">)&lt;/span>
