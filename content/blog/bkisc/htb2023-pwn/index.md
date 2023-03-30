@@ -20,18 +20,16 @@ publication_types: ['9']
 publication: ''
 publication_short: ''
 
-abstract: An in-depth writeup on Cyber Apocalypse 2023 - The Cursed Mission, Pwn category.
+abstract: An in-depth writeup on Cyber Apocalypse 2023 - The Cursed Mission, Pwnable category.
 
 # Summary. An optional shortened abstract.
-summary: An in-depth writeup on Cyber Apocalypse 2023 - The Cursed Mission, Pwn category.
+summary: An in-depth writeup on Cyber Apocalypse 2023 - The Cursed Mission, Pwnable category.
 
 tags:
   - ctf
   - writeup
   - pwn
   - htb
-  - hackthebox
-  - cyberapocalypse-2023
 
 featured: false
 
@@ -71,10 +69,13 @@ slides: ""
 
 ## Initialise Connection
 
-* **Description:** In order to proceed, we need to start with the basics. Start an instance, connect to it via $ nc e.g. nc 127.0.0.1 1337 and send "1" to get the flag.
-* **Note:** This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.
-* **Category:** Binary Exploitation/Pwnable
-* **Difficulty:** Very Easy
+**Description:** In order to proceed, we need to start with the basics. Start an instance, connect to it via $ nc e.g. nc 127.0.0.1 1337 and send "1" to get the flag.
+
+**Note:** This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.
+
+**Category:** Binary Exploitation/Pwnable
+
+**Difficulty:** Very Easy
 
 Just a sanity check challenge, do the same thing that is being stated in the description will grant you the flag.
 
@@ -84,11 +85,15 @@ Flag is: **HTB{g3t_r34dy_f0r_s0m3_pwn}**
 
 ## Questionnaire
 
-* **Given file:** [Get it here!](https://drive.google.com/file/d/1m_j9ApZJusGOgEvGl-32JRbFyk2fpPkH/view?usp=sharing)
-* **Description:** It's time to learn some things about binaries and basic c. Connect to a remote server and answer some questions to get the flag.
-* **Note:** This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.
-* **Category:** Binary Exploitation/Pwnable
-* **Difficulty:** Very Easy
+**Given file:** [Get it here!](https://drive.google.com/file/d/1m_j9ApZJusGOgEvGl-32JRbFyk2fpPkH/view?usp=sharing)
+
+**Description:** It's time to learn some things about binaries and basic c. Connect to a remote server and answer some questions to get the flag.
+
+**Note:** This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.
+
+**Category:** Binary Exploitation/Pwnable
+
+**Difficulty:** Very Easy
 
 We are given a binary, a C file and a netcat server to answer some questions.
 
@@ -271,11 +276,15 @@ Flag is: **HTB{th30ry_bef0r3_4cti0n}**
 
 ## Getting Started
 
-* **Given file:** [Get it here!](https://drive.google.com/file/d/1WbbUvsAAZ--CfdrHmOggCGuLa8q_rzuV/view?usp=sharing)
-* **Description:** Get ready for the last guided challenge and your first real exploit. It's time to show your hacking skills.
-* **Note:** This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.
-* **Category:** Binary Exploitation/Pwnable
-* **Difficulty:** Very Easy
+**Given file:** [Get it here!](https://drive.google.com/file/d/1WbbUvsAAZ--CfdrHmOggCGuLa8q_rzuV/view?usp=sharing)
+
+**Description:** Get ready for the last guided challenge and your first real exploit. It's time to show your hacking skills.
+
+**Note:** This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.
+
+**Category:** Binary Exploitation/Pwnable
+
+**Difficulty:** Very Easy
 
 We are given a binary, a C file and a netcat server to work with.
 
@@ -372,10 +381,15 @@ Flag is: **HTB{b0f_s33m5_3z_r1ght?}**
 
 ## Labyrinth
 
-* **Given file:** [Get it here!](https://github.com/padolex/misc/blob/main/pwn_labyrinth.zip)
-* **Description:** You find yourself trapped in a mysterious labyrinth, with only one chance to escape. Choose the correct door wisely, for the wrong choice could have deadly consequences.
-* **Category:** Binary Exploitation/Pwnable
-* **Difficulty:** Easy
+**Given file:** [Get it here!](https://github.com/padolex/misc/blob/main/pwn_labyrinth.zip)
+
+**Description:** You find yourself trapped in a mysterious labyrinth, with only one chance to escape. Choose the correct door wisely, for the wrong choice could have deadly consequences.
+
+**Note:** This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.
+
+**Category:** Binary Exploitation/Pwnable
+
+**Difficulty:** Easy
 
 Examine the binary with command `checksec`
 ```zsh
@@ -515,15 +529,15 @@ Flag is: **HTB{3sc4p3_fr0m_4b0v3}**
 
 ## Pandora's Box
 
-* **Given file:** [Get it here!](https://drive.google.com/drive/folders/1tkjLHsRXx8WdNrzWexbeDfcS3kFkCc-U?usp=sharing)
+**Given file:** [Get it here!](https://drive.google.com/drive/folders/1tkjLHsRXx8WdNrzWexbeDfcS3kFkCc-U?usp=sharing)
 
-* **Description:** You stumbled upon one of Pandora’s mythical boxes. Would you be curious enough to open it and see what’s inside, or would you opt to give it to your team for analysis?
+**Description:** You stumbled upon one of Pandora’s mythical boxes. Would you be curious enough to open it and see what’s inside, or would you opt to give it to your team for analysis?
 
-* **Note:** This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.
+**Note:** This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.
 
-* **Category:** Pwn
+**Category:** Pwn
 
-* **Difficulty:** Easy
+**Difficulty:** Easy
 
 The challenge greeted us with a binary following a libc.so.6 and a ld-linux-x86-64.so.2.
 
@@ -623,10 +637,15 @@ Flag is: **HTB{r3turn_2_P4nd0r4?!}**
 
 ## Void
 
-* **Given file:** [Get it here!]()
-* **Description:** The room goes dark and all you can see is a damaged terminal. Hack into it to restore the power and find your way out.
-* **Category:** Binary Exploitation/Pwnable
-* **Difficulty:** Medium
+**Given file:** [Get it here!]()
+
+**Description:** The room goes dark and all you can see is a damaged terminal. Hack into it to restore the power and find your way out.
+
+**Note:** This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.
+
+**Category:** Binary Exploitation/Pwnable
+
+**Difficulty:** Medium
 
 The program is simple, buffer overflow occurs in function `vuln`, here is the pseudocode of `vuln`
 ```c
@@ -705,3 +724,6 @@ p.interactive()
 ```
 Flag is: **HTB{r3s0lv3_th3_d4rkn355}**
 
+## Original Posts
+
+- [From FazeCT](https://fazect.github.io/htb2023/)
