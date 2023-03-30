@@ -79,13 +79,13 @@ In this blog post, we will focus specifically on the web challenges in the Cyber
 
 ## Trapped Source
 
-**Description:** Intergalactic Ministry of Spies tested Pandora's movement and intelligence abilities. She found herself locked in a room with no apparent means of escape. Her task was to unlock the door and make her way out. Can you help her in opening the door?
+* **Description:** Intergalactic Ministry of Spies tested Pandora's movement and intelligence abilities. She found herself locked in a room with no apparent means of escape. Her task was to unlock the door and make her way out. Can you help her in opening the door?
 
-**Note:** This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.
+* **Note:** This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.
 
-**Category:** Web Exploitation
+* **Category:** Web Exploitation
 
-**Difficulty:** Very Easy
+* **Difficulty:** Very Easy
 
 <img src="web1.png" alt="linux" width="1000"/>
 
@@ -103,15 +103,15 @@ Flag is: **HTB{V13w_50urc3_c4n_b3_u53ful!!!}**
 
 ## Gunhead
 
-**Given file:**: [Get it here](https://github.com/hdthinh1012/htb-cyber-apocalypse-2023/blob/main/web_gunhead.zip)
+* **Given file:**: [Get it here](https://github.com/hdthinh1012/htb-cyber-apocalypse-2023/blob/main/web_gunhead.zip)
 
-**Description**: During Pandora's training, the Gunhead AI combat robot had been tampered with and was now malfunctioning, causing it to become uncontrollable. With the situation escalating rapidly, Pandora used her hacking skills to infiltrate the managing system of Gunhead and urgently needs to take it down.
+* **Description**: During Pandora's training, the Gunhead AI combat robot had been tampered with and was now malfunctioning, causing it to become uncontrollable. With the situation escalating rapidly, Pandora used her hacking skills to infiltrate the managing system of Gunhead and urgently needs to take it down.
 
-**Note:** This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.
+* **Note:** This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.
 
-**Category:** Web Exploitation
+* **Category:** Web Exploitation
 
-**Difficulty:** Very Easy
+* **Difficulty:** Very Easy
 
 Click the URL of the generated challenge server, we are greeted with the home page of the challenge - a pseudo management system page
 
@@ -151,15 +151,15 @@ Flag is: **HTB{4lw4y5_54n1t1z3_u53r_1nput!!!}**
 
 ## Drobots
 
-**Given file:** [Get it here!](https://drive.google.com/file/d/1NIgOlQWRawCdP_pQeTk0q2rQxFywnYI_/view?usp=sharing)
+* **Given file:** [Get it here!](https://drive.google.com/file/d/1NIgOlQWRawCdP_pQeTk0q2rQxFywnYI_/view?usp=sharing)
 
-**Description:** Pandora's latest mission as part of her reconnaissance training is to infiltrate the Drobots firm that was suspected of engaging in illegal activities. Can you help pandora with this task?
+* **Description:** Pandora's latest mission as part of her reconnaissance training is to infiltrate the Drobots firm that was suspected of engaging in illegal activities. Can you help pandora with this task?
 
-**Note:** This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.
+* **Note:** This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.
 
-**Category:** Web Exploitation
+* **Category:** Web Exploitation
 
-**Difficulty:** Very Easy
+* **Difficulty:** Very Easy
 
 We are given a website and a zip file containing the website's source.
 
@@ -175,15 +175,15 @@ Flag is: **HTB{p4r4m3t3r1z4t10n_1s_1mp0rt4nt!!!}**
 
 ## Passman
 
-**Given file:** [Get it here](https://github.com/hdthinh1012/htb-cyber-apocalypse-2023/blob/main/web_passman.zip)
+* **Given file:** [Get it here](https://github.com/hdthinh1012/htb-cyber-apocalypse-2023/blob/main/web_passman.zip)
 
-**Description**: Pandora discovered the presence of a mole within the ministry. To proceed with caution, she must obtain the master control password for the ministry, which is stored in a password manager. Can you hack into the password manager?
+* **Description**: Pandora discovered the presence of a mole within the ministry. To proceed with caution, she must obtain the master control password for the ministry, which is stored in a password manager. Can you hack into the password manager?
 
-**Note:** This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.
+* **Note:** This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.
 
-**Category:** Web Exploitation
+* **Category:** Web Exploitation
 
-**Difficulty:** Easy
+* **Difficulty:** Easy
 
 The challenge starts with a login screen.
 
@@ -243,15 +243,15 @@ Flag is: **HTB{1d0r5_4r3_s1mpl3_4nd_1mp4ctful!!}**
 
 ## Orbital
 
-**Given file:**: [Get it here](https://github.com/HoangREALER/cyberApocalypse2023/blob/main/web_orbital.zip)
+* **Given file:**: [Get it here](https://github.com/HoangREALER/cyberApocalypse2023/blob/main/web_orbital.zip)
 
-**Description**: In order to decipher the alien communication that held the key to their location, she needed access to a decoder with advanced capabilities - a decoder that only The Orbital firm possessed. Can you get your hands on the decoder?
+* **Description**: In order to decipher the alien communication that held the key to their location, she needed access to a decoder with advanced capabilities - a decoder that only The Orbital firm possessed. Can you get your hands on the decoder?
 
-**Note:** This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.
+* **Note:** This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.
 
-**Category:** Web Exploitation
+* **Category:** Web Exploitation
 
-**Difficulty:** Easy
+* **Difficulty:** Easy
 
 At first, we were given the login page which requires credentials. There's nothing else you can do at this point than reading given code.
 
@@ -387,18 +387,17 @@ Nice but we only got the hash. Initially, we was trying to use `hashcat` but sin
 
 Flag is: **HTB{T1m3_b4$3d_$ql1_4r3_fun!!!}**
 
-
 ## Didactic Octo Paddles
 
-**Given File**: [Get it here](https://github.com/HoangREALER/cyberApocalypse2023/blob/main/web_didactic_octo_paddle.zip)
+* **Given File**: [Get it here](https://github.com/HoangREALER/cyberApocalypse2023/blob/main/web_didactic_octo_paddle.zip)
 
-**Description**: You have been hired by the Intergalactic Ministry of Spies to retrieve a powerful relic that is believed to be hidden within the small paddle shop, by the river. You must hack into the paddle shop's system to obtain information on the relic's location. Your ultimate challenge is to shut down the parasitic alien vessels and save humanity from certain destruction by retrieving the relic hidden within the Didactic Octo Paddles shop.
+* **Description**: You have been hired by the Intergalactic Ministry of Spies to retrieve a powerful relic that is believed to be hidden within the small paddle shop, by the river. You must hack into the paddle shop's system to obtain information on the relic's location. Your ultimate challenge is to shut down the parasitic alien vessels and save humanity from certain destruction by retrieving the relic hidden within the Didactic Octo Paddles shop.
 
-**Note:** This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.
+* **Note:** This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.
 
-**Category:** Web Exploitation
+* **Category:** Web Exploitation
 
-**Difficulty:** Medium
+* **Difficulty:** Medium
 
 This time it gives us a login panel like the last time. Except this time it also has register function. Let's look at the main routes in the source code.
 
@@ -634,15 +633,15 @@ Flag is: **HTB{Pr3_C0MP111N6_W17H0U7_P4DD13804rD1N6_5K1115}**
 
 ## SpyBug
 
-**Given file:**: [Get it here](https://github.com/HoangREALER/cyberApocalypse2023/blob/main/web_spybug.zip)
+* **Given file:**: [Get it here](https://github.com/HoangREALER/cyberApocalypse2023/blob/main/web_spybug.zip)
 
-**Description**: As Pandora made her way through the ancient tombs, she received a message from her contact in the Intergalactic Ministry of Spies. They had intercepted a communication from a rival treasure hunter who was working for the alien species. The message contained information about a digital portal that leads to a software used for intercepting audio from the Ministry's communication channels. Can you hack into the portal and take down the aliens counter-spying operation?
+* **Description**: As Pandora made her way through the ancient tombs, she received a message from her contact in the Intergalactic Ministry of Spies. They had intercepted a communication from a rival treasure hunter who was working for the alien species. The message contained information about a digital portal that leads to a software used for intercepting audio from the Ministry's communication channels. Can you hack into the portal and take down the aliens counter-spying operation?
 
-**Note:** This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.
+* **Note:** This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.
 
-**Category:** Web Exploitation
+* **Category:** Web Exploitation
 
-**Difficulty:** Medium
+* **Difficulty:** Medium
 
 Right, another login panel with no reigster. But wait what's that ? Look at the source code closely, we will have 2 main routes: `routes/agents` and `routes/main`.
 
@@ -949,15 +948,15 @@ Flag is: **HTB{p01yg10t5_4nd_35p10n4g3}**
 
 ## TrapTrack
 
-**Given file:**: [Get it here](https://github.com/HoangREALER/cyberApocalypse2023/blob/main/web_traptrack.zip)
+* **Given file:**: [Get it here](https://github.com/HoangREALER/cyberApocalypse2023/blob/main/web_traptrack.zip)
 
-**Description**: The aliens have prepared several trap websites to spread their propaganda campaigns on the internet. Our intergalactic forensics team has recovered an artifact of their health check portal that keeps track of their trap websites. Can you take a look and see if you can infiltrate their system?
+* **Description**: The aliens have prepared several trap websites to spread their propaganda campaigns on the internet. Our intergalactic forensics team has recovered an artifact of their health check portal that keeps track of their trap websites. Can you take a look and see if you can infiltrate their system?
 
-**Note:** This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.
+* **Note:** This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.
 
-**Category:** Web Exploitation
+* **Category:** Web Exploitation
 
-**Difficulty:** Very Hard
+* **Difficulty:** Hard
 
 Right ... Another login panel, excepts, now the credential is harcoded in to the source code ε-(´・｀) ﾌ
 
