@@ -15,10 +15,20 @@
 &lt;/nav>
 &lt;/details>
 &lt;h2 id="persistence">Persistence&lt;/h2>
+&lt;ul>
+&lt;li>
 &lt;p>&lt;strong>Description:&lt;/strong> Thousands of years ago, sending a GET request to /flag would grant immense power and wisdom. Now it&amp;rsquo;s broken and usually returns random data, but keep trying, and you might get lucky&amp;hellip; Legends say it works once every 1000 tries.&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Note:&lt;/strong> This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Category:&lt;/strong> Miscellaneous&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Difficulty:&lt;/strong> Very Easy&lt;/p>
+&lt;/li>
+&lt;/ul>
 &lt;p>We are given a website to work with. Initially, connection to the website would result in &lt;strong>&amp;ldquo;404 Not Found&amp;rdquo;&lt;/strong>. I then went to read the descriptions, and from it, I got to know that we should send at least &lt;strong>1000 GET requests&lt;/strong> to &lt;code>/flag&lt;/code> to maybe get the flag.&lt;/p>
 &lt;p>I used this below Python script to automate the task.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">requests&lt;/span>
@@ -33,10 +43,20 @@
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>After a short wait, we got the flag.&lt;/p>
 &lt;p>Flag is: &lt;strong>HTB{y0u_h4v3_p0w3rfuL_sCr1pt1ng_ab1lit13S!}&lt;/strong>&lt;/p>
 &lt;h2 id="hijack">Hijack&lt;/h2>
+&lt;ul>
+&lt;li>
 &lt;p>&lt;strong>Description&lt;/strong>: The security of the alien spacecrafts did not prove very robust, and you have gained access to an interface allowing you to upload a new configuration to their ship&amp;rsquo;s Thermal Control System. Can you take advantage of the situation without raising any suspicion?&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Note:&lt;/strong> This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Category:&lt;/strong> Miscellaneous&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Difficulty:&lt;/strong> Easy&lt;/p>
+&lt;/li>
+&lt;/ul>
 &lt;p>Let&amp;rsquo;s try to connect to the challenge instance.&lt;/p>
 &lt;img src="hijack1.png" alt="Solved" width="1000"/>
 &lt;p>And let&amp;rsquo;s try to test out those options.&lt;/p>
@@ -60,11 +80,23 @@
 &lt;img src="hijack4.png" alt="Demo" width="1000"/>
 &lt;p>Flag is: &lt;strong>HTB{1s_1t_ju5t_m3_0r_iS_1t_g3tTing_h0t_1n_h3r3?}&lt;/strong>&lt;/p>
 &lt;h2 id="restricted">Restricted&lt;/h2>
+&lt;ul>
+&lt;li>
 &lt;p>&lt;strong>Given file:&lt;/strong> &lt;a href="https://drive.google.com/file/d/1bu8crqTZ-PEVLRN5Dk6OhVWADcZIoYw3/view?usp=sharing" target="_blank" rel="noopener">Get it here!&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Description:&lt;/strong> You &amp;rsquo;re still trying to collect information for your research on the alien relic. Scientists contained the memories of ancient egyptian mummies into small chips, where they could store and replay them at will. Many of these mummies were part of the battle against the aliens and you suspect their memories may reveal hints to the location of the relic and the underground vessels. You managed to get your hands on one of these chips but after you connected to it, any attempt to access its internal data proved futile. The software containing all these memories seems to be running on a restricted environment which limits your access. Can you find a way to escape the restricted environment?&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Note:&lt;/strong> This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Category:&lt;/strong> Miscellaneous&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Difficulty:&lt;/strong> Easy&lt;/p>
+&lt;/li>
+&lt;/ul>
 &lt;p>We are provided with a server and it&amp;rsquo;s source. From the source, we know that it is a &lt;strong>SSH server&lt;/strong>.&lt;/p>
 &lt;p>One thing particular about this server is that, if the username is &lt;strong>restricted&lt;/strong>, we will not need to provide a password to authenticate, but the user will be in restricted shell mode.&lt;/p>
 &lt;img src="misc1.png" alt="dnSpy" width="1000"/>
@@ -76,10 +108,20 @@
 &lt;img src="misc5.png" alt="dnSpy" width="1000"/>
 &lt;p>Flag is: &lt;strong>HTB{r35tr1ct10n5_4r3_p0w3r1355}&lt;/strong>&lt;/p>
 &lt;h2 id="remote-computation">Remote computation&lt;/h2>
+&lt;ul>
+&lt;li>
 &lt;p>&lt;strong>Description:&lt;/strong> The alien species use remote machines for all their computation needs. Pandora managed to hack into one, but broke its functionality in the process. Incoming computation requests need to be calculated and answered rapidly, in order to not alarm the aliens and ultimately pivot to other parts of their network. Not all requests are valid though, and appropriate error messages need to be sent depending on the type of error. Can you buy us some time by correctly responding to the next 500 requests?&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Note:&lt;/strong> This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Category:&lt;/strong> Miscellaneous&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Difficulty:&lt;/strong> Easy&lt;/p>
+&lt;/li>
+&lt;/ul>
 &lt;p>The program asked us to calculate 500 math expressions with the following conditions.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">Results
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">---
@@ -146,11 +188,23 @@
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;img src="flag.png" alt="The dumb round() of python" width="1000"/>
 &lt;p>Flag is: &lt;strong>HTB{d1v1d3_bY_Z3r0_3rr0r}&lt;/strong>&lt;/p>
 &lt;h2 id="janken">Janken&lt;/h2>
+&lt;ul>
+&lt;li>
 &lt;p>&lt;strong>Given file:&lt;/strong> &lt;a href="https://drive.google.com/file/d/1h0_q2AoNESOKYubO_wu8TCGAk_T9WVWC/view?usp=sharing" target="_blank" rel="noopener">Get it here!&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Description:&lt;/strong> As you approach an ancient tomb, you&amp;rsquo;re met with a wise guru who guards its entrance. In order to proceed, he challenges you to a game of Janken, a variation of rock paper scissors with a unique twist. But there&amp;rsquo;s a catch: you must win 100 rounds in a row to pass. Fail to do so, and you&amp;rsquo;ll be denied entry.&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Note:&lt;/strong> This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Category:&lt;/strong> Miscellaneous&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Difficulty:&lt;/strong> Easy&lt;/p>
+&lt;/li>
+&lt;/ul>
 &lt;p>There are 2 noticable functions called within &lt;code>main()&lt;/code> which is &lt;code>game()&lt;/code> and &lt;code>get_prize()&lt;/code>.&lt;/p>
 &lt;p>The &lt;code>get_prize()&lt;/code> function simply gives us the flag so we won&amp;rsquo;t go too deep into it. But in order for this function to be called. We have to win 100 games of rock, paper, scissors. A.K.A. the &lt;code>game()&lt;/code> function.&lt;/p>
 &lt;p>Having analyzed it, we got the following code:&lt;/p>
@@ -215,10 +269,20 @@
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;img src="flag2.png" alt="Logic bug go brrr" width="1000"/>
 &lt;p>Flag is: &lt;strong>HTB{r0ck_p4p3R_5tr5tr_l0g1c_buG}&lt;/strong>&lt;/p>
 &lt;h2 id="nehebkaus-trap">nehebkaus trap&lt;/h2>
+&lt;ul>
+&lt;li>
 &lt;p>&lt;strong>Description:&lt;/strong> In search of the ancient relic, you go looking for the Pharaoh&amp;rsquo;s tomb inside the pyramids. A giant granite block falls and blocks your exit, and the walls start closing in! You are trapped. Can you make it out alive and continue your quest?&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Note:&lt;/strong> This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Category:&lt;/strong> Miscellaneous&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Difficulty:&lt;/strong> Medium&lt;/p>
+&lt;/li>
+&lt;/ul>
 &lt;p>A classic pyjail challenge with no source code. It filtered out some special characters like &lt;code>' &amp;quot; _ . /&lt;/code> so we couldn&amp;rsquo;t directly execute any code.&lt;/p>
 &lt;p>One way to bypass this is to break down the string of code we want to execute into individual characters and concatenate them together using the &lt;em>+&lt;/em> operator.&lt;/p>
 &lt;p>We can bypass the &lt;code>'&lt;/code> and &lt;code>&amp;quot;&lt;/code> filter simply by using &lt;code>chr(hex-value-of-the-ascii-character)&lt;/code> to make the character we want.&lt;/p>
@@ -228,10 +292,20 @@
 &lt;img src="flag3.png" alt="FLAG" width="1000"/>
 &lt;p>Flag is: &lt;strong>HTB{y0u_d3f34t3d_th3_sn4k3_g0d!}&lt;/strong>&lt;/p>
 &lt;h2 id="the-chasms-crossing-conundrum">The Chasm&amp;rsquo;s Crossing Conundrum&lt;/h2>
+&lt;ul>
+&lt;li>
 &lt;p>&lt;strong>Description:&lt;/strong> As you and your trusty team of local pyramid experts stand at the precipice of the chasm, you catch a glimpse of the otherworldly relic glowing tantalizingly in the distance. But the final obstacle looms ahead - a narrow, unstable bridge that threatens to send you all tumbling into the depths below. It won&amp;rsquo;t hold all of you at once. Time is running out, and the charge on your flashlight is dwindling. The chasm seems to be closing in, as if it&amp;rsquo;s trying to swallow you whole. With each step, you feel the weight of the task at hand. The fate of your team, and perhaps even the world, rests on your shoulders. Can you summon the courage and skill to make it across in time, and claim the relic that lies just beyond your grasp?&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Note:&lt;/strong> This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Category:&lt;/strong> Miscellaneous&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Difficulty:&lt;/strong> Hard&lt;/p>
+&lt;/li>
+&lt;/ul>
 &lt;p>Classic bridge and torch problem. Here&amp;rsquo;s the instruction of the game.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">☠ ☠ ☠ ☠ ☠ ☠ ☠ ☠ ☠ ☠ ☠ ☠ ☠ ☠ ☠ ☠ ☠ ☠ ☠ ☠ ☠ ☠ ☠ ☠ ☠ ☠ ☠ ☠ ☠
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">☠ ☠
