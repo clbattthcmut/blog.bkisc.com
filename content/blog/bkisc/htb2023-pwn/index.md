@@ -541,7 +541,7 @@ Flag is: **HTB{3sc4p3_fr0m_4b0v3}**
 
 The challenge greeted us with a binary following a libc.so.6 and a ld-linux-x86-64.so.2.
 
-Decompile the binary using [IDA Pro](https://hex-rays.com/ida-pro/), we easily found the vulnerability lied within the *box()* fucntion.
+Decompile the binary using [IDA Pro](https://hex-rays.com/ida-pro/), we easily found the vulnerability lied within the `box()` fucntion.
 
 ```c
 size_t box()
@@ -586,11 +586,11 @@ size_t box()
 
 A classic buffer overflow exploitation. Howerver, this time there was no win function to print out the flag so we had to get a shell using ret2libc technique. The binary has no Canary nor PIE enable so we didn't need to leak anything other than the libc address.
 
-Using gdb we knew that the offset from our input buffer to the return address of *box()* is 56 bytes long.
+Using gdb we knew that the offset from our input buffer to the return address of `box()` is 56 bytes long.
 
-Our 1st ROP chain would be to leak the address of the *puts()* function from the GOT table using the *puts()* function itself.
+Our 1st ROP chain would be to leak the address of the `puts()` function from the GOT table using the `puts()` function itself.
 
-The 2nd ROP chain was used to call the *system()* function from the libc with the argument string being "/bin/sh". I didn't use [one_gadget](https://github.com/david942j/one_gadget) since none of the provided gadgets worked.
+The 2nd ROP chain was used to call the `system()` function from the libc with the argument string being "/bin/sh". I didn't use [one_gadget](https://github.com/david942j/one_gadget) since none of the provided gadgets worked.
 
 The other gadgets such as *pop rdi ; ret* you can get them using [ROPgadget](https://github.com/JonathanSalwan/ROPgadget) or [Ropper](https://github.com/sashs/Ropper)
 
@@ -647,7 +647,7 @@ Flag is: **HTB{r3turn_2_P4nd0r4?!}**
 
 * **Difficulty:** Medium
 
-The program is simple, buffer overflow occurs in function `vuln`, here is the pseudocode of `vuln`
+The program is simple, buffer overflow occurs in function `vuln`, here is the pseudocode of `vuln`.
 ```c
 ssize_t vuln()
 {
