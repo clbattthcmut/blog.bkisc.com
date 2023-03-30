@@ -1250,10 +1250,20 @@
 &lt;img src="flexing.png" alt="" width="1000"/>
 &lt;p>In this blog post, we will focus specifically on the web challenges in the Cyber Apocalypse 2023 competition. We will provide a detailed analysis of each challenge, along with our thought process and the techniques we used to solve them. Whether you&amp;rsquo;re an aspiring cybersecurity professional or a seasoned veteran, we hope you find our write-ups informative and helpful!&lt;/p>
 &lt;h2 id="trapped-source">Trapped Source&lt;/h2>
+&lt;ul>
+&lt;li>
 &lt;p>&lt;strong>Description:&lt;/strong> Intergalactic Ministry of Spies tested Pandora&amp;rsquo;s movement and intelligence abilities. She found herself locked in a room with no apparent means of escape. Her task was to unlock the door and make her way out. Can you help her in opening the door?&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Note:&lt;/strong> This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Category:&lt;/strong> Web Exploitation&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Difficulty:&lt;/strong> Very Easy&lt;/p>
+&lt;/li>
+&lt;/ul>
 &lt;img src="web1.png" alt="linux" width="1000"/>
 &lt;p>We are given a website that looks like it requires us to input the right password on a locker to process.&lt;/p>
 &lt;p>View page source to see if anything is given, and we can see the correct pin is &lt;strong>8291&lt;/strong>.&lt;/p>
@@ -1262,11 +1272,23 @@
 &lt;img src="web3.png" alt="linux" width="1000"/>
 &lt;p>Flag is: &lt;strong>HTB{V13w_50urc3_c4n_b3_u53ful!!!}&lt;/strong>&lt;/p>
 &lt;h2 id="gunhead">Gunhead&lt;/h2>
+&lt;ul>
+&lt;li>
 &lt;p>&lt;strong>Given file:&lt;/strong>: &lt;a href="https://github.com/hdthinh1012/htb-cyber-apocalypse-2023/blob/main/web_gunhead.zip" target="_blank" rel="noopener">Get it here&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Description&lt;/strong>: During Pandora&amp;rsquo;s training, the Gunhead AI combat robot had been tampered with and was now malfunctioning, causing it to become uncontrollable. With the situation escalating rapidly, Pandora used her hacking skills to infiltrate the managing system of Gunhead and urgently needs to take it down.&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Note:&lt;/strong> This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Category:&lt;/strong> Web Exploitation&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Difficulty:&lt;/strong> Very Easy&lt;/p>
+&lt;/li>
+&lt;/ul>
 &lt;p>Click the URL of the generated challenge server, we are greeted with the home page of the challenge - a pseudo management system page&lt;/p>
 &lt;img src="gunhead-1.png" alt="Home page" width="1000"/>
 &lt;p>There are 3 buttons on the right side of the info panel, we interest in the third one, which gives us the shell UI.&lt;/p>
@@ -1286,11 +1308,23 @@
 &lt;img src="gunhead-10.png" alt="Flag" width="1000"/>
 &lt;p>Flag is: &lt;strong>HTB{4lw4y5_54n1t1z3_u53r_1nput!!!}&lt;/strong>&lt;/p>
 &lt;h2 id="drobots">Drobots&lt;/h2>
+&lt;ul>
+&lt;li>
 &lt;p>&lt;strong>Given file:&lt;/strong> &lt;a href="https://drive.google.com/file/d/1NIgOlQWRawCdP_pQeTk0q2rQxFywnYI_/view?usp=sharing" target="_blank" rel="noopener">Get it here!&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Description:&lt;/strong> Pandora&amp;rsquo;s latest mission as part of her reconnaissance training is to infiltrate the Drobots firm that was suspected of engaging in illegal activities. Can you help pandora with this task?&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Note:&lt;/strong> This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Category:&lt;/strong> Web Exploitation&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Difficulty:&lt;/strong> Very Easy&lt;/p>
+&lt;/li>
+&lt;/ul>
 &lt;p>We are given a website and a zip file containing the website&amp;rsquo;s source.&lt;/p>
 &lt;img src="web4.png" alt="linux" width="1000"/>
 &lt;p>After a quick analyze on the source, I get to understand that either we have to use &lt;a href="https://portswigger.net/web-security/sql-injection#:~:text=SQL%20injection%20%28SQLi%29%20is%20a,not%20normally%20able%20to%20retrieve." target="_blank" rel="noopener">SQL Injection&lt;/a> or use a specific parameter to get to the next page.&lt;/p>
@@ -1298,11 +1332,23 @@
 &lt;img src="web5.png" alt="linux" width="1000"/>
 &lt;p>Flag is: &lt;strong>HTB{p4r4m3t3r1z4t10n_1s_1mp0rt4nt!!!}&lt;/strong>&lt;/p>
 &lt;h2 id="passman">Passman&lt;/h2>
+&lt;ul>
+&lt;li>
 &lt;p>&lt;strong>Given file:&lt;/strong> &lt;a href="https://github.com/hdthinh1012/htb-cyber-apocalypse-2023/blob/main/web_passman.zip" target="_blank" rel="noopener">Get it here&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Description&lt;/strong>: Pandora discovered the presence of a mole within the ministry. To proceed with caution, she must obtain the master control password for the ministry, which is stored in a password manager. Can you hack into the password manager?&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Note:&lt;/strong> This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Category:&lt;/strong> Web Exploitation&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Difficulty:&lt;/strong> Easy&lt;/p>
+&lt;/li>
+&lt;/ul>
 &lt;p>The challenge starts with a login screen.&lt;/p>
 &lt;img src="passman-1.png" alt="Login screen" width="1000"/>
 &lt;p>Looking at &lt;code>entrypoint.sh&lt;/code> in sources, it appears that an admin account is existed, but the password was random generated so we may have to find someway to get access to admin account later on to finish the challnege.&lt;/p>
@@ -1332,11 +1378,23 @@
 &lt;p>The flag contents said it was IDOR vulnerabilities, which is actually an incorrect authorization related problem.&lt;/p>
 &lt;p>Flag is: &lt;strong>HTB{1d0r5_4r3_s1mpl3_4nd_1mp4ctful!!}&lt;/strong>&lt;/p>
 &lt;h2 id="orbital">Orbital&lt;/h2>
+&lt;ul>
+&lt;li>
 &lt;p>&lt;strong>Given file:&lt;/strong>: &lt;a href="https://github.com/HoangREALER/cyberApocalypse2023/blob/main/web_orbital.zip" target="_blank" rel="noopener">Get it here&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Description&lt;/strong>: In order to decipher the alien communication that held the key to their location, she needed access to a decoder with advanced capabilities - a decoder that only The Orbital firm possessed. Can you get your hands on the decoder?&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Note:&lt;/strong> This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Category:&lt;/strong> Web Exploitation&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Difficulty:&lt;/strong> Easy&lt;/p>
+&lt;/li>
+&lt;/ul>
 &lt;p>At first, we were given the login page which requires credentials. There&amp;rsquo;s nothing else you can do at this point than reading given code.&lt;/p>
 &lt;p>&amp;lt;img src=&amp;ldquo;orbital1.png&amp;rdquo; alt=&amp;ldquo;Login page&amp;rdquo;/ width=&amp;ldquo;1000&amp;rdquo;/&amp;gt;&lt;/p>
 &lt;p>Upon given the code, you can find out that there is 1 user &amp;ldquo;admin&amp;rdquo; which is initiated at the time the docker is created. We can also see that, the application only has SELECT privilege on table &lt;code>orbital.users&lt;/code> and &lt;code>orbital.communications&lt;/code>.&lt;/p>
@@ -1446,11 +1504,23 @@
 &lt;img src="orbital5.png" alt="SQLMap demo" width="1000"/>
 &lt;p>Flag is: &lt;strong>HTB{T1m3_b4$3d_$ql1_4r3_fun!!!}&lt;/strong>&lt;/p>
 &lt;h2 id="didactic-octo-paddles">Didactic Octo Paddles&lt;/h2>
+&lt;ul>
+&lt;li>
 &lt;p>&lt;strong>Given File&lt;/strong>: &lt;a href="https://github.com/HoangREALER/cyberApocalypse2023/blob/main/web_didactic_octo_paddle.zip" target="_blank" rel="noopener">Get it here&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Description&lt;/strong>: You have been hired by the Intergalactic Ministry of Spies to retrieve a powerful relic that is believed to be hidden within the small paddle shop, by the river. You must hack into the paddle shop&amp;rsquo;s system to obtain information on the relic&amp;rsquo;s location. Your ultimate challenge is to shut down the parasitic alien vessels and save humanity from certain destruction by retrieving the relic hidden within the Didactic Octo Paddles shop.&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Note:&lt;/strong> This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Category:&lt;/strong> Web Exploitation&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Difficulty:&lt;/strong> Medium&lt;/p>
+&lt;/li>
+&lt;/ul>
 &lt;p>This time it gives us a login panel like the last time. Except this time it also has register function. Let&amp;rsquo;s look at the main routes in the source code.&lt;/p>
 &lt;p>&lt;code>challenge/routes/index.js&lt;/code>&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="line">&lt;span class="cl">&lt;span class="nx">module&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">exports&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">db&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">=&amp;gt;&lt;/span> &lt;span class="p">{&lt;/span>
@@ -1660,11 +1730,23 @@
 &lt;img src="dict3.png" alt="Admin panel demo" width="1000"/>
 &lt;p>Flag is: &lt;strong>HTB{Pr3_C0MP111N6_W17H0U7_P4DD13804rD1N6_5K1115}&lt;/strong>&lt;/p>
 &lt;h2 id="spybug">SpyBug&lt;/h2>
+&lt;ul>
+&lt;li>
 &lt;p>&lt;strong>Given file:&lt;/strong>: &lt;a href="https://github.com/HoangREALER/cyberApocalypse2023/blob/main/web_spybug.zip" target="_blank" rel="noopener">Get it here&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Description&lt;/strong>: As Pandora made her way through the ancient tombs, she received a message from her contact in the Intergalactic Ministry of Spies. They had intercepted a communication from a rival treasure hunter who was working for the alien species. The message contained information about a digital portal that leads to a software used for intercepting audio from the Ministry&amp;rsquo;s communication channels. Can you hack into the portal and take down the aliens counter-spying operation?&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Note:&lt;/strong> This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Category:&lt;/strong> Web Exploitation&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Difficulty:&lt;/strong> Medium&lt;/p>
+&lt;/li>
+&lt;/ul>
 &lt;p>Right, another login panel with no reigster. But wait what&amp;rsquo;s that ? Look at the source code closely, we will have 2 main routes: &lt;code>routes/agents&lt;/code> and &lt;code>routes/main&lt;/code>.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-js" data-lang="js">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">// agents.js
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">&lt;/span>&lt;span class="kr">const&lt;/span> &lt;span class="nx">fs&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">require&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;fs&amp;#34;&lt;/span>&lt;span class="p">);&lt;/span>
@@ -1919,11 +2001,23 @@ Use &lt;code>!{hostname}&lt;/code> obviously.&lt;/p>
 &lt;img src="spybug8.png" alt="Money" width="1000"/>
 &lt;p>Flag is: &lt;strong>HTB{p01yg10t5_4nd_35p10n4g3}&lt;/strong>&lt;/p>
 &lt;h2 id="traptrack">TrapTrack&lt;/h2>
+&lt;ul>
+&lt;li>
 &lt;p>&lt;strong>Given file:&lt;/strong>: &lt;a href="https://github.com/HoangREALER/cyberApocalypse2023/blob/main/web_traptrack.zip" target="_blank" rel="noopener">Get it here&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Description&lt;/strong>: The aliens have prepared several trap websites to spread their propaganda campaigns on the internet. Our intergalactic forensics team has recovered an artifact of their health check portal that keeps track of their trap websites. Can you take a look and see if you can infiltrate their system?&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Note:&lt;/strong> This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Category:&lt;/strong> Web Exploitation&lt;/p>
-&lt;p>&lt;strong>Difficulty:&lt;/strong> Very Hard&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Difficulty:&lt;/strong> Hard&lt;/p>
+&lt;/li>
+&lt;/ul>
 &lt;p>Right &amp;hellip; Another login panel, excepts, now the credential is harcoded in to the source code ε-(´・｀) ﾌ&lt;/p>
 &lt;img src="traptrack1.png" alt="creds" width="1000"/>
 &lt;img src="traptrack2.png" alt="creds" width="1000"/>
