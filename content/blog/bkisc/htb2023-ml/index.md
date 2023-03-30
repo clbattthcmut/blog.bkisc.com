@@ -64,11 +64,11 @@ slides:
 
 ## Reconfiguration
 
-**Given zip:** [Get it here!](https://drive.google.com/drive/folders/1Pao4nTUNcvjCksDgyRCFPk_UCYpHeDqw?usp=sharing)
+* **Given zip:** [Get it here!](https://drive.google.com/drive/folders/1Pao4nTUNcvjCksDgyRCFPk_UCYpHeDqw?usp=sharing)
 
-**Description:** As Pandora set out on her quest to find the ancient alien relic, she knew that the journey would be treacherous. The desert was vast and unforgiving, and the harsh conditions would put her cyborg body to the test. Pandora started by collecting data about the temperature and humidity levels in the desert. She used a scatter plot in an Orange Workspace file to visualize this data and identified the areas where the temperature was highest and the humidity was lowest. Using this information, she reconfigured her sensors to better withstand the extreme heat and conserve water. But, a second look at the data revealed something otherwordly, it seems that the relic's presence beneath the surface has scarred the land in a very peculiar way, can you see it?
+* **Description:** As Pandora set out on her quest to find the ancient alien relic, she knew that the journey would be treacherous. The desert was vast and unforgiving, and the harsh conditions would put her cyborg body to the test. Pandora started by collecting data about the temperature and humidity levels in the desert. She used a scatter plot in an Orange Workspace file to visualize this data and identified the areas where the temperature was highest and the humidity was lowest. Using this information, she reconfigured her sensors to better withstand the extreme heat and conserve water. But, a second look at the data revealed something otherwordly, it seems that the relic's presence beneath the surface has scarred the land in a very peculiar way, can you see it?
 
-**Category:** Machine Learning
+* **Category:** Machine Learning
 
 In this challenge, we embarked on a quest to find an ancient alien relic hidden beneath the desert, following the footsteps of the cyborg Pandora. The task involved analyzing temperature and humidity data and uncovering peculiar patterns that hinted at the relic's presence.
 
@@ -86,11 +86,11 @@ Flag is: **HTB{sc4tter_pl0ts_4_th3_w1n}**
 
 ## Mysterious Learnings
 
-**Given zip:** [Get it here!](https://drive.google.com/drive/folders/15cjTqJqcDseU9niakqU64AqI09QlKFcU?usp=share_link)
+* **Given zip:** [Get it here!](https://drive.google.com/drive/folders/15cjTqJqcDseU9niakqU64AqI09QlKFcU?usp=share_link)
 
-**Description:** One day the archeologist came across a strange metal plate covered in uncommon hieroglyphics. It looked like blueprints for some kind of alien technology. "What kind of magic is this?" He studied the plate more closely and was amazed by the advanced technology and incredible engineering they were using at a time like this. This could only lead him in him wanting to learn more...
+* **Description:** One day the archeologist came across a strange metal plate covered in uncommon hieroglyphics. It looked like blueprints for some kind of alien technology. "What kind of magic is this?" He studied the plate more closely and was amazed by the advanced technology and incredible engineering they were using at a time like this. This could only lead him in him wanting to learn more...
 
-**Category:** Machine Learning
+* **Category:** Machine Learning
 
 In this challenge, we were given an **H5** file containing a pre-trained machine learning model. Our task was to analyze the model and extract a hidden flag.
 
@@ -115,11 +115,11 @@ Flag is: **HTB{th3s3_4l13nS_4r3_s00000_b4s1c}**
 
 ## Last Hope
 
-**Given zip:** [Get it here!](https://drive.google.com/drive/folders/19s7BGJ3ixtv732sDWy6VUshNhLRGC3Yn?usp=share_link)
+* **Given zip:** [Get it here!](https://drive.google.com/drive/folders/19s7BGJ3ixtv732sDWy6VUshNhLRGC3Yn?usp=share_link)
 
-**Description:** The quantum data came back and analyzed. DISASTER! Our best scientists all agree: Unfortunately our species and our whole culture are about to be eliminated. Due to abnormal behavior of the black hole's singularity our planet is about to get swallowed. Project "ONESHOT" is our last hope...
+* **Description:** The quantum data came back and analyzed. DISASTER! Our best scientists all agree: Unfortunately our species and our whole culture are about to be eliminated. Due to abnormal behavior of the black hole's singularity our planet is about to get swallowed. Project "ONESHOT" is our last hope...
 
-**Category:** Machine Learning
+* **Category:** Machine Learning
 
 In this challenge, we are given a file containing **OpenQASM 2.0** code, which represents a quantum circuit. Our goal is to execute the circuit and extract the flag, which is encoded in the most frequent bitstring resulting from the measurement of the quantum circuit.
 
@@ -192,11 +192,11 @@ Flag is: **HTB{a_gl1mps3_0f_h0p3}**
 
 ## On The Rescue
 
-**Given zip:** [Get it here!](https://drive.google.com/drive/folders/13cI2b3Slewv9u7y8ZCIi4Vjfb-HL4_Ye?usp=share_link)
+* **Given zip:** [Get it here!](https://drive.google.com/drive/folders/13cI2b3Slewv9u7y8ZCIi4Vjfb-HL4_Ye?usp=share_link)
 
-**Description:** The archeologist finally found the ancient vessel. Utilizing the alien technology he managed to breach in the central computational unit and learn the reason behind their visit on Earth millions of years ago. A message appeared. It was all a desperate plan for the survival of their kind.
+* **Description:** The archeologist finally found the ancient vessel. Utilizing the alien technology he managed to breach in the central computational unit and learn the reason behind their visit on Earth millions of years ago. A message appeared. It was all a desperate plan for the survival of their kind.
 
-**Category:** Machine Learning
+* **Category:** Machine Learning
 
 The challenge presented a simple **Bigram Language Model**, which is a basic character-level language model that predicts the next character based on the current character. We were given the model's architecture **architecture.py** and a pre-trained model file **bigram_model.pt**. The objective was to generate a text that could help us understand the aliens' message.The solve script is provided below:
 
