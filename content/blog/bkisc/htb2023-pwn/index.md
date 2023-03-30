@@ -29,7 +29,7 @@ tags:
   - ctf
   - writeup
   - pwn
-  - htb
+  - htb-2023
 
 featured: false
 
