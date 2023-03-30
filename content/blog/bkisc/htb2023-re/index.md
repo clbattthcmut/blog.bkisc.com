@@ -65,13 +65,13 @@ slides:
 
 ## Shattered Tablet
 
-**Given file:** [Get it here!](https://drive.google.com/file/d/1KbW9wdpO7sfwq1nUaqMTmmriVMkXzpdq/view?usp=sharing)
+* **Given file:** [Get it here!](https://drive.google.com/file/d/1KbW9wdpO7sfwq1nUaqMTmmriVMkXzpdq/view?usp=sharing)
 
-**Description:** Deep in an ancient tomb, you've discovered a stone tablet with secret information on the locations of other relics. However, while dodging a poison dart, it slipped from your hands and shattered into hundreds of pieces. Can you reassemble it and read the clues?
+* **Description:** Deep in an ancient tomb, you've discovered a stone tablet with secret information on the locations of other relics. However, while dodging a poison dart, it slipped from your hands and shattered into hundreds of pieces. Can you reassemble it and read the clues?
 
-**Category:** Reverse Engineering
+* **Category:** Reverse Engineering
 
-**Difficulty:** Very Easy
+* **Difficulty:** Very Easy
 
 Reverse Engineering category greets us with a binary. I used [IDA Pro](https://hex-rays.com/ida-pro/) to decompile the binary.
 
@@ -98,13 +98,13 @@ Flag is: **HTB{br0k3n_4p4rt,n3ver_t0_b3_r3p41r3d}**
 
 ## Needle in a Haystack
 
-**Given file:** [Get it here!](https://drive.google.com/file/d/1f9daRLUAowb2GXMbgTaZWzu8v7aEqkWz/view?usp=sharing)
+* **Given file:** [Get it here!](https://drive.google.com/file/d/1f9daRLUAowb2GXMbgTaZWzu8v7aEqkWz/view?usp=sharing)
 
-**Description:** You've obtained an ancient alien Datasphere, containing categorized and sorted recordings of every word in the forgotten intergalactic common language. Hidden within it is the password to a tomb, but the sphere has been worn with age and the search function no longer works, only playing random recordings. You don't have time to search through every recording - can you crack it open and extract the answer?
+* **Description:** You've obtained an ancient alien Datasphere, containing categorized and sorted recordings of every word in the forgotten intergalactic common language. Hidden within it is the password to a tomb, but the sphere has been worn with age and the search function no longer works, only playing random recordings. You don't have time to search through every recording - can you crack it open and extract the answer?
 
-**Category:** Reverse Engineering
+* **Category:** Reverse Engineering
 
-**Difficulty:** Very Easy
+* **Difficulty:** Very Easy
 
 We are given an another binary. Again, load the binary using [IDA Pro](https://hex-rays.com/ida-pro/).
 
@@ -116,13 +116,13 @@ Flag is: **HTB{d1v1ng_1nt0_th3_d4tab4nk5}**
 
 ## She Shells C Shells
 
-**Given file:** [Get it here!](https://drive.google.com/file/d/1oYAAIEwVZ2zmv7vTyZVhfCMPLxoinSKK/view?usp=sharing)
+* **Given file:** [Get it here!](https://drive.google.com/file/d/1oYAAIEwVZ2zmv7vTyZVhfCMPLxoinSKK/view?usp=sharing)
 
-**Description:** You've arrived in the Galactic Archive, sure that a critical clue is hidden here. You wait anxiously for a terminal to boot up, hiding in the shadows from the guards hunting for you. Unfortunately, it looks like you'll need a password to get what you need without setting off the alarms...
+* **Description:** You've arrived in the Galactic Archive, sure that a critical clue is hidden here. You wait anxiously for a terminal to boot up, hiding in the shadows from the guards hunting for you. Unfortunately, it looks like you'll need a password to get what you need without setting off the alarms...
 
-**Category:** Reverse Engineering
+* **Category:** Reverse Engineering
 
-**Difficulty:** Very Easy
+* **Difficulty:** Very Easy
 
 We get another binary, and it's time to use [IDA Pro](https://hex-rays.com/ida-pro/) to decompile it.
 
@@ -178,15 +178,15 @@ Flag is: **HTB{cr4ck1ng_0p3n_sh3ll5_by_th3_s34_sh0r3}**
 
 ## Hunting License
 
-**Given file:** [Get it here!](https://drive.google.com/file/d/1xResSHQcRL1wdSw3t3u-TuzGj839Gh0m/view?usp=sharing)
+* **Given file:** [Get it here!](https://drive.google.com/file/d/1xResSHQcRL1wdSw3t3u-TuzGj839Gh0m/view?usp=sharing)
 
-**Description:** STOP! Adventurer, have you got an up to date relic hunting license? If you don't, you'll need to take the exam again before you'll be allowed passage into the spacelanes!
+* **Description:** STOP! Adventurer, have you got an up to date relic hunting license? If you don't, you'll need to take the exam again before you'll be allowed passage into the spacelanes!
 
-**Note:** This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.
+* **Note:** This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.
 
-**Category:** Reverse Engineering
+* **Category:** Reverse Engineering
 
-**Difficulty:** Easy
+* **Difficulty:** Easy
 
 We are given a binary file, together with a netcat server.
 
@@ -223,13 +223,13 @@ Flag is: **HTB{l1c3ns3_4cquir3d-hunt1ng_t1m3!}**
 
 ## Cave System
 
-**Given file:** [Get it here!](https://drive.google.com/file/d/10IGptbNTTSxzx-Mv0Elgt2Vx4bVKjHCZ/view?usp=sharing)
+* **Given file:** [Get it here!](https://drive.google.com/file/d/10IGptbNTTSxzx-Mv0Elgt2Vx4bVKjHCZ/view?usp=sharing)
 
-**Description:** Deep inside a cave system, 500 feet below the surface, you find yourself stranded with supplies running low. Ahead of you sprawls a network of tunnels, branching off and looping back on themselves. You don't have time to explore them all - you'll need to program your cave-crawling robot to find the way out...
+* **Description:** Deep inside a cave system, 500 feet below the surface, you find yourself stranded with supplies running low. Ahead of you sprawls a network of tunnels, branching off and looping back on themselves. You don't have time to explore them all - you'll need to program your cave-crawling robot to find the way out...
 
-**Category:** Reverse Engineering
+* **Category:** Reverse Engineering
 
-**Difficulty:** Easy
+* **Difficulty:** Easy
 
 We are given a binary once again. Using [IDA Pro](https://hex-rays.com/ida-pro/), for this type of challenge, we should consider using [angr](https://angr.io/) or [z3 solver](https://pypi.org/project/z3-solver/). Here I choose to use [angr](https://angr.io/)
 
@@ -252,13 +252,13 @@ Flag is: **HTB{H0p3_u_d1dn't_g3t_th15_by_h4nd,1t5_4_pr3tty_l0ng_fl4g!!!}**
 
 ## Alien Saboteur
 
-**Given file:** [Get it here!](https://drive.google.com/file/d/1LFinP3KsutSSt46WExL_TekEBFv_GOmR/view?usp=sharing)
+* **Given file:** [Get it here!](https://drive.google.com/file/d/1LFinP3KsutSSt46WExL_TekEBFv_GOmR/view?usp=sharing)
 
-**Description:** You finally manage to make it into the main computer of the vessel, it's time to get this over with. You try to shutdown the vessel, however a couple of access codes unknown to you are needed. You try to figure them out, but the computer start speaking some weird language, it seems like gibberish...
+* **Description:** You finally manage to make it into the main computer of the vessel, it's time to get this over with. You try to shutdown the vessel, however a couple of access codes unknown to you are needed. You try to figure them out, but the computer start speaking some weird language, it seems like gibberish...
 
-**Category:** Reverse Engineering
+* **Category:** Reverse Engineering
 
-**Difficulty:** Medium
+* **Difficulty:** Medium
 
 We get a binary with a text file with no format. Analyze the binary using [IDA Pro](https://hex-rays.com/ida-pro/), from the function "vm_create", the text file is contained in ***(v3 + 18)** and being executed like a normal binary. 
 
@@ -646,11 +646,11 @@ Flag is: **HTB{5w1rl_4r0und_7h3_4l13n_l4ngu4g3}**
 
 ## Somewhat Linear
 
-**Given zip:** [Get it here!](https://drive.google.com/drive/folders/1_ExekBgLRfE1J9aMB1QReaAHuX6_SHHZ?usp=share_link)
+* **Given zip:** [Get it here!](https://drive.google.com/drive/folders/1_ExekBgLRfE1J9aMB1QReaAHuX6_SHHZ?usp=share_link)
 
-**Category:** Reverse Engineering
+* **Category:** Reverse Engineering
 
-**Difficulty:** Hard
+* **Difficulty:** Hard
 
 In this challenge, we are provided with **input_generator.py**, **impulse_response.wav**, and **shuffled_flag.wav** files. The objective is to reverse the process implemented in **input_generator.py** to recover the original flag message.
 
@@ -694,11 +694,11 @@ Flag is: **HTB{th1s_w@s_l0w_eff0rt}**
 
 ## Analogue Signal Processing v2
 
-**Given zip:** [Get it here!](https://drive.google.com/drive/folders/1HJWdy9Z56bPPIs0nPko2R1KUX7dCCUyj?usp=share_link)
+* **Given zip:** [Get it here!](https://drive.google.com/drive/folders/1HJWdy9Z56bPPIs0nPko2R1KUX7dCCUyj?usp=share_link)
 
-**Category:** Reverse Engineering
+* **Category:** Reverse Engineering
 
-**Difficulty:** Insane
+* **Difficulty:** Insane
 
 In this challenge, the encoding process is implemented in **input_generator.py**. 
 
