@@ -67,13 +67,13 @@ slides:
 
 ## Persistence
 
-**Description:** Thousands of years ago, sending a GET request to /flag would grant immense power and wisdom. Now it's broken and usually returns random data, but keep trying, and you might get lucky... Legends say it works once every 1000 tries.
+* **Description:** Thousands of years ago, sending a GET request to /flag would grant immense power and wisdom. Now it's broken and usually returns random data, but keep trying, and you might get lucky... Legends say it works once every 1000 tries.
 
-**Note:** This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.
+* **Note:** This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.
 
-**Category:** Miscellaneous
+* **Category:** Miscellaneous
 
-**Difficulty:** Very Easy
+* **Difficulty:** Very Easy
 
 We are given a website to work with. Initially, connection to the website would result in **"404 Not Found"**. I then went to read the descriptions, and from it, I got to know that we should send at least **1000 GET requests** to `/flag` to maybe get the flag.
 
@@ -97,13 +97,13 @@ Flag is: **HTB{y0u_h4v3_p0w3rfuL_sCr1pt1ng_ab1lit13S!}**
 
 ## Hijack
 
-**Description**: The security of the alien spacecrafts did not prove very robust, and you have gained access to an interface allowing you to upload a new configuration to their ship's Thermal Control System. Can you take advantage of the situation without raising any suspicion?
+* **Description**: The security of the alien spacecrafts did not prove very robust, and you have gained access to an interface allowing you to upload a new configuration to their ship's Thermal Control System. Can you take advantage of the situation without raising any suspicion?
 
-**Note:** This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.
+* **Note:** This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.
 
-**Category:** Miscellaneous
+* **Category:** Miscellaneous
 
-**Difficulty:** Easy
+* **Difficulty:** Easy
 
 Let's try to connect to the challenge instance.
 
@@ -146,15 +146,15 @@ Flag is: **HTB{1s_1t_ju5t_m3_0r_iS_1t_g3tTing_h0t_1n_h3r3?}**
 
 ## Restricted
 
-**Given file:** [Get it here!](https://drive.google.com/file/d/1bu8crqTZ-PEVLRN5Dk6OhVWADcZIoYw3/view?usp=sharing)
+* **Given file:** [Get it here!](https://drive.google.com/file/d/1bu8crqTZ-PEVLRN5Dk6OhVWADcZIoYw3/view?usp=sharing)
 
-**Description:** You 're still trying to collect information for your research on the alien relic. Scientists contained the memories of ancient egyptian mummies into small chips, where they could store and replay them at will. Many of these mummies were part of the battle against the aliens and you suspect their memories may reveal hints to the location of the relic and the underground vessels. You managed to get your hands on one of these chips but after you connected to it, any attempt to access its internal data proved futile. The software containing all these memories seems to be running on a restricted environment which limits your access. Can you find a way to escape the restricted environment?
+* **Description:** You 're still trying to collect information for your research on the alien relic. Scientists contained the memories of ancient egyptian mummies into small chips, where they could store and replay them at will. Many of these mummies were part of the battle against the aliens and you suspect their memories may reveal hints to the location of the relic and the underground vessels. You managed to get your hands on one of these chips but after you connected to it, any attempt to access its internal data proved futile. The software containing all these memories seems to be running on a restricted environment which limits your access. Can you find a way to escape the restricted environment?
 
-**Note:** This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.
+* **Note:** This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.
 
-**Category:** Miscellaneous
+* **Category:** Miscellaneous
 
-**Difficulty:** Easy
+* **Difficulty:** Easy
 
 We are provided with a server and it's source. From the source, we know that it is a **SSH server**. 
 
@@ -178,13 +178,13 @@ Flag is: **HTB{r35tr1ct10n5_4r3_p0w3r1355}**
 
 ## Remote computation
 
-**Description:** The alien species use remote machines for all their computation needs. Pandora managed to hack into one, but broke its functionality in the process. Incoming computation requests need to be calculated and answered rapidly, in order to not alarm the aliens and ultimately pivot to other parts of their network. Not all requests are valid though, and appropriate error messages need to be sent depending on the type of error. Can you buy us some time by correctly responding to the next 500 requests?
+* **Description:** The alien species use remote machines for all their computation needs. Pandora managed to hack into one, but broke its functionality in the process. Incoming computation requests need to be calculated and answered rapidly, in order to not alarm the aliens and ultimately pivot to other parts of their network. Not all requests are valid though, and appropriate error messages need to be sent depending on the type of error. Can you buy us some time by correctly responding to the next 500 requests?
 
-**Note:** This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.
+* **Note:** This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.
 
-**Category:** Miscellaneous
+* **Category:** Miscellaneous
 
-**Difficulty:** Easy
+* **Difficulty:** Easy
 
 The program asked us to calculate 500 math expressions with the following conditions.
 
@@ -264,15 +264,15 @@ Flag is: **HTB{d1v1d3_bY_Z3r0_3rr0r}**
 
 ## Janken
 
-**Given file:** [Get it here!](https://drive.google.com/file/d/1h0_q2AoNESOKYubO_wu8TCGAk_T9WVWC/view?usp=sharing)
+* **Given file:** [Get it here!](https://drive.google.com/file/d/1h0_q2AoNESOKYubO_wu8TCGAk_T9WVWC/view?usp=sharing)
 
-**Description:** As you approach an ancient tomb, you're met with a wise guru who guards its entrance. In order to proceed, he challenges you to a game of Janken, a variation of rock paper scissors with a unique twist. But there's a catch: you must win 100 rounds in a row to pass. Fail to do so, and you'll be denied entry.
+* **Description:** As you approach an ancient tomb, you're met with a wise guru who guards its entrance. In order to proceed, he challenges you to a game of Janken, a variation of rock paper scissors with a unique twist. But there's a catch: you must win 100 rounds in a row to pass. Fail to do so, and you'll be denied entry.
 
-**Note:** This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.
+* **Note:** This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.
 
-**Category:** Miscellaneous
+* **Category:** Miscellaneous
 
-**Difficulty:** Easy
+* **Difficulty:** Easy
 
 There are 2 noticable functions called within `main()` which is `game()` and `get_prize()`.
 
@@ -353,13 +353,13 @@ Flag is: **HTB{r0ck_p4p3R_5tr5tr_l0g1c_buG}**
 
 ## nehebkaus trap
 
-**Description:** In search of the ancient relic, you go looking for the Pharaoh's tomb inside the pyramids. A giant granite block falls and blocks your exit, and the walls start closing in! You are trapped. Can you make it out alive and continue your quest?
+* **Description:** In search of the ancient relic, you go looking for the Pharaoh's tomb inside the pyramids. A giant granite block falls and blocks your exit, and the walls start closing in! You are trapped. Can you make it out alive and continue your quest?
 
-**Note:** This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.
+* **Note:** This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.
 
-**Category:** Miscellaneous
+* **Category:** Miscellaneous
 
-**Difficulty:** Medium
+* **Difficulty:** Medium
 
 A classic pyjail challenge with no source code. It filtered out some special characters like `' " _ . /` so we couldn't directly execute any code.
 
@@ -381,13 +381,13 @@ Flag is: **HTB{y0u_d3f34t3d_th3_sn4k3_g0d!}**
 
 ## The Chasm's Crossing Conundrum
 
-**Description:** As you and your trusty team of local pyramid experts stand at the precipice of the chasm, you catch a glimpse of the otherworldly relic glowing tantalizingly in the distance. But the final obstacle looms ahead - a narrow, unstable bridge that threatens to send you all tumbling into the depths below. It won't hold all of you at once. Time is running out, and the charge on your flashlight is dwindling. The chasm seems to be closing in, as if it's trying to swallow you whole. With each step, you feel the weight of the task at hand. The fate of your team, and perhaps even the world, rests on your shoulders. Can you summon the courage and skill to make it across in time, and claim the relic that lies just beyond your grasp?
+* **Description:** As you and your trusty team of local pyramid experts stand at the precipice of the chasm, you catch a glimpse of the otherworldly relic glowing tantalizingly in the distance. But the final obstacle looms ahead - a narrow, unstable bridge that threatens to send you all tumbling into the depths below. It won't hold all of you at once. Time is running out, and the charge on your flashlight is dwindling. The chasm seems to be closing in, as if it's trying to swallow you whole. With each step, you feel the weight of the task at hand. The fate of your team, and perhaps even the world, rests on your shoulders. Can you summon the courage and skill to make it across in time, and claim the relic that lies just beyond your grasp?
 
-**Note:** This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.
+* **Note:** This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.
 
-**Category:** Miscellaneous
+* **Category:** Miscellaneous
 
-**Difficulty:** Hard
+* **Difficulty:** Hard
 
 Classic bridge and torch problem. Here's the instruction of the game.
 
