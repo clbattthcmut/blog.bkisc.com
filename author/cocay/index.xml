@@ -458,7 +458,7 @@
 &lt;/li>
 &lt;/ul>
 &lt;p>The challenge greeted us with a binary following a libc.so.6 and a ld-linux-x86-64.so.2.&lt;/p>
-&lt;p>Decompile the binary using &lt;a href="https://hex-rays.com/ida-pro/" target="_blank" rel="noopener">IDA Pro&lt;/a>, we easily found the vulnerability lied within the &lt;em>box()&lt;/em> fucntion.&lt;/p>
+&lt;p>Decompile the binary using &lt;a href="https://hex-rays.com/ida-pro/" target="_blank" rel="noopener">IDA Pro&lt;/a>, we easily found the vulnerability lied within the &lt;code>box()&lt;/code> fucntion.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-c" data-lang="c">&lt;span class="line">&lt;span class="cl">&lt;span class="kt">size_t&lt;/span> &lt;span class="nf">box&lt;/span>&lt;span class="p">()&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kt">char&lt;/span> &lt;span class="n">s&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">8&lt;/span>&lt;span class="p">];&lt;/span> &lt;span class="c1">// [rsp+0h] [rbp-30h] BYREF
@@ -498,9 +498,9 @@
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">_bss_start&lt;/span>&lt;span class="p">);&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>A classic buffer overflow exploitation. Howerver, this time there was no win function to print out the flag so we had to get a shell using ret2libc technique. The binary has no Canary nor PIE enable so we didn&amp;rsquo;t need to leak anything other than the libc address.&lt;/p>
-&lt;p>Using gdb we knew that the offset from our input buffer to the return address of &lt;em>box()&lt;/em> is 56 bytes long.&lt;/p>
-&lt;p>Our 1st ROP chain would be to leak the address of the &lt;em>puts()&lt;/em> function from the GOT table using the &lt;em>puts()&lt;/em> function itself.&lt;/p>
-&lt;p>The 2nd ROP chain was used to call the &lt;em>system()&lt;/em> function from the libc with the argument string being &amp;ldquo;/bin/sh&amp;rdquo;. I didn&amp;rsquo;t use &lt;a href="https://github.com/david942j/one_gadget" target="_blank" rel="noopener">one_gadget&lt;/a> since none of the provided gadgets worked.&lt;/p>
+&lt;p>Using gdb we knew that the offset from our input buffer to the return address of &lt;code>box()&lt;/code> is 56 bytes long.&lt;/p>
+&lt;p>Our 1st ROP chain would be to leak the address of the &lt;code>puts()&lt;/code> function from the GOT table using the &lt;code>puts()&lt;/code> function itself.&lt;/p>
+&lt;p>The 2nd ROP chain was used to call the &lt;code>system()&lt;/code> function from the libc with the argument string being &amp;ldquo;/bin/sh&amp;rdquo;. I didn&amp;rsquo;t use &lt;a href="https://github.com/david942j/one_gadget" target="_blank" rel="noopener">one_gadget&lt;/a> since none of the provided gadgets worked.&lt;/p>
 &lt;p>The other gadgets such as &lt;em>pop rdi ; ret&lt;/em> you can get them using &lt;a href="https://github.com/JonathanSalwan/ROPgadget" target="_blank" rel="noopener">ROPgadget&lt;/a> or &lt;a href="https://github.com/sashs/Ropper" target="_blank" rel="noopener">Ropper&lt;/a>&lt;/p>
 &lt;p>Here&amp;rsquo;s the exploit script.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-py" data-lang="py">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">pwn&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="o">*&lt;/span>
@@ -555,7 +555,7 @@
 &lt;p>&lt;strong>Difficulty:&lt;/strong> Medium&lt;/p>
 &lt;/li>
 &lt;/ul>
-&lt;p>The program is simple, buffer overflow occurs in function &lt;code>vuln&lt;/code>, here is the pseudocode of &lt;code>vuln&lt;/code>&lt;/p>
+&lt;p>The program is simple, buffer overflow occurs in function &lt;code>vuln&lt;/code>, here is the pseudocode of &lt;code>vuln&lt;/code>.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-c" data-lang="c">&lt;span class="line">&lt;span class="cl">&lt;span class="kt">ssize_t&lt;/span> &lt;span class="nf">vuln&lt;/span>&lt;span class="p">()&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">{&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kt">char&lt;/span> &lt;span class="n">buf&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mi">64&lt;/span>&lt;span class="p">];&lt;/span> &lt;span class="c1">// [rsp+0h] [rbp-40h] BYREF
