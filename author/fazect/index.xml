@@ -1892,27 +1892,24 @@ Use &lt;code>!{hostname}&lt;/code> obviously.&lt;/p>
 &lt;li>&lt;a href="#labyrinth">Labyrinth&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#pandoras-box">Pandora&amp;rsquo;s Box&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#void">Void&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#original-posts">Original Posts&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/nav>
 &lt;/details>
 &lt;h2 id="initialise-connection">Initialise Connection&lt;/h2>
-&lt;ul>
-&lt;li>&lt;strong>Description:&lt;/strong> In order to proceed, we need to start with the basics. Start an instance, connect to it via $ nc e.g. nc 127.0.0.1 1337 and send &amp;ldquo;1&amp;rdquo; to get the flag.&lt;/li>
-&lt;li>&lt;strong>Note:&lt;/strong> This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.&lt;/li>
-&lt;li>&lt;strong>Category:&lt;/strong> Binary Exploitation/Pwnable&lt;/li>
-&lt;li>&lt;strong>Difficulty:&lt;/strong> Very Easy&lt;/li>
-&lt;/ul>
+&lt;p>&lt;strong>Description:&lt;/strong> In order to proceed, we need to start with the basics. Start an instance, connect to it via $ nc e.g. nc 127.0.0.1 1337 and send &amp;ldquo;1&amp;rdquo; to get the flag.&lt;/p>
+&lt;p>&lt;strong>Note:&lt;/strong> This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.&lt;/p>
+&lt;p>&lt;strong>Category:&lt;/strong> Binary Exploitation/Pwnable&lt;/p>
+&lt;p>&lt;strong>Difficulty:&lt;/strong> Very Easy&lt;/p>
 &lt;p>Just a sanity check challenge, do the same thing that is being stated in the description will grant you the flag.&lt;/p>
 &lt;img src="pwn1.png" alt="linux" width="1000"/>
 &lt;p>Flag is: &lt;strong>HTB{g3t_r34dy_f0r_s0m3_pwn}&lt;/strong>&lt;/p>
 &lt;h2 id="questionnaire">Questionnaire&lt;/h2>
-&lt;ul>
-&lt;li>&lt;strong>Given file:&lt;/strong> &lt;a href="https://drive.google.com/file/d/1m_j9ApZJusGOgEvGl-32JRbFyk2fpPkH/view?usp=sharing" target="_blank" rel="noopener">Get it here!&lt;/a>&lt;/li>
-&lt;li>&lt;strong>Description:&lt;/strong> It&amp;rsquo;s time to learn some things about binaries and basic c. Connect to a remote server and answer some questions to get the flag.&lt;/li>
-&lt;li>&lt;strong>Note:&lt;/strong> This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.&lt;/li>
-&lt;li>&lt;strong>Category:&lt;/strong> Binary Exploitation/Pwnable&lt;/li>
-&lt;li>&lt;strong>Difficulty:&lt;/strong> Very Easy&lt;/li>
-&lt;/ul>
+&lt;p>&lt;strong>Given file:&lt;/strong> &lt;a href="https://drive.google.com/file/d/1m_j9ApZJusGOgEvGl-32JRbFyk2fpPkH/view?usp=sharing" target="_blank" rel="noopener">Get it here!&lt;/a>&lt;/p>
+&lt;p>&lt;strong>Description:&lt;/strong> It&amp;rsquo;s time to learn some things about binaries and basic c. Connect to a remote server and answer some questions to get the flag.&lt;/p>
+&lt;p>&lt;strong>Note:&lt;/strong> This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.&lt;/p>
+&lt;p>&lt;strong>Category:&lt;/strong> Binary Exploitation/Pwnable&lt;/p>
+&lt;p>&lt;strong>Difficulty:&lt;/strong> Very Easy&lt;/p>
 &lt;p>We are given a binary, a C file and a netcat server to answer some questions.&lt;/p>
 &lt;p>From the netcat, we are given some informations about the binary that we will going to work with.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">When compiling C/C++ source code in Linux, an ELF (Executable and Linkable Format) file is created.
@@ -2063,13 +2060,11 @@ Use &lt;code>!{hostname}&lt;/code> obviously.&lt;/p>
 &lt;img src="pwn12.png" alt="linux" width="1000"/>
 &lt;p>Flag is: &lt;strong>HTB{th30ry_bef0r3_4cti0n}&lt;/strong>&lt;/p>
 &lt;h2 id="getting-started">Getting Started&lt;/h2>
-&lt;ul>
-&lt;li>&lt;strong>Given file:&lt;/strong> &lt;a href="https://drive.google.com/file/d/1WbbUvsAAZ--CfdrHmOggCGuLa8q_rzuV/view?usp=sharing" target="_blank" rel="noopener">Get it here!&lt;/a>&lt;/li>
-&lt;li>&lt;strong>Description:&lt;/strong> Get ready for the last guided challenge and your first real exploit. It&amp;rsquo;s time to show your hacking skills.&lt;/li>
-&lt;li>&lt;strong>Note:&lt;/strong> This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.&lt;/li>
-&lt;li>&lt;strong>Category:&lt;/strong> Binary Exploitation/Pwnable&lt;/li>
-&lt;li>&lt;strong>Difficulty:&lt;/strong> Very Easy&lt;/li>
-&lt;/ul>
+&lt;p>&lt;strong>Given file:&lt;/strong> &lt;a href="https://drive.google.com/file/d/1WbbUvsAAZ--CfdrHmOggCGuLa8q_rzuV/view?usp=sharing" target="_blank" rel="noopener">Get it here!&lt;/a>&lt;/p>
+&lt;p>&lt;strong>Description:&lt;/strong> Get ready for the last guided challenge and your first real exploit. It&amp;rsquo;s time to show your hacking skills.&lt;/p>
+&lt;p>&lt;strong>Note:&lt;/strong> This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.&lt;/p>
+&lt;p>&lt;strong>Category:&lt;/strong> Binary Exploitation/Pwnable&lt;/p>
+&lt;p>&lt;strong>Difficulty:&lt;/strong> Very Easy&lt;/p>
 &lt;p>We are given a binary, a C file and a netcat server to work with.&lt;/p>
 &lt;p>Same with the above challenge, netcat tells us to fill in some questions.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">Stack frame layout
@@ -2153,12 +2148,11 @@ Use &lt;code>!{hostname}&lt;/code> obviously.&lt;/p>
 &lt;p>I don&amp;rsquo;t know why it prints out &lt;strong>&amp;quot;[-] You failed!&amp;quot;&lt;/strong> though&amp;hellip;&lt;/p>
 &lt;p>Flag is: &lt;strong>HTB{b0f_s33m5_3z_r1ght?}&lt;/strong>&lt;/p>
 &lt;h2 id="labyrinth">Labyrinth&lt;/h2>
-&lt;ul>
-&lt;li>&lt;strong>Given file:&lt;/strong> &lt;a href="https://github.com/padolex/misc/blob/main/pwn_labyrinth.zip" target="_blank" rel="noopener">Get it here!&lt;/a>&lt;/li>
-&lt;li>&lt;strong>Description:&lt;/strong> You find yourself trapped in a mysterious labyrinth, with only one chance to escape. Choose the correct door wisely, for the wrong choice could have deadly consequences.&lt;/li>
-&lt;li>&lt;strong>Category:&lt;/strong> Binary Exploitation/Pwnable&lt;/li>
-&lt;li>&lt;strong>Difficulty:&lt;/strong> Easy&lt;/li>
-&lt;/ul>
+&lt;p>&lt;strong>Given file:&lt;/strong> &lt;a href="https://github.com/padolex/misc/blob/main/pwn_labyrinth.zip" target="_blank" rel="noopener">Get it here!&lt;/a>&lt;/p>
+&lt;p>&lt;strong>Description:&lt;/strong> You find yourself trapped in a mysterious labyrinth, with only one chance to escape. Choose the correct door wisely, for the wrong choice could have deadly consequences.&lt;/p>
+&lt;p>&lt;strong>Note:&lt;/strong> This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.&lt;/p>
+&lt;p>&lt;strong>Category:&lt;/strong> Binary Exploitation/Pwnable&lt;/p>
+&lt;p>&lt;strong>Difficulty:&lt;/strong> Easy&lt;/p>
 &lt;p>Examine the binary with command &lt;code>checksec&lt;/code>&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-zsh" data-lang="zsh">&lt;span class="line">&lt;span class="cl">&lt;span class="o">[&lt;/span>*&lt;span class="o">]&lt;/span> &lt;span class="s1">&amp;#39;~/pwn_labyrinth/challenge/labyrinth&amp;#39;&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> Arch: amd64-64-little
@@ -2283,23 +2277,11 @@ Use &lt;code>!{hostname}&lt;/code> obviously.&lt;/p>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">p&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">interactive&lt;/span>&lt;span class="p">()&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Flag is: &lt;strong>HTB{3sc4p3_fr0m_4b0v3}&lt;/strong>&lt;/p>
 &lt;h2 id="pandoras-box">Pandora&amp;rsquo;s Box&lt;/h2>
-&lt;ul>
-&lt;li>
 &lt;p>&lt;strong>Given file:&lt;/strong> &lt;a href="https://drive.google.com/drive/folders/1tkjLHsRXx8WdNrzWexbeDfcS3kFkCc-U?usp=sharing" target="_blank" rel="noopener">Get it here!&lt;/a>&lt;/p>
-&lt;/li>
-&lt;li>
 &lt;p>&lt;strong>Description:&lt;/strong> You stumbled upon one of Pandora’s mythical boxes. Would you be curious enough to open it and see what’s inside, or would you opt to give it to your team for analysis?&lt;/p>
-&lt;/li>
-&lt;li>
 &lt;p>&lt;strong>Note:&lt;/strong> This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.&lt;/p>
-&lt;/li>
-&lt;li>
 &lt;p>&lt;strong>Category:&lt;/strong> Pwn&lt;/p>
-&lt;/li>
-&lt;li>
 &lt;p>&lt;strong>Difficulty:&lt;/strong> Easy&lt;/p>
-&lt;/li>
-&lt;/ul>
 &lt;p>The challenge greeted us with a binary following a libc.so.6 and a ld-linux-x86-64.so.2.&lt;/p>
 &lt;p>Decompile the binary using &lt;a href="https://hex-rays.com/ida-pro/" target="_blank" rel="noopener">IDA Pro&lt;/a>, we easily found the vulnerability lied within the &lt;em>box()&lt;/em> fucntion.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-c" data-lang="c">&lt;span class="line">&lt;span class="cl">&lt;span class="kt">size_t&lt;/span> &lt;span class="nf">box&lt;/span>&lt;span class="p">()&lt;/span>
@@ -2381,12 +2363,11 @@ Use &lt;code>!{hostname}&lt;/code> obviously.&lt;/p>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;img src="pandora.png" alt="Never gonna give you up" width="1000"/>
 &lt;p>Flag is: &lt;strong>HTB{r3turn_2_P4nd0r4?!}&lt;/strong>&lt;/p>
 &lt;h2 id="void">Void&lt;/h2>
-&lt;ul>
-&lt;li>&lt;strong>Given file:&lt;/strong> &lt;a href="">Get it here!&lt;/a>&lt;/li>
-&lt;li>&lt;strong>Description:&lt;/strong> The room goes dark and all you can see is a damaged terminal. Hack into it to restore the power and find your way out.&lt;/li>
-&lt;li>&lt;strong>Category:&lt;/strong> Binary Exploitation/Pwnable&lt;/li>
-&lt;li>&lt;strong>Difficulty:&lt;/strong> Medium&lt;/li>
-&lt;/ul>
+&lt;p>&lt;strong>Given file:&lt;/strong> &lt;a href="">Get it here!&lt;/a>&lt;/p>
+&lt;p>&lt;strong>Description:&lt;/strong> The room goes dark and all you can see is a damaged terminal. Hack into it to restore the power and find your way out.&lt;/p>
+&lt;p>&lt;strong>Note:&lt;/strong> This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.&lt;/p>
+&lt;p>&lt;strong>Category:&lt;/strong> Binary Exploitation/Pwnable&lt;/p>
+&lt;p>&lt;strong>Difficulty:&lt;/strong> Medium&lt;/p>
 &lt;p>The program is simple, buffer overflow occurs in function &lt;code>vuln&lt;/code>, here is the pseudocode of &lt;code>vuln&lt;/code>&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-c" data-lang="c">&lt;span class="line">&lt;span class="cl">&lt;span class="kt">ssize_t&lt;/span> &lt;span class="nf">vuln&lt;/span>&lt;span class="p">()&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">{&lt;/span>
@@ -2453,7 +2434,11 @@ Use &lt;code>!{hostname}&lt;/code> obviously.&lt;/p>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">p&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">send&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">payload&lt;/span>&lt;span class="o">+&lt;/span>&lt;span class="sa">b&lt;/span>&lt;span class="s1">&amp;#39;/bin/sh&lt;/span>&lt;span class="se">\x00&lt;/span>&lt;span class="s1">&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">p&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">interactive&lt;/span>&lt;span class="p">()&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Flag is: &lt;strong>HTB{r3s0lv3_th3_d4rkn355}&lt;/strong>&lt;/p></description></item><item><title>idekCTF 2022 - Osint/Osint Crime Confusion 3: W as in Who</title><link>https://blog.bkisc.com/blog/fazect/idekctf2022_osintcrime3/</link><pubDate>Mon, 16 Jan 2023 03:50:54 +0000</pubDate><guid>https://blog.bkisc.com/blog/fazect/idekctf2022_osintcrime3/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Flag is: &lt;strong>HTB{r3s0lv3_th3_d4rkn355}&lt;/strong>&lt;/p>
+&lt;h2 id="original-posts">Original Posts&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://fazect.github.io/htb2023/" target="_blank" rel="noopener">From FazeCT&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>idekCTF 2022 - Osint/Osint Crime Confusion 3: W as in Who</title><link>https://blog.bkisc.com/blog/fazect/idekctf2022_osintcrime3/</link><pubDate>Mon, 16 Jan 2023 03:50:54 +0000</pubDate><guid>https://blog.bkisc.com/blog/fazect/idekctf2022_osintcrime3/</guid><description>
 &lt;details class="toc-inpage d-print-none " open>
 &lt;summary class="font-weight-bold">Table of Contents&lt;/summary>
 &lt;nav id="TableOfContents">
