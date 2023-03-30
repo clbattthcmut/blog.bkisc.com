@@ -540,7 +540,7 @@
 &lt;h2 id="void">Void&lt;/h2>
 &lt;ul>
 &lt;li>
-&lt;p>&lt;strong>Given file:&lt;/strong> &lt;a href="">Get it here!&lt;/a>&lt;/p>
+&lt;p>&lt;strong>Given file:&lt;/strong> &lt;a href="https://github.com/padolex/misc/blob/main/pwn_void.zip" target="_blank" rel="noopener">Get it here!&lt;/a>&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>&lt;strong>Description:&lt;/strong> The room goes dark and all you can see is a damaged terminal. Hack into it to restore the power and find your way out.&lt;/p>
