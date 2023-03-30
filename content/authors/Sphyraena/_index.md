@@ -1,6 +1,4 @@
 ---
-draft: false
-
 # Display name
 title: Sphyraena
 
