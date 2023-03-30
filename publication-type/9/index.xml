@@ -11,9 +11,17 @@
 &lt;/nav>
 &lt;/details>
 &lt;h2 id="reconfiguration">Reconfiguration&lt;/h2>
+&lt;ul>
+&lt;li>
 &lt;p>&lt;strong>Given zip:&lt;/strong> &lt;a href="https://drive.google.com/drive/folders/1Pao4nTUNcvjCksDgyRCFPk_UCYpHeDqw?usp=sharing" target="_blank" rel="noopener">Get it here!&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Description:&lt;/strong> As Pandora set out on her quest to find the ancient alien relic, she knew that the journey would be treacherous. The desert was vast and unforgiving, and the harsh conditions would put her cyborg body to the test. Pandora started by collecting data about the temperature and humidity levels in the desert. She used a scatter plot in an Orange Workspace file to visualize this data and identified the areas where the temperature was highest and the humidity was lowest. Using this information, she reconfigured her sensors to better withstand the extreme heat and conserve water. But, a second look at the data revealed something otherwordly, it seems that the relic&amp;rsquo;s presence beneath the surface has scarred the land in a very peculiar way, can you see it?&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Category:&lt;/strong> Machine Learning&lt;/p>
+&lt;/li>
+&lt;/ul>
 &lt;p>In this challenge, we embarked on a quest to find an ancient alien relic hidden beneath the desert, following the footsteps of the cyborg Pandora. The task involved analyzing temperature and humidity data and uncovering peculiar patterns that hinted at the relic&amp;rsquo;s presence.&lt;/p>
 &lt;p>To begin the analysis, we downloaded and installed the &lt;strong>Orange&lt;/strong> data mining tool, which is an open-source data visualization and analysis tool for data scientists. You can download it here: &lt;a href="https://orange.biolab.si/download/" target="_blank" rel="noopener">https://orange.biolab.si/download/&lt;/a>&lt;/p>
 &lt;p>After installing &lt;strong>Orange&lt;/strong>, we opened the tool and loaded the &lt;strong>analysis.ows&lt;/strong> file. We then imported the &lt;strong>point.csv&lt;/strong> file into the Orange workspace by adding the &amp;ldquo;File&amp;rdquo; widget and selecting the &lt;strong>point.csv&lt;/strong> file from our computer. Next, we created a scatter plot to visualize the data. We added the &amp;ldquo;Scatter Plot&amp;rdquo; widget from &amp;ldquo;Visualize&amp;rdquo; panel to the workspace and connected it to the &amp;ldquo;File&amp;rdquo; widget.&lt;/p>
@@ -22,9 +30,17 @@
 &lt;img src="flag.png" alt="Guide" width="1000"/>
 &lt;p>Flag is: &lt;strong>HTB{sc4tter_pl0ts_4_th3_w1n}&lt;/strong>&lt;/p>
 &lt;h2 id="mysterious-learnings">Mysterious Learnings&lt;/h2>
+&lt;ul>
+&lt;li>
 &lt;p>&lt;strong>Given zip:&lt;/strong> &lt;a href="https://drive.google.com/drive/folders/15cjTqJqcDseU9niakqU64AqI09QlKFcU?usp=share_link" target="_blank" rel="noopener">Get it here!&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Description:&lt;/strong> One day the archeologist came across a strange metal plate covered in uncommon hieroglyphics. It looked like blueprints for some kind of alien technology. &amp;ldquo;What kind of magic is this?&amp;rdquo; He studied the plate more closely and was amazed by the advanced technology and incredible engineering they were using at a time like this. This could only lead him in him wanting to learn more&amp;hellip;&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Category:&lt;/strong> Machine Learning&lt;/p>
+&lt;/li>
+&lt;/ul>
 &lt;p>In this challenge, we were given an &lt;strong>H5&lt;/strong> file containing a pre-trained machine learning model. Our task was to analyze the model and extract a hidden flag.&lt;/p>
 &lt;p>&lt;strong>H5&lt;/strong> file format, also known as &lt;strong>Hierarchical Data Format (HDF5)&lt;/strong>, is a versatile data model that can store large amounts of data efficiently. It is widely used in scientific research and engineering for storing and managing data. The format organizes data hierarchically and enables fast I/O operations.&lt;/p>
 &lt;p>To solve this challenge, we first needed to load the model from the H5 file and display its summary. We used &lt;strong>TensorFlow&lt;/strong> and &lt;strong>Keras&lt;/strong> libraries to achieve this. Here is the Python script:&lt;/p>
@@ -39,9 +55,17 @@
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>We noticed a few strings in the layer names that seemed to be part of the flag. By combining these strings,decoded it from base64 we were able to construct the flag.&lt;/p>
 &lt;p>Flag is: &lt;strong>HTB{th3s3_4l13nS_4r3_s00000_b4s1c}&lt;/strong>&lt;/p>
 &lt;h2 id="last-hope">Last Hope&lt;/h2>
+&lt;ul>
+&lt;li>
 &lt;p>&lt;strong>Given zip:&lt;/strong> &lt;a href="https://drive.google.com/drive/folders/19s7BGJ3ixtv732sDWy6VUshNhLRGC3Yn?usp=share_link" target="_blank" rel="noopener">Get it here!&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Description:&lt;/strong> The quantum data came back and analyzed. DISASTER! Our best scientists all agree: Unfortunately our species and our whole culture are about to be eliminated. Due to abnormal behavior of the black hole&amp;rsquo;s singularity our planet is about to get swallowed. Project &amp;ldquo;ONESHOT&amp;rdquo; is our last hope&amp;hellip;&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Category:&lt;/strong> Machine Learning&lt;/p>
+&lt;/li>
+&lt;/ul>
 &lt;p>In this challenge, we are given a file containing &lt;strong>OpenQASM 2.0&lt;/strong> code, which represents a quantum circuit. Our goal is to execute the circuit and extract the flag, which is encoded in the most frequent bitstring resulting from the measurement of the quantum circuit.&lt;/p>
 &lt;p>Here&amp;rsquo;s a brief write-up of the steps taken to solve this challenge:&lt;/p>
 &lt;ol>
@@ -116,9 +140,17 @@
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;Flag:&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">flag&lt;/span>&lt;span class="p">)&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Flag is: &lt;strong>HTB{a_gl1mps3_0f_h0p3}&lt;/strong>&lt;/p>
 &lt;h2 id="on-the-rescue">On The Rescue&lt;/h2>
+&lt;ul>
+&lt;li>
 &lt;p>&lt;strong>Given zip:&lt;/strong> &lt;a href="https://drive.google.com/drive/folders/13cI2b3Slewv9u7y8ZCIi4Vjfb-HL4_Ye?usp=share_link" target="_blank" rel="noopener">Get it here!&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Description:&lt;/strong> The archeologist finally found the ancient vessel. Utilizing the alien technology he managed to breach in the central computational unit and learn the reason behind their visit on Earth millions of years ago. A message appeared. It was all a desperate plan for the survival of their kind.&lt;/p>
+&lt;/li>
+&lt;li>
 &lt;p>&lt;strong>Category:&lt;/strong> Machine Learning&lt;/p>
+&lt;/li>
+&lt;/ul>
 &lt;p>The challenge presented a simple &lt;strong>Bigram Language Model&lt;/strong>, which is a basic character-level language model that predicts the next character based on the current character. We were given the model&amp;rsquo;s architecture &lt;strong>architecture.py&lt;/strong> and a pre-trained model file &lt;strong>bigram_model.pt&lt;/strong>. The objective was to generate a text that could help us understand the aliens&amp;rsquo; message.The solve script is provided below:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">torch&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">architecture&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="n">BigramLanguageModel&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">vocab&lt;/span>
