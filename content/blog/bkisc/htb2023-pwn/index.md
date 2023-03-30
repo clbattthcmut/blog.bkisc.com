@@ -637,7 +637,7 @@ Flag is: **HTB{r3turn_2_P4nd0r4?!}**
 
 ## Void
 
-* **Given file:** [Get it here!]()
+* **Given file:** [Get it here!](https://github.com/padolex/misc/blob/main/pwn_void.zip)
 
 * **Description:** The room goes dark and all you can see is a damaged terminal. Hack into it to restore the power and find your way out.
 
