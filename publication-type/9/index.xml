@@ -1304,9 +1304,6 @@ When the &lt;code>lastEntrant&lt;/code> variable set to &lt;code>Pandora&lt;/cod
 &lt;p>&lt;strong>Description:&lt;/strong> Your team has assigned you to a mission to investigate the production files of Printed Circuit Boards for irregularities. This is in response to the deployment of nonfunctional DIY drones that keep falling out of the sky. The team had used a slightly modified version of an open-source flight controller in order to save time, but it appears that someone had sabotaged the design before production. Can you help identify any suspicious alterations made to the boards?&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>&lt;strong>Note:&lt;/strong> This challenge had a docker but it might be closed at the time you are reading this. All needed files will be given in the write-ups.&lt;/p>
-&lt;/li>
-&lt;li>
 &lt;p>&lt;strong>Category:&lt;/strong> Hardware&lt;/p>
 &lt;/li>
 &lt;li>
