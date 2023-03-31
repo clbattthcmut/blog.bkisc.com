@@ -1,5 +1,6 @@
 ---
 title: 'Cyber Apocalypse 2023: The Cursed Mission - Cryptography'
+draft: true
 authors:
   - Onirique
   - FazeCT
