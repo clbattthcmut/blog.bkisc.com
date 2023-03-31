@@ -15,7 +15,7 @@
 &lt;li>&lt;a href="#2-bash-script-analyze">2. Bash script analyze&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>&lt;a href="#original-posts">Original Posts:&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#original-posts">Original Posts&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/nav>
 &lt;/details>
@@ -834,7 +834,7 @@
 &lt;img src="003.png" alt="dnSpy" width="1000"/>
 &lt;p>I try some sussy strings and found that the private key is &lt;code>wJ5kENwyu8amx2RM&lt;/code>. Now we just need to decrypt the flag file and get the flag.&lt;/p>
 &lt;p>Flag is &lt;strong>HTB{n0_n33d_t0_r3turn_th3_r3l1c_1_gu3ss}&lt;/strong>&lt;/p>
-&lt;h2 id="original-posts">Original Posts:&lt;/h2>
+&lt;h2 id="original-posts">Original Posts&lt;/h2>
 &lt;ul>
 &lt;li>
 &lt;p>&lt;a href="https://junvalentine.github.io/posts/htb-wu-2023/" target="_blank" rel="noopener">From Onirique&lt;/a>&lt;/p>
