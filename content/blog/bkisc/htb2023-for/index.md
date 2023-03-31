@@ -914,7 +914,7 @@ I try some sussy strings and found that the private key is `wJ5kENwyu8amx2RM`. N
 
 Flag is **HTB{n0_n33d_t0_r3turn_th3_r3l1c_1_gu3ss}**
 
-## Original Posts:
+## Original Posts
 
 - [From Onirique](https://junvalentine.github.io/posts/htb-wu-2023/)
 
