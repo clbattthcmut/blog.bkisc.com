@@ -3,7 +3,7 @@ title: 'Cyber Apocalypse 2023: The Cursed Mission - Cryptography'
 authors:
   - Onirique
   - FazeCT
-  - dasHaus
+  - dasHaus165
   - TN
   - Nothing
 date: '2023-03-27T00:00:00Z'
