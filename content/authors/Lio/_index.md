@@ -14,7 +14,7 @@ organizations:
     url: ''
 
 # Short bio (displayed in user profile at end of posts)
-bio: Your friendly weeaboo hecker.
+bio: I describe myself as a program written in C. Vulnerable and easily exploited by others.
 
 interests:
   - Server Security
@@ -24,6 +24,9 @@ interests:
 
 education:
   courses:
+    - course: B.S. in Computer Science
+      institution: Ho Chi Minh City University of Technology
+      year: 2021-2025
 
 # Social/Academic Networking
 # For available icons, see: https://wowchemy.com/docs/getting-started/page-builder/#icons
@@ -61,13 +64,13 @@ user_groups:
 
 Hi my name is **Lio**. I'm your friendly Pwner from **HCMC University of Technology**.
 
-I used to be a noob game developer. Now I'm an even more noob hecker.
+I used to be a noob game developer. Now I'm just a hecker ~~with skill issue~~ when night falls.
 
-Absolutely love anime-related stuffs.
+Absolutely love anime-related stuffs. Part-time weeaboo when dawn breaks.
 
 My favorite number is 1767991380. Bet you can decode this (not my social security number btw).
 
-In the meantime, flag{h3r3_15_4_91F7_F0r_y0U}.
+In the meantime, BKISC{L1f3_1t_53lF_i5_@_t7p3_0f_5k1ll_i55u3}.
 
 ## Noticeable Achievements
 
