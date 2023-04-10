@@ -60,11 +60,11 @@ user_groups:
 
 ## Info of me
 
-Hello, I am **Lê Hoàng**, a Web player of team [BKISC](https://bkisc.com), Hồ Chí Minh city University of Technology. Currently, I am learning in the field of Computer Science. I am interested in cybersecurity and the ways in which we can protect our digital assets from threats.
+Hello, I am **Lê Hoàng**, a Web player of team [BKISC](https://bkisc.com), Ho Chi Minh City University of Technology. Currently, I am learning in the field of Computer Science. I am interested in cybersecurity and the ways in which we can protect our digital assets from threats.
 
 Through my coursework and personal projects, I have gained experience in programming languages such as C++, Golang, Python, Java, JavaScript and PHP ~~(misery)~~.
 
-At the momment, I am trying to comprehend the vast ammount of knowledge of cryptography and having my free time invested on game hacking as a hobby.
+At the moment, I am trying to comprehend the vast ammount of knowledge of cryptography and having my free time invested on game hacking as a hobby.
 
 
 ## Current Achievements
