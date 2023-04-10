@@ -385,7 +385,7 @@ Nice but we only got the hash. Initially, I was trying to use `hashcat` but sinc
 
 <img src="orbital5.png" alt="SQLMap demo" width="1000"/>
 
-Flag is: **HTB{T1m3_b4$3d_$ql1_4r3_fun!!!}**
+Flag is: <flag>**HTB{T1m3_b4$3d_$ql1_4r3_fun!!!}**</flag>
 
 ## Didactic Octo Paddles
 
