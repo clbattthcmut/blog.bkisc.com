@@ -1,7 +1,12 @@
 # IDEs
-.idea/
+/.idea/
 
 # Hugo
-/resources/
-public/
-assets/jsconfig.json
+/public/
+/resources/_gen/
+/assets/jsconfig.json
+hugo_stats.json
+/.hugo_build.lock
+
+# Other
+**/.DS_Store

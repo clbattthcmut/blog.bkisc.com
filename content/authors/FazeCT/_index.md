@@ -14,7 +14,7 @@ organizations:
     url: 'https://hcmut.edu.vn'
 
 # Short bio (displayed in user profile at end of posts)
-bio: Started playing CTFs since July 2022, currently I am focusly learning in the Reverse Engineering (RE) field of CTF.
+bio: Skill issue is one of my inner traits.
 
 interests:
   - Reverse Engineering
@@ -39,6 +39,9 @@ social:
   - icon: github
     icon_pack: fab
     link: https://github.com/FazeCT
+  - icon: globe
+    icon_pack: fas
+    link: https://fazect.github.io/
 # Link to a PDF of your resume/CV from the About widget.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
 # - icon: cv
@@ -60,7 +63,7 @@ I am **FazeCT**, a Reverser from team [BKISC](https://bkisc.com), HCMC Universit
 
 Started playing CTFs since **July 2022**, currently I am focusly learning in the **Reverse Engineering (RE)** field of CTF.
 
-I am also looking forward to learn more about **Pwnable** in the future.
+I am also looking forward to learn more about **Blockchain** in the future.
 
 ## Noticeable Achievements
 

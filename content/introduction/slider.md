@@ -16,7 +16,7 @@ design:
 content:
   slides:
     - title: 👋 BK Information Security Club Blogs
-      content: Where our members share valuable knowledges in variety of security sectors like *Cryptogrpahy, Web Exploitation, Binary Exploitation, Reverse Engineering* and more.
+      content: Where our members share valuable knowledges in variety of security sectors like *Cryptography, Web Exploitation, Binary Exploitation, Reverse Engineering* and more.
       align: center
       background:
         position: right
