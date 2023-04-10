@@ -70,7 +70,7 @@ Absolutely love anime-related stuffs. Part-time weeaboo when dawn breaks.
 
 My favorite number is 1767991380. Bet you can decode this (not my social security number btw).
 
-In the meantime, BKISC{L1f3_1t_53lF_i5_@_t7p3_0f_5k1ll_i55u3}.
+In the meantime, BKISC{L1f3_1t_53lF_i5_4_t7p3_0f_5k1ll_i55u3}.
 
 ## Noticeable Achievements
 
