@@ -1,5 +1,5 @@
 ---
-title: Câu lạc bộ BKISC tham gia vòng sơ khảo ASCIS 2022
+title: Câu lạc bộ BKISC tham dự Hacktheon Sejong 2023
 date: 2023-03-28
 image:
   focal_point: 'top'
