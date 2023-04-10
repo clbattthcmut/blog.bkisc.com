@@ -271,10 +271,10 @@
 &lt;p>I saved it as &lt;code>req.txt&lt;/code>. Since the database and the table was already known the command I used was:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sqlmap -r req.txt --level&lt;span class="o">=&lt;/span>&lt;span class="m">5&lt;/span> --risk&lt;span class="o">=&lt;/span>&lt;span class="m">3&lt;/span> --technique&lt;span class="o">=&lt;/span>T -o --ignore-code &lt;span class="m">401&lt;/span> -D orbital -T users --dump
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;img src="orbital3.png" alt="SQLMap demo" width="1000"/>
-&lt;p>Nice but we only got the hash. Initially, we was trying to use &lt;code>hashcat&lt;/code> but since this is HackTheBox, the challenge may use well-known hash so I throw it on the internet and Voila! The credential is &lt;code>admin:ichliebedich&lt;/code>, login and use LFI attack the get flag.&lt;/p>
+&lt;p>Nice but we only got the hash. Initially, I was trying to use &lt;code>hashcat&lt;/code> but since this is HackTheBox, the challenge may use well-known hash so I throwed it on the internet and Voila! The credential is &lt;code>admin:ichliebedich&lt;/code>, login and use LFI attack the get flag.&lt;/p>
 &lt;img src="orbital4.png" alt="SQLMap demo" width="1000"/>
 &lt;img src="orbital5.png" alt="SQLMap demo" width="1000"/>
-&lt;p>Flag is: &lt;strong>HTB{T1m3_b4$3d_$ql1_4r3_fun!!!}&lt;/strong>&lt;/p>
+&lt;p>Flag is: &lt;flag>&lt;strong>HTB{T1m3_b4$3d_$ql1_4r3_fun!!!}&lt;/strong>&lt;/flag>&lt;/p>
 &lt;h2 id="didactic-octo-paddles">Didactic Octo Paddles&lt;/h2>
 &lt;ul>
 &lt;li>
