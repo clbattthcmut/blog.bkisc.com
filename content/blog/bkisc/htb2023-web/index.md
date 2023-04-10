@@ -379,7 +379,7 @@ sqlmap -r req.txt --level=5 --risk=3 --technique=T -o --ignore-code 401 -D orbit
 
 <img src="orbital3.png" alt="SQLMap demo" width="1000"/>
 
-Nice but we only got the hash. Initially, we was trying to use `hashcat` but since this is HackTheBox, the challenge may use well-known hash so I throw it on the internet and Voila! The credential is `admin:ichliebedich`, login and use LFI attack the get flag.
+Nice but we only got the hash. Initially, I was trying to use `hashcat` but since this is HackTheBox, the challenge may use well-known hash so I throwed it on the internet and Voila! The credential is `admin:ichliebedich`, login and use LFI attack the get flag.
 
 <img src="orbital4.png" alt="SQLMap demo" width="1000"/>
 
