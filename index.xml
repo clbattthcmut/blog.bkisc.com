@@ -5540,6 +5540,36 @@ Use &lt;code>!{hostname}&lt;/code> obviously.&lt;/p>
 &lt;h2 id="original-posts">Original Posts&lt;/h2>
 &lt;ul>
 &lt;li>&lt;a href="https://fazect.github.io/htb2023/" target="_blank" rel="noopener">From FazeCT&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Tổng kết giải CTF Cyber Apocalypse 2023 - The Cursed Mission</title><link>https://blog.bkisc.com/post/23-3-27-htb-2023/</link><pubDate>Mon, 27 Mar 2023 00:00:00 +0000</pubDate><guid>https://blog.bkisc.com/post/23-3-27-htb-2023/</guid><description>&lt;p>Sau 5 ngày tham dự giải Cyber Apocalypse 2023: The Cursed Mission (18 - 23/03/2023), câu lạc bộ BKISC đã xuất sắc về đích ở vị trí thứ 29 trên tổng sổ 6483 đội tham gia, vượt qua 60/74 challenges và có cho mình tổng số điểm là 18175 điểm.&lt;/p>
+&lt;p>Các bài mà đội đã giải được xuyên suốt 5 ngày tham gia cuộc thi đều đã có lời giải chi tiết, các bạn có thể tham khảo tại đây:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;a href="https://blog.bkisc.com/blog/bkisc/htb2023-bc/" target="_blank" rel="noopener">Writeup Blockchain&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://blog.bkisc.com/blog/bkisc/htb2023-crypto/" target="_blank" rel="noopener">Writeup Cryptography&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://blog.bkisc.com/blog/bkisc/htb2023-for/" target="_blank" rel="noopener">Writeup Forensics&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://blog.bkisc.com/blog/bkisc/htb2023-hw/" target="_blank" rel="noopener">Writeup Hardware&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://blog.bkisc.com/blog/bkisc/htb2023-ml/" target="_blank" rel="noopener">Writeup Machine Learning&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://blog.bkisc.com/blog/bkisc/htb2023-misc/" target="_blank" rel="noopener">Writeup Miscellaneous&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://blog.bkisc.com/blog/bkisc/htb2023-pwn/" target="_blank" rel="noopener">Writeup Pwnable&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://blog.bkisc.com/blog/bkisc/htb2023-re/" target="_blank" rel="noopener">Writeup Reverse Engineering&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;a href="https://blog.bkisc.com/blog/bkisc/htb2023-web/" target="_blank" rel="noopener">Writeup Web Exploitation&lt;/a>&lt;/p>
+&lt;/li>
 &lt;/ul></description></item><item><title>idekCTF 2022 - Osint/Osint Crime Confusion 3: W as in Who</title><link>https://blog.bkisc.com/blog/fazect/idekctf2022_osintcrime3/</link><pubDate>Mon, 16 Jan 2023 03:50:54 +0000</pubDate><guid>https://blog.bkisc.com/blog/fazect/idekctf2022_osintcrime3/</guid><description>
 &lt;details class="toc-inpage d-print-none " open>
 &lt;summary class="font-weight-bold">Table of Contents&lt;/summary>
