@@ -1,32 +1,32 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Latest News | BKISC Blogs</title><link>https://blog.bkisc.com/post/</link><atom:link href="https://blog.bkisc.com/post/index.xml" rel="self" type="application/rss+xml"/><description>Latest News</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 28 Mar 2023 00:00:00 +0000</lastBuildDate><image><url>https://blog.bkisc.com/media/logo_huc55a0313517dd04bda48a4ace4db28bc_511389_300x300_fit_lanczos_3.png</url><title>Latest News</title><link>https://blog.bkisc.com/post/</link></image><item><title>Câu lạc bộ BKISC tham dự Hacktheon Sejong 2023</title><link>https://blog.bkisc.com/post/23-3-28-hacktheon-sejong-2023/</link><pubDate>Tue, 28 Mar 2023 00:00:00 +0000</pubDate><guid>https://blog.bkisc.com/post/23-3-28-hacktheon-sejong-2023/</guid><description>&lt;p>Ngày 25/03/2023, câu lạc bộ BKISC đã cử 4 đội, đó lần lượt là các đội Gavai, pwnhub, CAPTCHA và MTBP Starter tham dự vòng loại Hacktheon Sejong 2023. Sau 8 tiếng cạnh tranh cùng các đội trong khu vực, cả 4 đội thi đều đã xuất sắc vượt qua vòng loại của giải thi đấu.&lt;/p>
-&lt;p>Các thành viên đến từ 2 đội là Gavai và pwnhub sẽ được cử đi tham dự vòng Finals của Hacktheon Sejong, diễn ra vào 2 ngày 11-12/05/2023 tại Sejong, Hàn Quốc.&lt;/p></description></item><item><title>Tổng kết giải CTF Cyber Apocalypse 2023 - The Cursed Mission</title><link>https://blog.bkisc.com/post/23-3-27-htb-2023/</link><pubDate>Mon, 27 Mar 2023 00:00:00 +0000</pubDate><guid>https://blog.bkisc.com/post/23-3-27-htb-2023/</guid><description>&lt;p>Sau 5 ngày tham dự giải Cyber Apocalypse 2023: The Cursed Mission (18 - 23/03/2023), câu lạc bộ BKISC đã xuất sắc về đích ở vị trí thứ 29 trên tổng sổ 6483 đội tham gia, vượt qua 60/74 challenges và có cho mình tổng số điểm là 18175 điểm.&lt;/p>
-&lt;p>Các bài mà đội đã giải được xuyên suốt 5 ngày tham gia cuộc thi đều đã có lời giải chi tiết, các bạn có thể tham khảo tại đây:&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Latest News | BKISC Blogs</title><link>https://blog.bkisc.com/post/</link><atom:link href="https://blog.bkisc.com/post/index.xml" rel="self" type="application/rss+xml"/><description>Latest News</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 28 Mar 2023 00:00:00 +0000</lastBuildDate><image><url>https://blog.bkisc.com/media/logo_huc55a0313517dd04bda48a4ace4db28bc_511389_300x300_fit_lanczos_3.png</url><title>Latest News</title><link>https://blog.bkisc.com/post/</link></image><item><title>BKISC team qualified for Hacktheon Sejong 2023 FinalsX</title><link>https://blog.bkisc.com/post/23-03-28-hacktheon-sejong-2023/</link><pubDate>Tue, 28 Mar 2023 00:00:00 +0000</pubDate><guid>https://blog.bkisc.com/post/23-03-28-hacktheon-sejong-2023/</guid><description>&lt;p>On March 25th, 2023, BKISC sent 4 teams - Gavai, pwnhub, CAPTCHA, and MTBP Starter, to participate in the Hacktheon Sejong 2023 Qualifiers. After 8 hours of competition with teams in the area, all 4 teams successfully advanced to the next round of the tournament.&lt;/p>
+&lt;p>The members from 2 teams, Gavai and pwnhub, will be sent to participate in the Finals of Hacktheon Sejong, taking place on May 11th-12th, 2023 in Sejong, South Korea.&lt;/p></description></item><item><title>Cyber Apocalypse 2023 - The Cursed Mission CTF Results &amp; Writeups</title><link>https://blog.bkisc.com/post/23-03-27-htb-2023/</link><pubDate>Mon, 27 Mar 2023 00:00:00 +0000</pubDate><guid>https://blog.bkisc.com/post/23-03-27-htb-2023/</guid><description>&lt;p>After 5 days participating in the Cyber Apocalypse 2023: The Cursed Mission (March 18th - 23rd, 2023), BKISC finished the race at &lt;code>29&amp;lt;sup&amp;gt;th&amp;lt;/sup&amp;gt;&lt;/code> place out of &lt;code>6483&lt;/code> teams, surpassed &lt;code>60/74&lt;/code> challenges and gained a total of &lt;code>18175&lt;/code> points.&lt;/p>
+&lt;p>All the challenges that the team has solved during the 5-day competition already have detailed solutions by us, which you can refer to below:&lt;/p>
 &lt;ul>
 &lt;li>
-&lt;p>&lt;a href="https://blog.bkisc.com/blog/bkisc/htb2023-bc/" target="_blank" rel="noopener">Writeup Blockchain&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://blog.bkisc.com/blog/bkisc/htb2023-bc/" target="_blank" rel="noopener">Writeup: Blockchain&lt;/a>&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>&lt;a href="https://blog.bkisc.com/blog/bkisc/htb2023-crypto/" target="_blank" rel="noopener">Writeup Cryptography&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://blog.bkisc.com/blog/bkisc/htb2023-crypto/" target="_blank" rel="noopener">Writeup: Cryptography&lt;/a>&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>&lt;a href="https://blog.bkisc.com/blog/bkisc/htb2023-for/" target="_blank" rel="noopener">Writeup Forensics&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://blog.bkisc.com/blog/bkisc/htb2023-for/" target="_blank" rel="noopener">Writeup: Forensics&lt;/a>&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>&lt;a href="https://blog.bkisc.com/blog/bkisc/htb2023-hw/" target="_blank" rel="noopener">Writeup Hardware&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://blog.bkisc.com/blog/bkisc/htb2023-hw/" target="_blank" rel="noopener">Writeup: Hardware&lt;/a>&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>&lt;a href="https://blog.bkisc.com/blog/bkisc/htb2023-ml/" target="_blank" rel="noopener">Writeup Machine Learning&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://blog.bkisc.com/blog/bkisc/htb2023-ml/" target="_blank" rel="noopener">Writeup: Machine Learning&lt;/a>&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>&lt;a href="https://blog.bkisc.com/blog/bkisc/htb2023-misc/" target="_blank" rel="noopener">Writeup Miscellaneous&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://blog.bkisc.com/blog/bkisc/htb2023-misc/" target="_blank" rel="noopener">Writeup: Miscellaneous&lt;/a>&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>&lt;a href="https://blog.bkisc.com/blog/bkisc/htb2023-pwn/" target="_blank" rel="noopener">Writeup Pwnable&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://blog.bkisc.com/blog/bkisc/htb2023-pwn/" target="_blank" rel="noopener">Writeup: Pwnable&lt;/a>&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>&lt;a href="https://blog.bkisc.com/blog/bkisc/htb2023-re/" target="_blank" rel="noopener">Writeup Reverse Engineering&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://blog.bkisc.com/blog/bkisc/htb2023-re/" target="_blank" rel="noopener">Writeup: Reverse Engineering&lt;/a>&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>&lt;a href="https://blog.bkisc.com/blog/bkisc/htb2023-web/" target="_blank" rel="noopener">Writeup Web Exploitation&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://blog.bkisc.com/blog/bkisc/htb2023-web/" target="_blank" rel="noopener">Writeup: Web Exploitation&lt;/a>&lt;/p>
 &lt;/li>
-&lt;/ul></description></item><item><title>Câu lạc bộ BKISC tham gia vòng sơ khảo ASCIS 2022</title><link>https://blog.bkisc.com/post/22-10-25-ascis-2022-so-khao/</link><pubDate>Sat, 15 Oct 2022 00:00:00 +0000</pubDate><guid>https://blog.bkisc.com/post/22-10-25-ascis-2022-so-khao/</guid><description>&lt;p>Ngày 15/10/2022, câu lạc bộ BKISC có 2 đội tham dự vòng thi sơ khảo ASCIS 2022 bảng VN2 đã đạt được hai giải khuyến khích đó là đội &lt;em>COPIUM&lt;/em> (hạng 17) và &lt;em>BKISC&lt;/em> (hạng 9). Trong đó xin chúc mừng &lt;em>BKISC&lt;/em> lọt vào vòng chung khảo ASCIS 2022 sẽ diễn ra vào ngày 13/11/2022.&lt;/p></description></item></channel></rss>
+&lt;/ul></description></item><item><title>BKISC participated in ASCIS 2022 Qualifier</title><link>https://blog.bkisc.com/post/22-10-25-ascis-2022-qualifier/</link><pubDate>Sat, 15 Oct 2022 00:00:00 +0000</pubDate><guid>https://blog.bkisc.com/post/22-10-25-ascis-2022-qualifier/</guid><description>&lt;p>On October 15th, 2022, BKISC had a total of three teams participating in the ASCIS 2022 preliminary round, in the VN2 category, and achieved two honorable mentions: COPIUM team (ranked &lt;code>17&amp;lt;sup&amp;gt;th&amp;lt;/sup&amp;gt;&lt;/code>) and BKISC team (ranked &lt;code>9&amp;lt;sup&amp;gt;th&amp;lt;/sup&amp;gt;&lt;/code>). Congratulations to BKISC for advancing to the ASCIS 2022 final round, which will take place on November 13th, 2022..&lt;/p></description></item></channel></rss>
