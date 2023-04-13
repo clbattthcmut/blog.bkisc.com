@@ -1,5 +1,5 @@
 ---
-title: BKISC team qualified for Hacktheon Sejong 2023 FinalsX
+title: BKISC team qualified for Hacktheon Sejong 2023 Finals
 date: 2023-03-28
 image:
   focal_point: 'top'
