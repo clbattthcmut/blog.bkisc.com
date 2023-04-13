@@ -5,7 +5,7 @@ image:
   focal_point: 'top'
 ---
 
-After 5 days participating in the Cyber Apocalypse 2023: The Cursed Mission (March 18th - 23rd, 2023), BKISC finished the race at `29<sup>th</sup>` place out of `6483` teams, surpassed `60/74` challenges and gained a total of `18175` points.
+After 5 days participating in the Cyber Apocalypse 2023: The Cursed Mission (March 18th - 23rd, 2023), BKISC finished the race at `29th` place out of `6483` teams, surpassed `60/74` challenges and gained a total of `18175` points.
 
 All the challenges that the team has solved during the 5-day competition already have detailed solutions by us, which you can refer to below:
 
