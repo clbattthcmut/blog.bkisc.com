@@ -51,5 +51,5 @@ user_groups:
   - Mentors
 ---
 
-My name is Khoa. I used to dedicate a lot of time to play CTFs and have developed some skills in Reverse Engineering. While still spend my spare time occasionally to play CTF at the weekend, but now I want to spend more time studying different fields of computer science and other hobbies.
+My name is Khoa. I used to dedicate a lot of time to play CTFs and have developed some skills in Reverse Engineering. Although I am still occasionally spending my spare time to play CTF at weekends, now I want to spend my time studying different fields of computer science and for other hobbies.
 
