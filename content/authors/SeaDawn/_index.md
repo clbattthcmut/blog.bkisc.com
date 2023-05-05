@@ -24,7 +24,7 @@ education:
   courses:
     - course: B.S. in Computer Science
       institution: Ho Chi Minh City University of Technology
-      year: 2018-...
+      year: 2018-2023
 
 
 # Social/Academic Networking
@@ -48,8 +48,8 @@ email: ''
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.
 user_groups:
-  - Seniors
+  - Mentors
 ---
 
-A weber from BKISC - BK Information Security Club. He is currently working for VNG Corporation.
+A weber from BKISC - BK Information Security Club. He is currently working for VNG Corporation in Vietnam.
 
