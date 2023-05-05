@@ -1,6 +1,6 @@
 ---
 # Display name
-title: _.npn._
+title: npn
 
 # Is this the primary user of the site?
 superuser: false
