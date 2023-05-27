@@ -1,4 +1,10 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>FazeCT | BKISC Blogs</title><link>https://blog.bkisc.com/author/fazect/</link><atom:link href="https://blog.bkisc.com/author/fazect/index.xml" rel="self" type="application/rss+xml"/><description>FazeCT</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 27 Mar 2023 00:00:00 +0000</lastBuildDate><image><url>https://blog.bkisc.com/author/fazect/avatar_hud20978e2ce79cef4f33eb5572feeafc8_109792_270x270_fill_lanczos_center_3.png</url><title>FazeCT</title><link>https://blog.bkisc.com/author/fazect/</link></image><item><title>Cyber Apocalypse 2023: The Cursed Mission - Cryptography</title><link>https://blog.bkisc.com/blog/bkisc/htb2023-crypto/</link><pubDate>Mon, 27 Mar 2023 00:00:00 +0000</pubDate><guid>https://blog.bkisc.com/blog/bkisc/htb2023-crypto/</guid><description>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>FazeCT | BKISC Blogs</title><link>https://blog.bkisc.com/author/fazect/</link><atom:link href="https://blog.bkisc.com/author/fazect/index.xml" rel="self" type="application/rss+xml"/><description>FazeCT</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 27 Mar 2023 00:00:00 +0000</lastBuildDate><image><url>https://blog.bkisc.com/author/fazect/avatar_hud20978e2ce79cef4f33eb5572feeafc8_109792_270x270_fill_lanczos_center_3.png</url><title>FazeCT</title><link>https://blog.bkisc.com/author/fazect/</link></image><item><title>Cyber Apocalypse 2023: The Cursed Mission - Cryptography</title><link>https://blog.bkisc.com/blog/bkisc/htb2023-crypto/</link><pubDate>Mon, 27 Mar 2023 00:00:00 +0000</pubDate><guid>https://blog.bkisc.com/blog/bkisc/htb2023-crypto/</guid><description>&lt;p>
+&lt;ul class="tags-list">
+&lt;a href="https://blog.bkisc.com/tag/ctf/">ctf&lt;/a>
+&lt;a href="https://blog.bkisc.com/tag/writeup/">writeup&lt;/a>
+&lt;a href="https://blog.bkisc.com/tag/crypto/">crypto&lt;/a>
+&lt;a href="https://blog.bkisc.com/tag/htb-2023/">htb-2023&lt;/a>
+&lt;/ul>
 &lt;details class="toc-inpage d-print-none " open>
 &lt;summary class="font-weight-bold">Table of Contents&lt;/summary>
 &lt;nav id="TableOfContents">
@@ -58,6 +64,7 @@
 &lt;/ul>
 &lt;/nav>
 &lt;/details>
+&lt;/p>
 &lt;h2 id="ancient-encodings">Ancient Encodings&lt;/h2>
 &lt;ul>
 &lt;li>
@@ -1178,7 +1185,13 @@
 &lt;li>
 &lt;p>&lt;a href="https://haopham23.github.io/dashaus165blog/" target="_blank" rel="noopener">From dasHaus&lt;/a>&lt;/p>
 &lt;/li>
-&lt;/ul></description></item><item><title>Cyber Apocalypse 2023: The Cursed Mission - Forensics</title><link>https://blog.bkisc.com/blog/bkisc/htb2023-for/</link><pubDate>Mon, 27 Mar 2023 00:00:00 +0000</pubDate><guid>https://blog.bkisc.com/blog/bkisc/htb2023-for/</guid><description>
+&lt;/ul></description></item><item><title>Cyber Apocalypse 2023: The Cursed Mission - Forensics</title><link>https://blog.bkisc.com/blog/bkisc/htb2023-for/</link><pubDate>Mon, 27 Mar 2023 00:00:00 +0000</pubDate><guid>https://blog.bkisc.com/blog/bkisc/htb2023-for/</guid><description>&lt;p>
+&lt;ul class="tags-list">
+&lt;a href="https://blog.bkisc.com/tag/ctf/">ctf&lt;/a>
+&lt;a href="https://blog.bkisc.com/tag/writeup/">writeup&lt;/a>
+&lt;a href="https://blog.bkisc.com/tag/forensics/">forensics&lt;/a>
+&lt;a href="https://blog.bkisc.com/tag/htb-2023/">htb-2023&lt;/a>
+&lt;/ul>
 &lt;details class="toc-inpage d-print-none " open>
 &lt;summary class="font-weight-bold">Table of Contents&lt;/summary>
 &lt;nav id="TableOfContents">
@@ -1199,6 +1212,7 @@
 &lt;/ul>
 &lt;/nav>
 &lt;/details>
+&lt;/p>
 &lt;h2 id="plaintext-tleasure">Plaintext Tleasure&lt;/h2>
 &lt;ul>
 &lt;li>
@@ -2022,7 +2036,13 @@
 &lt;li>
 &lt;p>&lt;a href="https://fazect.github.io/htb2023/" target="_blank" rel="noopener">From FazeCT&lt;/a>&lt;/p>
 &lt;/li>
-&lt;/ul></description></item><item><title>Cyber Apocalypse 2023: The Cursed Mission - Miscellaneous</title><link>https://blog.bkisc.com/blog/bkisc/htb2023-misc/</link><pubDate>Mon, 27 Mar 2023 00:00:00 +0000</pubDate><guid>https://blog.bkisc.com/blog/bkisc/htb2023-misc/</guid><description>
+&lt;/ul></description></item><item><title>Cyber Apocalypse 2023: The Cursed Mission - Miscellaneous</title><link>https://blog.bkisc.com/blog/bkisc/htb2023-misc/</link><pubDate>Mon, 27 Mar 2023 00:00:00 +0000</pubDate><guid>https://blog.bkisc.com/blog/bkisc/htb2023-misc/</guid><description>&lt;p>
+&lt;ul class="tags-list">
+&lt;a href="https://blog.bkisc.com/tag/ctf/">ctf&lt;/a>
+&lt;a href="https://blog.bkisc.com/tag/writeup/">writeup&lt;/a>
+&lt;a href="https://blog.bkisc.com/tag/misc/">misc&lt;/a>
+&lt;a href="https://blog.bkisc.com/tag/htb-2023/">htb-2023&lt;/a>
+&lt;/ul>
 &lt;details class="toc-inpage d-print-none " open>
 &lt;summary class="font-weight-bold">Table of Contents&lt;/summary>
 &lt;nav id="TableOfContents">
@@ -2038,6 +2058,7 @@
 &lt;/ul>
 &lt;/nav>
 &lt;/details>
+&lt;/p>
 &lt;h2 id="persistence">Persistence&lt;/h2>
 &lt;ul>
 &lt;li>
@@ -2403,7 +2424,13 @@
 &lt;h2 id="original-posts">Original Posts&lt;/h2>
 &lt;ul>
 &lt;li>&lt;a href="https://fazect.github.io/htb2023/" target="_blank" rel="noopener">From FazeCT&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Cyber Apocalypse 2023: The Cursed Mission - Pwnable</title><link>https://blog.bkisc.com/blog/bkisc/htb2023-pwn/</link><pubDate>Mon, 27 Mar 2023 00:00:00 +0000</pubDate><guid>https://blog.bkisc.com/blog/bkisc/htb2023-pwn/</guid><description>
+&lt;/ul></description></item><item><title>Cyber Apocalypse 2023: The Cursed Mission - Pwnable</title><link>https://blog.bkisc.com/blog/bkisc/htb2023-pwn/</link><pubDate>Mon, 27 Mar 2023 00:00:00 +0000</pubDate><guid>https://blog.bkisc.com/blog/bkisc/htb2023-pwn/</guid><description>&lt;p>
+&lt;ul class="tags-list">
+&lt;a href="https://blog.bkisc.com/tag/ctf/">ctf&lt;/a>
+&lt;a href="https://blog.bkisc.com/tag/writeup/">writeup&lt;/a>
+&lt;a href="https://blog.bkisc.com/tag/pwn/">pwn&lt;/a>
+&lt;a href="https://blog.bkisc.com/tag/htb-2023/">htb-2023&lt;/a>
+&lt;/ul>
 &lt;details class="toc-inpage d-print-none " open>
 &lt;summary class="font-weight-bold">Table of Contents&lt;/summary>
 &lt;nav id="TableOfContents">
@@ -2418,6 +2445,7 @@
 &lt;/ul>
 &lt;/nav>
 &lt;/details>
+&lt;/p>
 &lt;h2 id="initialise-connection">Initialise Connection&lt;/h2>
 &lt;ul>
 &lt;li>
@@ -3030,7 +3058,13 @@
 &lt;h2 id="original-posts">Original Posts&lt;/h2>
 &lt;ul>
 &lt;li>&lt;a href="https://fazect.github.io/htb2023/" target="_blank" rel="noopener">From FazeCT&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Cyber Apocalypse 2023: The Cursed Mission - Reverse Engineering</title><link>https://blog.bkisc.com/blog/bkisc/htb2023-re/</link><pubDate>Mon, 27 Mar 2023 00:00:00 +0000</pubDate><guid>https://blog.bkisc.com/blog/bkisc/htb2023-re/</guid><description>
+&lt;/ul></description></item><item><title>Cyber Apocalypse 2023: The Cursed Mission - Reverse Engineering</title><link>https://blog.bkisc.com/blog/bkisc/htb2023-re/</link><pubDate>Mon, 27 Mar 2023 00:00:00 +0000</pubDate><guid>https://blog.bkisc.com/blog/bkisc/htb2023-re/</guid><description>&lt;p>
+&lt;ul class="tags-list">
+&lt;a href="https://blog.bkisc.com/tag/ctf/">ctf&lt;/a>
+&lt;a href="https://blog.bkisc.com/tag/writeup/">writeup&lt;/a>
+&lt;a href="https://blog.bkisc.com/tag/re/">re&lt;/a>
+&lt;a href="https://blog.bkisc.com/tag/htb-2023/">htb-2023&lt;/a>
+&lt;/ul>
 &lt;details class="toc-inpage d-print-none " open>
 &lt;summary class="font-weight-bold">Table of Contents&lt;/summary>
 &lt;nav id="TableOfContents">
@@ -3047,6 +3081,7 @@
 &lt;/ul>
 &lt;/nav>
 &lt;/details>
+&lt;/p>
 &lt;h2 id="shattered-tablet">Shattered Tablet&lt;/h2>
 &lt;ul>
 &lt;li>
@@ -3689,7 +3724,12 @@
 &lt;h2 id="original-posts">Original Posts&lt;/h2>
 &lt;ul>
 &lt;li>&lt;a href="https://fazect.github.io/htb2023/" target="_blank" rel="noopener">From FazeCT&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Cyber Apocalypse 2023: The Cursed Mission - Web Exploitation</title><link>https://blog.bkisc.com/blog/bkisc/htb2023-web/</link><pubDate>Mon, 27 Mar 2023 00:00:00 +0000</pubDate><guid>https://blog.bkisc.com/blog/bkisc/htb2023-web/</guid><description>
+&lt;/ul></description></item><item><title>Cyber Apocalypse 2023: The Cursed Mission - Web Exploitation</title><link>https://blog.bkisc.com/blog/bkisc/htb2023-web/</link><pubDate>Mon, 27 Mar 2023 00:00:00 +0000</pubDate><guid>https://blog.bkisc.com/blog/bkisc/htb2023-web/</guid><description>&lt;p>
+&lt;ul class="tags-list">
+&lt;a href="https://blog.bkisc.com/tag/ctf/">ctf&lt;/a>
+&lt;a href="https://blog.bkisc.com/tag/writeup/">writeup&lt;/a>
+&lt;a href="https://blog.bkisc.com/tag/htb-2023/">htb-2023&lt;/a>
+&lt;/ul>
 &lt;details class="toc-inpage d-print-none " open>
 &lt;summary class="font-weight-bold">Table of Contents&lt;/summary>
 &lt;nav id="TableOfContents">
@@ -3707,6 +3747,7 @@
 &lt;/ul>
 &lt;/nav>
 &lt;/details>
+&lt;/p>
 &lt;h2 id="introduction">Introduction&lt;/h2>
 &lt;p>Welcome to our blog post about the web challenges in the HTB Cyber Apocalypse 2023 competition! For those who may not be familiar, HTB (Hack The Box) is a platform that provides a range of cybersecurity challenges for users to test and improve their skills. Cyber Apocalypse 2023 was a massive virtual event that took place in February 2023, where thousands of participants from all over the world competed in a range of challenges, including web, crypto, reverse engineering, and more.&lt;/p>
 &lt;p>We were able to reach 29th place and solve 60/74 challenges. Particularly for web challenges, we got 8/9 (the one we didn&amp;rsquo;t solve was Unearthly Shop).&lt;/p>
@@ -4778,7 +4819,13 @@ Use &lt;code>!{hostname}&lt;/code> obviously.&lt;/p>
 &lt;h2 id="original-posts">Original Posts&lt;/h2>
 &lt;ul>
 &lt;li>&lt;a href="https://fazect.github.io/htb2023/" target="_blank" rel="noopener">From FazeCT&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>idekCTF 2022 - Osint/Osint Crime Confusion 3: W as in Who</title><link>https://blog.bkisc.com/blog/fazect/idekctf2022_osintcrime3/</link><pubDate>Mon, 16 Jan 2023 03:50:54 +0000</pubDate><guid>https://blog.bkisc.com/blog/fazect/idekctf2022_osintcrime3/</guid><description>
+&lt;/ul></description></item><item><title>idekCTF 2022 - Osint/Osint Crime Confusion 3: W as in Who</title><link>https://blog.bkisc.com/blog/fazect/idekctf2022_osintcrime3/</link><pubDate>Mon, 16 Jan 2023 03:50:54 +0000</pubDate><guid>https://blog.bkisc.com/blog/fazect/idekctf2022_osintcrime3/</guid><description>&lt;p>
+&lt;ul class="tags-list">
+&lt;a href="https://blog.bkisc.com/tag/ctf/">ctf&lt;/a>
+&lt;a href="https://blog.bkisc.com/tag/writeup/">writeup&lt;/a>
+&lt;a href="https://blog.bkisc.com/tag/osint/">osint&lt;/a>
+&lt;a href="https://blog.bkisc.com/tag/idekctf-2022/">idekctf-2022&lt;/a>
+&lt;/ul>
 &lt;details class="toc-inpage d-print-none " open>
 &lt;summary class="font-weight-bold">Table of Contents&lt;/summary>
 &lt;nav id="TableOfContents">
@@ -4792,6 +4839,7 @@ Use &lt;code>!{hostname}&lt;/code> obviously.&lt;/p>
 &lt;/ul>
 &lt;/nav>
 &lt;/details>
+&lt;/p>
 &lt;h2 id="introduction">Introduction&lt;/h2>
 &lt;p>&lt;strong>Given image:&lt;/strong> &lt;a href="https://drive.google.com/file/d/1sYKHJvmFAB0yjWCTEdp_ZL9g1Eh0G56x/view?usp=share_link" target="_blank" rel="noopener">Get it here!&lt;/a>&lt;/p>
 &lt;p>&lt;strong>Description:&lt;/strong> I feel the killer might be dangerous so I have some info to give you but I don&amp;rsquo;t want to disclose my email just like that. So find my review from the image below and send me an email asking for info. Be creative with the signature so I know its you. It is time to find Who is the killer.&lt;/p>
@@ -4820,7 +4868,13 @@ Use &lt;code>!{hostname}&lt;/code> obviously.&lt;/p>
 &lt;img src="flag.png" alt="Flag" width="1000"/>
 &lt;p>Concatenate the first letters of the last &lt;strong>7 sentences&lt;/strong> of the poem, we have our flag for the challenge: &lt;strong>idek{JULIANA_APOSIDM723489}&lt;/strong>.&lt;/p>
 &lt;h2 id="conclusion">Conclusion&lt;/h2>
-&lt;p>A good OSINT challenge overall, consist of several general skills in the field of OSINT, such as &lt;strong>using Wayback Machine&lt;/strong> or &lt;strong>finding locations on Google Maps&lt;/strong>.&lt;/p></description></item><item><title>ISITDTU CTF 2022 Finals - Slow</title><link>https://blog.bkisc.com/blog/fazect/isitdtu-2022-slow/</link><pubDate>Fri, 13 Jan 2023 15:44:54 +0000</pubDate><guid>https://blog.bkisc.com/blog/fazect/isitdtu-2022-slow/</guid><description>
+&lt;p>A good OSINT challenge overall, consist of several general skills in the field of OSINT, such as &lt;strong>using Wayback Machine&lt;/strong> or &lt;strong>finding locations on Google Maps&lt;/strong>.&lt;/p></description></item><item><title>ISITDTU CTF 2022 Finals - Slow</title><link>https://blog.bkisc.com/blog/fazect/isitdtu-2022-slow/</link><pubDate>Fri, 13 Jan 2023 15:44:54 +0000</pubDate><guid>https://blog.bkisc.com/blog/fazect/isitdtu-2022-slow/</guid><description>&lt;p>
+&lt;ul class="tags-list">
+&lt;a href="https://blog.bkisc.com/tag/ctf/">ctf&lt;/a>
+&lt;a href="https://blog.bkisc.com/tag/writeup/">writeup&lt;/a>
+&lt;a href="https://blog.bkisc.com/tag/re/">re&lt;/a>
+&lt;a href="https://blog.bkisc.com/tag/isitdtu-2022/">isitdtu-2022&lt;/a>
+&lt;/ul>
 &lt;details class="toc-inpage d-print-none " open>
 &lt;summary class="font-weight-bold">Table of Contents&lt;/summary>
 &lt;nav id="TableOfContents">
@@ -4834,6 +4888,7 @@ Use &lt;code>!{hostname}&lt;/code> obviously.&lt;/p>
 &lt;/ul>
 &lt;/nav>
 &lt;/details>
+&lt;/p>
 &lt;h2 id="introduction">Introduction&lt;/h2>
 &lt;p>&lt;strong>Given binary:&lt;/strong> &lt;a href="https://drive.google.com/file/d/1K2NjzRQadtL9CkbTINYDvrH7HRgSfDc1/view?usp=share_link" target="_blank" rel="noopener">Get it here!&lt;/a>&lt;/p>
 &lt;p>&lt;strong>Description:&lt;/strong> If you can make the program runs faster, you&amp;rsquo;ll get the flag!&lt;/p>

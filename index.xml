@@ -29,7 +29,13 @@
 &lt;li>
 &lt;p>&lt;a href="https://blog.bkisc.com/blog/bkisc/htb2023-web/" target="_blank" rel="noopener">Writeup: Web Exploitation&lt;/a>&lt;/p>
 &lt;/li>
-&lt;/ul></description></item><item><title>Cyber Apocalypse 2023: The Cursed Mission - Blockchain</title><link>https://blog.bkisc.com/blog/bkisc/htb2023-bc/</link><pubDate>Mon, 27 Mar 2023 00:00:00 +0000</pubDate><guid>https://blog.bkisc.com/blog/bkisc/htb2023-bc/</guid><description>
+&lt;/ul></description></item><item><title>Cyber Apocalypse 2023: The Cursed Mission - Blockchain</title><link>https://blog.bkisc.com/blog/bkisc/htb2023-bc/</link><pubDate>Mon, 27 Mar 2023 00:00:00 +0000</pubDate><guid>https://blog.bkisc.com/blog/bkisc/htb2023-bc/</guid><description>&lt;p>
+&lt;ul class="tags-list">
+&lt;a href="https://blog.bkisc.com/tag/ctf/">ctf&lt;/a>
+&lt;a href="https://blog.bkisc.com/tag/writeup/">writeup&lt;/a>
+&lt;a href="https://blog.bkisc.com/tag/blockchain/">blockchain&lt;/a>
+&lt;a href="https://blog.bkisc.com/tag/htb-2023/">htb-2023&lt;/a>
+&lt;/ul>
 &lt;details class="toc-inpage d-print-none " open>
 &lt;summary class="font-weight-bold">Table of Contents&lt;/summary>
 &lt;nav id="TableOfContents">
@@ -40,6 +46,7 @@
 &lt;/ul>
 &lt;/nav>
 &lt;/details>
+&lt;/p>
 &lt;h2 id="navigating-the-unknown">Navigating the Unknown&lt;/h2>
 &lt;ul>
 &lt;li>
@@ -436,7 +443,13 @@
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">forge create Exploit --rpc-url &amp;lt;rpc_url&amp;gt; --private-key &amp;lt;private_key&amp;gt; --constructor-args &amp;lt;setup_contract_address&amp;gt; --value 100ether
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>After deploying the &lt;code>Exploit&lt;/code> contract, call the &lt;code>pwn()&lt;/code> function twice. On the first call, the &lt;code>name()&lt;/code> function will return an authorized name, updating the &lt;code>lastEntrant&lt;/code> variable in the &lt;code>HighSecurityGate&lt;/code> contract. On the second call, the &lt;code>name()&lt;/code> function will return &lt;code>Pandora&lt;/code>, updating the &lt;code>lastEntrant&lt;/code> variable to the desired value.
 When the &lt;code>lastEntrant&lt;/code> variable set to &lt;code>Pandora&lt;/code>, the &lt;code>isSolved()&lt;/code> function in the &lt;code>Setup&lt;/code> contract will return &lt;code>true&lt;/code>, indicating that the challenge has been successfully solved.&lt;/p>
-&lt;p>Flag is: &lt;strong>HTB{H1D1n9_1n_PL41n_519H7}&lt;/strong>&lt;/p></description></item><item><title>Cyber Apocalypse 2023: The Cursed Mission - Cryptography</title><link>https://blog.bkisc.com/blog/bkisc/htb2023-crypto/</link><pubDate>Mon, 27 Mar 2023 00:00:00 +0000</pubDate><guid>https://blog.bkisc.com/blog/bkisc/htb2023-crypto/</guid><description>
+&lt;p>Flag is: &lt;strong>HTB{H1D1n9_1n_PL41n_519H7}&lt;/strong>&lt;/p></description></item><item><title>Cyber Apocalypse 2023: The Cursed Mission - Cryptography</title><link>https://blog.bkisc.com/blog/bkisc/htb2023-crypto/</link><pubDate>Mon, 27 Mar 2023 00:00:00 +0000</pubDate><guid>https://blog.bkisc.com/blog/bkisc/htb2023-crypto/</guid><description>&lt;p>
+&lt;ul class="tags-list">
+&lt;a href="https://blog.bkisc.com/tag/ctf/">ctf&lt;/a>
+&lt;a href="https://blog.bkisc.com/tag/writeup/">writeup&lt;/a>
+&lt;a href="https://blog.bkisc.com/tag/crypto/">crypto&lt;/a>
+&lt;a href="https://blog.bkisc.com/tag/htb-2023/">htb-2023&lt;/a>
+&lt;/ul>
 &lt;details class="toc-inpage d-print-none " open>
 &lt;summary class="font-weight-bold">Table of Contents&lt;/summary>
 &lt;nav id="TableOfContents">
@@ -496,6 +509,7 @@ When the &lt;code>lastEntrant&lt;/code> variable set to &lt;code>Pandora&lt;/cod
 &lt;/ul>
 &lt;/nav>
 &lt;/details>
+&lt;/p>
 &lt;h2 id="ancient-encodings">Ancient Encodings&lt;/h2>
 &lt;ul>
 &lt;li>
@@ -1616,7 +1630,13 @@ When the &lt;code>lastEntrant&lt;/code> variable set to &lt;code>Pandora&lt;/cod
 &lt;li>
 &lt;p>&lt;a href="https://haopham23.github.io/dashaus165blog/" target="_blank" rel="noopener">From dasHaus&lt;/a>&lt;/p>
 &lt;/li>
-&lt;/ul></description></item><item><title>Cyber Apocalypse 2023: The Cursed Mission - Forensics</title><link>https://blog.bkisc.com/blog/bkisc/htb2023-for/</link><pubDate>Mon, 27 Mar 2023 00:00:00 +0000</pubDate><guid>https://blog.bkisc.com/blog/bkisc/htb2023-for/</guid><description>
+&lt;/ul></description></item><item><title>Cyber Apocalypse 2023: The Cursed Mission - Forensics</title><link>https://blog.bkisc.com/blog/bkisc/htb2023-for/</link><pubDate>Mon, 27 Mar 2023 00:00:00 +0000</pubDate><guid>https://blog.bkisc.com/blog/bkisc/htb2023-for/</guid><description>&lt;p>
+&lt;ul class="tags-list">
+&lt;a href="https://blog.bkisc.com/tag/ctf/">ctf&lt;/a>
+&lt;a href="https://blog.bkisc.com/tag/writeup/">writeup&lt;/a>
+&lt;a href="https://blog.bkisc.com/tag/forensics/">forensics&lt;/a>
+&lt;a href="https://blog.bkisc.com/tag/htb-2023/">htb-2023&lt;/a>
+&lt;/ul>
 &lt;details class="toc-inpage d-print-none " open>
 &lt;summary class="font-weight-bold">Table of Contents&lt;/summary>
 &lt;nav id="TableOfContents">
@@ -1637,6 +1657,7 @@ When the &lt;code>lastEntrant&lt;/code> variable set to &lt;code>Pandora&lt;/cod
 &lt;/ul>
 &lt;/nav>
 &lt;/details>
+&lt;/p>
 &lt;h2 id="plaintext-tleasure">Plaintext Tleasure&lt;/h2>
 &lt;ul>
 &lt;li>
@@ -2460,7 +2481,13 @@ When the &lt;code>lastEntrant&lt;/code> variable set to &lt;code>Pandora&lt;/cod
 &lt;li>
 &lt;p>&lt;a href="https://fazect.github.io/htb2023/" target="_blank" rel="noopener">From FazeCT&lt;/a>&lt;/p>
 &lt;/li>
-&lt;/ul></description></item><item><title>Cyber Apocalypse 2023: The Cursed Mission - Hardware</title><link>https://blog.bkisc.com/blog/bkisc/htb2023-hw/</link><pubDate>Mon, 27 Mar 2023 00:00:00 +0000</pubDate><guid>https://blog.bkisc.com/blog/bkisc/htb2023-hw/</guid><description>
+&lt;/ul></description></item><item><title>Cyber Apocalypse 2023: The Cursed Mission - Hardware</title><link>https://blog.bkisc.com/blog/bkisc/htb2023-hw/</link><pubDate>Mon, 27 Mar 2023 00:00:00 +0000</pubDate><guid>https://blog.bkisc.com/blog/bkisc/htb2023-hw/</guid><description>&lt;p>
+&lt;ul class="tags-list">
+&lt;a href="https://blog.bkisc.com/tag/ctf/">ctf&lt;/a>
+&lt;a href="https://blog.bkisc.com/tag/writeup/">writeup&lt;/a>
+&lt;a href="https://blog.bkisc.com/tag/hardware/">hardware&lt;/a>
+&lt;a href="https://blog.bkisc.com/tag/htb-2023/">htb-2023&lt;/a>
+&lt;/ul>
 &lt;details class="toc-inpage d-print-none " open>
 &lt;summary class="font-weight-bold">Table of Contents&lt;/summary>
 &lt;nav id="TableOfContents">
@@ -2487,6 +2514,7 @@ When the &lt;code>lastEntrant&lt;/code> variable set to &lt;code>Pandora&lt;/cod
 &lt;/ul>
 &lt;/nav>
 &lt;/details>
+&lt;/p>
 &lt;h2 id="timed-transmission">Timed transmission&lt;/h2>
 &lt;ul>
 &lt;li>
@@ -2626,7 +2654,12 @@ When the &lt;code>lastEntrant&lt;/code> variable set to &lt;code>Pandora&lt;/cod
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#print(flag)&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nb">bytes&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">fromhex&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">flag&lt;/span>&lt;span class="p">))&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Flag is: &lt;strong>HTB{p0w32_c0m35_f20m_w17h1n@!#}&lt;/strong>&lt;/p></description></item><item><title>Cyber Apocalypse 2023: The Cursed Mission - Machine Learning</title><link>https://blog.bkisc.com/blog/bkisc/htb2023-ml/</link><pubDate>Mon, 27 Mar 2023 00:00:00 +0000</pubDate><guid>https://blog.bkisc.com/blog/bkisc/htb2023-ml/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Flag is: &lt;strong>HTB{p0w32_c0m35_f20m_w17h1n@!#}&lt;/strong>&lt;/p></description></item><item><title>Cyber Apocalypse 2023: The Cursed Mission - Machine Learning</title><link>https://blog.bkisc.com/blog/bkisc/htb2023-ml/</link><pubDate>Mon, 27 Mar 2023 00:00:00 +0000</pubDate><guid>https://blog.bkisc.com/blog/bkisc/htb2023-ml/</guid><description>&lt;p>
+&lt;ul class="tags-list">
+&lt;a href="https://blog.bkisc.com/tag/ctf/">ctf&lt;/a>
+&lt;a href="https://blog.bkisc.com/tag/writeup/">writeup&lt;/a>
+&lt;a href="https://blog.bkisc.com/tag/htb-2023/">htb-2023&lt;/a>
+&lt;/ul>
 &lt;details class="toc-inpage d-print-none " open>
 &lt;summary class="font-weight-bold">Table of Contents&lt;/summary>
 &lt;nav id="TableOfContents">
@@ -2638,6 +2671,7 @@ When the &lt;code>lastEntrant&lt;/code> variable set to &lt;code>Pandora&lt;/cod
 &lt;/ul>
 &lt;/nav>
 &lt;/details>
+&lt;/p>
 &lt;h2 id="reconfiguration">Reconfiguration&lt;/h2>
 &lt;ul>
 &lt;li>
@@ -2814,7 +2848,13 @@ When the &lt;code>lastEntrant&lt;/code> variable set to &lt;code>Pandora&lt;/cod
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">generated_text&lt;/span>&lt;span class="p">)&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To solve the challenge, we first created utility functions to convert text to index and index to text. Then, we wrote a function generate_text that takes the model, an initial text, and the desired length of the generated text. The function generates text by iteratively feeding the last character of the generated text to the model and appending the predicted character to the generated text.&lt;/p>
 &lt;p>We loaded the pre-trained model and moved it to the appropriate device (GPU or CPU). Finally, we generated text using the generate_text function with an initial text and a specified length, and printed the resulting text.&lt;/p>
-&lt;p>Flag is: &lt;strong>HTB{Pr0t3c7_L1fe}&lt;/strong>&lt;/p></description></item><item><title>Cyber Apocalypse 2023: The Cursed Mission - Miscellaneous</title><link>https://blog.bkisc.com/blog/bkisc/htb2023-misc/</link><pubDate>Mon, 27 Mar 2023 00:00:00 +0000</pubDate><guid>https://blog.bkisc.com/blog/bkisc/htb2023-misc/</guid><description>
+&lt;p>Flag is: &lt;strong>HTB{Pr0t3c7_L1fe}&lt;/strong>&lt;/p></description></item><item><title>Cyber Apocalypse 2023: The Cursed Mission - Miscellaneous</title><link>https://blog.bkisc.com/blog/bkisc/htb2023-misc/</link><pubDate>Mon, 27 Mar 2023 00:00:00 +0000</pubDate><guid>https://blog.bkisc.com/blog/bkisc/htb2023-misc/</guid><description>&lt;p>
+&lt;ul class="tags-list">
+&lt;a href="https://blog.bkisc.com/tag/ctf/">ctf&lt;/a>
+&lt;a href="https://blog.bkisc.com/tag/writeup/">writeup&lt;/a>
+&lt;a href="https://blog.bkisc.com/tag/misc/">misc&lt;/a>
+&lt;a href="https://blog.bkisc.com/tag/htb-2023/">htb-2023&lt;/a>
+&lt;/ul>
 &lt;details class="toc-inpage d-print-none " open>
 &lt;summary class="font-weight-bold">Table of Contents&lt;/summary>
 &lt;nav id="TableOfContents">
@@ -2830,6 +2870,7 @@ When the &lt;code>lastEntrant&lt;/code> variable set to &lt;code>Pandora&lt;/cod
 &lt;/ul>
 &lt;/nav>
 &lt;/details>
+&lt;/p>
 &lt;h2 id="persistence">Persistence&lt;/h2>
 &lt;ul>
 &lt;li>
@@ -3195,7 +3236,13 @@ When the &lt;code>lastEntrant&lt;/code> variable set to &lt;code>Pandora&lt;/cod
 &lt;h2 id="original-posts">Original Posts&lt;/h2>
 &lt;ul>
 &lt;li>&lt;a href="https://fazect.github.io/htb2023/" target="_blank" rel="noopener">From FazeCT&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Cyber Apocalypse 2023: The Cursed Mission - Pwnable</title><link>https://blog.bkisc.com/blog/bkisc/htb2023-pwn/</link><pubDate>Mon, 27 Mar 2023 00:00:00 +0000</pubDate><guid>https://blog.bkisc.com/blog/bkisc/htb2023-pwn/</guid><description>
+&lt;/ul></description></item><item><title>Cyber Apocalypse 2023: The Cursed Mission - Pwnable</title><link>https://blog.bkisc.com/blog/bkisc/htb2023-pwn/</link><pubDate>Mon, 27 Mar 2023 00:00:00 +0000</pubDate><guid>https://blog.bkisc.com/blog/bkisc/htb2023-pwn/</guid><description>&lt;p>
+&lt;ul class="tags-list">
+&lt;a href="https://blog.bkisc.com/tag/ctf/">ctf&lt;/a>
+&lt;a href="https://blog.bkisc.com/tag/writeup/">writeup&lt;/a>
+&lt;a href="https://blog.bkisc.com/tag/pwn/">pwn&lt;/a>
+&lt;a href="https://blog.bkisc.com/tag/htb-2023/">htb-2023&lt;/a>
+&lt;/ul>
 &lt;details class="toc-inpage d-print-none " open>
 &lt;summary class="font-weight-bold">Table of Contents&lt;/summary>
 &lt;nav id="TableOfContents">
@@ -3210,6 +3257,7 @@ When the &lt;code>lastEntrant&lt;/code> variable set to &lt;code>Pandora&lt;/cod
 &lt;/ul>
 &lt;/nav>
 &lt;/details>
+&lt;/p>
 &lt;h2 id="initialise-connection">Initialise Connection&lt;/h2>
 &lt;ul>
 &lt;li>
@@ -3822,7 +3870,13 @@ When the &lt;code>lastEntrant&lt;/code> variable set to &lt;code>Pandora&lt;/cod
 &lt;h2 id="original-posts">Original Posts&lt;/h2>
 &lt;ul>
 &lt;li>&lt;a href="https://fazect.github.io/htb2023/" target="_blank" rel="noopener">From FazeCT&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Cyber Apocalypse 2023: The Cursed Mission - Reverse Engineering</title><link>https://blog.bkisc.com/blog/bkisc/htb2023-re/</link><pubDate>Mon, 27 Mar 2023 00:00:00 +0000</pubDate><guid>https://blog.bkisc.com/blog/bkisc/htb2023-re/</guid><description>
+&lt;/ul></description></item><item><title>Cyber Apocalypse 2023: The Cursed Mission - Reverse Engineering</title><link>https://blog.bkisc.com/blog/bkisc/htb2023-re/</link><pubDate>Mon, 27 Mar 2023 00:00:00 +0000</pubDate><guid>https://blog.bkisc.com/blog/bkisc/htb2023-re/</guid><description>&lt;p>
+&lt;ul class="tags-list">
+&lt;a href="https://blog.bkisc.com/tag/ctf/">ctf&lt;/a>
+&lt;a href="https://blog.bkisc.com/tag/writeup/">writeup&lt;/a>
+&lt;a href="https://blog.bkisc.com/tag/re/">re&lt;/a>
+&lt;a href="https://blog.bkisc.com/tag/htb-2023/">htb-2023&lt;/a>
+&lt;/ul>
 &lt;details class="toc-inpage d-print-none " open>
 &lt;summary class="font-weight-bold">Table of Contents&lt;/summary>
 &lt;nav id="TableOfContents">
@@ -3839,6 +3893,7 @@ When the &lt;code>lastEntrant&lt;/code> variable set to &lt;code>Pandora&lt;/cod
 &lt;/ul>
 &lt;/nav>
 &lt;/details>
+&lt;/p>
 &lt;h2 id="shattered-tablet">Shattered Tablet&lt;/h2>
 &lt;ul>
 &lt;li>
@@ -4481,7 +4536,12 @@ When the &lt;code>lastEntrant&lt;/code> variable set to &lt;code>Pandora&lt;/cod
 &lt;h2 id="original-posts">Original Posts&lt;/h2>
 &lt;ul>
 &lt;li>&lt;a href="https://fazect.github.io/htb2023/" target="_blank" rel="noopener">From FazeCT&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Cyber Apocalypse 2023: The Cursed Mission - Web Exploitation</title><link>https://blog.bkisc.com/blog/bkisc/htb2023-web/</link><pubDate>Mon, 27 Mar 2023 00:00:00 +0000</pubDate><guid>https://blog.bkisc.com/blog/bkisc/htb2023-web/</guid><description>
+&lt;/ul></description></item><item><title>Cyber Apocalypse 2023: The Cursed Mission - Web Exploitation</title><link>https://blog.bkisc.com/blog/bkisc/htb2023-web/</link><pubDate>Mon, 27 Mar 2023 00:00:00 +0000</pubDate><guid>https://blog.bkisc.com/blog/bkisc/htb2023-web/</guid><description>&lt;p>
+&lt;ul class="tags-list">
+&lt;a href="https://blog.bkisc.com/tag/ctf/">ctf&lt;/a>
+&lt;a href="https://blog.bkisc.com/tag/writeup/">writeup&lt;/a>
+&lt;a href="https://blog.bkisc.com/tag/htb-2023/">htb-2023&lt;/a>
+&lt;/ul>
 &lt;details class="toc-inpage d-print-none " open>
 &lt;summary class="font-weight-bold">Table of Contents&lt;/summary>
 &lt;nav id="TableOfContents">
@@ -4499,6 +4559,7 @@ When the &lt;code>lastEntrant&lt;/code> variable set to &lt;code>Pandora&lt;/cod
 &lt;/ul>
 &lt;/nav>
 &lt;/details>
+&lt;/p>
 &lt;h2 id="introduction">Introduction&lt;/h2>
 &lt;p>Welcome to our blog post about the web challenges in the HTB Cyber Apocalypse 2023 competition! For those who may not be familiar, HTB (Hack The Box) is a platform that provides a range of cybersecurity challenges for users to test and improve their skills. Cyber Apocalypse 2023 was a massive virtual event that took place in February 2023, where thousands of participants from all over the world competed in a range of challenges, including web, crypto, reverse engineering, and more.&lt;/p>
 &lt;p>We were able to reach 29th place and solve 60/74 challenges. Particularly for web challenges, we got 8/9 (the one we didn&amp;rsquo;t solve was Unearthly Shop).&lt;/p>
@@ -5570,7 +5631,13 @@ Use &lt;code>!{hostname}&lt;/code> obviously.&lt;/p>
 &lt;h2 id="original-posts">Original Posts&lt;/h2>
 &lt;ul>
 &lt;li>&lt;a href="https://fazect.github.io/htb2023/" target="_blank" rel="noopener">From FazeCT&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>idekCTF 2022 - Osint/Osint Crime Confusion 3: W as in Who</title><link>https://blog.bkisc.com/blog/fazect/idekctf2022_osintcrime3/</link><pubDate>Mon, 16 Jan 2023 03:50:54 +0000</pubDate><guid>https://blog.bkisc.com/blog/fazect/idekctf2022_osintcrime3/</guid><description>
+&lt;/ul></description></item><item><title>idekCTF 2022 - Osint/Osint Crime Confusion 3: W as in Who</title><link>https://blog.bkisc.com/blog/fazect/idekctf2022_osintcrime3/</link><pubDate>Mon, 16 Jan 2023 03:50:54 +0000</pubDate><guid>https://blog.bkisc.com/blog/fazect/idekctf2022_osintcrime3/</guid><description>&lt;p>
+&lt;ul class="tags-list">
+&lt;a href="https://blog.bkisc.com/tag/ctf/">ctf&lt;/a>
+&lt;a href="https://blog.bkisc.com/tag/writeup/">writeup&lt;/a>
+&lt;a href="https://blog.bkisc.com/tag/osint/">osint&lt;/a>
+&lt;a href="https://blog.bkisc.com/tag/idekctf-2022/">idekctf-2022&lt;/a>
+&lt;/ul>
 &lt;details class="toc-inpage d-print-none " open>
 &lt;summary class="font-weight-bold">Table of Contents&lt;/summary>
 &lt;nav id="TableOfContents">
@@ -5584,6 +5651,7 @@ Use &lt;code>!{hostname}&lt;/code> obviously.&lt;/p>
 &lt;/ul>
 &lt;/nav>
 &lt;/details>
+&lt;/p>
 &lt;h2 id="introduction">Introduction&lt;/h2>
 &lt;p>&lt;strong>Given image:&lt;/strong> &lt;a href="https://drive.google.com/file/d/1sYKHJvmFAB0yjWCTEdp_ZL9g1Eh0G56x/view?usp=share_link" target="_blank" rel="noopener">Get it here!&lt;/a>&lt;/p>
 &lt;p>&lt;strong>Description:&lt;/strong> I feel the killer might be dangerous so I have some info to give you but I don&amp;rsquo;t want to disclose my email just like that. So find my review from the image below and send me an email asking for info. Be creative with the signature so I know its you. It is time to find Who is the killer.&lt;/p>
@@ -5612,7 +5680,13 @@ Use &lt;code>!{hostname}&lt;/code> obviously.&lt;/p>
 &lt;img src="flag.png" alt="Flag" width="1000"/>
 &lt;p>Concatenate the first letters of the last &lt;strong>7 sentences&lt;/strong> of the poem, we have our flag for the challenge: &lt;strong>idek{JULIANA_APOSIDM723489}&lt;/strong>.&lt;/p>
 &lt;h2 id="conclusion">Conclusion&lt;/h2>
-&lt;p>A good OSINT challenge overall, consist of several general skills in the field of OSINT, such as &lt;strong>using Wayback Machine&lt;/strong> or &lt;strong>finding locations on Google Maps&lt;/strong>.&lt;/p></description></item><item><title>ISITDTU CTF 2022 Finals - Slow</title><link>https://blog.bkisc.com/blog/fazect/isitdtu-2022-slow/</link><pubDate>Fri, 13 Jan 2023 15:44:54 +0000</pubDate><guid>https://blog.bkisc.com/blog/fazect/isitdtu-2022-slow/</guid><description>
+&lt;p>A good OSINT challenge overall, consist of several general skills in the field of OSINT, such as &lt;strong>using Wayback Machine&lt;/strong> or &lt;strong>finding locations on Google Maps&lt;/strong>.&lt;/p></description></item><item><title>ISITDTU CTF 2022 Finals - Slow</title><link>https://blog.bkisc.com/blog/fazect/isitdtu-2022-slow/</link><pubDate>Fri, 13 Jan 2023 15:44:54 +0000</pubDate><guid>https://blog.bkisc.com/blog/fazect/isitdtu-2022-slow/</guid><description>&lt;p>
+&lt;ul class="tags-list">
+&lt;a href="https://blog.bkisc.com/tag/ctf/">ctf&lt;/a>
+&lt;a href="https://blog.bkisc.com/tag/writeup/">writeup&lt;/a>
+&lt;a href="https://blog.bkisc.com/tag/re/">re&lt;/a>
+&lt;a href="https://blog.bkisc.com/tag/isitdtu-2022/">isitdtu-2022&lt;/a>
+&lt;/ul>
 &lt;details class="toc-inpage d-print-none " open>
 &lt;summary class="font-weight-bold">Table of Contents&lt;/summary>
 &lt;nav id="TableOfContents">
@@ -5626,6 +5700,7 @@ Use &lt;code>!{hostname}&lt;/code> obviously.&lt;/p>
 &lt;/ul>
 &lt;/nav>
 &lt;/details>
+&lt;/p>
 &lt;h2 id="introduction">Introduction&lt;/h2>
 &lt;p>&lt;strong>Given binary:&lt;/strong> &lt;a href="https://drive.google.com/file/d/1K2NjzRQadtL9CkbTINYDvrH7HRgSfDc1/view?usp=share_link" target="_blank" rel="noopener">Get it here!&lt;/a>&lt;/p>
 &lt;p>&lt;strong>Description:&lt;/strong> If you can make the program runs faster, you&amp;rsquo;ll get the flag!&lt;/p>
@@ -5776,7 +5851,11 @@ Use &lt;code>!{hostname}&lt;/code> obviously.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">fazect@LAPTOP-CQA118DI:/mnt/d/Downloads$ ./slow.exe
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">RESULT: 75025
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">flag is: Pr4ct1c3_VMc0d3_w1th_F1b0n4cc1
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Wrap the flag with &lt;strong>ISITDTU{}&lt;/strong>, we have our flag for the challenge: &lt;strong>ISITDTU{Pr4ct1c3_VMc0d3_w1th_F1b0n4cc1}&lt;/strong>.&lt;/p></description></item><item><title>Sekai CTF 2022 Bottle Poem</title><link>https://blog.bkisc.com/blog/duti/sekai-ctf-2022-bottle-poem/</link><pubDate>Thu, 12 Jan 2023 00:00:00 +0000</pubDate><guid>https://blog.bkisc.com/blog/duti/sekai-ctf-2022-bottle-poem/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Wrap the flag with &lt;strong>ISITDTU{}&lt;/strong>, we have our flag for the challenge: &lt;strong>ISITDTU{Pr4ct1c3_VMc0d3_w1th_F1b0n4cc1}&lt;/strong>.&lt;/p></description></item><item><title>Sekai CTF 2022 Bottle Poem</title><link>https://blog.bkisc.com/blog/duti/sekai-ctf-2022-bottle-poem/</link><pubDate>Thu, 12 Jan 2023 00:00:00 +0000</pubDate><guid>https://blog.bkisc.com/blog/duti/sekai-ctf-2022-bottle-poem/</guid><description>&lt;p>
+&lt;ul class="tags-list">
+&lt;a href="https://blog.bkisc.com/tag/ctf/">ctf&lt;/a>
+&lt;a href="https://blog.bkisc.com/tag/writeup/">writeup&lt;/a>
+&lt;/ul>
 &lt;details class="toc-inpage d-print-none " open>
 &lt;summary class="font-weight-bold">Table of Contents&lt;/summary>
 &lt;nav id="TableOfContents">
@@ -5797,6 +5876,7 @@ Use &lt;code>!{hostname}&lt;/code> obviously.&lt;/p>
 &lt;/ul>
 &lt;/nav>
 &lt;/details>
+&lt;/p>
 &lt;h2 id="problem-statement">Problem statement&lt;/h2>
 &lt;p>
 &lt;figure >

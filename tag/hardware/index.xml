@@ -1,4 +1,10 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>hardware | BKISC Blogs</title><link>https://blog.bkisc.com/tag/hardware/</link><atom:link href="https://blog.bkisc.com/tag/hardware/index.xml" rel="self" type="application/rss+xml"/><description>hardware</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 27 Mar 2023 00:00:00 +0000</lastBuildDate><image><url>https://blog.bkisc.com/media/logo_huc55a0313517dd04bda48a4ace4db28bc_511389_300x300_fit_lanczos_3.png</url><title>hardware</title><link>https://blog.bkisc.com/tag/hardware/</link></image><item><title>Cyber Apocalypse 2023: The Cursed Mission - Hardware</title><link>https://blog.bkisc.com/blog/bkisc/htb2023-hw/</link><pubDate>Mon, 27 Mar 2023 00:00:00 +0000</pubDate><guid>https://blog.bkisc.com/blog/bkisc/htb2023-hw/</guid><description>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>hardware | BKISC Blogs</title><link>https://blog.bkisc.com/tag/hardware/</link><atom:link href="https://blog.bkisc.com/tag/hardware/index.xml" rel="self" type="application/rss+xml"/><description>hardware</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 27 Mar 2023 00:00:00 +0000</lastBuildDate><image><url>https://blog.bkisc.com/media/logo_huc55a0313517dd04bda48a4ace4db28bc_511389_300x300_fit_lanczos_3.png</url><title>hardware</title><link>https://blog.bkisc.com/tag/hardware/</link></image><item><title>Cyber Apocalypse 2023: The Cursed Mission - Hardware</title><link>https://blog.bkisc.com/blog/bkisc/htb2023-hw/</link><pubDate>Mon, 27 Mar 2023 00:00:00 +0000</pubDate><guid>https://blog.bkisc.com/blog/bkisc/htb2023-hw/</guid><description>&lt;p>
+&lt;ul class="tags-list">
+&lt;a href="https://blog.bkisc.com/tag/ctf/">ctf&lt;/a>
+&lt;a href="https://blog.bkisc.com/tag/writeup/">writeup&lt;/a>
+&lt;a href="https://blog.bkisc.com/tag/hardware/">hardware&lt;/a>
+&lt;a href="https://blog.bkisc.com/tag/htb-2023/">htb-2023&lt;/a>
+&lt;/ul>
 &lt;details class="toc-inpage d-print-none " open>
 &lt;summary class="font-weight-bold">Table of Contents&lt;/summary>
 &lt;nav id="TableOfContents">
@@ -25,6 +31,7 @@
 &lt;/ul>
 &lt;/nav>
 &lt;/details>
+&lt;/p>
 &lt;h2 id="timed-transmission">Timed transmission&lt;/h2>
 &lt;ul>
 &lt;li>

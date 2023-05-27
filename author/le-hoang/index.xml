@@ -1,4 +1,10 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Lê Hoàng | BKISC Blogs</title><link>https://blog.bkisc.com/author/le-hoang/</link><atom:link href="https://blog.bkisc.com/author/le-hoang/index.xml" rel="self" type="application/rss+xml"/><description>Lê Hoàng</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 27 Mar 2023 00:00:00 +0000</lastBuildDate><image><url>https://blog.bkisc.com/author/le-hoang/avatar_hub1960694dd8a44fa9cc7ba9b0e79ac0e_263514_270x270_fill_lanczos_center_3.png</url><title>Lê Hoàng</title><link>https://blog.bkisc.com/author/le-hoang/</link></image><item><title>Cyber Apocalypse 2023: The Cursed Mission - Miscellaneous</title><link>https://blog.bkisc.com/blog/bkisc/htb2023-misc/</link><pubDate>Mon, 27 Mar 2023 00:00:00 +0000</pubDate><guid>https://blog.bkisc.com/blog/bkisc/htb2023-misc/</guid><description>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Lê Hoàng | BKISC Blogs</title><link>https://blog.bkisc.com/author/le-hoang/</link><atom:link href="https://blog.bkisc.com/author/le-hoang/index.xml" rel="self" type="application/rss+xml"/><description>Lê Hoàng</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 27 Mar 2023 00:00:00 +0000</lastBuildDate><image><url>https://blog.bkisc.com/author/le-hoang/avatar_hub1960694dd8a44fa9cc7ba9b0e79ac0e_263514_270x270_fill_lanczos_center_3.png</url><title>Lê Hoàng</title><link>https://blog.bkisc.com/author/le-hoang/</link></image><item><title>Cyber Apocalypse 2023: The Cursed Mission - Miscellaneous</title><link>https://blog.bkisc.com/blog/bkisc/htb2023-misc/</link><pubDate>Mon, 27 Mar 2023 00:00:00 +0000</pubDate><guid>https://blog.bkisc.com/blog/bkisc/htb2023-misc/</guid><description>&lt;p>
+&lt;ul class="tags-list">
+&lt;a href="https://blog.bkisc.com/tag/ctf/">ctf&lt;/a>
+&lt;a href="https://blog.bkisc.com/tag/writeup/">writeup&lt;/a>
+&lt;a href="https://blog.bkisc.com/tag/misc/">misc&lt;/a>
+&lt;a href="https://blog.bkisc.com/tag/htb-2023/">htb-2023&lt;/a>
+&lt;/ul>
 &lt;details class="toc-inpage d-print-none " open>
 &lt;summary class="font-weight-bold">Table of Contents&lt;/summary>
 &lt;nav id="TableOfContents">
@@ -14,6 +20,7 @@
 &lt;/ul>
 &lt;/nav>
 &lt;/details>
+&lt;/p>
 &lt;h2 id="persistence">Persistence&lt;/h2>
 &lt;ul>
 &lt;li>
@@ -379,7 +386,12 @@
 &lt;h2 id="original-posts">Original Posts&lt;/h2>
 &lt;ul>
 &lt;li>&lt;a href="https://fazect.github.io/htb2023/" target="_blank" rel="noopener">From FazeCT&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Cyber Apocalypse 2023: The Cursed Mission - Web Exploitation</title><link>https://blog.bkisc.com/blog/bkisc/htb2023-web/</link><pubDate>Mon, 27 Mar 2023 00:00:00 +0000</pubDate><guid>https://blog.bkisc.com/blog/bkisc/htb2023-web/</guid><description>
+&lt;/ul></description></item><item><title>Cyber Apocalypse 2023: The Cursed Mission - Web Exploitation</title><link>https://blog.bkisc.com/blog/bkisc/htb2023-web/</link><pubDate>Mon, 27 Mar 2023 00:00:00 +0000</pubDate><guid>https://blog.bkisc.com/blog/bkisc/htb2023-web/</guid><description>&lt;p>
+&lt;ul class="tags-list">
+&lt;a href="https://blog.bkisc.com/tag/ctf/">ctf&lt;/a>
+&lt;a href="https://blog.bkisc.com/tag/writeup/">writeup&lt;/a>
+&lt;a href="https://blog.bkisc.com/tag/htb-2023/">htb-2023&lt;/a>
+&lt;/ul>
 &lt;details class="toc-inpage d-print-none " open>
 &lt;summary class="font-weight-bold">Table of Contents&lt;/summary>
 &lt;nav id="TableOfContents">
@@ -397,6 +409,7 @@
 &lt;/ul>
 &lt;/nav>
 &lt;/details>
+&lt;/p>
 &lt;h2 id="introduction">Introduction&lt;/h2>
 &lt;p>Welcome to our blog post about the web challenges in the HTB Cyber Apocalypse 2023 competition! For those who may not be familiar, HTB (Hack The Box) is a platform that provides a range of cybersecurity challenges for users to test and improve their skills. Cyber Apocalypse 2023 was a massive virtual event that took place in February 2023, where thousands of participants from all over the world competed in a range of challenges, including web, crypto, reverse engineering, and more.&lt;/p>
 &lt;p>We were able to reach 29th place and solve 60/74 challenges. Particularly for web challenges, we got 8/9 (the one we didn&amp;rsquo;t solve was Unearthly Shop).&lt;/p>
