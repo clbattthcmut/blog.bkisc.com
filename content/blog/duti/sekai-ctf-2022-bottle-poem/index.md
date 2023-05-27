@@ -63,7 +63,9 @@ projects: []
 #   Otherwise, set `slides: ""`.
 slides:
 ---
+{{< blog_list_tags >}}
 {{< toc >}}
+
 
 ## Problem statement
 ![](problem-statement.png)
