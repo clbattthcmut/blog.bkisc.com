@@ -1,0 +1,13 @@
+{{/*
+    Docs: https://wowchemy.com/docs/content/writing-markdown-latex/#tags-and-categories
+*/}}
+
+
+
+<ul class="tags-list">
+    {{ range $index, $name := .Page.Params.tags }}
+        {{ with $.Site.GetPage (printf "/tags/%s" $name) }}
+            <a href="{{ .Permalink }}">{{ $name }}</a>
+        {{ end }}
+    {{ end }}
+</ul>
