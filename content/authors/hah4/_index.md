@@ -68,9 +68,9 @@ user_groups:
 
 Hi, I am hah4 (Anh-Hung Hoang), a web pentester from BKISC. Currently, I am studying Computer Science at Ho Chi Minh University of Technology.
 
-Starting as a Back-End developer, I have developed many applications. Because of their security, I have learned about threats and vulnerabilities. I suddenly realized that I have a passion for hacking, and my road to becoming a cyber security specialist began.
+Started as a Back-End developer, I have developed many applications. Because of many requirements in security, I have learned about threats and vulnerabilities. I suddenly realized that I have a passion for hacking, and my road to become a cyber security specialist began since.
 
-## Archievements
+## Achievements
 
 + *First Prize*, National Physics Olympiad, 2022
 + *Third Prize*, National Physics Olympiad, 2021
