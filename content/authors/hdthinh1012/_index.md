@@ -52,7 +52,7 @@ highlight_name: false
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.
 user_groups:
-  - Members
+  - Alumni
 ---
 
 hdthinh1012 (Thinh Huynh Duc) is a Computer Science student studying at Ho Chi Minh University of Technology.
