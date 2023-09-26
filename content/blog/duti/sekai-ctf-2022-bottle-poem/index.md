@@ -26,7 +26,7 @@ summary: Deserialization attack with Python Bottle.
 tags:
   - ctf
   - writeup
-  - web exploitation
+  - web-exploitation
 featured: true
 
 links:
