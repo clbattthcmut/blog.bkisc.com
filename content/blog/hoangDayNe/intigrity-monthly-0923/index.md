@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 title: 'Writeup for Intigriti September Challenge 2023'
 authors:
   - hoangDayNe
@@ -7,7 +7,7 @@ date: '2023-09-26T00:00:00Z'
 doi: ''
 
 # Schedule page publish date (NOT publication's date).
-publishDate: '2022-10-03T11:59:00Z'
+publishDate: '2023-10-03T11:59:00Z'
 
 # Publication type.
 # Legend: 0 = Uncategorized; 1 = Conference paper; 2 = Journal article;
