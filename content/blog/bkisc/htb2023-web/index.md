@@ -29,7 +29,7 @@ summary: An in-depth writeup on Cyber Apocalypse 2023 - The Cursed Mission, Web 
 tags:
   - ctf
   - writeup
-  - web exploitation
+  - web-exploitation
   - htb-2023
 
 featured: false
