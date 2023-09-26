@@ -67,7 +67,7 @@ slides:
 {{< blog_list_tags >}}
 {{< toc >}}
 
-Hi all, first time doing a writeup here 😉. This will be the [Intigriti September 2023 challenge](https://challenge-0923.intigriti.io/) created by {{<hl>}}@sgrum0x{{</hl>}}. I wrote this writeup not just for experienced players but also for newbies. In short, this challenge can be solved by using parentheses for whitespaces filter and get a column without using it's name.
+Hi all, first time doing a writeup here 😉. This will be the [Intigriti September 2023 challenge](https://challenge-0923.intigriti.io/) created by {{<hl>}}@sgrum0x{{</hl>}}. I wrote this writeup not just for experienced players but also for newbies. In short, this challenge can be solved by using parentheses for whitespaces filter and get a column without using its name.
 
 ![](bypass_meme.jpg)
 
@@ -117,7 +117,7 @@ catch(\PDOException $e){
 ...
 ```
 
-Upon reading the source code, I was able to guess that the flag will be in the column `password` which we need to leak it somehow using `SQL Injection``. So where is the injection point ? What are the problems that we need to encounter ? Let's dive deeper.
+Upon reading the source code, I was able to guess that the flag will be in the column `password` which we need to leak it somehow using `SQL Injection``. So where is the injection point? What are the problems that we need to encounter? Let's dive deeper.
 
 ## Overview
 
@@ -134,7 +134,7 @@ $stmt = $pdo->prepare("SELECT id, name, email FROM users WHERE id<=$max");
 ```
 
 But it wouldn't have been a challenge if it was this easy right 🥲?
-The variable `$max` must go through a god d@mn filter in order to be passed to the query.
+The variable `$max` must go through a god d@mn filter to be passed to the query.
 
 ### Filter
 
@@ -152,13 +152,13 @@ if (isset($_GET['max']) && !is_array($_GET['max']) && $_GET['max']>0) {
 }
 ```
 
-In short there are 2 processes the filter perform:
-- First it check the query `$_GET['max']` if it an array and greater than 0.
+In short, there are 2 processes the filter performs:
+- First, it checks the query `$_GET['max']` if it is an array and greater than 0.
 - If it satisfies the condition, it assigns `$max` with the query `$_GET['max']`, and then it performs a blacklist case insensitive check.
 
 ## Filter bypass
 
-### Number check
+### Number Check
 
 First up, in order to get through the if statement, the max must greater than 0. This is easy as stated in **PHP Documentation**.
 ![](php_number.png)
@@ -172,24 +172,24 @@ Comments for whitespaces will fail as it blocks character `/`.
 
 There are a few payloads with alternative characters, unicodes that I have tried and failed like: `%a0, %09, %0a, ...`
 
-There is still other ways.
+There are still other ways.
 
-Taken this from [Hacktricks](https://book.hacktricks.xyz/pentesting-web/sql-injection#no-spaces-bypass), we may already find the payload we need:
+Taking this from [Hacktricks](https://book.hacktricks.xyz/pentesting-web/sql-injection#no-spaces-bypass), we may already find the payload we need:
 `?max=(1)and(1)=(1)`.
 
 Nice👌.
 
-However if you apply this right a way it would not work as it requires a **leading numeric character** in the payload. We can use arithmetic operators to utilize this.
+However, if you apply this right away it would not work as it requires a **leading numeric character** in the payload. We can use arithmetic operators to utilize this.
 
 Operator `*` multiply is not filtered. `?max=1*(2)and(1)=(1)`
 
 ### Desired characters are blocked
 
-We can already construct a payload for **Union based** SQL Injection.
+We can already construct a payload for **Union-Based** SQL Injection.
 
-The payload for it maybe: `1 union select 1,2,password from users`
+The payload for it may be: `1 union select 1,2,password from users`
 
-Bad news: `"password"` has characters "a" which is filtered.
+Bad news: `"password"` has character a "a" which is filtered.
 
 Good news: [Hacktricks](https://book.hacktricks.xyz/pentesting-web/sql-injection#bypass-column-names-restriction) also offers us another way around.
 
@@ -202,24 +202,24 @@ Good news: [Hacktricks](https://book.hacktricks.xyz/pentesting-web/sql-injection
 
 ### Our union select
 
-Let's start off with making our union select, provided that there are no filters applied.
+Let's start with making our union select, provided that there are no filters applied.
 
 It would be: 
 ```sql
 1*2 UNION SELECT 1, 2, password FROM users
 ```
 
-### Without using column name
+### Without using a column name
 
-Column `"password"` is the fourth column of the table users. So the payload from previous section would be:
+Column `"password"` is the fourth column of the table users. So the payload from the previous section would be:
 ```sql
 1*2 UNION SELECT 1, 2, F.4 FROM (SELECT 1, 2, 3, 4 UNION SELECT * FROM users)F
--- Extracting fourth column with a table with 4 columns
+-- Extracting the fourth column with a table with 4 columns
 ```
 
 ### Combine with no spaces using parentheses
 
-This is a tedious and annoying part to explain so I just leave it right here for you to think and try:
+This is a tedious and annoying part to explain so I just leave it right here for you to think about and try:
 
 ```sql
 1*(2)union(SELECT(1),(2),((F.4))from(SELECT(1),(2),(3),(4)union(SELECT*from(users)))F)
@@ -229,7 +229,7 @@ This is a tedious and annoying part to explain so I just leave it right here for
 
 ![](try_fail.png)
 
-The payload seems to work pretty well, but the flag should be there right ? Unfortunately, **no**.
+The payload seems to work pretty well, but the flag should be there right? Unfortunately, **no**.
 
 The problem is right here:
 ```php {linenos=inline}
@@ -242,11 +242,11 @@ If our result contains `"INTIGRITI"` (which is the flag) it will return `"REDACT
 
 ### Final touch
 
-We need to find a function, [a string function](https://dev.mysql.com/doc/refman/8.0/en/string-functions.html) to be precised, that can make the string contain the word `"INTIGRITI"` no more.
+We need to find a function, [a string function](https://dev.mysql.com/doc/refman/8.0/en/string-functions.html) to be precise, that can make the string contain the word `"INTIGRITI"` no more.
 
-A few comes in mind like: *SUBSTR, REVERSE, FORMAT, ...* but they are all filtered this way or another.
+A few come to mind like: *SUBSTR, REVERSE, FORMAT, ...* but they are all filtered this way or another.
 
-And there's *MID* instead of *SUBSTR* ... Wow. Just wow. So in order to not return the result containing `"INTIGRITI"`, we can use `MID(str,2)` which skips the first character.
+And there's *MID* instead of *SUBSTR* ... Wow. Just wow. So to not return the result containing `"INTIGRITI"`, we can use `MID(str,2)` which skips the first character.
 
 *One more thing:* You may use *LOWER* and it still got through and the flag is still correct in this challenge.
 
@@ -260,11 +260,12 @@ And there's *MID* instead of *SUBSTR* ... Wow. Just wow. So in order to not retu
 ![](final_result.png)
 
 ![](ambatukam.jpg)
-## Conclussion
 
-Overall, the challenge is quite interesting from my perspective. Upon first glance, the blacklist maybe overwhelmed for those who are not familiar with solving CTF challenges. However with a little bit of searching and trying, failing in the process is a must, the challenge may seem not so tough after all.
+## Conclusion
 
-Thanks for reading the writeup and have a nice day.
+Overall, the challenge is quite interesting from my perspective. At first glance, the blacklist may be overwhelming for those who are not familiar with solving CTF challenges. However, with a little bit of searching and trying, failing in the process is a must, the challenge may seem not so tough after all.
+
+Thanks for reading and have a nice day.
 
 ![](peace.jpg)
 
