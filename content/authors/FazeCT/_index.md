@@ -63,7 +63,7 @@ I am **FazeCT**, a Reverser from team [BKISC](https://bkisc.com), HCMC Universit
 
 Started playing CTFs since **July 2022**, currently I am focusly learning in the **Reverse Engineering (RE)** field of CTF.
 
-I am also looking forward to learn more about **Blockchain** in the future.
+I am also looking forward to learn more about **Software Engineering** in the future.
 
 ## Noticeable Achievements
 
