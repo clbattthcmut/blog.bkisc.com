@@ -14,13 +14,15 @@ organizations:
     url: ''
 
 # Short bio (displayed in user profile at end of posts)
-bio: I describe myself as a program written in C. Vulnerable and easily exploited by others.
+bio: Trying to exploit this shell program called life that I never get control of.
 
 interests:
   - Server Security
+  - Malware Development
   - Game Hacking
   - OSINT
-  - Network Analysis
+  - Story Writing
+  - Eat, sleep, repeat
 
 education:
   courses:
@@ -60,18 +62,34 @@ user_groups:
   - Members
 ---
 
+Player Name: **Lio**
+
+Class: **Pwner**, **Keyboard Hero** (former)
+
+Level: 21
+
+Weapon: Keyboard of Destruction **+15**
+
+Armor: Shadowweave Cloak of Tntrovertedness **+15**
+
 ## Background
 
-Hi my name is **Lio**. I'm your friendly Pwner from **HCMC University of Technology**.
+Yuri enthusiast. Diagnosed with chronic gacha addiction.
 
-I used to be a noob game developer. Now I'm just a hecker ~~with skill issue~~ when night falls.
+Playing **PWN** cause I'm too dumb at math to pursue **cryptography**, won't be playing **REV** since I'm too lazy to read code. But I'm currently trying to expand my knowledge in **web exploitation** (still a noob tho).
 
-Absolutely love anime-related stuffs. Part-time weeaboo when dawn breaks.
+"If a program has more than 7 functions or a function has more than 100 lines, I will not read it."
 
-My favorite number is 1767991380. Bet you can decode this (not my social security number btw).
+## Skills
 
-In the meantime, BKISC{L1f3_1t_53lF_i5_4_t7p3_0f_5k1ll_i55u3}.
+- Coding Mastery: 69/100
+- Laziness Control: 0/100
+- Sleeping Mastery: 9999999/100
 
-## Noticeable Achievements
+## Achievements
 
 **TOP 10** as **Fried Rice** in GAMEUIT HACKATHON 2022
+
+**Qualified** for Hacktheon Sejong 2023 Finals
+
+**Consolation Prize** in ASEAN Student Contest on Information Security 2023
