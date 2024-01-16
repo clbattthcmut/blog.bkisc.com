@@ -70,7 +70,7 @@ Level: 21
 
 Weapon: Keyboard of Destruction **+15**
 
-Armor: Shadowweave Cloak of Tntrovertedness **+15**
+Armor: Shadowweave Cloak of Introvertedness **+15**
 
 ## Background
 
