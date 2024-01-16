@@ -808,19 +808,19 @@
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The algorithm here is very simple, however this is author&amp;rsquo;s idea to let the program sleeps for a total of &lt;strong>(a1 + a2) seconds&lt;/strong> each time this function is called. The intended result of this function is to &lt;strong>return a1 + a2&lt;/strong>. We will have to patch the binary to get our flag.&lt;/p>
 &lt;h2 id="patch-the-binary">Patch the binary&lt;/h2>
 &lt;p>So we know what makes our program runs slowly, it is time to fix that. Below is the decompiled assembly code of that part.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">mov ecx, [ebp+arg_0]
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">mov edx, [ecx+10h]
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sub edx, 1
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">mov eax, [ebp+arg_0]
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">mov [eax+10h], edx
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">mov ecx, [ebp+var_10]
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">push ecx
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">mov edx, [ebp+var_C]
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">push edx
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">call sub_401110
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">add esp, 8
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">mov [ebp+var_58], eax
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">mov eax, [ebp+arg_0]
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-gdscript3" data-lang="gdscript3">&lt;span class="line">&lt;span class="cl">&lt;span class="n">mov&lt;/span> &lt;span class="n">ecx&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="n">ebp&lt;/span>&lt;span class="o">+&lt;/span>&lt;span class="n">arg_0&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">mov&lt;/span> &lt;span class="n">edx&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="n">ecx&lt;/span>&lt;span class="o">+&lt;/span>&lt;span class="mi">10&lt;/span>&lt;span class="n">h&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">sub&lt;/span> &lt;span class="n">edx&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">mov&lt;/span> &lt;span class="n">eax&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="n">ebp&lt;/span>&lt;span class="o">+&lt;/span>&lt;span class="n">arg_0&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">mov&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="n">eax&lt;/span>&lt;span class="o">+&lt;/span>&lt;span class="mi">10&lt;/span>&lt;span class="n">h&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="n">edx&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">mov&lt;/span> &lt;span class="n">ecx&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="n">ebp&lt;/span>&lt;span class="o">+&lt;/span>&lt;span class="n">var_10&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">push&lt;/span> &lt;span class="n">ecx&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">mov&lt;/span> &lt;span class="n">edx&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="n">ebp&lt;/span>&lt;span class="o">+&lt;/span>&lt;span class="n">var_C&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">push&lt;/span> &lt;span class="n">edx&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">call&lt;/span> &lt;span class="n">sub_401110&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">add&lt;/span> &lt;span class="n">esp&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mi">8&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">mov&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="n">ebp&lt;/span>&lt;span class="o">+&lt;/span>&lt;span class="n">var_58&lt;/span>&lt;span class="p">],&lt;/span> &lt;span class="n">eax&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">mov&lt;/span> &lt;span class="n">eax&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="n">ebp&lt;/span>&lt;span class="o">+&lt;/span>&lt;span class="n">arg_0&lt;/span>&lt;span class="p">]&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Instead of calling &lt;strong>sub_401110&lt;/strong>, we should patch the program to directly calculates &lt;strong>ecx + edx&lt;/strong> then assigns it into &lt;strong>eax&lt;/strong>. We find out that the opcode of &lt;strong>call sub_401110&lt;/strong> is &lt;strong>E8 77 FC FF FF&lt;/strong>.&lt;/p>
 &lt;p>Using &lt;strong>IDA Pro&lt;/strong> integrated settings, which can be found at &lt;strong>Options &amp;gt; Generals &amp;gt; Number of Opcode bytes (non-graph) set to a large enough number&lt;/strong>, we can view each instruction&amp;rsquo;s opcode.&lt;/p>
 &lt;p>With &lt;a href="https://github.com/Gallopsled/pwntools" target="_blank" rel="noopener">pwntools&lt;/a> library, we also find out the opcode for &lt;strong>add ecx, edx&lt;/strong> and &lt;strong>move eax, ecx&lt;/strong> is &lt;strong>01 D1&lt;/strong> and &lt;strong>89 C8&lt;/strong> using this script written in &lt;strong>Python&lt;/strong> below.&lt;/p>
@@ -832,7 +832,7 @@
 &lt;p>Change &lt;strong>E8 77 FC FF FF&lt;/strong> to &lt;strong>01 D1 89 C8 90&lt;/strong> using any hex editor of your choice (here &lt;strong>90&lt;/strong> corresponds to the &lt;strong>NOP&lt;/strong> instruction).&lt;/p>
 &lt;h2 id="result">Result&lt;/h2>
 &lt;p>After patching the binary, run it again to get our flag.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">fazect@LAPTOP-CQA118DI:/mnt/d/Downloads$ ./slow.exe
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">RESULT: 75025
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">flag is: Pr4ct1c3_VMc0d3_w1th_F1b0n4cc1
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-gdscript3" data-lang="gdscript3">&lt;span class="line">&lt;span class="cl">&lt;span class="n">fazect&lt;/span>&lt;span class="err">@&lt;/span>&lt;span class="n">LAPTOP&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">CQA118DI&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">mnt&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">d&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">Downloads&lt;/span>&lt;span class="o">$&lt;/span> &lt;span class="o">./&lt;/span>&lt;span class="n">slow&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">exe&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">RESULT&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="mi">75025&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">flag&lt;/span> &lt;span class="n">is&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">Pr4ct1c3_VMc0d3_w1th_F1b0n4cc1&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Wrap the flag with &lt;strong>ISITDTU{}&lt;/strong>, we have our flag for the challenge: &lt;strong>ISITDTU{Pr4ct1c3_VMc0d3_w1th_F1b0n4cc1}&lt;/strong>.&lt;/p></description></item></channel></rss>
