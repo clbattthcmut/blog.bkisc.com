@@ -14,7 +14,7 @@ organizations:
     url: 'https://hcmut.edu.vn'
 
 # Short bio (displayed in user profile at end of posts)
-bio: Hmmm...
+bio: A newbie 
 
 interests:
   - Binary analysis
