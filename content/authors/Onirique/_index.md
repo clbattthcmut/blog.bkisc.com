@@ -14,7 +14,7 @@ organizations:
     url: 'https://hcmut.edu.vn'
 
 # Short bio (displayed in user profile at end of posts)
-bio: Nothing but an absolute noob
+bio: Enjoying everyday life
 
 interests:
   - Applied Cryptography
@@ -38,9 +38,6 @@ social:
   - icon: github
     icon_pack: fab
     link: https://github.com/junvalentine
-  - icon: twitter
-    icon_pack: fab
-    link: https://twitter.com/Onirique9203
 # Link to a PDF of your resume/CV from the About widget.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
 # - icon: cv
@@ -58,20 +55,16 @@ user_groups:
 
 ## Background
 
-My name is Onirique, but you may also know me as Junvalentine.
+I am Onirique, also known as Junvalentine, currently studying in the field of Applied Cryptography (absolute noob).
 
-I’m currently playing CTF for [thehackerscrew](https://twitter.com/thehackerscrew1) and [cr3.mov](https://twitter.com/cr3mov), mainly focus in crypto challenges. I’m also the president of BKISC (Ho Chi Minh City University of Technology Information Security Club).
+Love traveling and football (a royal fan of Man United). 
 
-I’m a Man United fan and a Hanni simper. I can speak some Japanese (I’m a wibu ofc).
+Also doing Competitive Programming on [Codeforces](https://codeforces.com/profile/Onirique) for fun.
 
 ## Achievements
 
-Ranked **3<sup>rd</sup>** as a member of **Team Asia** in [International Cybersecurity Challenge (IC3)](https://www.ic3.games/)
+Qualified for [ISITDTU CTF 2022](https://ctftime.org/ctf/258) Finals
 
-Ranked **7<sup>th</sup>** as **Team 0k0n0m1y4k1** in [Crypto CTF](https://ctftime.org/event/1857)
-
-Ranked **1<sup>st</sup>** as **Team Under The Hood** in [WannaGame Championship](https://ctftime.org/event/2146)
-
-Ranked **5<sup>th</sup>** as **Team Thehackerscrew** in [Molecon Finals CTF](https://ctftime.org/event/2033)
+Honorable Mention at National Olympics in Informatics (2022)
 
 Ranked **57<sup>th</sup>** as **HCMUT Last Dance** in 2022 ACM-ICPC Asia HoChiMinh City Regional Contest
