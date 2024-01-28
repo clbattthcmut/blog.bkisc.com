@@ -66,6 +66,8 @@ user_groups:
     - Members
 ---
 ### Background
+---
+
 I am **Cyese**, a newbie in the field of binary exploitation. Getting into the Security realm is a novel and challenging experience to me personally, and hopefully a memoriable one. 
 
 As a *generic homosapien*, I enjoy a slow and peaceful lifestyle, while enpanding my horizon and understanding of the world around me. 
@@ -73,4 +75,9 @@ As a *generic homosapien*, I enjoy a slow and peaceful lifestyle, while enpandin
 *A book's meaning is based on the viewpoints of its reader*
 
 ### Achievements
+---
+
 Top 12 teams as **AFools** in **Minathon 2023** at HCMUT 
+
+### Note
+* ~~AnotherEden Gacha Addict~~
