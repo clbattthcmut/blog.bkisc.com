@@ -1,38 +1,37 @@
 ---
-# Draft mode---
-draft: false
+draft: false 
 # Set to false when publishing
 
 # Display name
-title: Cyese
+title: Hoainam1
 
 # Username (this should match the folder name)
 authors:
-  - Cyese
+  - Hoainam1
 
 # Is this the primary user of the site?
 superuser: false
 
 # Role/position
-role: Pwner
+role: Web Exploitation
 
 # Organizations/Affiliations
 organizations:
-  - name: Ho Chi Minh City University of Technology
-    url: 'https://hcmut.edu.vn'
+  - name: ''
+    url: ''
 
 # Short bio (displayed in user profile at end of posts)
-bio: Idly watching this evolving world
+bio: Weeboo + Noob Web
 
 interests:
-  - Learning new things
-  - Reading books, listening to music, gaming
-  - Finding a meaning
+  - Web Security
+  - Eat & Sleep
+
 education:
   courses:
     - course: B.S. in Computer Science
       institution: Ho Chi Minh City University of Technology
-      year: 2021-2025
+      year: 2023-2027
 
 # Social/Academic Networking
 # For available icons, see: https://wowchemy.com/docs/getting-started/page-builder/#icons
@@ -41,21 +40,15 @@ education:
 social:
   - icon: envelope
     icon_pack: fas
-    link: 'mailto:tue.lamkhmtk21@hcmut.edu.vn'
-#   - icon: twitter
-#     icon_pack: fab
-#     link: https://twitter.com/GeorgeCushen
-#   - icon: google-scholar
-#     icon_pack: ai
-#     link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ
+    link: 'mailto:nguyenhnam21@gmail.com'
   - icon: github
     icon_pack: fab
-    link: https://github.com/Cyese
+    link: https://github.com/hoainam125
 # Link to a PDF of your resume/CV from the About widget.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
 # - icon: cv
 #   icon_pack: ai
-#   link: 
+#   link: files/cv.pdf
 
 # Enter email to display Gravatar (if Gravatar enabled in Config)
 email: ''
@@ -63,21 +56,9 @@ email: ''
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.
 user_groups:
-    - Members
----
-### Background
+  - Members
 ---
 
-I am **Cyese**, a newbie in the field of binary exploitation. Getting into the Security realm is a novel and challenging experience to me personally, and hopefully a memoriable one. 
+## Introduction
 
-As a *generic homosapien*, I enjoy a slow and peaceful lifestyle, while enpanding my horizon and understanding of the world around me. 
-
-*A book's meaning is based on the viewpoints of its reader*
-
-### Achievements
----
-
-Top 12 teams as **AFools** in **Minathon 2023** at HCMUT 
-
-### Note
-* ~~AnotherEden Gacha Addict~~
+Hiiii ~
