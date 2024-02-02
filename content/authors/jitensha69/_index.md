@@ -1,19 +1,12 @@
 ---
-draft: false 
-# Set to false when publishing
-
 # Display name
-title: Hoainam1
-
-# Username (this should match the folder name)
-authors:
-  - Hoainam1
+title: jitensha69 
 
 # Is this the primary user of the site?
 superuser: false
 
 # Role/position
-role: Web Exploitation
+role: reverser
 
 # Organizations/Affiliations
 organizations:
@@ -21,17 +14,17 @@ organizations:
     url: ''
 
 # Short bio (displayed in user profile at end of posts)
-bio: Weeboo + Noob Web
+bio: HCMUT K23 Computer Science major
 
 interests:
-  - Web Security
-  - Eat & Sleep
+  - Reverse Engineering
+  - Pwn
 
 education:
   courses:
     - course: B.S. in Computer Science
       institution: Ho Chi Minh City University of Technology
-      year: 2023-2027
+      year: 2023 - 2027 
 
 # Social/Academic Networking
 # For available icons, see: https://wowchemy.com/docs/getting-started/page-builder/#icons
@@ -40,10 +33,10 @@ education:
 social:
   - icon: envelope
     icon_pack: fas
-    link: 'mailto:nguyenhnam21@gmail.com'
-  - icon: github
+    link: 'mailto:kienmt05@outlook.com'
+  - icon: facebook
     icon_pack: fab
-    link: https://github.com/hoainam125
+    link: https://www.facebook.com/MaiTrungKien2005/
 # Link to a PDF of your resume/CV from the About widget.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
 # - icon: cv
@@ -53,12 +46,22 @@ social:
 # Enter email to display Gravatar (if Gravatar enabled in Config)
 email: ''
 
+# Highlight the author in author lists? (true/false)
+highlight_name: false
+
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.
 user_groups:
   - Members
 ---
 
-## Introduction
+## Background
 
-Hiiii ~
+I am **Trung Kien** and I major in **Computer Science.** Proud member of the **BKISC.**
+
+I am looking forward to learning a lot about computer security.
+
+
+## Noticeable Achievements
+
+Nothing yet here.
