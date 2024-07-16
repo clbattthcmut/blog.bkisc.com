@@ -39,9 +39,9 @@ social:
   - icon: github
     icon_pack: fab
     link: https://github.com/Phuc000
-#   - icon: globe
-#     icon_pack: fas
-#     link: https://Phuc000.github.io/
+  - icon: globe
+    icon_pack: fas
+    link: https://Phuc000.github.io/
 # Link to a PDF of your resume/CV from the About widget.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
 # - icon: cv
@@ -58,4 +58,4 @@ user_groups:
 ---
 
 
-I’m **Phuc000**, Computer Science student in Faculty of Computer Science and Engineering, Ho Chi Minh City University of Technology, Vietnam. Reverser from team BKISC.
+I’m **Phuc000**, Computer Science student in Faculty of Computer Science and Engineering, Ho Chi Minh City University of Technology, Vietnam. Reverser from team [BKISC](https://bkisc.com).
