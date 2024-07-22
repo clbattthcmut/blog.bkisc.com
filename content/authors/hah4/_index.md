@@ -17,8 +17,6 @@ role:  Web Exploitaion, Penetration Tester
 
 # Organizations/Affiliations
 organizations:
-  - name: FPT Information System
-    url: 'https://www.fis.com.vn/'
 
 # Short bio (displayed in user profile at end of posts)
 bio: A Web Pentester from BKISC

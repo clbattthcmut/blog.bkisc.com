@@ -1,12 +1,12 @@
 ---
 # Display name
-title: Phuc000
+title: bigbluewhale111
 
 # Is this the primary user of the site?
 superuser: false
 
 # Role/position
-role: Reverser
+role: Web Exploitation
 
 # Organizations/Affiliations
 organizations:
@@ -14,19 +14,16 @@ organizations:
     url: 'https://hcmut.edu.vn'
 
 # Short bio (displayed in user profile at end of posts)
-bio: No idea what I'm doing.
+bio: Whale.
 
 interests:
-  - Reverse Engineering
-  - Networking
-  - Software Engineering
-
+  - Web exploit
+  - Pentest
 education:
   courses:
     - course: B.S. in Computer Science
       institution: Ho Chi Minh City University of Technology
-      year: 2021-2025
-
+      year: 2023-????
 
 # Social/Academic Networking
 # For available icons, see: https://wowchemy.com/docs/getting-started/page-builder/#icons
@@ -35,13 +32,10 @@ education:
 social:
   - icon: envelope
     icon_pack: fas
-    link: 'mailto:truongvinhphuc2003@gmail.com'
+    link: 'mailto:minh.lebaominh11@hcmut.edu.vn'
   - icon: github
     icon_pack: fab
-    link: https://github.com/Phuc000
-  - icon: globe
-    icon_pack: fas
-    link: https://Phuc000.github.io/
+    link: https://github.com/bigbluewhale111
 # Link to a PDF of your resume/CV from the About widget.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
 # - icon: cv
@@ -58,4 +52,6 @@ user_groups:
 ---
 
 
-I’m **Phuc000**, Computer Science student in Faculty of Computer Science and Engineering, Ho Chi Minh City University of Technology, Vietnam. Reverser from team [BKISC](https://bkisc.com).
+I am a **whale**.
+
+
