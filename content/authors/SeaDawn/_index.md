@@ -48,7 +48,7 @@ email: ''
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.
 user_groups:
-  - Alumni
+  - Mentors
 ---
 
 A weber from BKISC - BK Information Security Club. He is currently working for VNG Corporation in Vietnam.
