@@ -48,7 +48,7 @@ email: ''
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.
 user_groups:
-  - Mentors
+  - Alumni
 ---
 
 My name is Khoa. I used to dedicate a lot of time to play CTFs and have developed some skills in Reverse Engineering. Although I am still occasionally spending my spare time to play CTF at weekends, now I want to spend my time studying different fields of computer science and for other hobbies.
