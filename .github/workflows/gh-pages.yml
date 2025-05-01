@@ -21,7 +21,7 @@ permissions:
 
 jobs:
   deploy:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu
     permissions:
       contents: write
     concurrency:
