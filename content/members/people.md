@@ -18,7 +18,7 @@ content:
   user_groups:
   # - Administrator
     - Members
-    - Admin
+    - Admins
     - Mentors
     - Alumni
     - Advisors
