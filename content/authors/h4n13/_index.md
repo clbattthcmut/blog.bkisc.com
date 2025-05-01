@@ -1,12 +1,12 @@
 ---
 # Display name
-title: delk
+title: h4n13
 
 # Is this the primary user of the site?
 superuser: false
 
 # Role/position
-role: Binary Exploitation
+role: Cryptography
 
 # Organizations/Affiliations
 organizations:
@@ -14,13 +14,15 @@ organizations:
     url: 'https://hcmut.edu.vn'
 
 # Short bio (displayed in user profile at end of posts)
-bio: Started playing CTFs since July 2022, currently I am focusly learning in the Binary Exploitation field of CTF.
+bio: a sad horse
 
 interests:
-  - Binary analysis
-  - Networking
+  - Cryptography
 education:
   courses:
+    - course: B.S. in Computer Science
+      institution: Ho Chi Minh City University of Technology
+      year: 2023-Now
 
 # Social/Academic Networking
 # For available icons, see: https://wowchemy.com/docs/getting-started/page-builder/#icons
@@ -29,13 +31,10 @@ education:
 social:
   - icon: envelope
     icon_pack: fas
-    link: 'mailto:phuc.dang1402@hcmut.edu.vn'
-  - icon: github
-    icon_pack: fab
-    link: https://github.com/DelkDang
+    link: 'mailto:hoangtantaoa911@gmail.com'
   - icon: facebook
     icon_pack: fab
-    link: https://www.facebook.com/profile.php?id=100013359073980
+    link: https://www.facebook.com/wiburacknat
 # Link to a PDF of your resume/CV from the About widget.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
 # - icon: cv
@@ -51,7 +50,4 @@ user_groups:
   - Members
 ---
 
-
-I am **delk**.
-
-
+I am a **sad horse**.

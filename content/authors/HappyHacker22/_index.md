@@ -44,7 +44,7 @@ social:
   link: https://github.com/HappyFalcon22
 
 user_groups:
-- Members
+- Mentors
 
 ---
 

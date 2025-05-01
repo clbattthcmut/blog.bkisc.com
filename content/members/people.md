@@ -18,8 +18,9 @@ content:
   user_groups:
   # - Administrator
     - Members
-    - Alumni
+    - Admins
     - Mentors
+    - Alumni
     - Advisors
     - Seniors
     - Principal Investigators
