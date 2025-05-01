@@ -13,7 +13,7 @@ authors:
 superuser: false
 
 # Role/position
-role:  Web Exploitaion, Penetration Tester
+role:  Red Team Operator
 
 # Organizations/Affiliations
 organizations:
