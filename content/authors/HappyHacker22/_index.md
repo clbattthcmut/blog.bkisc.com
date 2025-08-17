@@ -60,4 +60,3 @@ My specialty is ***Cryptography***, with primary interests in ***Zero-Knowledge 
 + Sinh viên tiêu biểu của Khoa Khoa học và Kỹ thuật Máy tính 2023 và 2024.
 + [NSUCRYPTO 2023](https://nsucrypto.nsu.ru/archive/2023/total_results/#data) and [2024](https://nsucrypto.nsu.ru/archive/2024/total_results/#data): Sivler prize with senior ***nothing*** and ***daminha***
 + [NSUCRYPTO 2022](https://nsucrypto.nsu.ru/archive/2022/total_results/#data): Bronze prize with senior ***catperson***
-+ Not failing any subjects in Bach Khoa University
