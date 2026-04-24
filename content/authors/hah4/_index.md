@@ -64,16 +64,8 @@ user_groups:
 
 ## About me
 
-Hi, I am hah4 (Anh-Hung Hoang), a web pentester from BKISC. Currently, I am studying Computer Science at Ho Chi Minh University of Technology.
-
-Started as a Back-End developer, I have developed many applications. Because of many requirements in security, I have learned about threats and vulnerabilities. I suddenly realized that I have a passion for hacking, and my road to become a cyber security specialist began since.
+Hi, I'm hah4!
 
 ## Achievements
 
-+ *First Prize*, National Physics Olympiad, 2022
-+ *Third Prize*, National Physics Olympiad, 2021
-+ *First Prize*, Provincial Physics Olympiad for Grade 12, 2022
-+ *First Prize*, Provincial Physics Olympiad for Grade 12, 2021
-+ *First Prize*, Provincial Solving Math on Calculator Olympiad in Physics, 2022
-+ *Gold Medal*, April 30th Traditional Olympiad in Physics, 2021
-
++ haven't failed any subjects at HCMUT.
